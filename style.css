@@ -1,0 +1,28 @@
+.game {
+    width: fit-content;
+    margin: 100px auto;
+}
+
+.wheel_1 {
+    background-color: pink;
+}
+
+.item {
+    transition-timing-function: linear;
+    width: fit-content;
+    padding: 50px;
+    border: 1px solid black;
+}
+
+button {
+    padding: 10px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.wheel_1_view {
+    position: absolute;
+    top: 20%;
+    height: 60%;
+    width: 100%;
+}
