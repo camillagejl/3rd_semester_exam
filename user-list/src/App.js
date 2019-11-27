@@ -48,6 +48,15 @@ const USERS = [
         lastName: "Everdeen",
         dateOfBirth: "15/09/1995",
         address: "Smithsroad 123"
+    },
+    {
+        id: 6,
+        userName: "WSmith",
+        email: "will@smith.com",
+        firstName: "Barbara",
+        lastName: "Roberts",
+        dateOfBirth: "15/09/1995",
+        address: "Smithsroad 123"
     }
 ];
 
