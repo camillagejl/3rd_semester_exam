@@ -1,15 +1,61 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
     <title>3rd Semester Exam Project</title>
-</head>
-<body>
+  </head>
+  <body>
+    <section id="landing">
+      <nav>
+        <a href="#Home">Home</a>
+        <a href="#MoreGames">More Games</a>
+      </nav>
+      <div class="title"></div>
+      <div class="earth"></div>
+      <form>
+        <label for="name">Name</label>
+        <input type="text" placeholder="Enter Name" name="name" required />
 
-<script src="script.js"></script>
-</body>
+        <label for="email">Email</label>
+        <input type="text" placeholder="Enter Email" name="email" required />
+
+        <label for="password">Password</label>
+        <input
+          type="text"
+          placeholder="Enter your Password"
+          name="password"
+          required
+        />
+
+        <button type="submit">Login</button>
+      </form>
+    </section>
+
+    <section id="game_page">
+      <div class="game_container">
+        <div class="chose_theme"></div>
+        <div class="game"></div>
+      </div>
+    </section>
+
+    <section id="all_games">
+      <div class="games_container">
+        <div id="item1"></div>
+        <div id="item2"></div>
+        <div id="item3"></div>
+        <div id="item4"></div>
+        <div id="item5"></div>
+        <div id="item6"></div>
+        <div id="item7"></div>
+        <div id="item8"></div>
+      </div>
+    </section>
+    <script src="script.js"></script>
+  </body>
 </html>
