@@ -1,1 +1,4 @@
 .idea/
+_offline
+user-list/node_modules
+node_modules
