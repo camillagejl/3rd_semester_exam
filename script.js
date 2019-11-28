@@ -2,21 +2,24 @@
 
 document.addEventListener("DOMContentLoaded", start);
 
-let lastItemID = 5;
+const spinHandle = document.querySelector(".spin_handle");
+
+let lastItemID = 6;
 let spinRounds;
 
 function start() {
-    document.querySelector("button").addEventListener("click", spinClick);
+    spinHandle.addEventListener("click", spinButtonClick);
 }
 
-function spinClick() {
+function spinButtonClick() {
     spinRounds = Math.random() * Math.floor(20) + 1;
-    spinWheel();
+    spinWheel(".wheel_1");
+    spinWheel(".wheel_2");
+    spinWheel(".wheel_3");
 }
 
-function spinWheel() {
-    console.log("Spinning");
-    document.querySelectorAll(".item").forEach(item => {
+function spinWheel(wheel, dest) {
+    document.querySelectorAll(`${wheel} .item`).forEach(item => {
         item.style.transitionDuration = ".1s";
         item.style.transform = "translateY(100%)";
     });
@@ -25,15 +28,14 @@ function spinWheel() {
 }
 
 function moveLastItem() {
-    console.log("moving last item");
     document.querySelectorAll(".item").forEach(item => {
         item.style.transitionDuration = "0s";
         item.style.transform = "translateY(0)";
     });
-const elem = document.querySelector(`.item_${lastItemID}`);
-elem.parentNode.removeChild(elem);
+    const elem = document.querySelector(`.item_${lastItemID}`);
+    elem.parentNode.removeChild(elem);
 
-addLastItem();
+    addLastItem();
 
 }
 
@@ -49,11 +51,13 @@ function addLastItem() {
     }
 
     spinRounds--;
-    console.log(spinRounds);
 
     if (spinRounds > 0) {
-        console.log("I'm over");
-        setTimeout(spinWheel, .1)
+        setTimeout(function() {
+            spinWheel(".wheel_1");
+            spinWheel(".wheel_2");
+            spinWheel(".wheel_3")
+        }, .1)
     }
 
 }
