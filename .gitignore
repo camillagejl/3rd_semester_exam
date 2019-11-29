@@ -1,3 +1,4 @@
 .idea/
 _offline
-gameitems.json
+node_modules/
+user-list/
