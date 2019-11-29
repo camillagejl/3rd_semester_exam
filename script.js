@@ -1,6 +1,57 @@
 "use strict";
 
-document.addEventListener("DOMContentLoaded", start);
+document.addEventListener("DOMContentLoaded", buildWheels);
+
+async function buildWheels() {
+    let pagesUrl = "gameitems.json";
+    let jsonData = await fetch(pagesUrl);
+    let symbols = await jsonData.json();
+
+    const wheel1 = [symbols[0], symbols[1]];
+    const wheel2 = [symbols[0], symbols[1]];
+    const wheel3 = [symbols[0], symbols[1]];
+    const wheels = [wheel1, wheel2, wheel3];
+
+    startMachine(wheels);
+}
+
+function startMachine(wheels) {
+    let spinResult = calculateSpinResult(wheels);
+    let didWin = compareSpinResult(spinResult);
+
+    if (didWin) {
+        payPrice(spinResult);
+    }
+}
+
+function calculateSpinResult(wheels) {
+    let spinResult = [];
+
+    wheels.forEach(wheel => {
+        let wheelSymbol = wheel[randomSymbol(wheel)];
+        spinResult.push(wheelSymbol);
+    });
+    return spinResult;
+}
+
+function compareSpinResult(spinResult) {
+    return spinResult[0] === spinResult[1] && spinResult[1] === spinResult[2];
+}
+
+function payPrice(spinResult) {
+    console.log(spinResult[0].price);
+}
+
+
+// ----- HELPING FUNCTIONS -----
+
+function randomSymbol(wheel) {
+    return Math.round(Math.random() * Math.floor(wheel.length - 1));
+}
+
+// ----- VISUAL WHEELS PROTOTYPE -----
+
+// document.addEventListener("DOMContentLoaded", start);
 
 const spinHandle = document.querySelector(".spin_handle");
 
