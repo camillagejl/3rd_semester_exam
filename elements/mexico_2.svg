@@ -1,0 +1,13 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="100" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="linear-gradient" x1="41.85" y1="88.78" x2="48.84" y2="49.11" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#666"/>
+      <stop offset="1"/>
+    </linearGradient>
+  </defs>
+  <title>mexico_2</title>
+  <path d="M77.22,58.89c.09,1.51-1.27,2.56-2.43,1.89L56,50,37.16,39.2a2.13,2.13,0,0,1-.19-3.4L54.4,22.24,71.84,8.68c1.08-.84,2.54,0,2.62,1.5l1.38,24.35Z" fill="#cc841b" stroke="#000" stroke-miterlimit="10" stroke-width="0.75"/>
+  <path d="M93,82c-4.11,13-27,15.13-51.06,4.81S1.67,57.59,5.78,44.61s27-15.13,51.06-4.81S97.11,69,93,82Z" fill="#cc841b" stroke="#000" stroke-miterlimit="10" stroke-width="0.75"/>
+  <path d="M81.22,84.32c-3,9.59-21.56,10.47-41.38,2S6.43,63.15,9.47,53.56s21.56-10.47,41.38-2S84.26,74.74,81.22,84.32Z" fill="url(#linear-gradient)"/>
+  <path d="M5.51,45.58C8,37.41,15.24,34,25.27,33.35a77.58,77.58,0,0,1,27,4.64c9.63,4,18.46,8.36,24.94,14s12.5,11.61,15.25,19.43c1,3.37,1.56,6.54.88,9.28l-3.91.82L91,74l-4-.94.8-6.56H83V60.88l-4.83.94-.8-6.56-4,.94-2.41-4.68-4,1.87-.8-5.62-6.44,1.87L57.24,44l-4,1.87L50,39.34l-4,2.81L42.75,38.4l-4,2.81-4-4.68-3.22,4.68-5.63-4.68-3.22,4.68L17.8,37.46l-2.41,5.62-4.83-2.81L9.75,45Z" fill="#cc3e1d" stroke="#000" stroke-miterlimit="10" stroke-width="0.75"/>
+</svg>
