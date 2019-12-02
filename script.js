@@ -10,7 +10,25 @@ async function fetchSymbols() {
     symbols = await jsonData.json();
 
     activateStartButton();
+}
 
+function buildWheels() {
+    const wheel1 = {
+        symbols: [symbols[0], symbols[1], symbols[2]],
+        isHolding: false,
+        active: null
+    };
+    const wheel2 = {
+        symbols: [symbols[0], symbols[1], symbols[2]],
+        isHolding: false,
+        active: null
+    };
+    const wheel3 = {
+        symbols: [symbols[0], symbols[1], symbols[2]],
+        isHolding: false,
+        active: null
+    };
+    return [wheel1, wheel2, wheel3];
 }
 
 function activateStartButton() {
@@ -21,30 +39,8 @@ function activateStartButton() {
     })
 }
 
-function buildWheels() {
-
-    const wheel1 = {
-        symbols: [symbols[0], symbols[1]],
-        isHolding: false,
-        active: null
-    };
-
-    const wheel2 = {
-        symbols: [symbols[0], symbols[1]],
-        isHolding: false,
-        active: null
-    };
-
-    const wheel3 = {
-        symbols: [symbols[0], symbols[1]],
-        isHolding: false,
-        active: null
-    };
-
-    return [wheel1, wheel2, wheel3];
-}
-
 function activateSpinButton(wheels, spins) {
+    spinHandle.addEventListener("click", spinButtonClick);
     document.querySelector(".spin_button").addEventListener("click", function _function() {
         spin(wheels, spins);
         document.querySelector(".spin_button").removeEventListener("click", _function);
@@ -113,16 +109,10 @@ function randomSymbol(wheel) {
 
 // ----- VISUAL WHEELS PROTOTYPE -----
 
-// document.addEventListener("DOMContentLoaded", start);
+const spinHandle = document.querySelector(".spin_button");
 
-const spinHandle = document.querySelector(".spin_handle");
-
-let lastItemID = 6;
+let lastItemID = 5;
 let spinRounds;
-
-function start() {
-    spinHandle.addEventListener("click", spinButtonClick);
-}
 
 function spinButtonClick() {
     spinRounds = Math.random() * Math.floor(20) + 1;

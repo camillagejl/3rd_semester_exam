@@ -1,20 +1,22 @@
 body {
     background-color: #3d3d3d;
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    width: 99vw;
+    height: 95vh;
 }
 
-
 .game {
+    text-align: center;
     width: fit-content;
     margin: 100px auto;
 }
 
+.wheel {
+    background-color: darkgrey;
+}
+
 .wheels {
+    margin: 0 auto;
+    width: fit-content;
     display: flex;
 }
 
