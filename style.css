@@ -1,0 +1,10 @@
+#all_games {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  font-family: "Righteous", cursive;
+  text-align: center;
+}
+
+.image_content img {
+  width: 60%;
+}

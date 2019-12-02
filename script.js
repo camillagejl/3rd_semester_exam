@@ -13,16 +13,13 @@ async function getAllGames() {
 
 function insertAllGames() {
   section.forEach(section => {
-    console.log("whatever");
     let template = `<section>
                     <div class="image_content">
-                        <img src="${section.thumbnail.guid}" alt="Image for: ${section.gametitle.rendered}">
+                        <img src="${section.thumbnail.guid}" alt="Image for: ${section.title.rendered}">
                     </div>
                     <div class="gametitle">
                         <h2>${section.gametitle}</h2>
                     </div>
-                    <div class="category">
-                    <p>${section.category}</p></div>
             </section>`;
     destAllGames.insertAdjacentHTML("beforeend", template);
   });
