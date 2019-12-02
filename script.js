@@ -10,17 +10,28 @@ async function buildWheels() {
     let symbols = await jsonData.json();
 
     const wheel1 = [symbols[0], symbols[1]];
-    const wheel2 = [symbols[0], symbols[1]];
+    const wheel2 = [symbols[0], symbols[1], symbols[1]];
     const wheel3 = [symbols[0], symbols[1]];
     const wheels = [wheel1, wheel2, wheel3];
 
-    activateSpinButton(wheels, 3);
+    document.querySelector(".hold_wheel_1").addEventListener("click", function _function() {
+        console.log(wheels[1]);
+    });
+
+    activateStartButton(wheels);
+}
+
+function activateStartButton(wheels) {
+    document.querySelector(".start_button").addEventListener("click", function _function() {
+        activateSpinButton(wheels, 3);
+        document.querySelector(".start_button").removeEventListener("click", _function);
+    })
 }
 
 function activateSpinButton(wheels, spins) {
-    document.querySelector("button").addEventListener("click", function _function() {
+    document.querySelector(".spin_button").addEventListener("click", function _function() {
         spin(wheels, spins);
-        document.querySelector("button").removeEventListener("click", _function);
+        document.querySelector(".spin_button").removeEventListener("click", _function);
     });
 }
 
@@ -31,6 +42,7 @@ function spin(wheels, spins) {
 
     if (didWin) {
         payPrice(spinResult);
+        activateStartButton(wheels);
     }
 
     if (!didWin) {
@@ -39,6 +51,7 @@ function spin(wheels, spins) {
 
         if (spins <= 0) {
             console.log("YOU LOST!");
+            activateStartButton(wheels);
         }
 
         else activateSpinButton(wheels, spins);
