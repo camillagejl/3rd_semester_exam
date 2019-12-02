@@ -2,6 +2,8 @@
 
 document.addEventListener("DOMContentLoaded", buildWheels);
 
+
+
 async function buildWheels() {
     let pagesUrl = "gameitems.json";
     let jsonData = await fetch(pagesUrl);
@@ -12,15 +14,34 @@ async function buildWheels() {
     const wheel3 = [symbols[0], symbols[1]];
     const wheels = [wheel1, wheel2, wheel3];
 
-    startMachine(wheels);
+    activateSpinButton(wheels, 3);
 }
 
-function startMachine(wheels) {
+function activateSpinButton(wheels, spins) {
+    document.querySelector("button").addEventListener("click", function _function() {
+        spin(wheels, spins);
+        document.querySelector("button").removeEventListener("click", _function);
+    });
+}
+
+function spin(wheels, spins) {
+    console.log(spins);
     let spinResult = calculateSpinResult(wheels);
     let didWin = compareSpinResult(spinResult);
 
     if (didWin) {
         payPrice(spinResult);
+    }
+
+    if (!didWin) {
+        console.log("You didn't win!");
+        spins--;
+
+        if (spins <= 0) {
+            console.log("YOU LOST!");
+        }
+
+        else activateSpinButton(wheels, spins);
     }
 }
 
