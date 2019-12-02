@@ -1,10 +1,9 @@
 #all_games {
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  font-family: "Righteous", cursive;
+  display: flex;
+  font-family: "Alatsi", sans-serif;
   text-align: center;
 }
 
 .image_content img {
-  width: 60%;
+  width: 70%;
 }
