@@ -4,35 +4,46 @@ document.addEventListener("DOMContentLoaded", fetchSymbols);
 
 let symbols;
 
+// Fetching all different symbols from the gameitems.json file.
 async function fetchSymbols() {
     let pagesUrl = "gameitems.json";
     let jsonData = await fetch(pagesUrl);
     symbols = await jsonData.json();
 
-    activateStartButton();
+    startGame();
+}
+
+function startGame() {
+    let wheels = buildWheels();
+    activateStartButton(wheels);
+    addVisuals(wheels);
 }
 
 function buildWheels() {
     const wheel1 = {
-        symbols: [symbols[0], symbols[1], symbols[2]],
+        symbols: [symbols[0], symbols[1], symbols[2], symbols[3], symbols[4]],
         isHolding: false,
         active: null
     };
     const wheel2 = {
-        symbols: [symbols[0], symbols[1], symbols[2]],
+        symbols: [symbols[0], symbols[1], symbols[2], symbols[3], symbols[4]],
         isHolding: false,
         active: null
     };
     const wheel3 = {
-        symbols: [symbols[0], symbols[1], symbols[2]],
+        symbols: [symbols[0], symbols[1], symbols[2], symbols[3], symbols[4]],
         isHolding: false,
         active: null
     };
-    return [wheel1, wheel2, wheel3];
+    const wheel4 = {
+        symbols: [symbols[0], symbols[1], symbols[2], symbols[3], symbols[4]],
+        isHolding: false,
+        active: null
+    };
+    return [wheel1, wheel2, wheel3, wheel4];
 }
 
-function activateStartButton() {
-    let wheels = buildWheels();
+function activateStartButton(wheels) {
     document.querySelector(".start_button").addEventListener("click", function _function() {
         activateSpinButton(wheels, 3);
         document.querySelector(".start_button").removeEventListener("click", _function);
@@ -40,9 +51,9 @@ function activateStartButton() {
 }
 
 function activateSpinButton(wheels, spins) {
-    spinHandle.addEventListener("click", spinButtonClick);
     document.querySelector(".spin_button").addEventListener("click", function _function() {
         spin(wheels, spins);
+        spinButtonClick(wheels);
         document.querySelector(".spin_button").removeEventListener("click", _function);
     });
 }
@@ -100,28 +111,49 @@ function payPrice(spinResult) {
     console.log(spinResult[0].price);
 }
 
-
 // ----- HELPING FUNCTIONS -----
 
 function randomSymbol(wheel) {
     return Math.round(Math.random() * Math.floor(wheel.symbols.length - 1));
 }
 
-// ----- VISUAL WHEELS PROTOTYPE -----
 
-const spinHandle = document.querySelector(".spin_button");
+
+// ----- VISUAL WHEELS PROTOTYPE -----
 
 let lastItemID = 5;
 let spinRounds;
 
-function spinButtonClick() {
-    spinRounds = Math.random() * Math.floor(20) + 1;
-    spinWheel(".wheel_1");
-    spinWheel(".wheel_2");
-    spinWheel(".wheel_3");
+function addVisuals(wheels) {
+    addSymbolsToWheels(wheels);
 }
 
-function spinWheel(wheel, dest) {
+function addSymbolsToWheels(wheels) {
+    let wheelCount = 0;
+    wheels.forEach(wheel => {
+        wheelCount++;
+        document.querySelector(".wheels").innerHTML += `<div class="wheel wheel_${wheelCount}"></div>`;
+
+        let symbolCount = 0;
+        wheel.symbols.forEach(symbol => {
+            symbolCount++;
+            document.querySelector(`.wheel_${wheelCount}`).innerHTML += `<div class="item item_${symbolCount}">${symbolCount}</div>`;
+            document.querySelector(`.item_${symbolCount}`).style.backgroundImage = `url(elements/mexico_${symbolCount}.svg)`;
+        })
+    })
+}
+
+function spinButtonClick(wheels) {
+    spinRounds = Math.random() * Math.floor(20) + 1;
+
+    let wheelCount = 0;
+    wheels.forEach(wheel => {
+        wheelCount++;
+        spinWheel(`.wheel_${wheelCount}`)
+    });
+}
+
+function spinWheel(wheel) {
     document.querySelectorAll(`${wheel} .item`).forEach(item => {
         item.style.transitionDuration = ".1s";
         item.style.transform = "translateY(100%)";
@@ -135,17 +167,17 @@ function moveLastItem() {
         item.style.transitionDuration = "0s";
         item.style.transform = "translateY(0)";
     });
-    const elem = document.querySelector(`.item_${lastItemID}`);
-    elem.parentNode.removeChild(elem);
+    const lastItem = document.querySelector(`.item_${lastItemID}`);
+    const lastItemTemplate = lastItem.cloneNode(true);
+    lastItem.parentNode.removeChild(lastItem);
 
-    addLastItem();
+    addLastItem(lastItemTemplate);
 
 }
 
-function addLastItem() {
-    const movedElement = `<div class="item item_${lastItemID}">${lastItemID}</div>`;
+function addLastItem(lastItemTemplate) {
 
-    document.querySelector(".wheel_1").insertAdjacentHTML('afterbegin', movedElement);
+    document.querySelector(".wheel_1").insertAdjacentHTML('afterbegin', lastItemTemplate);
 
     lastItemID--;
 
