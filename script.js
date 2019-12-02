@@ -1,36 +1,98 @@
 "use strict";
 
-document.addEventListener("DOMContentLoaded", buildWheels);
+document.addEventListener("DOMContentLoaded", fetchSymbols);
 
-async function buildWheels() {
+let symbols;
+
+async function fetchSymbols() {
     let pagesUrl = "gameitems.json";
     let jsonData = await fetch(pagesUrl);
-    let symbols = await jsonData.json();
+    symbols = await jsonData.json();
 
-    const wheel1 = [symbols[0], symbols[1]];
-    const wheel2 = [symbols[0], symbols[1]];
-    const wheel3 = [symbols[0], symbols[1]];
-    const wheels = [wheel1, wheel2, wheel3];
+    activateStartButton();
 
-    startMachine(wheels);
 }
 
-function startMachine(wheels) {
+function activateStartButton() {
+    let wheels = buildWheels();
+    document.querySelector(".start_button").addEventListener("click", function _function() {
+        activateSpinButton(wheels, 3);
+        document.querySelector(".start_button").removeEventListener("click", _function);
+    })
+}
+
+function buildWheels() {
+
+    const wheel1 = {
+        symbols: [symbols[0], symbols[1]],
+        isHolding: false,
+        active: null
+    };
+
+    const wheel2 = {
+        symbols: [symbols[0], symbols[1]],
+        isHolding: false,
+        active: null
+    };
+
+    const wheel3 = {
+        symbols: [symbols[0], symbols[1]],
+        isHolding: false,
+        active: null
+    };
+
+    return [wheel1, wheel2, wheel3];
+}
+
+function activateSpinButton(wheels, spins) {
+    document.querySelector(".spin_button").addEventListener("click", function _function() {
+        spin(wheels, spins);
+        document.querySelector(".spin_button").removeEventListener("click", _function);
+    });
+}
+
+function spin(wheels, spins) {
+    console.log(spins);
     let spinResult = calculateSpinResult(wheels);
     let didWin = compareSpinResult(spinResult);
 
     if (didWin) {
         payPrice(spinResult);
+        activateStartButton(wheels);
     }
+
+    if (!didWin) {
+        console.log("You didn't win!");
+        spins--;
+
+        if (spins <= 0) {
+            console.log("YOU LOST!");
+            buildWheels();
+        } else activateSpinButton(wheels, spins);
+    }
+
+    document.querySelectorAll(".hold_wheel").forEach(button => {
+        let attr = button.getAttribute("data-holdwheel") - 1;
+        console.log(attr);
+        button.addEventListener("click", function _function() {
+            wheels[attr].isHolding = !wheels[attr].isHolding;
+        });
+    });
 }
 
 function calculateSpinResult(wheels) {
     let spinResult = [];
 
     wheels.forEach(wheel => {
-        let wheelSymbol = wheel[randomSymbol(wheel)];
-        spinResult.push(wheelSymbol);
+
+        if (!wheel.isHolding) {
+            wheel.active = wheel.symbols[randomSymbol(wheel)];
+        }
+
+        spinResult.push(wheel.active);
     });
+
+    console.log(spinResult);
     return spinResult;
 }
 
@@ -46,7 +108,7 @@ function payPrice(spinResult) {
 // ----- HELPING FUNCTIONS -----
 
 function randomSymbol(wheel) {
-    return Math.round(Math.random() * Math.floor(wheel.length - 1));
+    return Math.round(Math.random() * Math.floor(wheel.symbols.length - 1));
 }
 
 // ----- VISUAL WHEELS PROTOTYPE -----
