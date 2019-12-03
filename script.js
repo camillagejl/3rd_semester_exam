@@ -197,11 +197,19 @@ function addLastItem(wheel, lastSymbolID) {
     }
 
     spinRounds--;
-    console.log(spinRounds);
 
     if (spinRounds > 0) {
+        console.log("Keep spinning!");
         setTimeout(function () {
             spinWheel(wheel, lastSymbolID)
         }, .1)
+    }
+
+    else {
+        console.log("Stop spinning!");
+        document.querySelector(".spin_button").addEventListener("click", function _function() {
+            spinButtonClick(wheel, lastSymbolID);
+            document.querySelector(".spin_button").removeEventListener("click", _function);
+        });
     }
 }
