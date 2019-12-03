@@ -16,21 +16,24 @@ async function fetchSymbols() {
 function startGame() {
     let wheels = buildWheels();
     activateStartButton(wheels);
-    addVisuals(wheels);
+    addSymbolsToWheels(wheels);
 }
 
 function buildWheels() {
     const wheel1 = {
+        id: 1,
         symbols: [symbols[0], symbols[1], symbols[2], symbols[3], symbols[4]],
         isHolding: false,
         active: null
     };
     const wheel2 = {
+        id: 2,
         symbols: [symbols[0], symbols[1], symbols[2], symbols[3], symbols[4]],
         isHolding: false,
         active: null
     };
     const wheel3 = {
+        id: 3,
         symbols: [symbols[0], symbols[1], symbols[2], symbols[3], symbols[4]],
         isHolding: false,
         active: null
@@ -39,8 +42,10 @@ function buildWheels() {
 }
 
 function activateStartButton(wheels) {
+    const wheelLengths = getWheelLengths(wheels);
     document.querySelector(".start_button").addEventListener("click", function _function() {
-        activateSpinButton(wheels, 3);
+        activateSpinButton(wheels, 3, wheelLengths);
+        startButtonClick(wheels, wheelLengths);
         document.querySelector(".start_button").removeEventListener("click", _function);
     })
 }
@@ -53,7 +58,6 @@ function activateSpinButton(wheels, spins) {
 }
 
 function spin(wheels, spins) {
-    console.log(spins);
     let spinResult = calculateSpinResult(wheels);
     let didWin = compareSpinResult(spinResult);
 
@@ -74,7 +78,6 @@ function spin(wheels, spins) {
 
     document.querySelectorAll(".hold_wheel").forEach(button => {
         let attr = button.getAttribute("data-holdwheel") - 1;
-        console.log(attr);
         button.addEventListener("click", function _function() {
             wheels[attr].isHolding = !wheels[attr].isHolding;
         });
@@ -93,7 +96,6 @@ function calculateSpinResult(wheels) {
         spinResult.push(wheel.active);
     });
 
-    console.log(spinResult);
     return spinResult;
 }
 
@@ -112,19 +114,16 @@ function randomSymbol(wheel) {
 }
 
 
-
 // ----- VISUAL WHEELS PROTOTYPE -----
 
-let lastItemID = 5;
 let spinRounds;
 
-function addVisuals(wheels) {
-    addSymbolsToWheels(wheels);
-
-    document.querySelector(".spin_button").addEventListener("click", function _function() {
-        spinButtonClick(wheels);
+function getWheelLengths(wheels) {
+    let wheelLengths = [];
+    wheels.forEach(wheel => {
+        wheelLengths.push(wheel.symbols.length);
     });
-
+    return wheelLengths;
 }
 
 function addSymbolsToWheels(wheels) {
@@ -141,56 +140,68 @@ function addSymbolsToWheels(wheels) {
     })
 }
 
-function spinButtonClick(wheels) {
-    spinRounds = Math.random() * Math.floor(20) + 1;
-
+function startButtonClick(wheels, wheelLengths) {
     let wheelCount = 0;
     wheels.forEach(wheel => {
         wheelCount++;
-        spinWheel(`.wheel_${wheelCount}`)
+
+        let lastSymbolID = wheelLengths[wheelCount - 1];
+        console.log(lastSymbolID);
+
+        document.querySelector(".spin_button").addEventListener("click", function _function() {
+            spinButtonClick(wheel, lastSymbolID);
+            document.querySelector(".spin_button").removeEventListener("click", _function);
+        });
     });
 }
 
-function spinWheel(wheel) {
-    document.querySelectorAll(`${wheel} .item`).forEach(item => {
+function spinButtonClick(wheel, lastSymbolID) {
+    spinRounds = Math.round(Math.random() * Math.floor(20) + 1);
+
+    spinWheel(wheel, lastSymbolID)
+}
+
+function spinWheel(wheel, lastSymbolID) {
+    document.querySelectorAll(`.wheel_${wheel.id} .item`).forEach(item => {
         item.style.transitionDuration = ".1s";
         item.style.transform = "translateY(100%)";
     });
 
-    document.querySelector(".item").addEventListener("transitionend", moveLastItem)
+    document.querySelector(".item").addEventListener("transitionend", function _function() {
+        moveLastItem(wheel, lastSymbolID)
+    })
 }
 
-function moveLastItem() {
+function moveLastItem(wheel, lastSymbolID) {
+
     document.querySelectorAll(".item").forEach(item => {
         item.style.transitionDuration = "0s";
         item.style.transform = "translateY(0)";
     });
-    const lastItem = document.querySelector(`[data-symbol-number="${lastItemID}"]`);
+
+    const lastItem = document.querySelector(`.wheel_${wheel.id} [data-symbol-number="${lastSymbolID}"]`);
     lastItem.parentNode.removeChild(lastItem);
 
-    addLastItem();
-
+    addLastItem(wheel, lastSymbolID);
 }
 
-function addLastItem() {
+function addLastItem(wheel, lastSymbolID) {
 
-    let lastItemTemplate = `<div class="item" data-symbol-number="${lastItemID}">${lastItemID}</div>`;
-    document.querySelector(".wheel_1").insertAdjacentHTML('afterbegin', lastItemTemplate);
+    let lastItemTemplate = `<div class="item" data-symbol-number="${lastSymbolID}">${lastSymbolID}</div>`;
+    document.querySelector(`.wheel_${wheel.id}`).insertAdjacentHTML('afterbegin', lastItemTemplate);
 
-    lastItemID--;
+    lastSymbolID--;
 
-    if (lastItemID === 0) {
-        lastItemID = 5;
+    if (lastSymbolID === 0) {
+        lastSymbolID = 5;
     }
 
     spinRounds--;
+    console.log(spinRounds);
 
     if (spinRounds > 0) {
-        setTimeout(function() {
-            spinWheel(".wheel_1");
-            spinWheel(".wheel_2");
-            spinWheel(".wheel_3")
+        setTimeout(function () {
+            spinWheel(wheel, lastSymbolID)
         }, .1)
     }
-
 }
