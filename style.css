@@ -131,7 +131,9 @@ button {
   }
 
   #error {
+    display: none;
     font-size: 15px;
     color: red;
     padding-bottom: 30px;
+    max-width: 300px;
   }

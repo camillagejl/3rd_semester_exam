@@ -69,11 +69,13 @@ loginForm.addEventListener("submit", e => {
         }
 
         if (loginForm.elements.username.value !== user.username) {
-            document.querySelector("#error").innerHTML = "Username incorrect";
+            document.querySelector("#error").style.display = "block";
+            document.querySelector("#error").innerHTML = "Incorrect username";
         }
 
         if (loginForm.elements.password.value !== user.password) {
-            document.querySelector("#error").innerHTML = "Password incorrect";
+            document.querySelector("#error").style.display = "block";
+            document.querySelector("#error").innerHTML = "Inocrect password";
         }
 
     })
@@ -90,11 +92,13 @@ document.querySelector("#next-btn").addEventListener("click", e => {
             document.querySelector("#next-btn").style.display = "none";
             document.querySelector("#buttons-container").style.display = "flex";
         } else {
+            document.querySelector("#error").style.display = "block";
             document.querySelector("#error").innerHTML = "The username and password must have more than 5 characters";
         }
 
         if (signupForm.elements.repeatpw.value !== signupForm.elements.password.value) {
-            document.querySelector("#error").innerHTML = "Repeat password incorrect";
+            document.querySelector("#error").style.display = "block";
+            document.querySelector("#error").innerHTML = "Incorrect repeat password";
         }
 });
 
