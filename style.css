@@ -1,15 +1,137 @@
-#signup-form {
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+#login-form {
     display: none;
 }
 
-#acc-created {
+#second-fields {
     display: none;
 }
 
-#logged-in {
+#checkboxes {
+    padding-bottom: 30px;
     display: none;
 }
 
-#error-msg {
-    display: none;
+.fields {
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 300px;
+    border: none;
+    border-bottom: 1px solid #757575;
 }
+
+.fields:focus {
+    outline: none;
+}
+
+.fields:focus~label,
+.fields:valid~label {
+    top: -20px;
+    font-size: 14px;
+    color: #757575;
+}
+
+label {
+    color: #999;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+.group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+#logo-form-container {
+    display: flex;
+    padding: 8em 0;
+}
+
+#logo-container {
+    flex: 1;
+}
+
+#form-container {
+    margin: 0 20em;
+}
+
+button {
+    display: block;
+    margin: 0 auto;
+    outline: none;
+}
+
+.line {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+}
+
+.line::before, .line::after {
+    border-bottom: 1px solid #ccd0d5;
+    content: '';
+    flex: 1 1 auto;
+}
+
+.line::before {
+    margin-right: 8px;
+}
+
+.line::after {
+    margin-left: 8px;
+}
+
+#signup-h1 {
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.bar {
+    width: 49%;
+    background-color: #999;
+    margin-bottom: 30px;
+  }
+
+  .first-step {
+    width: 100%;
+    height: 10px;
+    background-color: green;
+  }
+
+  .second-step {
+    width: 0%;
+    height: 10px;
+    background-color: green;
+  }
+
+  #bars-container {
+      display: flex;
+      justify-content: space-between;
+  }
+
+  #buttons-container {
+      display: none
+  }
+
+  .show {
+      display: block;
+  }
+
+  #error {
+    font-size: 15px;
+    color: red;
+    padding-bottom: 30px;
+  }
