@@ -37,22 +37,22 @@ button {
 
 /* ----- SYMBOLS ----- */
 
-[data-symbol-number="1"] {
+[data-symbol-id="1"] {
     background-image: url("elements/mexico_1.svg");
 }
 
-[data-symbol-number="2"] {
+[data-symbol-id="2"] {
     background-image: url("elements/mexico_2.svg");
 }
 
-[data-symbol-number="3"] {
+[data-symbol-id="3"] {
     background-image: url("elements/mexico_3.svg");
 }
 
-[data-symbol-number="4"] {
+[data-symbol-id="4"] {
     background-image: url("elements/mexico_4.svg");
 }
 
-[data-symbol-number="5"] {
+[data-symbol-id="5"] {
     background-image: url("elements/mexico_5.svg");
 }

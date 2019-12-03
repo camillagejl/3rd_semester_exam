@@ -42,10 +42,9 @@ function buildWheels() {
 }
 
 function activateStartButton(wheels) {
-    const wheelLengths = getWheelLengths(wheels);
     document.querySelector(".start_button").addEventListener("click", function _function() {
-        activateSpinButton(wheels, 3, wheelLengths);
-        startButtonClick(wheels, wheelLengths);
+        activateSpinButton(wheels, 3);
+        startButtonClick(wheels);
         document.querySelector(".start_button").removeEventListener("click", _function);
     })
 }
@@ -116,91 +115,75 @@ function randomSymbol(wheel) {
 
 // ----- VISUAL WHEELS PROTOTYPE -----
 
-function getWheelLengths(wheels) {
-    let wheelLengths = [];
-    wheels.forEach(wheel => {
-        wheelLengths.push(wheel.symbols.length);
-    });
-    return wheelLengths;
-}
-
 function addSymbolsToWheels(wheels) {
-    let wheelCount = 0;
     wheels.forEach(wheel => {
-        wheelCount++;
-        document.querySelector(".wheels").innerHTML += `<div class="wheel wheel_${wheelCount}"></div>`;
+        document.querySelector(".wheels").innerHTML += `<div class="wheel wheel_${wheel.id}"></div>`;
 
-        let symbolCount = 0;
         wheel.symbols.forEach(symbol => {
-            symbolCount++;
-            document.querySelector(`.wheel_${wheelCount}`).innerHTML += `<div class="item" data-symbol-number="${symbolCount}">${symbolCount}</div>`;
+            document.querySelector(`.wheel_${wheel.id}`).innerHTML += `<div class="item" data-symbol-id="${symbol.id}">${symbol.id}</div>`;
         })
     })
 }
 
-function startButtonClick(wheels, wheelLengths) {
-    let wheelCount = 0;
+function startButtonClick(wheels) {
     wheels.forEach(wheel => {
-        wheelCount++;
-
-        let lastSymbolID = wheelLengths[wheelCount - 1];
 
         document.querySelector(".spin_button").addEventListener("click", function _function() {
-            spinButtonClick(wheel, lastSymbolID);
             document.querySelector(".spin_button").removeEventListener("click", _function);
+            spinButtonClick(wheel);
         });
     });
 }
 
-function spinButtonClick(wheel, lastSymbolID) {
+function spinButtonClick(wheel) {
     let spinRounds = Math.round(Math.random() * Math.floor(20) + 1);
-    console.log(wheel.id, spinRounds);
 
-    spinWheel(wheel, lastSymbolID, spinRounds)
+    spinWheel(wheel, spinRounds)
 }
 
-function spinWheel(wheel, lastSymbolID, spinRounds) {
+function spinWheel(wheel, spinRounds) {
     document.querySelectorAll(`.wheel_${wheel.id} .item`).forEach(item => {
         item.style.transitionDuration = ".1s";
         item.style.transform = "translateY(100%)";
     });
 
     document.querySelector(`.wheel_${wheel.id} .item`).addEventListener("transitionend", function _function() {
-        moveLastItem(wheel, lastSymbolID, spinRounds)
+        document.querySelector(`.wheel_${wheel.id} .item`).removeEventListener("transitionend", _function)
+        moveLastItem(wheel, spinRounds);
     })
 }
 
-function moveLastItem(wheel, lastSymbolID, spinRounds) {
+function moveLastItem(wheel, spinRounds) {
     document.querySelectorAll(`.wheel_${wheel.id} .item`).forEach(item => {
         item.style.transitionDuration = "0s";
         item.style.transform = "translateY(0)";
     });
 
-    const lastItem = document.querySelector(`.wheel_${wheel.id} [data-symbol-number="${lastSymbolID}"]`);
+    const allItems = document.querySelectorAll(`.wheel_${wheel.id} .item`);
+
+    const lastItem = allItems[allItems.length - 1];
+
+    const lastSymbolID = lastItem.getAttribute("data-symbol-id");
+
     lastItem.parentNode.removeChild(lastItem);
 
     addLastItem(wheel, lastSymbolID, spinRounds);
 }
 
 function addLastItem(wheel, lastSymbolID, spinRounds) {
+    console.log(spinRounds);
 
-    let lastItemTemplate = `<div class="item" data-symbol-number="${lastSymbolID}">${lastSymbolID}</div>`;
+    let lastItemTemplate = `<div class="item" data-symbol-id="${lastSymbolID}">${lastSymbolID}</div>`;
     document.querySelector(`.wheel_${wheel.id}`).insertAdjacentHTML('afterbegin', lastItemTemplate);
-
-    lastSymbolID--;
-
-    if (lastSymbolID === 0) {
-        lastSymbolID = wheel.symbols.length;
-    }
 
     spinRounds--;
 
     if (spinRounds > 0) {
         setTimeout(function () {
-            spinWheel(wheel, lastSymbolID, spinRounds)
-        }, 1000)
+            spinWheel(wheel, spinRounds)
+        }, 1)
     }
-    //
+
     // else {
     //     console.log("Stop spinning!");
     //     document.querySelector(".spin_button").addEventListener("click", function _function() {
@@ -208,4 +191,5 @@ function addLastItem(wheel, lastSymbolID, spinRounds) {
     //         document.querySelector(".spin_button").removeEventListener("click", _function);
     //     });
     // }
+
 }
