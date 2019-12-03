@@ -166,7 +166,7 @@ function spinWheel(wheel, lastSymbolID, spinRounds) {
         item.style.transform = "translateY(100%)";
     });
 
-    document.querySelector(`.wheel_${wheel.id} .item`).addEventListener("transitionend", function _function() 
+    document.querySelector(`.wheel_${wheel.id} .item`).addEventListener("transitionend", function _function() {
         document.querySelector(`.wheel_${wheel.id} .item`).removeEventListener("transitionend", _function);
         moveLastItem(wheel, lastSymbolID, spinRounds)
     })
