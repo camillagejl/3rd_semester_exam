@@ -146,8 +146,8 @@ function startButtonClick(wheels, wheelLengths) {
         let lastSymbolID = wheelLengths[wheelCount - 1];
 
         document.querySelector(".spin_button").addEventListener("click", function _function() {
-            spinButtonClick(wheel, lastSymbolID);
             document.querySelector(".spin_button").removeEventListener("click", _function);
+            spinButtonClick(wheel, lastSymbolID);
         });
     });
 }
@@ -160,12 +160,14 @@ function spinButtonClick(wheel, lastSymbolID) {
 }
 
 function spinWheel(wheel, lastSymbolID, spinRounds) {
+    console.log('spinWheel', {id: wheel.id, last: lastSymbolID, rounds: spinRounds});
     document.querySelectorAll(`.wheel_${wheel.id} .item`).forEach(item => {
         item.style.transitionDuration = ".1s";
         item.style.transform = "translateY(100%)";
     });
 
     document.querySelector(`.wheel_${wheel.id} .item`).addEventListener("transitionend", function _function() {
+        document.querySelector(`.wheel_${wheel.id} .item`).removeEventListener("transitionend", _function);
         moveLastItem(wheel, lastSymbolID, spinRounds)
     })
 }
