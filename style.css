@@ -34,3 +34,25 @@ button {
     padding: 10px;
     margin-top: 10px;
 }
+
+/* ----- SYMBOLS ----- */
+
+[data-symbol-number="1"] {
+    background-image: url("elements/mexico_1.svg");
+}
+
+[data-symbol-number="2"] {
+    background-image: url("elements/mexico_2.svg");
+}
+
+[data-symbol-number="3"] {
+    background-image: url("elements/mexico_3.svg");
+}
+
+[data-symbol-number="4"] {
+    background-image: url("elements/mexico_4.svg");
+}
+
+[data-symbol-number="5"] {
+    background-image: url("elements/mexico_5.svg");
+}

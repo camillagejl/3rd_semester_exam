@@ -35,12 +35,7 @@ function buildWheels() {
         isHolding: false,
         active: null
     };
-    const wheel4 = {
-        symbols: [symbols[0], symbols[1], symbols[2], symbols[3], symbols[4]],
-        isHolding: false,
-        active: null
-    };
-    return [wheel1, wheel2, wheel3, wheel4];
+    return [wheel1, wheel2, wheel3];
 }
 
 function activateStartButton(wheels) {
@@ -53,7 +48,6 @@ function activateStartButton(wheels) {
 function activateSpinButton(wheels, spins) {
     document.querySelector(".spin_button").addEventListener("click", function _function() {
         spin(wheels, spins);
-        spinButtonClick(wheels);
         document.querySelector(".spin_button").removeEventListener("click", _function);
     });
 }
@@ -126,6 +120,11 @@ let spinRounds;
 
 function addVisuals(wheels) {
     addSymbolsToWheels(wheels);
+
+    document.querySelector(".spin_button").addEventListener("click", function _function() {
+        spinButtonClick(wheels);
+    });
+
 }
 
 function addSymbolsToWheels(wheels) {
@@ -137,8 +136,7 @@ function addSymbolsToWheels(wheels) {
         let symbolCount = 0;
         wheel.symbols.forEach(symbol => {
             symbolCount++;
-            document.querySelector(`.wheel_${wheelCount}`).innerHTML += `<div class="item item_${symbolCount}">${symbolCount}</div>`;
-            document.querySelector(`.item_${symbolCount}`).style.backgroundImage = `url(elements/mexico_${symbolCount}.svg)`;
+            document.querySelector(`.wheel_${wheelCount}`).innerHTML += `<div class="item" data-symbol-number="${symbolCount}">${symbolCount}</div>`;
         })
     })
 }
@@ -167,16 +165,16 @@ function moveLastItem() {
         item.style.transitionDuration = "0s";
         item.style.transform = "translateY(0)";
     });
-    const lastItem = document.querySelector(`.item_${lastItemID}`);
-    const lastItemTemplate = lastItem.cloneNode(true);
+    const lastItem = document.querySelector(`[data-symbol-number="${lastItemID}"]`);
     lastItem.parentNode.removeChild(lastItem);
 
-    addLastItem(lastItemTemplate);
+    addLastItem();
 
 }
 
-function addLastItem(lastItemTemplate) {
+function addLastItem() {
 
+    let lastItemTemplate = `<div class="item" data-symbol-number="${lastItemID}">${lastItemID}</div>`;
     document.querySelector(".wheel_1").insertAdjacentHTML('afterbegin', lastItemTemplate);
 
     lastItemID--;
