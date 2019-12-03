@@ -44,7 +44,6 @@ function buildWheels() {
 function activateStartButton(wheels) {
     document.querySelector(".start_button").addEventListener("click", function _function() {
         activateSpinButton(wheels, 3);
-        startButtonClick(wheels);
         document.querySelector(".start_button").removeEventListener("click", _function);
     })
 }
@@ -79,6 +78,13 @@ function spin(wheels, spins) {
         let attr = button.getAttribute("data-holdwheel") - 1;
         button.addEventListener("click", function _function() {
             wheels[attr].isHolding = !wheels[attr].isHolding;
+        });
+    });
+
+    wheels.forEach(wheel => {
+        document.querySelector(".spin_button").addEventListener("click", function _function() {
+            document.querySelector(".spin_button").removeEventListener("click", _function);
+            spinButtonClick(wheel, spinResult);
         });
     });
 }
@@ -125,17 +131,11 @@ function addSymbolsToWheels(wheels) {
     })
 }
 
-function startButtonClick(wheels) {
-    wheels.forEach(wheel => {
 
-        document.querySelector(".spin_button").addEventListener("click", function _function() {
-            document.querySelector(".spin_button").removeEventListener("click", _function);
-            spinButtonClick(wheel);
-        });
-    });
-}
+function spinButtonClick(wheel, spinResult) {
 
-function spinButtonClick(wheel) {
+        wheel.position = wheel.symbols.indexOf(spinResult[wheel.id - 1]);
+
     let spinRounds = Math.round(Math.random() * Math.floor(20) + 1);
 
     spinWheel(wheel, spinRounds)
@@ -148,7 +148,7 @@ function spinWheel(wheel, spinRounds) {
     });
 
     document.querySelector(`.wheel_${wheel.id} .item`).addEventListener("transitionend", function _function() {
-        document.querySelector(`.wheel_${wheel.id} .item`).removeEventListener("transitionend", _function)
+        document.querySelector(`.wheel_${wheel.id} .item`).removeEventListener("transitionend", _function);
         moveLastItem(wheel, spinRounds);
     })
 }
@@ -171,7 +171,6 @@ function moveLastItem(wheel, spinRounds) {
 }
 
 function addLastItem(wheel, lastSymbolID, spinRounds) {
-    console.log(spinRounds);
 
     let lastItemTemplate = `<div class="item" data-symbol-id="${lastSymbolID}">${lastSymbolID}</div>`;
     document.querySelector(`.wheel_${wheel.id}`).insertAdjacentHTML('afterbegin', lastItemTemplate);
