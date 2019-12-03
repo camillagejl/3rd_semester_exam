@@ -116,8 +116,6 @@ function randomSymbol(wheel) {
 
 // ----- VISUAL WHEELS PROTOTYPE -----
 
-let spinRounds;
-
 function getWheelLengths(wheels) {
     let wheelLengths = [];
     wheels.forEach(wheel => {
@@ -146,7 +144,6 @@ function startButtonClick(wheels, wheelLengths) {
         wheelCount++;
 
         let lastSymbolID = wheelLengths[wheelCount - 1];
-        console.log(lastSymbolID);
 
         document.querySelector(".spin_button").addEventListener("click", function _function() {
             spinButtonClick(wheel, lastSymbolID);
@@ -156,25 +153,25 @@ function startButtonClick(wheels, wheelLengths) {
 }
 
 function spinButtonClick(wheel, lastSymbolID) {
-    spinRounds = Math.round(Math.random() * Math.floor(20) + 1);
+    let spinRounds = Math.round(Math.random() * Math.floor(20) + 1);
+    console.log(wheel.id, spinRounds);
 
-    spinWheel(wheel, lastSymbolID)
+    spinWheel(wheel, lastSymbolID, spinRounds)
 }
 
-function spinWheel(wheel, lastSymbolID) {
+function spinWheel(wheel, lastSymbolID, spinRounds) {
     document.querySelectorAll(`.wheel_${wheel.id} .item`).forEach(item => {
         item.style.transitionDuration = ".1s";
         item.style.transform = "translateY(100%)";
     });
 
-    document.querySelector(".item").addEventListener("transitionend", function _function() {
-        moveLastItem(wheel, lastSymbolID)
+    document.querySelector(`.wheel_${wheel.id} .item`).addEventListener("transitionend", function _function() {
+        moveLastItem(wheel, lastSymbolID, spinRounds)
     })
 }
 
-function moveLastItem(wheel, lastSymbolID) {
-
-    document.querySelectorAll(".item").forEach(item => {
+function moveLastItem(wheel, lastSymbolID, spinRounds) {
+    document.querySelectorAll(`.wheel_${wheel.id} .item`).forEach(item => {
         item.style.transitionDuration = "0s";
         item.style.transform = "translateY(0)";
     });
@@ -182,10 +179,10 @@ function moveLastItem(wheel, lastSymbolID) {
     const lastItem = document.querySelector(`.wheel_${wheel.id} [data-symbol-number="${lastSymbolID}"]`);
     lastItem.parentNode.removeChild(lastItem);
 
-    addLastItem(wheel, lastSymbolID);
+    addLastItem(wheel, lastSymbolID, spinRounds);
 }
 
-function addLastItem(wheel, lastSymbolID) {
+function addLastItem(wheel, lastSymbolID, spinRounds) {
 
     let lastItemTemplate = `<div class="item" data-symbol-number="${lastSymbolID}">${lastSymbolID}</div>`;
     document.querySelector(`.wheel_${wheel.id}`).insertAdjacentHTML('afterbegin', lastItemTemplate);
@@ -193,23 +190,22 @@ function addLastItem(wheel, lastSymbolID) {
     lastSymbolID--;
 
     if (lastSymbolID === 0) {
-        lastSymbolID = 5;
+        lastSymbolID = wheel.symbols.length;
     }
 
     spinRounds--;
 
     if (spinRounds > 0) {
-        console.log("Keep spinning!");
         setTimeout(function () {
-            spinWheel(wheel, lastSymbolID)
-        }, .1)
+            spinWheel(wheel, lastSymbolID, spinRounds)
+        }, 1000)
     }
-
-    else {
-        console.log("Stop spinning!");
-        document.querySelector(".spin_button").addEventListener("click", function _function() {
-            spinButtonClick(wheel, lastSymbolID);
-            document.querySelector(".spin_button").removeEventListener("click", _function);
-        });
-    }
+    //
+    // else {
+    //     console.log("Stop spinning!");
+    //     document.querySelector(".spin_button").addEventListener("click", function _function() {
+    //         spinButtonClick(wheel, lastSymbolID, spinRounds);
+    //         document.querySelector(".spin_button").removeEventListener("click", _function);
+    //     });
+    // }
 }
