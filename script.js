@@ -46,7 +46,7 @@ function buildWheels() {
 
     // Adds the initially active symbol.
     wheels.forEach(wheel => {
-        wheel.active = Math.round(wheel.symbols.length / 2);
+        wheel.active = Math.floor(wheel.symbols.length / 2);
         console.log(wheel.active);
     });
 
@@ -140,7 +140,7 @@ function calculateSpinResult(wheels) {
     let spinResult = [];
     wheels.forEach(wheel => {
         if (!wheel.isHolding) {
-            wheel.active = Math.ceil(Math.random() * wheel.symbols.length)
+            wheel.active = Math.ceil(Math.random() * wheel.symbols.length) - 1
         }
         spinResult.push(wheel.active);
     });
@@ -172,7 +172,7 @@ function addSymbolsToWheels(wheels) {
 function spinButtonClick(wheel) {
     if (!wheel.isHolding) {
     let spinRounds = wheel.previouslyActive - wheel.active + (10 * wheel.id);
-    console.log(wheel.id + " Active " + wheel.active);
+    console.log(wheel.id + " Active " + (wheel.active));
     console.log(wheel.id + wheel.symbols[wheel.active].thisIs);
 
     spinWheel(wheel, spinRounds)
