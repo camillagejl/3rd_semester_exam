@@ -15,6 +15,7 @@ async function fetchSymbols() {
 
 function startGame() {
     let wheels = buildWheels();
+    activateThemeButton();
     activateStartButton(wheels);
     addSymbolsToWheels(wheels);
 }
@@ -47,19 +48,23 @@ function buildWheels() {
     // Adds the initially active symbol.
     wheels.forEach(wheel => {
         wheel.active = Math.floor(wheel.symbols.length / 2);
-        console.log(wheel.active);
     });
 
     return [wheel1, wheel2, wheel3];
 }
 
-function activateStartButton(wheels) {
-    console.log("isHolding = false");
+function activateThemeButton() {
+    document.querySelectorAll(".theme_button").forEach(button => {
+        button.addEventListener("click", function() {
+            document.querySelector(".game").setAttribute("data-game-theme", button.getAttribute("data-theme"));
+        })
+});
+}
 
+function activateStartButton(wheels) {
     wheels.forEach(wheel => {
         wheel.isHolding = false;
     });
-
 
     document.querySelector(".start_button").addEventListener("click", function _function() {
         // When the start button is activated (when the page is loaded or the user has used all three spins),
@@ -184,7 +189,6 @@ function spinButtonClick(wheel) {
     if (!wheel.isHolding) {
     let spinRounds = wheel.previouslyActive - wheel.active + (10 * wheel.id);
     console.log(wheel.id + " Active " + (wheel.active));
-    console.log(wheel.id + wheel.symbols[wheel.active].thisIs);
 
     spinWheel(wheel, spinRounds)
     }
@@ -231,13 +235,4 @@ function addLastItem(wheel, lastSymbolID, spinRounds) {
             spinWheel(wheel, spinRounds)
         }, 1)
     }
-
-    // else {
-    //     console.log("Stop spinning!");
-    //     document.querySelector(".spin_button").addEventListener("click", function _function() {
-    //         spinButtonClick(wheel, lastSymbolID, spinRounds);
-    //         document.querySelector(".spin_button").removeEventListener("click", _function);
-    //     });
-    // }
-
 }

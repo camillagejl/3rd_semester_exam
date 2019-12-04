@@ -37,22 +37,46 @@ button {
 
 /* ----- SYMBOLS ----- */
 
+[data-game-theme="mexico"] {
+    --symbol-1: url("elements/mexico_1.svg");
+    --symbol-2: url("elements/mexico_2.svg");
+    --symbol-3: url("elements/mexico_3.svg");
+    --symbol-4: url("elements/mexico_4.svg");
+    --symbol-5: url("elements/mexico_5.svg");
+}
+
+[data-game-theme="native"] {
+    --symbol-1: url("elements/native_1.svg");
+    --symbol-2: url("elements/native_2.svg");
+    --symbol-3: url("elements/native_3.svg");
+    --symbol-4: url("elements/native_4.svg");
+    --symbol-5: url("elements/native_5.svg");
+}
+
+[data-game-theme="viking"] {
+    --symbol-1: url("elements/viking_1.svg");
+    --symbol-2: url("elements/viking_2.svg");
+    --symbol-3: url("elements/viking_3.svg");
+    --symbol-4: url("elements/viking_4.svg");
+    --symbol-5: url("elements/viking_5.svg");
+}
+
 [data-symbol-id="1"] {
-    background-image: url("elements/mexico_1.svg");
+    background-image: var(--symbol-1);
 }
 
 [data-symbol-id="2"] {
-    background-image: url("elements/mexico_2.svg");
+    background-image: var(--symbol-2);
 }
 
 [data-symbol-id="3"] {
-    background-image: url("elements/mexico_3.svg");
+    background-image: var(--symbol-3);
 }
 
 [data-symbol-id="4"] {
-    background-image: url("elements/mexico_4.svg");
+    background-image: var(--symbol-4);
 }
 
 [data-symbol-id="5"] {
-    background-image: url("elements/mexico_5.svg");
+    background-image: var(--symbol-5);
 }
