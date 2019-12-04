@@ -10,3 +10,18 @@
   width: 90%;
   border: 1px solid black;
 }
+
+.image_content img:hover {
+ cursor: pointer;
+ opacity: 30%;
+ animation: fadein 2s linear;
+}
+
+@keyframes fadein {
+ 0% {
+   opacity: 10%;
+ }
+ 100% {
+   opacity: 30%;
+ }
+}
