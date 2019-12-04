@@ -1,139 +1,196 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: rgb(10, 82, 10);
+}
 #login-form {
-    display: none;
+  display: none;
 }
 
 #second-fields {
-    display: none;
+  display: none;
 }
 
 #checkboxes {
-    padding-bottom: 30px;
-    display: none;
+  padding-bottom: 30px;
+  display: none;
 }
 
 .fields {
-    font-size: 18px;
-    padding: 10px 10px 10px 5px;
-    display: block;
-    width: 300px;
-    border: none;
-    border-bottom: 1px solid #757575;
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 300px;
+  border: none;
+  border-bottom: 1px solid #757575;
 }
 
 .fields:focus {
-    outline: none;
+  outline: none;
 }
 
-.fields:focus~label,
-.fields:valid~label {
-    top: -20px;
-    font-size: 14px;
-    color: #757575;
+.fields:focus ~ label,
+.fields:valid ~ label {
+  top: -20px;
+  font-size: 14px;
+  color: #757575;
 }
 
 label {
-    color: #999;
-    font-size: 18px;
-    font-weight: normal;
-    position: absolute;
-    pointer-events: none;
-    left: 5px;
-    top: 10px;
-    transition: 0.2s ease all;
-    -moz-transition: 0.2s ease all;
-    -webkit-transition: 0.2s ease all;
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
 }
 
 .group {
-    position: relative;
-    margin-bottom: 30px;
+  position: relative;
+  margin-bottom: 30px;
 }
 
 #logo-form-container {
-    display: flex;
-    padding: 8em 0;
+  display: flex;
+  padding: 8em 0;
 }
 
 #logo-container {
-    flex: 1;
+  flex: 1;
 }
 
 #form-container {
-    margin: 0 20em;
+  margin: 0 20em;
 }
 
 button {
-    display: block;
-    margin: 0 auto;
-    outline: none;
+  display: block;
+  margin: 0 auto;
+  outline: none;
 }
 
+#next-btn {
+  width: 300px;
+  background-color: rgb(11, 182, 11);
+  color: white;
+  padding: 10px;
+  border: none;
+}
+#already-acc {
+  width: 300px;
+  padding: 10px;
+  background-color: rgb(3, 49, 3);
+  color: white;
+  border: none;
+}
 .line {
-    display: flex;
-    align-items: center;
-    font-size: 15px;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  color: white;
+  padding: 20px;
 }
 
-.line::before, .line::after {
-    border-bottom: 1px solid #ccd0d5;
-    content: '';
-    flex: 1 1 auto;
+.line::before,
+.line::after {
+  border-bottom: 1px solid #ccd0d5;
+  content: "";
+  flex: 1 1 auto;
 }
 
 .line::before {
-    margin-right: 8px;
+  margin-right: 8px;
 }
 
 .line::after {
-    margin-left: 8px;
+  margin-left: 8px;
 }
 
 #signup-h1 {
-    text-align: center;
-    padding-bottom: 30px;
+  text-align: center;
+  padding-bottom: 30px;
 }
 
 .bar {
-    width: 49%;
-    background-color: #999;
-    margin-bottom: 30px;
-  }
+  width: 49%;
+  background-color: #999;
+  margin-bottom: 30px;
+}
 
-  .first-step {
-    width: 100%;
-    height: 10px;
-    background-color: green;
-  }
+.first-step {
+  width: 100%;
+  height: 10px;
+  background-color: green;
+}
 
-  .second-step {
-    width: 0%;
-    height: 10px;
-    background-color: green;
-  }
+.second-step {
+  width: 0%;
+  height: 10px;
+  background-color: green;
+}
 
-  #bars-container {
-      display: flex;
-      justify-content: space-between;
-  }
+#bars-container {
+  display: flex;
+  justify-content: space-between;
+}
 
-  #buttons-container {
-      display: none
-  }
+#buttons-container {
+  display: none;
+}
 
-  .show {
-      display: block;
-  }
+.show {
+  display: block;
+}
 
-  #error {
-    display: none;
-    font-size: 15px;
-    color: red;
-    padding-bottom: 30px;
-    max-width: 300px;
+#error {
+  display: none;
+  font-size: 15px;
+  color: red;
+  padding-bottom: 30px;
+  max-width: 300px;
+}
+/************* Earth Logo ****************/
+.title_1 {
+  position: absolute;
+  top: 7%;
+  left: 17%;
+  font-family: "Lora", serif;
+  font-size: 4.5em;
+  color: white;
+}
+.title_2 {
+  position: absolute;
+  top: 55%;
+  left: 16.5%;
+  font-family: "Lora", serif;
+  font-size: 4.5em;
+  color: white;
+}
+.earth {
+  width: 300px;
+  height: 300px;
+  background-image: url("elements/earth1.svg");
+  border-radius: 100%;
+  border: 1px solid black;
+  background-size: 621px;
+  animation: spin 4.5s infinite linear;
+  position: absolute;
+  top: 25%;
+  left: 20%;
+}
+
+@keyframes spin {
+  0% {
+    background-position-x: 0;
   }
+  100% {
+    background-position-x: 600px;
+  }
+}
