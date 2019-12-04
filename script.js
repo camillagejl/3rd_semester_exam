@@ -54,6 +54,12 @@ function buildWheels() {
 }
 
 function activateStartButton(wheels) {
+    console.log("isHolding = false");
+
+    wheels.forEach(wheel => {
+        wheel.isHolding = false;
+    });
+
 
     document.querySelector(".start_button").addEventListener("click", function _function() {
         // When the start button is activated (when the page is loaded or the user has used all three spins),
@@ -106,10 +112,22 @@ function spin(wheels, spins) {
         activateStartButton(wheels);
     }
 
+
+    spins--;
+
+    // This starts the visual part of spinning the wheels, separately for each wheel.
+    wheels.forEach(wheel => {
+        spinButtonClick(wheel);
+    });
+
+    if (spins === 2) {
+        activateHoldButtons(wheels);
+    }
+
+
     // If didWin returns false, the user will have one less spin left.
     if (!didWin) {
         console.log("You didn't win!");
-        spins--;
 
 
         // If spins is still above 0, the spin button will get activated again.
@@ -124,14 +142,7 @@ function spin(wheels, spins) {
         }
     }
 
-    // This starts the visual part of spinning the wheels, separately for each wheel.
-    wheels.forEach(wheel => {
-            spinButtonClick(wheel);
-    });
 
-    if (spins === 2) {
-        activateHoldButtons(wheels);
-    }
 }
 
 // Return functions
