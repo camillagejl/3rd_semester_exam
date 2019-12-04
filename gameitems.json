@@ -1,26 +1,32 @@
 [
   {
     "id": "1",
-    "price": 20
+    "price": 20,
+    "thisIs": "cactus"
   },
   {
     "id": "2",
-    "price": 12
+    "price": 12,
+    "thisIs": "sombrero"
   },
   {
     "id": "3",
-    "price": 4
+    "price": 4,
+    "thisIs": "chili"
   },
   {
     "id": "4",
-    "price": 2
+    "price": 2,
+    "thisIs": "guitar"
   },
   {
     "id": "5",
-    "price": 8
+    "price": 8,
+    "thisIs": "taco"
   },
   {
     "id": "6",
-    "price": 16
+    "price": 16,
+    "thisIs": "maracas"
   }
 ]

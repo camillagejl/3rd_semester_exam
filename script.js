@@ -65,13 +65,28 @@ function activateStartButton(wheels) {
 }
 
 function activateSpinButton(wheels, spins) {
-
     document.querySelector(".spin_button").addEventListener("click", function _function() {
         spin(wheels, spins);
         document.querySelector(".spin_button").removeEventListener("click", _function);
     });
 
 }
+
+function activateHoldButtons(wheels) {
+
+    document.querySelectorAll(".hold_wheel").forEach(button => {
+
+            // When clicking a hold button, this will find out which button has been clicked.
+            let attr = button.getAttribute("data-holdwheel") - 1;
+            button.addEventListener("click", function _function() {
+                console.log("Hold it!");
+                // This will toggle the isHolding state of the wheel matching the button that was clicked.
+                wheels[attr].isHolding = !wheels[attr].isHolding;
+                console.log(wheels);
+            });
+    });
+}
+
 
 // Main spin function on click
 function spin(wheels, spins) {
@@ -109,19 +124,14 @@ function spin(wheels, spins) {
         }
     }
 
-    document.querySelectorAll(".hold_wheel").forEach(button => {
-        // When clicking a hold button, this will find out which button has been clicked.
-        let attr = button.getAttribute("data-holdwheel") - 1;
-        button.addEventListener("click", function _function() {
-            // This will toggle the isHolding state of the wheel matching the button that was clicked.
-            wheels[attr].isHolding = !wheels[attr].isHolding;
-        });
-    });
-
     // This starts the visual part of spinning the wheels, separately for each wheel.
     wheels.forEach(wheel => {
             spinButtonClick(wheel);
     });
+
+    if (spins === 2) {
+        activateHoldButtons(wheels);
+    }
 }
 
 // Return functions
@@ -143,7 +153,7 @@ function compareSpinResult(wheels, spinResult) {
 }
 
 function payPrice(wheels, spinResult) {
-    console.log(wheels[0].symbols[spinResult[0]].price);
+    console.log("Price!", wheels[0].symbols[spinResult[0]].price);
 }
 
 
@@ -160,10 +170,13 @@ function addSymbolsToWheels(wheels) {
 }
 
 function spinButtonClick(wheel) {
+    if (!wheel.isHolding) {
     let spinRounds = wheel.previouslyActive - wheel.active + (10 * wheel.id);
     console.log(wheel.id + " Active " + wheel.active);
+    console.log(wheel.id + wheel.symbols[wheel.active].thisIs);
 
     spinWheel(wheel, spinRounds)
+    }
 }
 
 function spinWheel(wheel, spinRounds) {
