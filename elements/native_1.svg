@@ -1,0 +1,42 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="100" viewBox="0 0 100 100">
+  <defs>
+    <radialGradient id="radial-gradient" cx="1.04" cy="47.29" r="32.03" gradientTransform="translate(50.69 9.87) scale(0.95 1.02)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f7931e"/>
+      <stop offset="0.05" stop-color="#e98a1d"/>
+      <stop offset="0.2" stop-color="#bf711a"/>
+      <stop offset="0.35" stop-color="#9d5d17"/>
+      <stop offset="0.51" stop-color="#824d15"/>
+      <stop offset="0.66" stop-color="#6f4114"/>
+      <stop offset="0.83" stop-color="#643a13"/>
+      <stop offset="1" stop-color="#603813"/>
+    </radialGradient>
+    <linearGradient id="linear-gradient" x1="51.6" y1="73.45" x2="51.6" y2="4.95" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ed1c24"/>
+      <stop offset="0.07" stop-color="#ee2c23"/>
+      <stop offset="0.26" stop-color="#f15121"/>
+      <stop offset="0.45" stop-color="#f46e20"/>
+      <stop offset="0.64" stop-color="#f6821f"/>
+      <stop offset="0.82" stop-color="#f78f1e"/>
+      <stop offset="1" stop-color="#f7931e"/>
+    </linearGradient>
+  </defs>
+  <title>native_1</title>
+  <ellipse cx="51.68" cy="58.17" rx="35.92" ry="25.59" stroke="#000" stroke-miterlimit="10" fill="url(#radial-gradient)"/>
+  <g>
+    <ellipse cx="27.78" cy="81.93" rx="8.51" ry="9.14" fill="#757372" stroke="#000" stroke-miterlimit="10"/>
+    <ellipse cx="16.62" cy="71.21" rx="8.51" ry="9.14" fill="#757372" stroke="#000" stroke-miterlimit="10"/>
+    <ellipse cx="12.51" cy="55.46" rx="8.51" ry="9.14" fill="#757372" stroke="#000" stroke-miterlimit="10"/>
+    <ellipse cx="20.15" cy="39.71" rx="8.51" ry="9.14" fill="#757372" stroke="#000" stroke-miterlimit="10"/>
+    <ellipse cx="33.65" cy="30.26" rx="8.51" ry="9.14" fill="#757372" stroke="#000" stroke-miterlimit="10"/>
+    <ellipse cx="49.5" cy="27.74" rx="8.51" ry="9.14" fill="#757372" stroke="#000" stroke-miterlimit="10"/>
+    <ellipse cx="65.36" cy="30.26" rx="8.51" ry="9.14" fill="#757372" stroke="#000" stroke-miterlimit="10"/>
+    <ellipse cx="80.62" cy="37.19" rx="8.51" ry="9.14" fill="#757372" stroke="#000" stroke-miterlimit="10"/>
+    <ellipse cx="87.67" cy="52.94" rx="8.51" ry="9.14" fill="#757372" stroke="#000" stroke-miterlimit="10"/>
+    <ellipse cx="85.91" cy="70.58" rx="8.51" ry="9.14" fill="#757372" stroke="#000" stroke-miterlimit="10"/>
+    <ellipse cx="74.16" cy="81.93" rx="8.51" ry="9.14" fill="#757372" stroke="#000" stroke-miterlimit="10"/>
+    <ellipse cx="58.31" cy="86.34" rx="8.51" ry="9.14" fill="#757372" stroke="#000" stroke-miterlimit="10"/>
+    <ellipse cx="43.05" cy="86.34" rx="8.51" ry="9.14" fill="#757372" stroke="#000" stroke-miterlimit="10"/>
+  </g>
+  <path d="M38.54,69.81a82.7,82.7,0,0,1-5-13.26,39.87,39.87,0,0,1-1-4.63c-1.19-8.2,7.16-22.37,7.16-22.37C41.48,20.2,39,12.41,35.55,5c4.25,2.2,8.56,4.2,11.34,11.18l.6-8.2c2.9,5.89,4.68,13,6,14.17-.31-1.87,4.19-5.59,7.76-9-1.93,8.45-1.53,14.8,0,20.13l3-6.71s6.56,17.15,6.56,26.84A24,24,0,0,1,64.9,69.13C61.13,73.29,45.51,76,38.54,69.81Z" stroke="#000" stroke-miterlimit="10" fill="url(#linear-gradient)"/>
+  <path d="M33.77,57.36a87.66,87.66,0,0,0,4.88,12.75c8.54,4.63,16.9,4.28,25.11,0a22.58,22.58,0,0,0,6.84-14c-1-2.91-4.24-10.74-7.16-12.62-2,3.09-2.64,10.09-4.45,10.92-3.41-2.74-6.33-8.8-7-13-2.24.8-1.8,7.7-1.27,13C46.15,53,43.43,49,41.83,43.5,38.45,46.51,35.74,51.09,33.77,57.36Z" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="0.75"/>
+</svg>
