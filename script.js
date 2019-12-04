@@ -75,6 +75,10 @@ function activateSpinButton(wheels, spins) {
 
 // Main spin function on click
 function spin(wheels, spins) {
+    wheels.forEach(wheel => {
+        wheel.previouslyActive = wheel.active;
+    });
+
     // The spin result is an array with the index of the "active" symbol in each wheel.
     let spinResult = calculateSpinResult(wheels);
 
@@ -116,7 +120,7 @@ function spin(wheels, spins) {
 
     // This starts the visual part of spinning the wheels, separately for each wheel.
     wheels.forEach(wheel => {
-            spinButtonClick(wheel, spinResult);
+            spinButtonClick(wheel);
     });
 }
 
@@ -126,7 +130,7 @@ function calculateSpinResult(wheels) {
     let spinResult = [];
     wheels.forEach(wheel => {
         if (!wheel.isHolding) {
-            wheel.active = Math.round(Math.random() * Math.floor(wheel.symbols.length - 1))
+            wheel.active = Math.ceil(Math.random() * wheel.symbols.length)
         }
         spinResult.push(wheel.active);
     });
@@ -155,19 +159,16 @@ function addSymbolsToWheels(wheels) {
     })
 }
 
-
-function spinButtonClick(wheel, spinResult) {
-
-        wheel.position = wheel.symbols.indexOf(spinResult[wheel.id - 1]);
-
-    let spinRounds = Math.round(Math.random() * Math.floor(20) + 1);
+function spinButtonClick(wheel) {
+    let spinRounds = wheel.previouslyActive - wheel.active + (10 * wheel.id);
+    console.log(wheel.id + " Active " + wheel.active);
 
     spinWheel(wheel, spinRounds)
 }
 
 function spinWheel(wheel, spinRounds) {
     document.querySelectorAll(`.wheel_${wheel.id} .item`).forEach(item => {
-        item.style.transitionDuration = ".1s";
+        item.style.transitionDuration = ".05s";
         item.style.transform = "translateY(100%)";
     });
 
