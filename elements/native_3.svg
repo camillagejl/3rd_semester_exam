@@ -1,0 +1,40 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="100" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="linear-gradient" x1="46.65" y1="84.88" x2="56.77" y2="84.88" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#efe584" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="65.19" y1="78.26" x2="75.31" y2="78.26" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="33.02" y1="95.9" x2="43.14" y2="95.9" gradientTransform="translate(-2.97 -18.38) rotate(1.24)" xlink:href="#linear-gradient"/>
+  </defs>
+  <title>native_3</title>
+  <g>
+    <path d="M49.22,71.08s-3.06,4.59-2.5,12.72S53.42,99,53.42,99s3.35-10.84,3.35-16.25-5-11.92-5-11.92C51.25,71.48,50.29,71.36,49.22,71.08Z" stroke="#000" stroke-miterlimit="10" fill="url(#linear-gradient)"/>
+    <ellipse cx="50.54" cy="50.19" rx="3.11" ry="3.02" fill="#9b1012" stroke="#000" stroke-miterlimit="10"/>
+    <ellipse cx="50.54" cy="56.23" rx="3.11" ry="3.02" fill="#005e29" stroke="#000" stroke-miterlimit="10"/>
+    <ellipse cx="50.54" cy="62.28" rx="3.11" ry="3.02" fill="#9b1012" stroke="#000" stroke-miterlimit="10"/>
+    <ellipse cx="50.54" cy="68.32" rx="3.11" ry="3.02" fill="#005e29" stroke="#000" stroke-miterlimit="10"/>
+    <path d="M47.28,87.26c.47-1.7,1.07-3.16,2.22-3.7a4.65,4.65,0,0,0,2.77,2c.49-1.2,1.17-1.91,2.07-2a11.73,11.73,0,0,1,2.16,2.35A61.9,61.9,0,0,1,53.65,99,28.32,28.32,0,0,1,47.28,87.26Z" stroke="#000" stroke-miterlimit="10"/>
+    <path d="M50.19,71.47A95.63,95.63,0,0,0,53,92.29" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+  </g>
+  <path d="M67.77,64.45s-3.07,4.6-2.51,12.72S72,92.34,72,92.34s3.35-10.83,3.35-16.25-5-11.92-5-11.92C69.79,64.86,68.83,64.74,67.77,64.45Z" stroke="#000" stroke-miterlimit="10" fill="url(#linear-gradient-2)"/>
+  <path d="M30.85,64.47S27.68,69,28.06,77.14s6.36,15.31,6.36,15.31S38,81.68,38.13,76.27s-4.76-12-4.76-12C32.87,64.92,31.9,64.78,30.85,64.47Z" stroke="#000" stroke-miterlimit="10" fill="url(#linear-gradient-3)"/>
+  <ellipse cx="69.08" cy="43.56" rx="3.11" ry="3.02" fill="#9b1012" stroke="#000" stroke-miterlimit="10"/>
+  <ellipse cx="69.08" cy="49.61" rx="3.11" ry="3.02" fill="#005e29" stroke="#000" stroke-miterlimit="10"/>
+  <ellipse cx="69.08" cy="55.65" rx="3.11" ry="3.02" fill="#9b1012" stroke="#000" stroke-miterlimit="10"/>
+  <ellipse cx="69.08" cy="61.69" rx="3.11" ry="3.02" fill="#005e29" stroke="#000" stroke-miterlimit="10"/>
+  <ellipse cx="32.55" cy="43.63" rx="3.11" ry="3.02" fill="#9b1012" stroke="#000" stroke-miterlimit="10"/>
+  <ellipse cx="32.55" cy="49.68" rx="3.11" ry="3.02" fill="#005e29" stroke="#000" stroke-miterlimit="10"/>
+  <ellipse cx="32.55" cy="55.72" rx="3.11" ry="3.02" fill="#9b1012" stroke="#000" stroke-miterlimit="10"/>
+  <ellipse cx="32.55" cy="61.76" rx="3.11" ry="3.02" fill="#005e29" stroke="#000" stroke-miterlimit="10"/>
+  <ellipse cx="50.88" cy="25.84" rx="24.56" ry="23.84" fill="#754c24" stroke="#000" stroke-miterlimit="10"/>
+  <ellipse cx="51.17" cy="25.83" rx="21.42" ry="21.06" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+  <line x1="50.88" y1="4.77" x2="50.88" y2="46.9" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+  <line x1="72.59" y1="25.84" x2="29.76" y2="25.84" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+  <path d="M65.74,10.32C59.61,14,53.83,19,50.88,25.48,48.18,32.48,43,37.33,36,40.7" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+  <path d="M38.26,9C44.07,14,48.67,19.42,50.88,26c4.38,6.77,9.13,12.35,14.63,15.5" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+  <path d="M65.82,80.63c.47-1.7,1.08-3.16,2.22-3.7a4.61,4.61,0,0,0,2.77,2c.5-1.2,1.17-1.91,2.08-2a12.34,12.34,0,0,1,2.16,2.35A63.17,63.17,0,0,1,72.2,92.37,28.22,28.22,0,0,1,65.82,80.63Z" stroke="#000" stroke-miterlimit="10"/>
+  <path d="M28.6,80.7c.46-1.7,1.07-3.16,2.22-3.7a4.59,4.59,0,0,0,2.77,2c.49-1.2,1.17-1.91,2.07-2a12,12,0,0,1,2.16,2.35A62.53,62.53,0,0,1,35,92.44,28.09,28.09,0,0,1,28.6,80.7Z" stroke="#000" stroke-miterlimit="10"/>
+  <path d="M68.74,64.84A95.46,95.46,0,0,0,71.5,85.66" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+  <path d="M32.2,64.91a126.69,126.69,0,0,0,1.39,19.47" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+</svg>
