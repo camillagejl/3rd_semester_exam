@@ -17,7 +17,7 @@ function startGame() {
     let wheels = buildWheels();
     activateThemeButton();
     activateStartButton(wheels);
-    addSymbolsToWheels(wheels);
+    addWheelsToDOM(wheels);
 }
 
 function buildWheels() {
@@ -55,10 +55,10 @@ function buildWheels() {
 
 function activateThemeButton() {
     document.querySelectorAll(".theme_button").forEach(button => {
-        button.addEventListener("click", function() {
+        button.addEventListener("click", function () {
             document.querySelector(".game").setAttribute("data-game-theme", button.getAttribute("data-theme"));
         })
-});
+    });
 }
 
 function activateStartButton(wheels) {
@@ -83,18 +83,34 @@ function activateSpinButton(wheels, spins) {
 
 }
 
-function activateHoldButtons(wheels) {
+const holdButtonsListeners = {};
+
+function activateHoldButtons(wheels, spins) {
 
     document.querySelectorAll(".hold_wheel").forEach(button => {
 
-            // When clicking a hold button, this will find out which button has been clicked.
-            let attr = button.getAttribute("data-holdwheel") - 1;
-            button.addEventListener("click", function _function() {
+        // When clicking a hold button, this will find out which button has been clicked.
+        let holdWheelID = button.getAttribute("data-holdwheel") - 1;
+
+        // Add eventListeners for the hold buttons after the first spin.
+        if (spins === 2) {
+            holdButtonsListeners[holdWheelID] = function () {
+
                 console.log("Hold it!");
                 // This will toggle the isHolding state of the wheel matching the button that was clicked.
-                wheels[attr].isHolding = !wheels[attr].isHolding;
+                wheels[holdWheelID].isHolding = !wheels[holdWheelID].isHolding;
                 console.log(wheels);
-            });
+            };
+
+            console.log("Adding listener");
+            button.addEventListener("click", holdButtonsListeners[holdWheelID]);
+        }
+
+        // Removes eventListeners from the hold buttons after the last spin.
+        if (spins === 0) {
+            button.removeEventListener("click", holdButtonsListeners[holdWheelID]);
+        }
+
     });
 }
 
@@ -125,10 +141,7 @@ function spin(wheels, spins) {
         spinButtonClick(wheel);
     });
 
-    if (spins === 2) {
-        activateHoldButtons(wheels);
-    }
-
+    activateHoldButtons(wheels, spins);
 
     // If didWin returns false, the user will have one less spin left.
     if (!didWin) {
@@ -141,7 +154,7 @@ function spin(wheels, spins) {
         }
 
         // If spins reaches 0, the user has lost and the start button will be activated.
-        else  {
+        else {
             console.log("YOU LOST!");
             activateStartButton(wheels);
         }
@@ -175,22 +188,24 @@ function payPrice(wheels, spinResult) {
 
 // ----- VISUAL WHEELS -----
 
-function addSymbolsToWheels(wheels) {
+function addWheelsToDOM(wheels) {
     wheels.forEach(wheel => {
         document.querySelector(".wheels").innerHTML += `<div class="wheel wheel_${wheel.id}"></div>`;
 
         wheel.symbols.forEach(symbol => {
-            document.querySelector(`.wheel_${wheel.id}`).innerHTML += `<div class="item" data-symbol-id="${symbol.id}">${symbol.id}</div>`;
-        })
+            document.querySelector(`.wheel_${wheel.id}`).innerHTML += `<div class="item" data-symbol-id="${symbol.id}"></div>`;
+        });
+
+        document.querySelector(".hold_buttons").innerHTML += `<button class="hold_wheel" data-holdwheel="${wheel.id}">Hold wheel ${wheel.id}</button>`
     })
 }
 
 function spinButtonClick(wheel) {
     if (!wheel.isHolding) {
-    let spinRounds = wheel.previouslyActive - wheel.active + (10 * wheel.id);
-    console.log(wheel.id + " Active " + (wheel.active));
+        let spinRounds = wheel.previouslyActive - wheel.active + (10 * wheel.id);
+        console.log(wheel.id + " Active " + (wheel.active));
 
-    spinWheel(wheel, spinRounds)
+        spinWheel(wheel, spinRounds)
     }
 }
 
@@ -213,9 +228,7 @@ function moveLastItem(wheel, spinRounds) {
     });
 
     const allItems = document.querySelectorAll(`.wheel_${wheel.id} .item`);
-
     const lastItem = allItems[allItems.length - 1];
-
     const lastSymbolID = lastItem.getAttribute("data-symbol-id");
 
     lastItem.parentNode.removeChild(lastItem);
@@ -225,7 +238,7 @@ function moveLastItem(wheel, spinRounds) {
 
 function addLastItem(wheel, lastSymbolID, spinRounds) {
 
-    let lastItemTemplate = `<div class="item" data-symbol-id="${lastSymbolID}">${lastSymbolID}</div>`;
+    let lastItemTemplate = `<div class="item" data-symbol-id="${lastSymbolID}"></div>`;
     document.querySelector(`.wheel_${wheel.id}`).insertAdjacentHTML('afterbegin', lastItemTemplate);
 
     spinRounds--;

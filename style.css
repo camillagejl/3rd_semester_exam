@@ -11,7 +11,7 @@ body {
 }
 
 .wheel {
-    background-color: darkgrey;
+    background-color: whitesmoke;
 }
 
 .wheels {
@@ -21,10 +21,13 @@ body {
 }
 
 .item {
+    background-repeat: no-repeat;
+    background-position: center;
     transition-timing-function: linear;
-    width: fit-content;
-    padding: 40px;
-    border: 1px solid black;
+    height: 120px;
+    width: 100px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
 }
 
 button {
@@ -35,7 +38,8 @@ button {
     margin-top: 10px;
 }
 
-/* ----- SYMBOLS ----- */
+
+/* ----- GRAPHIC SOURCES ----- */
 
 [data-game-theme="mexico"] {
     --symbol-1: url("elements/mexico_1.svg");
