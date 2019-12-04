@@ -20,106 +20,130 @@ function startGame() {
 }
 
 function buildWheels() {
-    const wheel1 = {
+
+    // Initial state of wheels.
+    // The amount of symbols needs to be odd, so the median symbol will be the initially "active" symbol, and it will
+    // fit in the design.
+    let wheel1 = {
         id: 1,
         symbols: [symbols[0], symbols[1], symbols[2], symbols[3], symbols[4]],
-        isHolding: false,
-        active: null
+        isHolding: false
     };
-    const wheel2 = {
+    let wheel2 = {
         id: 2,
         symbols: [symbols[0], symbols[1], symbols[2], symbols[3], symbols[4]],
-        isHolding: false,
-        active: null
+        isHolding: false
     };
-    const wheel3 = {
+    let wheel3 = {
         id: 3,
         symbols: [symbols[0], symbols[1], symbols[2], symbols[3], symbols[4]],
-        isHolding: false,
-        active: null
+        isHolding: false
     };
+
+    // Contains all wheels. If another wheel is added above, this is the only place it also needs to be added, and will
+    // then work along with the other wheels.
+    const wheels = [wheel1, wheel2, wheel3];
+
+    // Adds the initially active symbol.
+    wheels.forEach(wheel => {
+        wheel.active = Math.round(wheel.symbols.length / 2);
+        console.log(wheel.active);
+    });
+
     return [wheel1, wheel2, wheel3];
 }
 
 function activateStartButton(wheels) {
+
     document.querySelector(".start_button").addEventListener("click", function _function() {
+        // When the start button is activated (when the page is loaded or the user has used all three spins),
+        // is will set the remaining spins to 3.
         activateSpinButton(wheels, 3);
         document.querySelector(".start_button").removeEventListener("click", _function);
     })
+
 }
 
 function activateSpinButton(wheels, spins) {
+
     document.querySelector(".spin_button").addEventListener("click", function _function() {
         spin(wheels, spins);
         document.querySelector(".spin_button").removeEventListener("click", _function);
     });
+
 }
 
+// Main spin function on click
 function spin(wheels, spins) {
+    // The spin result is an array with the index of the "active" symbol in each wheel.
     let spinResult = calculateSpinResult(wheels);
-    let didWin = compareSpinResult(spinResult);
 
+    // didWin compares the active symbols, and returns true (if they are the same) or false (if they are not the same).
+    let didWin = compareSpinResult(wheels, spinResult);
+
+    // If didWin returns true, the user will get the price and the start button will be activated.
     if (didWin) {
-        payPrice(spinResult);
+        payPrice(wheels, spinResult);
         activateStartButton(wheels);
     }
 
+    // If didWin returns false, the user will have one less spin left.
     if (!didWin) {
         console.log("You didn't win!");
         spins--;
 
-        if (spins <= 0) {
+
+        // If spins is still above 0, the spin button will get activated again.
+        if (spins > 0) {
+            activateSpinButton(wheels, spins);
+        }
+
+        // If spins reaches 0, the user has lost and the start button will be activated.
+        else  {
             console.log("YOU LOST!");
-            buildWheels();
-        } else activateSpinButton(wheels, spins);
+            activateStartButton(wheels);
+        }
     }
 
     document.querySelectorAll(".hold_wheel").forEach(button => {
+        // When clicking a hold button, this will find out which button has been clicked.
         let attr = button.getAttribute("data-holdwheel") - 1;
         button.addEventListener("click", function _function() {
+            // This will toggle the isHolding state of the wheel matching the button that was clicked.
             wheels[attr].isHolding = !wheels[attr].isHolding;
         });
     });
 
+    // This starts the visual part of spinning the wheels, separately for each wheel.
     wheels.forEach(wheel => {
-        document.querySelector(".spin_button").addEventListener("click", function _function() {
-            document.querySelector(".spin_button").removeEventListener("click", _function);
             spinButtonClick(wheel, spinResult);
-        });
     });
 }
+
+// Return functions
 
 function calculateSpinResult(wheels) {
     let spinResult = [];
-
     wheels.forEach(wheel => {
-
         if (!wheel.isHolding) {
-            wheel.active = wheel.symbols[randomSymbol(wheel)];
+            wheel.active = Math.round(Math.random() * Math.floor(wheel.symbols.length - 1))
         }
-
         spinResult.push(wheel.active);
     });
-
     return spinResult;
 }
 
-function compareSpinResult(spinResult) {
-    return spinResult[0] === spinResult[1] && spinResult[1] === spinResult[2];
+function compareSpinResult(wheels, spinResult) {
+    return wheels[0].symbols[spinResult[0]] === wheels[1].symbols[spinResult[1]]
+        && wheels[1].symbols[spinResult[1]] === wheels[2].symbols[spinResult[2]];
 }
 
-function payPrice(spinResult) {
-    console.log(spinResult[0].price);
-}
-
-// ----- HELPING FUNCTIONS -----
-
-function randomSymbol(wheel) {
-    return Math.round(Math.random() * Math.floor(wheel.symbols.length - 1));
+function payPrice(wheels, spinResult) {
+    console.log(wheels[0].symbols[spinResult[0]].price);
 }
 
 
-// ----- VISUAL WHEELS PROTOTYPE -----
+// ----- VISUAL WHEELS -----
 
 function addSymbolsToWheels(wheels) {
     wheels.forEach(wheel => {
