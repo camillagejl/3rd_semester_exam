@@ -28,28 +28,24 @@ function buildWheels() {
     let wheel1 = {
         id: 1,
         symbols: [symbols[0], symbols[1], symbols[2], symbols[3], symbols[4]],
-        isHolding: false
+        isHolding: false,
+        active: 1
     };
     let wheel2 = {
         id: 2,
         symbols: [symbols[0], symbols[1], symbols[2], symbols[3], symbols[4]],
-        isHolding: false
+        isHolding: false,
+        active: 1
     };
     let wheel3 = {
         id: 3,
         symbols: [symbols[0], symbols[1], symbols[2], symbols[3], symbols[4]],
-        isHolding: false
+        isHolding: false,
+        active: 1
     };
 
     // Contains all wheels. If another wheel is added above, this is the only place it also needs to be added, and will
     // then work along with the other wheels.
-    const wheels = [wheel1, wheel2, wheel3];
-
-    // Adds the initially active symbol.
-    wheels.forEach(wheel => {
-        wheel.active = Math.floor(wheel.symbols.length / 2);
-    });
-
     return [wheel1, wheel2, wheel3];
 }
 
@@ -202,7 +198,7 @@ function addWheelsToDOM(wheels) {
 
 function spinButtonClick(wheel) {
     if (!wheel.isHolding) {
-        let spinRounds = wheel.previouslyActive - wheel.active + (10 * wheel.id);
+        let spinRounds = wheel.previouslyActive - wheel.active + (wheel.symbols.length * 2 * wheel.id);
         console.log(wheel.id + " Active " + (wheel.active));
 
         spinWheel(wheel, spinRounds)
