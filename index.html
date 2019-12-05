@@ -10,22 +10,26 @@
 </head>
 <body>
 
+<!-- The theme is added to the .game div through JavaScript. It currently starts with 'mexico'. -->
 <div class="game" data-game-theme="mexico">
+
+<!-- The wheels are added through JavaScript -->
     <div class="wheels"></div>
 
     <div class="main_buttons">
+<!-- The start and spin buttons are always the same. -->
         <button class="start_button">Start!</button>
         <button class="spin_button">Spin!</button>
+
+<!-- If a new theme is added, the theme button needs to be added here. the data-theme is the attribute that is
+ used to style the elements through CSS. -->
         <button class="theme_button" data-theme="mexico">Mexican!</button>
         <button class="theme_button" data-theme="native">Native!</button>
         <button class="theme_button" data-theme="viking">Vikings!</button>
-
     </div>
 
-<!--  NOTE! These buttons could be added with JavaScript, so there will be as many
-  buttons as there are wheels. -->
-    <div class="hold_buttons">
-    </div>
+<!-- The hold buttons are added through JavaScript. -->
+    <div class="hold_buttons"></div>
 </div>
 
 <script src="script.js"></script>
