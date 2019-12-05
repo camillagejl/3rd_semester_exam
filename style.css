@@ -11,8 +11,20 @@
   border: 1px solid black;
 }
 
-.image_content img:hover {
- cursor: pointer;
- opacity: 50%;
+.play_btn {
+  position: relative;
+  top: -4.5vh;
+  width: 80px;
+  height: 30px;
+  background-color: white;
+  border-radius: 5px;
+  border: none;
+  font-family: "Alatsi", sans-serif;
+  font-weight: 600;
+  font-size: 1.2em;
 }
-
+.play_btn:hover {
+ color: white;
+ background-color: rgb(13, 184, 56);
+ cursor: pointer;
+}

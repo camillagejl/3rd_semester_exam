@@ -16,6 +16,7 @@ function insertAllGames() {
     let template = `<section>
                     <div class="image_content">
                         <img src="${section.thumbnail.guid}" alt="Image for: ${section.title.rendered}">
+                        <button class="play_btn">PLAY</button>
                     </div>
                     <div class="gametitle">
                         <h2>${section.gametitle}</h2>
