@@ -15,7 +15,7 @@ async function fetchSymbols() {
 
 function startGame() {
     let wheels = buildWheels();
-    activateThemeButton();
+    activateThemeButtons();
     activateStartButton(wheels);
     addWheelsToDOM(wheels);
 }
@@ -23,12 +23,16 @@ function startGame() {
 function buildWheels() {
 
     // Initial state of wheels.
-    // The amount of symbols needs to be odd, so the median symbol will be the initially "active" symbol, and it will
-    // fit in the design.
     let wheel1 = {
         id: 1,
+
+        // The symbols are fetched from a json-file. Symbols can be added several times, and order doesn't matter.
         symbols: [symbols[0], symbols[1], symbols[2], symbols[3], symbols[4]],
         isHolding: false,
+
+        // "active" refers to the active symbol in the wheel array. This starts on 1 (i.e. the second symbol in the
+        // array), so that the "active" symbol is the second in the visual wheel, and these are the symbols that will be
+        // compared for winning.
         active: 1
     };
     let wheel2 = {
@@ -49,7 +53,8 @@ function buildWheels() {
     return [wheel1, wheel2, wheel3];
 }
 
-function activateThemeButton() {
+// Activating all three theme buttons
+function activateThemeButtons() {
     document.querySelectorAll(".theme_button").forEach(button => {
         button.addEventListener("click", function () {
             document.querySelector(".game").setAttribute("data-game-theme", button.getAttribute("data-theme"));
@@ -58,6 +63,7 @@ function activateThemeButton() {
 }
 
 function activateStartButton(wheels) {
+    //
     wheels.forEach(wheel => {
         wheel.isHolding = false;
     });
