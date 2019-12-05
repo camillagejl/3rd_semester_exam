@@ -13,15 +13,6 @@
 
 .image_content img:hover {
  cursor: pointer;
- opacity: 30%;
- animation: fadein 2s linear;
+ opacity: 50%;
 }
 
-@keyframes fadein {
- 0% {
-   opacity: 10%;
- }
- 100% {
-   opacity: 30%;
- }
-}
