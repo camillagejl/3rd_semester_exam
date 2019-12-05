@@ -84,22 +84,23 @@ loginForm.addEventListener("submit", e => {
 document.querySelector("#next-btn").addEventListener("click", e => {
     e.preventDefault();
 
-        if (signupForm.elements.username.value.length > 5 && signupForm.elements.password.value.length > 5 && signupForm.elements.repeatpw.value === signupForm.elements.password.value) {
-            document.querySelector(".second-step").style.width = "100%";
-            document.querySelector("#first-fields").style.display = "none";
-            document.querySelector("#second-fields").style.display = "block";
-            document.querySelector("#checkboxes").style.display = "block";
-            document.querySelector("#next-btn").style.display = "none";
-            document.querySelector("#buttons-container").style.display = "flex";
-        } else {
-            document.querySelector("#error").style.display = "block";
-            document.querySelector("#error").innerHTML = "The username and password must have more than 5 characters";
-        }
+    if (signupForm.elements.username.value.length > 5 && signupForm.elements.password.value.length > 5 && signupForm.elements.repeatpw.value === signupForm.elements.password.value) {
+        document.querySelector(".second-step").style.width = "100%";
+        document.querySelector("#first-fields").style.display = "none";
+        document.querySelector("#second-fields").style.display = "block";
+        document.querySelector("#checkboxes").style.display = "block";
+        document.querySelector("#next-btn").style.display = "none";
+        document.querySelector("#buttons-container").style.display = "flex";
+        document.querySelector("#error").style.display = "none";
+    } else {
+        document.querySelector("#error").style.display = "block";
+        document.querySelector("#error").innerHTML = "The username and password must have more than 5 characters";
+    }
 
-        if (signupForm.elements.repeatpw.value !== signupForm.elements.password.value) {
-            document.querySelector("#error").style.display = "block";
-            document.querySelector("#error").innerHTML = "Incorrect repeat password";
-        }
+    if (signupForm.elements.repeatpw.value !== signupForm.elements.password.value) {
+        document.querySelector("#error").style.display = "block";
+        document.querySelector("#error").innerHTML = "Incorrect repeat password";
+    }
 });
 
 document.querySelector("#back-btn").addEventListener("click", e => {
@@ -114,15 +115,49 @@ document.querySelector("#back-btn").addEventListener("click", e => {
 });
 
 document.querySelector("#already-acc").addEventListener("click", e => {
-    document.querySelector("#signup-form").style.display = "none";
+    signupForm.style.display = "none";
     document.querySelector("#signup-h1").innerHTML = "Log In";
     document.querySelector("#bars-container").style.display = "none";
-    document.querySelector("#login-form").style.display = "block";
+    loginForm.style.display = "block";
 });
 
 document.querySelector("#new-acc").addEventListener("click", e => {
-    document.querySelector("#login-form").style.display = "none";
+    loginForm.style.display = "none";
     document.querySelector("#signup-h1").innerHTML = "Sign Up";
     document.querySelector("#bars-container").style.display = "flex";
-    document.querySelector("#signup-form").style.display = "block";
+    signupForm.style.display = "block";
+});
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    document.querySelector("#nav-buttons").style.display = "flex";
+  } else {
+    document.querySelector("#nav-buttons").style.display = "none";
+  }
+}
+
+const scrollToTop = () => {
+    const c = document.documentElement.scrollTop || document.body.scrollTop;
+    if (c > 0) {
+      window.requestAnimationFrame(scrollToTop);
+      window.scrollTo(0, c - c / 20);
+    }
+  };
+
+document.querySelector("#nav-login").addEventListener("click", e => {
+    signupForm.style.display = "none";
+    document.querySelector("#signup-h1").innerHTML = "Log In";
+    document.querySelector("#bars-container").style.display = "none";
+    loginForm.style.display = "block";
+    scrollToTop();
+});
+
+document.querySelector("#nav-signup").addEventListener("click", e => {
+    loginForm.style.display = "none";
+    document.querySelector("#signup-h1").innerHTML = "Sign Up";
+    document.querySelector("#bars-container").style.display = "flex";
+    signupForm.style.display = "block";
+    scrollToTop();
 });
