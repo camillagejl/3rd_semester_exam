@@ -85,9 +85,10 @@ function activateSpinButton(wheels, spins) {
 
 }
 
+// The hold button listeners are stored in a global variable, so they can be removed later, and not on button click.
 const holdButtonsListeners = {};
 
-function activateHoldButtons(wheels, spins) {
+function toggleHoldButtons(wheels, spins) {
 
     document.querySelectorAll(".hold_wheel").forEach(button => {
 
@@ -104,7 +105,6 @@ function activateHoldButtons(wheels, spins) {
                 console.log(wheels);
             };
 
-            console.log("Adding listener");
             button.addEventListener("click", holdButtonsListeners[holdWheelID]);
         }
 
@@ -112,7 +112,6 @@ function activateHoldButtons(wheels, spins) {
         if (spins === 0) {
             button.removeEventListener("click", holdButtonsListeners[holdWheelID]);
         }
-
     });
 }
 
@@ -129,21 +128,24 @@ function spin(wheels, spins) {
     // didWin compares the active symbols, and returns true (if they are the same) or false (if they are not the same).
     let didWin = compareSpinResult(wheels, spinResult);
 
+    spins--;
+
     // If didWin returns true, the user will get the price and the start button will be activated.
     if (didWin) {
+        spins = 0;
+        toggleHoldButtons(wheels, spins);
         payPrice(wheels, spinResult);
         activateStartButton(wheels);
     }
 
 
-    spins--;
 
     // This starts the visual part of spinning the wheels, separately for each wheel.
     wheels.forEach(wheel => {
         spinButtonClick(wheel);
     });
 
-    activateHoldButtons(wheels, spins);
+    toggleHoldButtons(wheels, spins);
 
     // If didWin returns false, the user will have one less spin left.
     if (!didWin) {
@@ -161,7 +163,6 @@ function spin(wheels, spins) {
             activateStartButton(wheels);
         }
     }
-
 
 }
 
