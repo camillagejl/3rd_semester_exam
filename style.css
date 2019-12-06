@@ -70,6 +70,7 @@ button {
     --symbol-3: url("elements/mexico_3.svg");
     --symbol-4: url("elements/mexico_4.svg");
     --symbol-5: url("elements/mexico_5.svg");
+    --symbol-6: url("elements/mexico_6.svg");
 }
 
 [data-game-theme="native"] {
@@ -78,6 +79,7 @@ button {
     --symbol-3: url("elements/native_3.svg");
     --symbol-4: url("elements/native_4.svg");
     --symbol-5: url("elements/native_5.svg");
+    --symbol-6: url("elements/native_6.svg");
 }
 
 [data-game-theme="viking"] {
@@ -86,6 +88,7 @@ button {
     --symbol-3: url("elements/viking_3.svg");
     --symbol-4: url("elements/viking_4.svg");
     --symbol-5: url("elements/viking_5.svg");
+    --symbol-6: url("elements/viking_6.svg");
 }
 
 
@@ -110,4 +113,8 @@ button {
 
 [data-symbol-id="5"] {
     background-image: var(--symbol-5);
+}
+
+[data-symbol-id="6"] {
+    background-image: var(--symbol-6);
 }
