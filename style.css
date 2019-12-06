@@ -1,13 +1,65 @@
+/* ----- STATIC DESIGN ----- */
+
+/* Sources for the static design elements that do not change when changing themes.*/
+:root {
+    --slot_machine: url("elements/static/slot_machine.svg");
+}
+
+/* ----- THEMES ----- */
+
+/* For each theme, a group of custom properties is created with sources to the graphics from the theme. */
+
+
+[data-game-theme="mexican"] {
+    --background-image: url("elements/mexican/mexican_background.svg");
+    --symbol-1: url("elements/mexican/mexican_1.svg");
+    --symbol-2: url("elements/mexican/mexican_2.svg");
+    --symbol-3: url("elements/mexican/mexican_3.svg");
+    --symbol-4: url("elements/mexican/mexican_4.svg");
+    --symbol-5: url("elements/mexican/mexican_5.svg");
+    --symbol-6: url("elements/mexican/mexican_6.svg");
+}
+
+[data-game-theme="indigenous"] {
+    --background-image: url("elements/indigenous/indigenous_background.svg");
+    --symbol-1: url("elements/indigenous/indigenous_1.svg");
+    --symbol-2: url("elements/indigenous/indigenous_2.svg");
+    --symbol-3: url("elements/indigenous/indigenous_3.svg");
+    --symbol-4: url("elements/indigenous/indigenous_4.svg");
+    --symbol-5: url("elements/indigenous/indigenous_5.svg");
+    --symbol-6: url("elements/indigenous/indigenous_6.svg");
+}
+
+[data-game-theme="viking"] {
+    --background-image: url("elements/viking/viking_background.svg");
+    --symbol-1: url("elements/viking/viking_1.svg");
+    --symbol-2: url("elements/viking/viking_2.svg");
+    --symbol-3: url("elements/viking/viking_3.svg");
+    --symbol-4: url("elements/viking/viking_4.svg");
+    --symbol-5: url("elements/viking/viking_5.svg");
+    --symbol-6: url("elements/viking/viking_6.svg");
+}
+
+/* ----- GENERAL DESIGN -----*/
+
 body {
     background-color: #3d3d3d;
-    width: 99vw;
-    height: 95vh;
 }
 
 .game {
+    height: 90vh;
+    width: 90vh;
     text-align: center;
-    width: fit-content;
-    margin: 100px auto;
+    margin: 5vh auto;
+    background-image: var(--background-image);
+    background-size: cover;
+}
+
+.slot_machine {
+    height: 80%;
+    width: 80%;
+    background-image: var(--slot_machine);
+    background-size: cover;
 }
 
 .wheel {
@@ -62,34 +114,7 @@ button {
 
 /* -- Theme custom properties -- */
 
-/* For each theme, a group of custom properties must be created with sources to the graphics from the theme. */
 
-[data-game-theme="mexico"] {
-    --symbol-1: url("elements/mexican/mexico_1.svg");
-    --symbol-2: url("elements/mexican/mexico_2.svg");
-    --symbol-3: url("elements/mexican/mexico_3.svg");
-    --symbol-4: url("elements/mexican/mexico_4.svg");
-    --symbol-5: url("elements/mexican/mexico_5.svg");
-    --symbol-6: url("elements/mexican/mexico_6.svg");
-}
-
-[data-game-theme="native"] {
-    --symbol-1: url("elements/indigenous/native_1.svg");
-    --symbol-2: url("elements/indigenous/native_2.svg");
-    --symbol-3: url("elements/indigenous/native_3.svg");
-    --symbol-4: url("elements/indigenous/native_4.svg");
-    --symbol-5: url("elements/indigenous/native_5.svg");
-    --symbol-6: url("elements/indigenous/native_6.svg");
-}
-
-[data-game-theme="viking"] {
-    --symbol-1: url("elements/viking/viking_1.svg");
-    --symbol-2: url("elements/viking/viking_2.svg");
-    --symbol-3: url("elements/viking/viking_3.svg");
-    --symbol-4: url("elements/viking/viking_4.svg");
-    --symbol-5: url("elements/viking/viking_5.svg");
-    --symbol-6: url("elements/viking/viking_6.svg");
-}
 
 
 /* -- Changable elements -- */
