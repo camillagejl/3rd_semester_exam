@@ -160,6 +160,7 @@ button {
 }
 
 .start_button.inactive {
+    cursor: default;
     background-image: var(--start_button_inactive);
 }
 
@@ -174,6 +175,7 @@ button {
 }
 
 .spin_button.inactive {
+    cursor: default;
     background-image: var(--spin_button_inactive);
 }
 
