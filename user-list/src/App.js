@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import './App.css';
 import {orderBy} from "lodash";
+import {filter} from "lodash";
 import sortArrow from "./elements/sort_arrow.svg";
 
 // Placeholder user data
@@ -13,7 +14,9 @@ const USERS = [
         email: "will@smith.com",
         firstName: "Will",
         lastName: "Smith",
-        dateOfBirth: "05/09/1995"
+        dateOfBirth: "05/09/1995",
+        country: "Denmark",
+        emailSub: "false"
     },
     {
         id: 2,
@@ -21,7 +24,9 @@ const USERS = [
         email: "Carlton@smith.com",
         firstName: "Carlton",
         lastName: "Banks",
-        dateOfBirth: "15/09/1995"
+        dateOfBirth: "15/09/1995",
+        country: "Denmark",
+        emailSub: "false"
     },
     {
         id: 3,
@@ -29,7 +34,9 @@ const USERS = [
         email: "Dwayne@smith.com",
         firstName: "Dwayne",
         lastName: "Johnson",
-        dateOfBirth: "13/09/1995"
+        dateOfBirth: "13/09/1995",
+        country: "Romania",
+        emailSub: "false"
     },
     {
         id: 4,
@@ -37,7 +44,9 @@ const USERS = [
         email: "Harry@smith.com",
         firstName: "Harry",
         lastName: "Potter",
-        dateOfBirth: "23/09/1995"
+        dateOfBirth: "23/09/1995",
+        country: "Romania",
+        emailSub: "true"
     },
     {
         id: 5,
@@ -45,7 +54,9 @@ const USERS = [
         email: "Katniss@smith.com",
         firstName: "Katniss",
         lastName: "Everdeen",
-        dateOfBirth: "06/09/1995"
+        dateOfBirth: "06/09/1995",
+        country: "United Kingdom",
+        emailSub: "true"
     },
     {
         id: 6,
@@ -53,7 +64,9 @@ const USERS = [
         email: "Barbara@smith.com",
         firstName: "Barbara",
         lastName: "Roberts",
-        dateOfBirth: "21/09/1995"
+        dateOfBirth: "21/09/1995",
+        country: "Japan",
+        emailSub: "false"
     }
 ];
 
@@ -69,9 +82,10 @@ function Header() {
 }
 
 function List() {
+    // ----- SORT BY -----
     // Defines useStates for sortBy (the key from the header that is clicked) and
     // sortDirection (toggles between ascending and descending on click).
-    const [sortBy, setSortBy] = useState('firstName');
+    const [sortBy, setSortBy] = useState('userName');
     const [sortDirection, setDirection] = useState('asc');
 
     // Sets useStates on click on one of the column headers.
@@ -94,9 +108,45 @@ function List() {
         arrowStyle = {transform: "rotateX(180deg)"}
     }
 
-    // List component
+    // ----- FILTER BY -----
+
+    const [filterBy, setFilterBy] = useState('Romania');
+
+    const filterByColumn = (column) => {
+        setFilterBy(column);
+    };
+
+    const filteredCollection = filter(
+        sortedCollection,
+        ['country', filterBy]
+    );
+
+    // ----- LIST COMPONENT -----
     return (
         <div className="list">
+
+            <label id="filterByCountry">
+                Filter by country:
+                <select name="filterByCountry" className="filterByCountry">
+                    <option value="All">All</option>
+                    <option value="Denmark">Denmark</option>
+                    <option value="United Kingdom">United Kingdom</option>
+                    <option value="Romania">Romania</option>
+                    <option value="Japan">Japan</option>
+                </select>
+            </label>
+
+            <label id="filterByEmailPrefs">
+                Filter by email subscription:
+                <select name="filterByEmailPrefs" className="filterByEmailPrefs">
+                    <option value="All">All</option>
+                    <option value="true">&#10003; Subscribed</option>
+                    <option value="false">&times; Not subscribed</option>
+                </select>
+            </label>
+
+
+
             <table>
                 <thead>
 
@@ -110,35 +160,42 @@ function List() {
                         {/* If sortBy is set to userName, this function will return true and
                         display the arrow.*/}
                         {sortBy === "userName" &&
-                        <img style={arrowStyle} src={sortArrow} alt="Sorting arrow"/>
+                        <img className="sortArrow" style={arrowStyle} src={sortArrow} alt="Sorting arrow"/>
                         }
                     </th>
 
                     <th onClick={() => sortByColumn("email")}>
                         Email
                         {sortBy === "email" &&
-                        <img style={arrowStyle} src={sortArrow} alt="Sorting arrow"/>
+                        <img className="sortArrow" style={arrowStyle} src={sortArrow} alt="Sorting arrow"/>
                         }
                     </th>
 
                     <th onClick={() => sortByColumn("firstName")}>
                         First name
                         {sortBy === "firstName" &&
-                            <img style={arrowStyle} src={sortArrow} alt="Sorting arrow"/>
+                            <img className="sortArrow" style={arrowStyle} src={sortArrow} alt="Sorting arrow"/>
                         }
                     </th>
 
                     <th onClick={() => sortByColumn("lastName")}>
                         Last name
                         {sortBy === "lastName" &&
-                            <img style={arrowStyle} src={sortArrow} alt="Sorting arrow"/>
+                            <img className="sortArrow" style={arrowStyle} src={sortArrow} alt="Sorting arrow"/>
                         }
                     </th>
 
                     <th onClick={() => sortByColumn("dateOfBirth")}>
                         Date of birth
                         {sortBy === "dateOfBirth" &&
-                        <img style={arrowStyle} src={sortArrow} alt="Sorting arrow"/>
+                        <img className="sortArrow" style={arrowStyle} src={sortArrow} alt="Sorting arrow"/>
+                        }
+                    </th>
+
+                    <th onClick={() => sortByColumn("country")}>
+                        Country
+                        {sortBy === "country" &&
+                        <img className="sortArrow" style={arrowStyle} src={sortArrow} alt="Sorting arrow"/>
                         }
                     </th>
                 </tr>
@@ -147,7 +204,7 @@ function List() {
 
                 {/* This should ideally be in a seperate file, but I could not make that work
                  for now. */}
-                {sortedCollection.map(user => (
+                {filteredCollection.map(user => (
 
                     <tr key={user.id}>
                         <td>{user.userName}</td>
@@ -155,7 +212,7 @@ function List() {
                         <td>{user.firstName}</td>
                         <td>{user.lastName}</td>
                         <td>{user.dateOfBirth}</td>
-                        <td>{user.address}</td>
+                        <td>{user.country}</td>
                     </tr>
 
                 ))}
