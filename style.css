@@ -74,6 +74,7 @@ body {
 }
 
 .wheel {
+    position: relative;
     background-color: whitesmoke;
     width: 100%;
 }
@@ -101,6 +102,29 @@ body {
 
     /* Makes the transition linear when the wheels "spin", so it's a stable animation without tics. */
     transition-timing-function: linear;
+}
+
+.hold_buttons {
+    position: absolute;
+    top: 59%;
+    left: 12%;
+    height: 4.7%;
+    width: 56%;
+}
+
+.hold_wheel {
+    margin-right: 5%;
+    border: none;
+    box-shadow: none;
+    height: 100%;
+    width: 30%;
+    background-color: transparent;
+    background-image: var(--hold_button);
+    background-size: contain;
+}
+
+.hold_wheel:last-child {
+    margin-right: 0;
 }
 
 /* -- Changable elements -- */
