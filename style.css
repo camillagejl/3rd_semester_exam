@@ -5,9 +5,10 @@
     --slot_machine: url("elements/static/slot_machine.svg");
     --hold_button: url("elements/static/hold.svg");
     --start_button: url("elements/static/play_not_pressed.svg");
+    --start_button_pressed: url("elements/static/play_pressed.svg");
     --spin_button: url("elements/static/spin_not_pressed.svg");
+    --spin_button_pressed: url("elements/static/spin_pressed.svg");
 }
-
 
 /* For each theme, a group of custom properties is created with sources to the graphics from the theme. */
 
@@ -116,6 +117,8 @@ body {
 }
 
 button {
+    cursor: pointer;
+    outline: none;
     border: none;
     box-shadow: none;
     background-color: transparent;
@@ -150,10 +153,18 @@ button {
     background-image: var(--start_button);
 }
 
+.start_button:active {
+    background-image: var(--start_button_pressed);
+}
+
 .spin_button {
     height: 100%;
     width: 25%;
     background-image: var(--spin_button);
+}
+
+.spin_button:active {
+    background-image: var(--spin_button_pressed);
 }
 
 
