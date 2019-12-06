@@ -16,7 +16,7 @@ async function fetchSymbols() {
 function startGame() {
     let wheels = buildWheels();
     // activateThemeButtons();
-    // activateStartButton(wheels);
+    activateStartButton(wheels);
     addWheelsToDOM(wheels);
 }
 
@@ -205,7 +205,7 @@ function addWheelsToDOM(wheels) {
             document.querySelector(`.wheel_${wheel.id}`).innerHTML += `<div class="item" data-symbol-id="${symbol.id}"></div>`;
         });
 
-        document.querySelector(".hold_buttons").innerHTML += `<button class="hold_wheel" data-holdwheel="${wheel.id}"></button>`
+        document.querySelector(".hold_buttons").innerHTML += `<button class="hold_wheel" data-holdwheel="${wheel.id}"/>`
     })
 }
 

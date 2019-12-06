@@ -3,7 +3,9 @@
 /* Sources for the static design elements that do not change when changing themes.*/
 :root {
     --slot_machine: url("elements/static/slot_machine.svg");
-    --hold_button: url("elements/static/hold.svg")
+    --hold_button: url("elements/static/hold.svg");
+    --start_button: url("elements/static/play_not_pressed.svg");
+    --spin_button: url("elements/static/spin_not_pressed.svg");
 }
 
 
@@ -93,6 +95,7 @@ body {
 
 /* The "items" in the wheels. The background-images are added through attributes on each item. */
 .item {
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     height: 33%;
@@ -112,22 +115,49 @@ body {
     width: 56%;
 }
 
-.hold_wheel {
-    margin-right: 5%;
+button {
     border: none;
     box-shadow: none;
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.hold_wheel {
+    margin-right: 5%;
     height: 100%;
     width: 30%;
-    background-color: transparent;
     background-image: var(--hold_button);
-    background-size: contain;
 }
 
 .hold_wheel:last-child {
     margin-right: 0;
 }
 
-/* -- Changable elements -- */
+.main_buttons {
+    position: absolute;
+    top: 70%;
+    left: 8%;
+    height: 10%;
+    width: 81%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.start_button {
+    height: 100%;
+    width: 25%;
+    background-image: var(--start_button);
+}
+
+.spin_button {
+    height: 100%;
+    width: 25%;
+    background-image: var(--spin_button);
+}
+
+
+/* -- THEME ELEMENTS -- */
 /* These elements all use custom properties, and these custom properties change depending on the theme. */
 
 [data-symbol-id="1"] {
