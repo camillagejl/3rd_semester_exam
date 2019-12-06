@@ -22,6 +22,15 @@ function insertAllGames() {
                         <h2>${section.gametitle}</h2>
                     </div>
             </section>`;
+
+      // if (item.project_type[0] === "Coding") {
+      //     document.querySelector("#coding-projects").insertAdjacentHTML("beforeend", template);
+      // }
+      //
+      // if (item.project_type[0] === "Other projects") {
+      //     document.querySelector("#other-projects").insertAdjacentHTML("beforeend", template);
+      // }
+
     destAllGames.insertAdjacentHTML("beforeend", template);
   });
 }
