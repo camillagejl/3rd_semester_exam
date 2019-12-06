@@ -15,8 +15,8 @@ async function fetchSymbols() {
 
 function startGame() {
     let wheels = buildWheels();
-    activateThemeButtons();
-    activateStartButton(wheels);
+    // activateThemeButtons();
+    // activateStartButton(wheels);
     addWheelsToDOM(wheels);
 }
 
