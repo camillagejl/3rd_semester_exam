@@ -65,30 +65,30 @@ button {
 /* For each theme, a group of custom properties must be created with sources to the graphics from the theme. */
 
 [data-game-theme="mexico"] {
-    --symbol-1: url("elements/mexico_1.svg");
-    --symbol-2: url("elements/mexico_2.svg");
-    --symbol-3: url("elements/mexico_3.svg");
-    --symbol-4: url("elements/mexico_4.svg");
-    --symbol-5: url("elements/mexico_5.svg");
-    --symbol-6: url("elements/mexico_6.svg");
+    --symbol-1: url("elements/mexican/mexico_1.svg");
+    --symbol-2: url("elements/mexican/mexico_2.svg");
+    --symbol-3: url("elements/mexican/mexico_3.svg");
+    --symbol-4: url("elements/mexican/mexico_4.svg");
+    --symbol-5: url("elements/mexican/mexico_5.svg");
+    --symbol-6: url("elements/mexican/mexico_6.svg");
 }
 
 [data-game-theme="native"] {
-    --symbol-1: url("elements/native_1.svg");
-    --symbol-2: url("elements/native_2.svg");
-    --symbol-3: url("elements/native_3.svg");
-    --symbol-4: url("elements/native_4.svg");
-    --symbol-5: url("elements/native_5.svg");
-    --symbol-6: url("elements/native_6.svg");
+    --symbol-1: url("elements/indigenous/native_1.svg");
+    --symbol-2: url("elements/indigenous/native_2.svg");
+    --symbol-3: url("elements/indigenous/native_3.svg");
+    --symbol-4: url("elements/indigenous/native_4.svg");
+    --symbol-5: url("elements/indigenous/native_5.svg");
+    --symbol-6: url("elements/indigenous/native_6.svg");
 }
 
 [data-game-theme="viking"] {
-    --symbol-1: url("elements/viking_1.svg");
-    --symbol-2: url("elements/viking_2.svg");
-    --symbol-3: url("elements/viking_3.svg");
-    --symbol-4: url("elements/viking_4.svg");
-    --symbol-5: url("elements/viking_5.svg");
-    --symbol-6: url("elements/viking_6.svg");
+    --symbol-1: url("elements/viking/viking_1.svg");
+    --symbol-2: url("elements/viking/viking_2.svg");
+    --symbol-3: url("elements/viking/viking_3.svg");
+    --symbol-4: url("elements/viking/viking_4.svg");
+    --symbol-5: url("elements/viking/viking_5.svg");
+    --symbol-6: url("elements/viking/viking_6.svg");
 }
 
 
