@@ -90,6 +90,7 @@ function List() {
 
     // Sets useStates on click on one of the column headers.
     const sortByColumn = (column) => {
+        console.log("Sorting");
         setSortBy(column);
         setDirection(sortDirection === 'asc' ? 'desc' : 'asc');
     };
@@ -110,16 +111,26 @@ function List() {
 
     // ----- FILTER BY -----
 
-    const [filterBy, setFilterBy] = useState('Romania');
+    const [filterBy, setFilterBy] = useState('All');
 
     const filterByColumn = (column) => {
+        console.log("Changing");
         setFilterBy(column);
     };
 
-    const filteredCollection = filter(
+    let filteredCollection;
+    if (filterBy === 'All') {
+    filteredCollection = filter(
+        sortedCollection
+    );
+    }
+
+    else {
+    filteredCollection = filter(
         sortedCollection,
         ['country', filterBy]
     );
+    }
 
     // ----- LIST COMPONENT -----
     return (
@@ -198,6 +209,13 @@ function List() {
                         <img className="sortArrow" style={arrowStyle} src={sortArrow} alt="Sorting arrow"/>
                         }
                     </th>
+
+                    <th onClick={() => sortByColumn("emailSub")}>
+                        Email subscription
+                        {sortBy === "emailSub" &&
+                        <img className="sortArrow" style={arrowStyle} src={sortArrow} alt="Sorting arrow"/>
+                        }
+                    </th>
                 </tr>
                 </thead>
                 <tbody>
@@ -213,6 +231,7 @@ function List() {
                         <td>{user.lastName}</td>
                         <td>{user.dateOfBirth}</td>
                         <td>{user.country}</td>
+                        <td>{user.emailSub}</td>
                     </tr>
 
                 ))}
