@@ -1,0 +1,22 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="451" height="138" viewBox="0 0 451 138">
+  <defs>
+    <filter id="AI_Shadow_2" x="-15" y="-15" width="140" height="130" name="AI_Shadow_2">
+      <feGaussianBlur result="blur" stdDeviation="6" in="SourceAlpha"/>
+      <feOffset result="offsetBlurredAlpha" dx="8" dy="8" in="blur"/>
+      <feMerge>
+        <feMergeNode in="offsetBlurredAlpha"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="linear-gradient" x1="8" y1="64.5" x2="435" y2="64.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0.04" stop-color="#ed1c24"/>
+      <stop offset="0.51" stop-color="#f15a24"/>
+      <stop offset="1" stop-color="#ed1c24"/>
+    </linearGradient>
+  </defs>
+  <title>mexicans_button</title>
+  <g filter="url(#AI_Shadow_2)">
+    <rect x="8" y="6" width="427" height="117" fill="url(#linear-gradient)"/>
+  </g>
+  <text transform="translate(125 80.53)" font-size="45" fill="#fff" font-family="MyriadPro-Regular, Myriad Pro">MEXI<tspan x="94.77" y="0" letter-spacing="0em">C</tspan><tspan x="121.05" y="0">ANS</tspan></text>
+</svg>

@@ -1,0 +1,151 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1390" height="1482" viewBox="0 0 1390 1482">
+  <defs>
+    <linearGradient id="linear-gradient" x1="695" y1="783" x2="695" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8fd2ea"/>
+      <stop offset="1" stop-color="#1271c6"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="591.52" y1="1251" x2="591.52" y2="286.57" gradientUnits="userSpaceOnUse">
+      <stop offset="0.02" stop-color="#333"/>
+      <stop offset="0.2" stop-color="#363636"/>
+      <stop offset="0.36" stop-color="#41403e"/>
+      <stop offset="0.51" stop-color="#53504c"/>
+      <stop offset="0.64" stop-color="#68635c"/>
+      <stop offset="0.66" stop-color="#7d7973"/>
+      <stop offset="0.72" stop-color="#a5a29d"/>
+      <stop offset="0.77" stop-color="#c5c3c1"/>
+      <stop offset="0.83" stop-color="#dfdedc"/>
+      <stop offset="0.88" stop-color="#f1f0ef"/>
+      <stop offset="0.94" stop-color="#fbfbfb"/>
+      <stop offset="1" stop-color="#fff"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="370.26" y1="1698.19" x2="1021.74" y2="569.81" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#8c6239"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-4" x1="18.94" y1="1135.31" x2="136" y2="1135.31" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#009245"/>
+      <stop offset="1" stop-color="#003f05" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-5" x1="25.63" y1="1101.91" x2="130.36" y2="1101.91" xlink:href="#linear-gradient-4"/>
+    <linearGradient id="linear-gradient-6" x1="31.94" y1="1069.07" x2="122.92" y2="1069.07" xlink:href="#linear-gradient-4"/>
+    <linearGradient id="linear-gradient-7" x1="164.94" y1="967.31" x2="282" y2="967.31" xlink:href="#linear-gradient-4"/>
+    <linearGradient id="linear-gradient-8" x1="171.63" y1="933.91" x2="276.36" y2="933.91" xlink:href="#linear-gradient-4"/>
+    <linearGradient id="linear-gradient-9" x1="177.94" y1="901.07" x2="268.92" y2="901.07" xlink:href="#linear-gradient-4"/>
+    <linearGradient id="linear-gradient-10" x1="1241.94" y1="1055.31" x2="1359" y2="1055.31" xlink:href="#linear-gradient-4"/>
+    <linearGradient id="linear-gradient-11" x1="1248.63" y1="1021.91" x2="1353.36" y2="1021.91" xlink:href="#linear-gradient-4"/>
+    <linearGradient id="linear-gradient-12" x1="1254.94" y1="989.07" x2="1345.92" y2="989.07" xlink:href="#linear-gradient-4"/>
+    <linearGradient id="linear-gradient-13" x1="1089.94" y1="827.31" x2="1207" y2="827.31" xlink:href="#linear-gradient-4"/>
+    <linearGradient id="linear-gradient-14" x1="1096.63" y1="793.91" x2="1201.36" y2="793.91" xlink:href="#linear-gradient-4"/>
+    <linearGradient id="linear-gradient-15" x1="1102.94" y1="761.07" x2="1193.92" y2="761.07" xlink:href="#linear-gradient-4"/>
+    <linearGradient id="linear-gradient-16" x1="1182.94" y1="694.31" x2="1300" y2="694.31" xlink:href="#linear-gradient-4"/>
+    <linearGradient id="linear-gradient-17" x1="1189.63" y1="660.91" x2="1294.36" y2="660.91" xlink:href="#linear-gradient-4"/>
+    <linearGradient id="linear-gradient-18" x1="1195.94" y1="628.07" x2="1286.92" y2="628.07" xlink:href="#linear-gradient-4"/>
+    <linearGradient id="linear-gradient-19" x1="15.94" y1="844.31" x2="133" y2="844.31" xlink:href="#linear-gradient-4"/>
+    <linearGradient id="linear-gradient-20" x1="22.63" y1="810.91" x2="127.36" y2="810.91" xlink:href="#linear-gradient-4"/>
+    <linearGradient id="linear-gradient-21" x1="28.94" y1="778.07" x2="119.92" y2="778.07" xlink:href="#linear-gradient-4"/>
+    <linearGradient id="linear-gradient-22" x1="132.94" y1="697.31" x2="250" y2="697.31" xlink:href="#linear-gradient-4"/>
+    <linearGradient id="linear-gradient-23" x1="139.63" y1="663.91" x2="244.36" y2="663.91" xlink:href="#linear-gradient-4"/>
+    <linearGradient id="linear-gradient-24" x1="145.94" y1="631.07" x2="236.92" y2="631.07" xlink:href="#linear-gradient-4"/>
+  </defs>
+  <title>viking_background</title>
+  <rect width="1390" height="783" fill="url(#linear-gradient)"/>
+  <path d="M4,524C73.18,413.28,277.47,278,334.57,287S516.8,395.49,587,495c0,0,30-65,66.11-56s76.13,119,76.13,119,70.12-63,122.21-63,230.39,184,230.39,184l78.32,98.32L1183,1251H0Z" stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="url(#linear-gradient-2)"/>
+  <g>
+    <g>
+      <polygon points="152.55 192.21 137.25 221.61 130.26 186.74 116.56 203.55 120.25 179.13 82.77 223.6 102.4 161.66 47.38 180.7 94.17 138.64 34.1 132.41 94.56 114.9 73.27 92.21 102.2 96.21 55.76 36.14 117.58 78.28 113 43.15 150.2 66.15 168.54 40.34 187.31 70.9 221.71 60.81 202 97.5 227.02 97.5 211.67 113.55 267.94 102.7 221.95 136.83 256.61 147.04 216.95 159.14 244.21 185.07 203.56 173.72 209.62 213.22 186.45 186.19 166.57 246.68 152.55 192.21" fill="#f7b541"/>
+      <path d="M58.08,38.33l58.29,39.74,1.85,1.25-.29-2.21-4.3-33,35.91,22.19.8.5.54-.77,17.63-24.81,18.18,29.6.4.65.73-.22,32.88-9.65L202,96.53l-.8,1.47h24.69l-13.46,14.07-2.16,2.27,3.08-.6,52.57-10.13-43.42,32.22-1.61,1.2,1.92.56,32.1,9.46-37.25,11.36-1.64.5,1.24,1.18,25.19,24-38-10.61L203,173l.23,1.53,5.68,37-21.45-25-1.16-1.35-.55,1.69-19.07,58-13.27-51.55-.66-2.53-1.2,2.31-14,27L131,187.68l-.42-2.08-1.34,1.64-11.87,14.58L120.48,181l.53-3.5-2.28,2.71L84,221.36l18.58-58.6.6-1.89-1.88.65-51.75,17.9,44.11-39.65,1.68-1.51L93.1,138l-56.4-5.86,57.21-16.56,1.57-.46L94.36,114,74.6,92.9l26.32,3.64,2.43.33-1.5-1.93L58.08,38.33M53.43,34l47.63,61.6-29.12-4,21.69,23.13-62.13,18L93,139,45.21,182l56.42-19.52-20.1,63.38,38-45-3.69,24.48L130,187.87,137,223.1l15.35-29.5,14.12,54.86,20.14-61.27,23.73,27.69-6.21-40.47L246,186.09l-28.1-26.72L258.35,147l-35.3-10.39L270,101.8l-56.88,11L228.19,97H202.84l19.87-37L187.54,70.31l-19-30.88-18.51,26-37.69-23.3,4.57,35.07L53.43,34Z"/>
+    </g>
+    <path d="M206.61,129.55a52.73,52.73,0,1,1-31.35-48.24A52.78,52.78,0,0,1,206.61,129.55Z" fill="#f5ff7b"/>
+  </g>
+  <rect x="1" y="783" width="1390" height="702" stroke="#000" stroke-miterlimit="10" stroke-width="4" fill="url(#linear-gradient-3)"/>
+  <g opacity="0.5">
+    <rect x="109.28" y="1256.52" width="14.54" height="117.61" transform="translate(1032.44 2266.56) rotate(141.15)" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+    <polygon points="89.58 1368.01 132.42 1334.4 175.27 1300.78 182.96 1354.69 190.65 1408.61 140.11 1388.31 89.58 1368.01" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+    <polygon points="116.29 1392.82 154.63 1362.74 192.96 1332.66 199.84 1380.9 206.72 1429.14 161.51 1410.98 116.29 1392.82" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+    <polygon points="144.35 1416.61 177.65 1390.48 210.96 1364.36 216.93 1406.26 222.91 1448.17 183.63 1432.39 144.35 1416.61" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+  </g>
+  <g opacity="0.5">
+    <rect x="251.28" y="1086.52" width="14.54" height="117.61" transform="translate(1178.38 1875.09) rotate(141.15)" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+    <polygon points="231.58 1198.01 274.42 1164.4 317.27 1130.78 324.96 1184.69 332.65 1238.61 282.11 1218.31 231.58 1198.01" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+    <polygon points="258.29 1222.82 296.63 1192.74 334.96 1162.66 341.84 1210.9 348.72 1259.14 303.51 1240.98 258.29 1222.82" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+    <polygon points="286.35 1246.61 319.65 1220.48 352.95 1194.36 358.93 1236.26 364.91 1278.17 325.63 1262.39 286.35 1246.61" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+  </g>
+  <g opacity="0.5">
+    <rect x="1269.28" y="819.52" width="14.54" height="117.61" transform="translate(2821.67 761.55) rotate(141.15)" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+    <polygon points="1249.58 931.01 1292.42 897.4 1335.27 863.78 1342.96 917.7 1350.65 971.61 1300.11 951.31 1249.58 931.01" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+    <polygon points="1276.29 955.82 1314.63 925.74 1352.96 895.66 1359.84 943.9 1366.72 992.14 1321.51 973.98 1276.29 955.82" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+    <polygon points="1304.35 979.61 1337.65 953.48 1370.95 927.36 1376.93 969.26 1382.91 1011.17 1343.63 995.39 1304.35 979.61" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+  </g>
+  <g opacity="0.5">
+    <rect x="1175.28" y="947.52" width="14.54" height="117.61" transform="translate(2734.77 1048.2) rotate(141.15)" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+    <polygon points="1155.58 1059.01 1198.42 1025.4 1241.27 991.78 1248.96 1045.69 1256.65 1099.61 1206.11 1079.31 1155.58 1059.01" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+    <polygon points="1182.29 1083.82 1220.63 1053.74 1258.96 1023.66 1265.84 1071.9 1272.72 1120.14 1227.51 1101.98 1182.29 1083.82" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+    <polygon points="1210.35 1107.61 1243.65 1081.48 1276.95 1055.36 1282.93 1097.26 1288.91 1139.17 1249.63 1123.39 1210.35 1107.61" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+  </g>
+  <g opacity="0.5">
+    <rect x="1327.28" y="1175.52" width="14.54" height="117.61" transform="translate(3148.17 1358.41) rotate(141.15)" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+    <polygon points="1307.58 1287.01 1350.42 1253.4 1393.27 1219.78 1400.96 1273.69 1408.65 1327.61 1358.11 1307.31 1307.58 1287.01" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+    <polygon points="1334.29 1311.82 1372.63 1281.74 1410.96 1251.66 1417.84 1299.9 1424.72 1348.14 1379.51 1329.98 1334.29 1311.82" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+    <polygon points="1362.35 1335.61 1395.65 1309.48 1428.95 1283.36 1434.93 1325.26 1440.91 1367.17 1401.63 1351.39 1362.35 1335.61" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+  </g>
+  <g opacity="0.5">
+    <rect x="219.38" y="811.65" width="14.54" height="117.61" transform="translate(949.2 1406.16) rotate(141.15)" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+    <polygon points="199.67 923.14 242.52 889.52 285.37 855.9 293.06 909.82 300.74 963.73 250.21 943.43 199.67 923.14" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+    <polygon points="226.39 947.94 264.72 917.87 303.06 887.79 309.94 936.03 316.82 984.27 271.6 966.11 226.39 947.94" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+    <polygon points="254.44 971.74 287.75 945.61 321.05 919.48 327.03 961.39 333 1003.29 293.72 987.51 254.44 971.74" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+  </g>
+  <g opacity="0.5">
+    <rect x="105.38" y="964.65" width="14.54" height="117.61" transform="translate(842.4 1749.83) rotate(141.15)" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+    <polygon points="85.67 1076.14 128.52 1042.52 171.37 1008.9 179.06 1062.82 186.74 1116.73 136.21 1096.43 85.67 1076.14" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+    <polygon points="112.39 1100.94 150.72 1070.87 189.06 1040.79 195.94 1089.03 202.82 1137.27 157.6 1119.11 112.39 1100.94" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+    <polygon points="140.44 1124.74 173.75 1098.61 207.05 1072.48 213.03 1114.39 219 1156.29 179.72 1140.52 140.44 1124.74" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+  </g>
+  <g>
+    <rect x="70.09" y="1149.08" width="15.62" height="126.41" fill="#59390a" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+    <polygon points="136 1186.37 77.47 1185.62 18.94 1184.87 48.86 1134.56 78.77 1084.24 107.39 1135.31 136 1186.37" stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="url(#linear-gradient-4)"/>
+    <polygon points="130.36 1147.6 78 1146.92 25.63 1146.25 52.39 1101.24 79.16 1056.22 104.76 1101.91 130.36 1147.6" stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="url(#linear-gradient-5)"/>
+    <polygon points="122.92 1108.76 77.43 1108.18 31.93 1107.6 55.19 1068.49 78.44 1029.38 100.68 1069.07 122.92 1108.76" stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="url(#linear-gradient-6)"/>
+  </g>
+  <g>
+    <rect x="216.09" y="981.08" width="15.62" height="126.41" fill="#59390a" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+    <polygon points="282 1018.37 223.47 1017.62 164.94 1016.87 194.86 966.56 224.77 916.25 253.39 967.31 282 1018.37" stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="url(#linear-gradient-7)"/>
+    <polygon points="276.36 979.6 224 978.92 171.63 978.25 198.39 933.24 225.16 888.22 250.76 933.91 276.36 979.6" stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="url(#linear-gradient-8)"/>
+    <polygon points="268.92 940.76 223.43 940.18 177.94 939.6 201.19 900.49 224.44 861.38 246.68 901.07 268.92 940.76" stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="url(#linear-gradient-9)"/>
+  </g>
+  <g>
+    <rect x="1293.09" y="1069.08" width="15.62" height="126.41" fill="#59390a" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+    <polygon points="1359 1106.37 1300.47 1105.62 1241.94 1104.87 1271.86 1054.56 1301.77 1004.25 1330.39 1055.31 1359 1106.37" stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="url(#linear-gradient-10)"/>
+    <polygon points="1353.36 1067.6 1301 1066.92 1248.63 1066.25 1275.39 1021.24 1302.16 976.22 1327.76 1021.91 1353.36 1067.6" stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="url(#linear-gradient-11)"/>
+    <polygon points="1345.92 1028.76 1300.43 1028.18 1254.93 1027.6 1278.19 988.49 1301.44 949.38 1323.68 989.07 1345.92 1028.76" stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="url(#linear-gradient-12)"/>
+  </g>
+  <g>
+    <rect x="1141.09" y="841.08" width="15.62" height="126.41" fill="#59390a" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+    <polygon points="1207 878.37 1148.47 877.62 1089.94 876.87 1119.86 826.56 1149.77 776.25 1178.39 827.31 1207 878.37" stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="url(#linear-gradient-13)"/>
+    <polygon points="1201.36 839.6 1149 838.92 1096.63 838.25 1123.39 793.24 1150.16 748.22 1175.76 793.91 1201.36 839.6" stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="url(#linear-gradient-14)"/>
+    <polygon points="1193.92 800.76 1148.43 800.18 1102.93 799.6 1126.19 760.49 1149.44 721.38 1171.68 761.07 1193.92 800.76" stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="url(#linear-gradient-15)"/>
+  </g>
+  <g>
+    <rect x="1234.09" y="708.08" width="15.62" height="126.41" fill="#59390a" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+    <polygon points="1300 745.37 1241.47 744.62 1182.94 743.87 1212.86 693.56 1242.77 643.25 1271.39 694.31 1300 745.37" stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="url(#linear-gradient-16)"/>
+    <polygon points="1294.36 706.6 1242 705.92 1189.63 705.25 1216.39 660.24 1243.16 615.22 1268.76 660.91 1294.36 706.6" stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="url(#linear-gradient-17)"/>
+    <polygon points="1286.92 667.76 1241.43 667.18 1195.93 666.6 1219.19 627.49 1242.44 588.38 1264.68 628.07 1286.92 667.76" stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="url(#linear-gradient-18)"/>
+  </g>
+  <g>
+    <rect x="67.09" y="858.08" width="15.62" height="126.41" fill="#59390a" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+    <polygon points="133 895.37 74.47 894.62 15.94 893.87 45.86 843.56 75.77 793.25 104.39 844.31 133 895.37" stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="url(#linear-gradient-19)"/>
+    <polygon points="127.36 856.6 75 855.92 22.63 855.25 49.39 810.24 76.16 765.22 101.76 810.91 127.36 856.6" stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="url(#linear-gradient-20)"/>
+    <polygon points="119.92 817.76 74.43 817.18 28.93 816.6 52.19 777.49 75.44 738.38 97.68 778.07 119.92 817.76" stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="url(#linear-gradient-21)"/>
+  </g>
+  <g>
+    <rect x="184.09" y="711.08" width="15.62" height="126.41" fill="#59390a" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+    <polygon points="250 748.37 191.47 747.62 132.94 746.87 162.86 696.56 192.77 646.25 221.39 697.31 250 748.37" stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="url(#linear-gradient-22)"/>
+    <polygon points="244.36 709.6 192 708.92 139.63 708.25 166.39 663.24 193.16 618.22 218.76 663.91 244.36 709.6" stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="url(#linear-gradient-23)"/>
+    <polygon points="236.92 670.76 191.43 670.18 145.94 669.6 169.19 630.49 192.44 591.38 214.68 631.07 236.92 670.76" stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="url(#linear-gradient-24)"/>
+  </g>
+  <path d="M1261.53,309.69H1384c-14.83-28.63-33.39-42.71-57.22-22.59,1.28-27.32-49.26-34.89-55.21.51,0,0,7-42.67-31.12-32.63s-12,54.71-12,54.71Z" fill="#fff" stroke="#000" stroke-miterlimit="10" opacity="0.8"/>
+  <path d="M1235.16,319.23H1323c-10.64-20.55-24-30.65-41-16.21.91-19.6-35.35-25-39.61.36,0,0,5-30.6-22.33-23.4s-8.64,39.25-8.64,39.25Z" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+  <path d="M1019.76,172.72H1206c-22.55-43.54-50.77-64.95-87-34.34,1.94-41.55-74.92-53.06-84,.76,0,0,10.68-64.88-47.33-49.61s-18.32,83.19-18.32,83.19Z" fill="#fff" stroke="#000" stroke-miterlimit="10" opacity="0.8"/>
+  <path d="M979.65,187.23h133.61c-16.18-31.24-36.42-46.6-62.42-24.65,1.39-29.8-53.75-38.06-60.24.55,0,0,7.67-46.54-34-35.59s-13.14,59.69-13.14,59.69Z" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+  <path d="M517.82,150.39H324.14c23.46-45.28,52.8-67.55,90.49-35.72-2-43.21,77.91-55.18,87.31.8,0,0-11.11-67.47,49.21-51.6s19.05,86.52,19.05,86.52Z" fill="#fff" stroke="#000" stroke-miterlimit="10" opacity="0.8"/>
+  <path d="M559.53,165.47H420.58C437.41,133,458.46,117,485.5,139.85c-1.45-31,55.9-39.59,62.64.56,0,0-8-48.4,35.31-37s13.66,62.07,13.66,62.07Z" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+</svg>
