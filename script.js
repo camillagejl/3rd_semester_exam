@@ -63,6 +63,9 @@ function activateThemeButtons() {
 }
 
 function activateStartButton(wheels) {
+    document.querySelector(".spin_button").classList.add("inactive");
+    document.querySelector(".start_button").classList.remove("inactive");
+
     //
     wheels.forEach(wheel => {
         wheel.isHolding = false;
@@ -72,6 +75,8 @@ function activateStartButton(wheels) {
         // When the start button is activated (when the page is loaded or the user has used all three spins),
         // is will set the remaining spins to 3.
         activateSpinButton(wheels, 3);
+        document.querySelector(".spin_button").classList.remove("inactive");
+        document.querySelector(".start_button").classList.add("inactive");
         document.querySelector(".start_button").removeEventListener("click", _function);
     })
 
