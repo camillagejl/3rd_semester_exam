@@ -1,5 +1,1 @@
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="200" height="61" viewBox="0 0 200 61">
-  <title>hold</title>
-  <rect width="200" height="61" fill="#d3d3d3" stroke="#000" stroke-miterlimit="10"/>
-  <text transform="translate(80 40)" font-size="23" font-family="Press Start 2P">Hold</text>
-</svg>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 61"><defs><style>.cls-1{fill:#d3d3d3;stroke:#000;stroke-miterlimit:10;}.cls-2{font-size:21px;font-family:PressStart2P-Regular, "Press Start 2P";}</style></defs><title>hold</title><rect class="cls-1" y="-0.66" width="200" height="61"/><text class="cls-2" transform="translate(58 40.41)">Hold</text></svg>
