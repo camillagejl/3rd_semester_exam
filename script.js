@@ -10,7 +10,22 @@ async function fetchSymbols() {
     let jsonData = await fetch(pagesUrl);
     symbols = await jsonData.json();
 
-    startGame();
+    fetchSVGs();
+}
+
+let slotMachineSVG;
+function fetchSVGs() {
+    const slotMachineSVGFile = fetch("elements/static/slot_machine.svg").then(r => r.text());
+
+    Promise
+        .all([slotMachineSVGFile])
+        .then(
+            function (responses) {
+                const [slotMachineSVGFile] = responses;
+                slotMachineSVG = slotMachineSVGFile;
+                startGame();
+            }
+        );
 }
 
 function startGame() {
@@ -27,7 +42,7 @@ function buildWheels() {
         id: 1,
 
         // The symbols are fetched from a json-file. Symbols can be added several times, and order doesn't matter.
-        symbols: [symbols[0], symbols[1], symbols[2], symbols[3], symbols[4], symbols[5]],
+        symbols: [symbols[4], symbols[5], symbols[5], symbols[5], symbols[5], symbols[5]],
         isHolding: false,
 
         // "active" refers to the active symbol in the wheel array. This starts on 1 (i.e. the second symbol in the
@@ -37,13 +52,13 @@ function buildWheels() {
     };
     let wheel2 = {
         id: 2,
-        symbols: [symbols[0], symbols[1], symbols[2], symbols[3], symbols[4], symbols[5]],
+        symbols: [symbols[4], symbols[5], symbols[5], symbols[5], symbols[5], symbols[5]],
         isHolding: false,
         active: 1
     };
     let wheel3 = {
         id: 3,
-        symbols: [symbols[0], symbols[1], symbols[2], symbols[3], symbols[4], symbols[5]],
+        symbols: [symbols[4], symbols[5], symbols[5], symbols[5], symbols[5], symbols[5]],
         isHolding: false,
         active: 1
     };
@@ -78,16 +93,18 @@ function activateStartButton(wheels) {
         document.querySelector(".spin_button").classList.remove("inactive");
         document.querySelector(".start_button").classList.add("inactive");
         document.querySelector(".start_button").removeEventListener("click", _function);
+        document.querySelector(".coins_won").textContent = 0;
     })
 
 }
 
 function activateSpinButton(wheels, spins) {
+    showSpinsLeft(spins);
+
     document.querySelector(".spin_button").addEventListener("click", function _function() {
         spin(wheels, spins);
         document.querySelector(".spin_button").removeEventListener("click", _function);
     });
-
 }
 
 // The hold button listeners are stored in a global variable, so they can be removed later, and not on button click.
@@ -132,19 +149,19 @@ function spin(wheels, spins) {
     let spinResult = calculateSpinResult(wheels);
 
     // didWin compares the active symbols, and returns true (if they are the same) or false (if they are not the same).
-    let didWin = compareSpinResult(wheels, spinResult);
+    let priceWon  = calculatePriceWon(wheels, spinResult);
 
     spins--;
 
+    console.log(priceWon);
+
     // If the user wins:
-    if (didWin) {
+    if (priceWon > 0) {
+        console.log("won!", priceWon);
 
         // Sets spins to 0 and toggles hold buttons, so they are deactivated.
         spins = 0;
         toggleHoldButtons(wheels, spins);
-
-        // Gets the prices from the active symbols.
-        payPrice(wheels, spinResult);
 
         // Activates the start button, so the user can start a new game.
         activateStartButton(wheels);
@@ -152,14 +169,17 @@ function spin(wheels, spins) {
 
     // Starts the visual part of spinning the wheels, separately for each wheel.
     wheels.forEach(wheel => {
-        spinVisualWheel(wheel);
+        spinVisualWheel(wheel, priceWon);
     });
+
+    // Updates visual display of spins left.
+    showSpinsLeft(spins);
 
     // Toggles the hold buttons.
     toggleHoldButtons(wheels, spins);
 
     // If the user loses:
-    if (!didWin) {
+    if (priceWon === 0) {
 
         // If spins is still above 0, the spin button will get activated again.
         if (spins > 0) {
@@ -189,20 +209,29 @@ function calculateSpinResult(wheels) {
     return spinResult;
 }
 
-function compareSpinResult(wheels, spinResult) {
-    return wheels[0].symbols[spinResult[0]] === wheels[1].symbols[spinResult[1]]
-        && wheels[1].symbols[spinResult[1]] === wheels[2].symbols[spinResult[2]];
+function calculatePriceWon(wheels, spinResult) {
+    if (wheels[0].symbols[spinResult[0]] === wheels[1].symbols[spinResult[1]]
+        && wheels[1].symbols[spinResult[1]] === wheels[2].symbols[spinResult[2]]) {
+        return wheels[0].symbols[spinResult[0]].price;
+    }
+
+    else {
+        return 0;
+    }
+
 }
 
-function payPrice(wheels, spinResult) {
-    console.log("Price!", wheels[0].symbols[spinResult[0]].price);
-}
 
-
-// ----- VISUAL WHEELS -----
+// ----- VISUAL -----
 
 // Adds the wheels, their symbols and hold buttons to the DOM.
 function addWheelsToDOM(wheels) {
+
+    // First, adding the slot machine SVG to the DOM. This is added as an image with JavaScript so we are able to change
+    // text elements (coins and spins left) through JavaScript.
+
+    document.querySelector(".slot_machine").insertAdjacentHTML('afterbegin', slotMachineSVG);
+
     wheels.forEach(wheel => {
         document.querySelector(".wheels").innerHTML += `<div class="wheel wheel_${wheel.id}"></div>`;
 
@@ -214,7 +243,11 @@ function addWheelsToDOM(wheels) {
     })
 }
 
-function spinVisualWheel(wheel) {
+function showSpinsLeft(spins) {
+    document.querySelector(".spins_left").textContent = spins;
+}
+
+function spinVisualWheel(wheel, priceWon) {
     // Only spins each wheel if they are not on hold.
     if (!wheel.isHolding) {
 
@@ -225,11 +258,11 @@ function spinVisualWheel(wheel) {
         let spinRounds = wheel.previouslyActive - wheel.active + (wheel.symbols.length * 2 * wheel.id);
         console.log(wheel.id + " Active " + (wheel.active));
 
-        spinWheel(wheel, spinRounds)
+        spinWheel(wheel, spinRounds, priceWon)
     }
 }
 
-function spinWheel(wheel, spinRounds) {
+function spinWheel(wheel, spinRounds, priceWon) {
     document.querySelectorAll(`.wheel_${wheel.id} .item`).forEach(item => {
 
         // Moves all symbols down 100% of their height.
@@ -239,11 +272,11 @@ function spinWheel(wheel, spinRounds) {
 
     document.querySelector(`.wheel_${wheel.id} .item`).addEventListener("transitionend", function _function() {
         document.querySelector(`.wheel_${wheel.id} .item`).removeEventListener("transitionend", _function);
-        moveLastItem(wheel, spinRounds);
+        moveLastItem(wheel, spinRounds, priceWon);
     })
 }
 
-function moveLastItem(wheel, spinRounds) {
+function moveLastItem(wheel, spinRounds, priceWon) {
 
     // Moves all symbols back to their original position (which will change because there is another div added at the
     // top - as happens below).
@@ -264,10 +297,10 @@ function moveLastItem(wheel, spinRounds) {
     // Removes the last div completely from the DOM.
     lastItem.parentNode.removeChild(lastItem);
 
-    addLastItem(wheel, lastSymbolID, spinRounds);
+    addLastItem(wheel, lastSymbolID, spinRounds, priceWon);
 }
 
-function addLastItem(wheel, lastSymbolID, spinRounds) {
+function addLastItem(wheel, lastSymbolID, spinRounds, priceWon) {
 
     // Inserts div to the start of the wheel, with the ID from the div removed from the end of the wheel.
     let lastItemTemplate = `<div class="item" data-symbol-id="${lastSymbolID}"></div>`;
@@ -278,7 +311,47 @@ function addLastItem(wheel, lastSymbolID, spinRounds) {
     // If spinRounds is over 0, the functions will loop and the wheel will keep spinning until spinRounds hits 0.
     if (spinRounds > 0) {
         setTimeout(function () {
-            spinWheel(wheel, spinRounds)
+            spinWheel(wheel, spinRounds, priceWon)
         }, 1)
     }
+
+    else if (wheel.id === 3 && spinRounds <= 0) {
+        displayPrice(priceWon);
+    }
+}
+
+function displayPrice(priceWon) {
+
+    let coinsDisplay = document.querySelector(".coins_won").textContent;
+
+    if (coinsDisplay > 9) {
+        console.log("translating");
+        document.querySelector(".coins_won").style.transform = "translateX(-1%);";
+    }
+
+    if (coinsDisplay < priceWon) {
+        console.log("Done spinning", priceWon);
+
+        coinsDisplay++;
+        document.querySelector(".coins_won").textContent = coinsDisplay;
+
+        setTimeout(function _function() {
+            displayPrice(priceWon)
+        }, 100);
+    }
+
+    if (priceWon !== 0 && priceWon === coinsDisplay) {
+        toggleCoinsDisplay();
+    }
+}
+
+function toggleCoinsDisplay() {
+    if (document.querySelector(".coins_won").style.display === "block") {
+    document.querySelector(".coins_won").style.display = "none";
+    }
+
+    else {
+        document.querySelector(".coins_won").style.display = "block";
+    }
+    setTimeout(toggleCoinsDisplay, 100);
 }

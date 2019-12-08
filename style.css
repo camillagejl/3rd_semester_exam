@@ -48,6 +48,7 @@
 
 body {
     background-color: #3d3d3d;
+    font-family: "Press Start 2P", cursive;
 }
 
 .game {
@@ -64,7 +65,7 @@ body {
     margin: 0 auto;
     height: 100%;
     width: 90%;
-    background-image: var(--slot_machine);
+    /*background-image: var(--slot_machine);*/
     background-size: cover;
 }
 
