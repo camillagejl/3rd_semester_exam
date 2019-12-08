@@ -42,7 +42,7 @@ function buildWheels() {
         id: 1,
 
         // The symbols are fetched from a json-file. Symbols can be added several times, and order doesn't matter.
-        symbols: [symbols[4], symbols[5], symbols[5], symbols[5], symbols[5], symbols[5]],
+        symbols: [symbols[0], symbols[1], symbols[2], symbols[3], symbols[4], symbols[5]],
         isHolding: false,
 
         // "active" refers to the active symbol in the wheel array. This starts on 1 (i.e. the second symbol in the
@@ -52,13 +52,13 @@ function buildWheels() {
     };
     let wheel2 = {
         id: 2,
-        symbols: [symbols[4], symbols[5], symbols[5], symbols[5], symbols[5], symbols[5]],
+        symbols: [symbols[0], symbols[1], symbols[2], symbols[3], symbols[4], symbols[5]],
         isHolding: false,
         active: 1
     };
     let wheel3 = {
         id: 3,
-        symbols: [symbols[4], symbols[5], symbols[5], symbols[5], symbols[5], symbols[5]],
+        symbols: [symbols[0], symbols[1], symbols[2], symbols[3], symbols[4], symbols[5]],
         isHolding: false,
         active: 1
     };
