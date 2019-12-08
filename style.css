@@ -22,6 +22,9 @@
     --symbol-4: url("elements/mexican/mexican_4.svg");
     --symbol-5: url("elements/mexican/mexican_5.svg");
     --symbol-6: url("elements/mexican/mexican_6.svg");
+    --options_color: #79a67b;
+    --slot_machine_color: #763e19;
+    --slot_machine_color_dark: #4f2910;
 }
 
 [data-game-theme="indigenous"] {
@@ -32,6 +35,9 @@
     --symbol-4: url("elements/indigenous/indigenous_4.svg");
     --symbol-5: url("elements/indigenous/indigenous_5.svg");
     --symbol-6: url("elements/indigenous/indigenous_6.svg");
+    --options_color: #d19865;
+    --slot_machine_color: #7b1911;
+    --slot_machine_color_dark: #5b120d;
 }
 
 [data-game-theme="viking"] {
@@ -42,9 +48,16 @@
     --symbol-4: url("elements/viking/viking_4.svg");
     --symbol-5: url("elements/viking/viking_5.svg");
     --symbol-6: url("elements/viking/viking_6.svg");
+    --options_color: #6a8da6;
+    --slot_machine_color: #7b3310;
+    --slot_machine_color_dark: #56240b;
 }
 
 /* ----- GENERAL DESIGN -----*/
+
+.slot_machine_color {
+    fill: #000000;
+}
 
 body {
     background-color: #3d3d3d;
@@ -52,18 +65,20 @@ body {
 }
 
 .game_container {
+    box-sizing: border-box;
     position: relative;
     height: 70vh;
     width: 100vh;
     max-width: 90vw;
     max-height: 63vw;
-    background-color: grey;
+    background-color: var(--options_color);
     margin: 15vh auto;
     border: 3px solid black;
     border-radius: 3px;
 }
 
 .game_options {
+    color: #232323;
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -240,7 +255,7 @@ button {
 /* ----- GAME POPUP ----- */
 
 .game_popup {
-    color: white;
+    color: #f6f6f6;
     line-height: 1.2rem;
     flex-direction: column;
     display: none;
@@ -267,7 +282,7 @@ button {
 .popup_button {
     font-size: 1.3rem;
     margin: 3%;
-    color: white;
+    color: #f6f6f6;
     padding: 2%;
     border: 3px solid black;
     border-radius: 5px;

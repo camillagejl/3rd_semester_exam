@@ -73,7 +73,7 @@ function activateThemeButtons() {
     document.querySelectorAll(".theme_button").forEach(button => {
         button.addEventListener("click", function () {
             document.querySelector(".game_container").setAttribute("data-game-theme", button.getAttribute("data-theme"));
-        })
+        });
     });
 }
 
@@ -231,6 +231,10 @@ function addWheelsToDOM(wheels) {
     // text elements (coins and spins left) through JavaScript.
 
     document.querySelector(".slot_machine").insertAdjacentHTML('afterbegin', slotMachineSVG);
+    document.querySelectorAll(".slot_machine_color").forEach(element => {
+        element.style.fill = "var(--slot_machine_color)";
+    });
+    document.querySelector(".slot_machine_color_dark").style.fill = "var(--slot_machine_color_dark)";
 
     wheels.forEach(wheel => {
         document.querySelector(".wheels").innerHTML += `<div class="wheel wheel_${wheel.id}"></div>`;
@@ -361,7 +365,7 @@ function toggleCoinsDisplay() {
 
 function displayPopup(priceWon) {
     if (priceWon === 20) {
-        document.querySelector(".game_popup").textContent = `
+        document.querySelector(".game_popup").innerHTML = `
         You won the big jackpot of ${priceWon} coins!
         <p>Sign up now, and you can spend your coins to win real money prices!</p>
         <button class="popup_button popup_signup_button">Sign up now!</button>
