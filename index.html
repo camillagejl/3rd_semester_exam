@@ -13,6 +13,17 @@
 
 <!-- The theme is added to the .game div through JavaScript. It currently starts with 'mexico'. -->
 <div class="game_container" data-game-theme="mexican">
+    <div class="game_options">
+        <div class="game_options_heading">
+            Choose theme
+        </div>
+
+        <!-- If a new theme is added, the theme button needs to be added here. the data-theme is the attribute that is
+ used to style the elements through CSS. -->
+                <button class="theme_button" data-theme="mexican"></button>
+                <button class="theme_button" data-theme="indigenous"></button>
+                <button class="theme_button" data-theme="viking"></button>
+    </div>
 <div class="game">
 
     <div class="slot_machine">
@@ -26,12 +37,6 @@
         <button class="start_button"></button>
         <button class="spin_button inactive"></button>
     </div>
-
-<!-- If a new theme is added, the theme button needs to be added here. the data-theme is the attribute that is
- used to style the elements through CSS. -->
-<!--        <button class="theme_button" data-theme="mexican">Mexican!</button>-->
-<!--        <button class="theme_button" data-theme="indigenous">Indigenous!</button>-->
-<!--        <button class="theme_button" data-theme="viking">Vikings!</button>-->
     </div>
 
     <div class="game_popup">YOU WON, HUH</div>

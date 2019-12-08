@@ -30,7 +30,7 @@ function fetchSVGs() {
 
 function startGame() {
     let wheels = buildWheels();
-    // activateThemeButtons();
+    activateThemeButtons();
     activateStartButton(wheels);
     addWheelsToDOM(wheels);
 }

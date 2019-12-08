@@ -52,16 +52,33 @@ body {
 }
 
 .game_container {
-    height: 90vh;
-    width: 90vh;
+    position: relative;
+    height: 70vh;
+    width: 100vh;
     max-width: 90vw;
-    max-height: 90vw;
-    /*width: 100vh;*/
-    /*background-color: pink;*/
-    margin: 5vh auto;
+    max-height: 63vw;
+    background-color: grey;
+    margin: 15vh auto;
+    border: 3px solid black;
+    border-radius: 3px;
+}
+
+.game_options {
+    position: absolute;
+    width: 30%;
+    height: 97%;
+}
+
+.game_options_heading {
+    width: 100%;
+    text-align: center;
+    margin: 5% 0;
 }
 
 .game {
+    margin-left: 30%;
+    height: 100%;
+    width: 70%;
     position: relative;
     text-align: center;
     background-image: var(--background-image);
@@ -271,4 +288,22 @@ button {
     100% {
         opacity: 1;
     }
+}
+
+.theme_button {
+    margin-left: 3%;
+    width: 60%;
+    height: 10%;
+}
+
+[data-theme="mexican"] {
+    background-image: url("elements/static/mexicans_button.svg");
+}
+
+[data-theme="viking"] {
+    background-image: url("elements/static/vikings_button.svg");
+}
+
+[data-theme="indigenous"] {
+    background-image: url("elements/static/indiginous_button.svg");
 }
