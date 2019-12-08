@@ -65,6 +65,9 @@ body {
 
 .game_options {
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 30%;
     height: 97%;
 }
@@ -290,10 +293,15 @@ button {
     }
 }
 
+.game_options_top {
+    height: 50%;
+}
+
 .theme_button {
-    margin-left: 3%;
-    width: 60%;
-    height: 10%;
+    background-size: cover;
+    margin: 3%;
+    width: 94%;
+    height: 20%;
 }
 
 [data-theme="mexican"] {
@@ -306,4 +314,51 @@ button {
 
 [data-theme="indigenous"] {
     background-image: url("elements/static/indiginous_button.svg");
+}
+
+.point_chart {
+    align-self: end;
+    height: 50%;
+    width: 100%;
+}
+
+.point_chart_row {
+    margin: 0 0 3% 3%;
+    display: flex;
+    height: 15%;
+    width: 100%;
+}
+
+.point_chart_points {
+    margin: 5%;
+}
+
+.point_chart_symbol {
+    width: 17%;
+    height: 100%;
+    background-size: cover;
+}
+
+.point_chart_row_1 .point_chart_symbol {
+    background-image: var(--symbol-1);
+}
+
+.point_chart_row_2 .point_chart_symbol {
+    background-image: var(--symbol-2);
+}
+
+.point_chart_row_3 .point_chart_symbol {
+    background-image: var(--symbol-3);
+}
+
+.point_chart_row_4 .point_chart_symbol {
+    background-image: var(--symbol-4);
+}
+
+.point_chart_row_5 .point_chart_symbol {
+    background-image: var(--symbol-5);
+}
+
+.point_chart_row_6 .point_chart_symbol {
+    background-image: var(--symbol-6);
 }
