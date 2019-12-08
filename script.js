@@ -72,7 +72,7 @@ function buildWheels() {
 function activateThemeButtons() {
     document.querySelectorAll(".theme_button").forEach(button => {
         button.addEventListener("click", function () {
-            document.querySelector(".game").setAttribute("data-game-theme", button.getAttribute("data-theme"));
+            document.querySelector(".game_container").setAttribute("data-game-theme", button.getAttribute("data-theme"));
         })
     });
 }
@@ -342,6 +342,9 @@ function displayPrice(priceWon) {
 
     if (priceWon !== 0 && priceWon === coinsDisplay) {
         toggleCoinsDisplay();
+        setTimeout(function _function() {
+            displayPopup(priceWon);
+        }, 2000);
     }
 }
 
@@ -354,4 +357,26 @@ function toggleCoinsDisplay() {
         document.querySelector(".coins_won").style.display = "block";
     }
     setTimeout(toggleCoinsDisplay, 100);
+}
+
+function displayPopup(priceWon) {
+    if (priceWon === 20) {
+        document.querySelector(".game_popup").textContent = `
+        You won the big jackpot of ${priceWon} coins!
+        <p>Sign up now, and you can spend your coins to win real money prices!</p>
+        <button class="popup_button popup_signup_button">Sign up now!</button>
+        `
+    }
+
+    else {
+        document.querySelector(".game_popup").innerHTML = `
+        <p>You won ${priceWon} coins!</p>
+        <p>Sign up now, and you can spend your coins to win real money prices!</p>
+        <button class="popup_button popup_signup_button">Sign up now!</button>
+        <p>Or keep playing to aim for the big jackpot of 20 price, to take with you to our other games!</p>
+        <button class="popup_button popup_keep_playing_button">Keep playing!</button>
+        `
+    }
+
+    document.querySelector(".game_popup").style.display = "flex";
 }

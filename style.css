@@ -51,13 +51,22 @@ body {
     font-family: "Press Start 2P", cursive;
 }
 
-.game {
+.game_container {
     height: 90vh;
     width: 90vh;
-    text-align: center;
+    max-width: 90vw;
+    max-height: 90vw;
+    /*width: 100vh;*/
+    /*background-color: pink;*/
     margin: 5vh auto;
+}
+
+.game {
+    position: relative;
+    text-align: center;
     background-image: var(--background-image);
     background-size: cover;
+    overflow: hidden;
 }
 
 .slot_machine {
@@ -206,4 +215,60 @@ button {
 
 [data-symbol-id="6"] {
     background-image: var(--symbol-6);
+}
+
+/* ----- GAME POPUP ----- */
+
+.game_popup {
+    color: white;
+    line-height: 1.2rem;
+    flex-direction: column;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 80%;
+    width: 80%;
+    background-color: saddlebrown;
+    border: 3px solid black;
+    border-radius: 5%;
+
+    animation-name: fade_in_kf;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+}
+
+.popup_button {
+    font-size: 1.3rem;
+    margin: 3%;
+    color: white;
+    padding: 2%;
+    border: 3px solid black;
+    border-radius: 5px;
+}
+
+.popup_signup_button {
+    margin-bottom: 7%;
+    background-color: #8cb150;
+}
+
+.popup_keep_playing_button {
+    background-color: #6578b1;
+
+}
+
+@keyframes fade_in_kf {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
