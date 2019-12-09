@@ -408,6 +408,7 @@ label {
 }
 
 .point_chart_points {
+    width: 30%;
     margin: 5%;
 }
 
