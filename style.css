@@ -1,3 +1,5 @@
+/* ----- MAIN DESIGN ----- */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -5,9 +7,26 @@
 }
 
 body {
+    font-family: "Alatsi", sans-serif;
     background-image: url(elements/background_03.svg);
 }
 
+section {
+    min-height: 100vh;
+}
+
+/* Removes standard styling from all buttons */
+button {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* ----- NAVIGATION BAR ----- */
 nav {
     width: 100%;
     height: 50px;
@@ -35,11 +54,11 @@ nav a {
     margin-right: 1em;
     outline: none;
     cursor: pointer;
+    color: white;
 }
 
-.show {
-    display: block;
-}
+
+/* ----- LOGIN FORM ----- */
 
 #login-form {
     display: none;
@@ -86,7 +105,7 @@ nav a {
 }
 
 .second-step {
-    width: 0%;
+    width: 0;
     height: 10px;
     background-color: green;
 }
@@ -230,7 +249,7 @@ label {
     max-width: 300px;
 }
 
-/************* Earth Logo ****************/
+/* ----- EARTH LOGO ----- */
 .title {
     background-image: url(elements/title_1.svg);
     background-repeat: no-repeat;
@@ -240,6 +259,7 @@ label {
     width: 500px;
     height: 500px;
 }
+
 .earth {
     width: 300px;
     height: 300px;
@@ -264,9 +284,9 @@ label {
     }
 }
 
-/* GAME */
+/* ----- GAME ----- */
 
-/* ----- GRAPHIC SOURCES ----- */
+/* GRAPHIC SOURCES */
 
 /* Sources for the static design elements that do not change when changing themes.*/
 :root {
@@ -321,18 +341,10 @@ label {
     --slot_machine_color_dark: #56240b;
 }
 
-/* ----- GENERAL DESIGN -----*/
-
-.slot_machine_color {
-    fill: #000000;
-}
-
-body {
-    background-color: #3d3d3d;
-    font-family: "Press Start 2P", cursive;
-}
+/* GENERAL DESIGN */
 
 .game_container {
+    font-family: "Press Start 2P", cursive;
     box-sizing: border-box;
     position: relative;
     height: 70vh;
@@ -343,6 +355,10 @@ body {
     margin: 15vh auto;
     border: 3px solid black;
     border-radius: 3px;
+}
+
+.game_options_top {
+    height: 50%;
 }
 
 .game_options {
@@ -361,6 +377,65 @@ body {
     margin: 5% 0;
 }
 
+.theme_button {
+    background-size: cover;
+    margin: 3%;
+    width: 94%;
+    height: 20%;
+}
+
+[data-theme="mexican"] {
+    background-image: url("elements/static/mexicans_button.svg");
+}
+[data-theme="viking"] {
+    background-image: url("elements/static/vikings_button.svg");
+}
+[data-theme="indigenous"] {
+    background-image: url("elements/static/indiginous_button.svg");
+}
+
+.point_chart {
+    align-self: end;
+    height: 50%;
+    width: 100%;
+}
+
+.point_chart_row {
+    margin: 0 0 3% 3%;
+    display: flex;
+    height: 15%;
+    width: 100%;
+}
+
+.point_chart_points {
+    margin: 5%;
+}
+
+.point_chart_symbol {
+    width: 17%;
+    height: 100%;
+    background-size: cover;
+}
+
+.point_chart_row_1 .point_chart_symbol {
+    background-image: var(--symbol-1);
+}
+.point_chart_row_2 .point_chart_symbol {
+    background-image: var(--symbol-2);
+}
+.point_chart_row_3 .point_chart_symbol {
+    background-image: var(--symbol-3);
+}
+.point_chart_row_4 .point_chart_symbol {
+    background-image: var(--symbol-4);
+}
+.point_chart_row_5 .point_chart_symbol {
+    background-image: var(--symbol-5);
+}
+.point_chart_row_6 .point_chart_symbol {
+    background-image: var(--symbol-6);
+}
+
 .game {
     margin-left: 30%;
     height: 100%;
@@ -377,7 +452,6 @@ body {
     margin: 0 auto;
     height: 100%;
     width: 90%;
-    /*background-image: var(--slot_machine);*/
     background-size: cover;
 }
 
@@ -429,16 +503,6 @@ body {
     left: 12%;
     height: 4.7%;
     width: 56%;
-}
-
-.game button {
-    cursor: pointer;
-    outline: none;
-    border: none;
-    box-shadow: none;
-    background-color: transparent;
-    background-size: contain;
-    background-repeat: no-repeat;
 }
 
 .hold_wheel {
@@ -493,7 +557,7 @@ body {
 }
 
 
-/* -- THEME ELEMENTS -- */
+/* THEME ELEMENTS */
 /* These elements all use custom properties, and these custom properties change depending on the theme. */
 
 [data-symbol-id="1"] {
@@ -520,8 +584,8 @@ body {
     background-image: var(--symbol-6);
 }
 
-/* ----- GAME POPUP ----- */
 
+/* GAME POPUP */
 
 .game_popup {
     color: #f6f6f6;
@@ -577,75 +641,7 @@ body {
     }
 }
 
-.game_options_top {
-    height: 50%;
-}
 
-.theme_button {
-    background-size: cover;
-    margin: 3%;
-    width: 94%;
-    height: 20%;
-}
-
-[data-theme="mexican"] {
-    background-image: url("elements/static/mexicans_button.svg");
-}
-
-[data-theme="viking"] {
-    background-image: url("elements/static/vikings_button.svg");
-}
-
-[data-theme="indigenous"] {
-    background-image: url("elements/static/indiginous_button.svg");
-}
-
-.point_chart {
-    align-self: end;
-    height: 50%;
-    width: 100%;
-}
-
-.point_chart_row {
-    margin: 0 0 3% 3%;
-    display: flex;
-    height: 15%;
-    width: 100%;
-}
-
-.point_chart_points {
-    margin: 5%;
-}
-
-.point_chart_symbol {
-    width: 17%;
-    height: 100%;
-    background-size: cover;
-}
-
-.point_chart_row_1 .point_chart_symbol {
-    background-image: var(--symbol-1);
-}
-
-.point_chart_row_2 .point_chart_symbol {
-    background-image: var(--symbol-2);
-}
-
-.point_chart_row_3 .point_chart_symbol {
-    background-image: var(--symbol-3);
-}
-
-.point_chart_row_4 .point_chart_symbol {
-    background-image: var(--symbol-4);
-}
-
-.point_chart_row_5 .point_chart_symbol {
-    background-image: var(--symbol-5);
-}
-
-.point_chart_row_6 .point_chart_symbol {
-    background-image: var(--symbol-6);
-}
 
 /* WORDPRESS */
 
@@ -657,25 +653,65 @@ body {
     margin: 50px;
 }
 
+#all_games h2 {
+    margin-left: -10%;
+}
+
 .image_content img {
     width: 90%;
     border: 1px solid black;
 }
 
+.container {
+    position: relative;
+    width: 90%;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 5%;
+    right: 0;
+    height: 90%;
+    width: 90%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgb(97, 97, 97);
+}
+
+.container:hover .overlay {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
 .play_btn {
     position: relative;
-    top: -4.5vh;
-    width: 80px;
-    height: 30px;
+    top: -4vh;
+    width: 70px;
+    height: 25px;
     background-color: white;
     border-radius: 5px;
     border: none;
     font-family: "Alatsi", sans-serif;
     font-weight: 600;
-    font-size: 1.2em;
+    font-size: 1em;
 }
-.play_btn:hover {
-    color: white;
-    background-color: rgb(13, 184, 56);
-    cursor: pointer;
+
+/* ----- HELPER CLASSES ----- */
+
+.show {
+    display: block;
 }
