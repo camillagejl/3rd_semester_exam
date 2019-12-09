@@ -1,0 +1,37 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="100" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="linear-gradient" x1="10.36" y1="50.51" x2="87.85" y2="50.51" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f7931e"/>
+      <stop offset="1" stop-color="#e8803a"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="-462.45" y1="-290.28" x2="-457.6" y2="-290.28" gradientTransform="matrix(0.71, -0.16, -0.16, 0.91, 352.49, 199.67)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="-668.37" y1="-413.63" x2="-663.53" y2="-413.63" gradientTransform="matrix(0.65, -0.2, -0.2, 0.89, 426.72, 241.72)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-4" x1="-305.53" y1="-211.41" x2="-301.11" y2="-211.41" gradientTransform="matrix(0.77, -0.13, -0.13, 0.93, 283, 160.31)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-5" x1="-78.62" y1="-85.81" x2="-74.55" y2="-85.81" gradientTransform="matrix(0.88, -0.07, -0.07, 0.96, 141.63, 80.23)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-6" x1="198.98" y1="70.77" x2="202.28" y2="70.77" gradientTransform="matrix(1.11, 0.06, 0.06, 1.04, -139.4, -78.96)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-7" x1="-30.4" y1="-52.23" x2="-26.34" y2="-52.23" gradientTransform="matrix(0.91, -0.05, -0.05, 0.97, 108.6, 61.52)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-8" x1="295.4" y1="128.71" x2="298.53" y2="128.71" gradientTransform="matrix(1.24, 0.14, 0.14, 1.08, -300.74, -170.36)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-9" x1="-144.96" y1="-113.66" x2="-140.5" y2="-113.66" gradientTransform="matrix(0.84, -0.09, -0.09, 0.95, 193.76, 109.76)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-10" x1="-132.07" y1="-103.65" x2="-128.09" y2="-103.65" gradientTransform="matrix(0.85, -0.08, -0.08, 0.95, 184.17, 104.33)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-11" x1="-459.56" y1="-292" x2="-454.71" y2="-292" gradientTransform="matrix(0.71, -0.16, -0.16, 0.91, 352.09, 199.44)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-12" x1="44.17" y1="54.46" x2="54.15" y2="54.46" xlink:href="#linear-gradient"/>
+  </defs>
+  <title>mexico_4</title>
+  <path d="M50.16,47.94,74.25,15.69a4.24,4.24,0,0,1-1.06-1.37c-.33-.77.48-1.65.48-1.65s7.4-11.18,8.14-11.32a6.51,6.51,0,0,1,1.89.08,2.07,2.07,0,0,1,2.61-.17,2.05,2.05,0,0,1,.77,2.56,4,4,0,0,1,.76,1.27c.09.49-8.23,12.58-9,12.85a2.1,2.1,0,0,1-1.67-.36l-22,33.24C59.6,56,62.3,61,60.14,65.07a10.4,10.4,0,0,1-4.36,4.79L51.59,72.2C50,73.58,49,76.51,49.2,82.26a19.57,19.57,0,0,1-5.12,13.3c-4.19,3.78-9,5.6-15.06,4-9.41-3.88-16.11-8.92-18.24-15.9-1.06-4.77-.31-9.55,4.36-14.34,2.55-2.9,6.57-5.15,12.15-6.69a6.93,6.93,0,0,0,4.58-6.55c.22-3.71,1.25-6.79,3.57-8.87C39.08,45.33,43.82,45.3,50.16,47.94Z" stroke="#000" stroke-miterlimit="10" stroke-width="0.5" fill="url(#linear-gradient)"/>
+  <path d="M53.15,58a6.52,6.52,0,0,1-5.31,7.6,6.65,6.65,0,0,1-7.77-5.2,6.52,6.52,0,0,1,5.31-7.6A6.65,6.65,0,0,1,53.15,58Z" fill="#773b13" stroke="#000" stroke-miterlimit="10" stroke-width="0.25"/>
+  <polygon points="74.62 13.34 72.05 11.92 72.74 10.73 75.31 12.14 74.62 13.34" fill="url(#linear-gradient-2)"/>
+  <polygon points="77.64 8.35 75.4 7.12 76.09 5.93 78.33 7.15 77.64 8.35" fill="url(#linear-gradient-3)"/>
+  <polygon points="79.2 6.17 76.6 4.48 77.25 3.27 79.84 4.96 79.2 6.17" fill="url(#linear-gradient-4)"/>
+  <polygon points="80.76 4.21 77.87 2.38 78.51 1.16 81.4 2.99 80.76 4.21" fill="url(#linear-gradient-5)"/>
+  <polygon points="89.75 8.81 86.65 6.93 87.26 5.7 90.36 7.57 89.75 8.81" fill="url(#linear-gradient-6)"/>
+  <polygon points="86.49 13.61 83.52 11.96 84.21 10.77 87.18 12.41 86.49 13.61" fill="url(#linear-gradient-7)"/>
+  <polygon points="88.08 11.16 84.86 9.37 85.55 8.18 88.78 9.97 88.08 11.16" fill="url(#linear-gradient-8)"/>
+  <polygon points="84.82 16.01 81.83 14.36 82.52 13.17 85.51 14.82 84.82 16.01" fill="url(#linear-gradient-9)"/>
+  <polygon points="83.36 18.03 80.72 16.56 81.41 15.37 84.05 16.83 83.36 18.03" fill="url(#linear-gradient-10)"/>
+  <polygon points="76.3 10.94 73.73 9.52 74.41 8.33 76.98 9.74 76.3 10.94" fill="url(#linear-gradient-11)"/>
+  <path d="M47.29,60.17,44.72,58.6A1.13,1.13,0,0,1,44.35,57l5.07-7.9A1.19,1.19,0,0,1,51,48.75l2.57,1.58A1.13,1.13,0,0,1,54,51.91l-5.07,7.9A1.19,1.19,0,0,1,47.29,60.17Z" fill="url(#linear-gradient-12)"/>
+  <line x1="76.37" y1="17.49" x2="30.52" y2="83.11" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="0.25"/>
+  <line x1="75.55" y1="16.94" x2="29.43" y2="82.96" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="0.25"/>
+  <line x1="74.74" y1="16.4" x2="28.89" y2="82.02" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="0.25"/>
+  <polygon points="37.6 91.13 17.45 78.75 19.31 75.85 39.46 88.23 37.6 91.13" fill="#773b13" stroke="#000" stroke-miterlimit="10" stroke-width="0.25"/>
+</svg>

@@ -1,0 +1,34 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="100" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="linear-gradient" x1="24.24" y1="69.12" x2="91.37" y2="69.12" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#63080d"/>
+      <stop offset="1" stop-color="#f15a24" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="38.98" y1="-218.51" x2="43.91" y2="-218.51" gradientTransform="translate(93.56 309.82) rotate(-15.87)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#efe584" stop-opacity="0.96"/>
+    </linearGradient>
+  </defs>
+  <title>native_4</title>
+  <path d="M88.35,41.33C71,59.08,51.23,81.69,43,80.64L41.17,69.15c-5.73,4-11.38,4.1-16.93,0,0,0,.6,15.12,8.46,21.77s12.71,8.47,21.17,1.82,37.5-50.2,37.5-50.2Z" stroke="#000" stroke-miterlimit="10" stroke-width="0.75" fill="url(#linear-gradient)"/>
+  <ellipse cx="32.7" cy="69.45" rx="8.47" ry="3.33" fill="#282828" stroke="#000" stroke-miterlimit="10" stroke-width="0.75"/>
+  <polygon points="56.88 72.73 65.62 79.44 69.34 74.52 61.06 69.06 56.88 72.73" fill="#005e29" stroke="#000" stroke-miterlimit="10"/>
+  <polygon points="60.74 69.45 69.04 74.5 72.96 69.12 64.95 65.41 60.74 69.45" fill="#d34802" stroke="#000" stroke-miterlimit="10"/>
+  <g>
+    <path d="M70.55,81.74a11.84,11.84,0,0,0,.63,6.69,16,16,0,0,0,5.3,6.69s0-5.86-.74-8.57-4-5.29-4-5.29C71.56,81.67,71.09,81.74,70.55,81.74Z" stroke="#000" stroke-miterlimit="10" stroke-width="0.75" fill="url(#linear-gradient-2)"/>
+    <ellipse cx="69.06" cy="74.15" rx="1.52" ry="1.57" transform="translate(-17.64 21.71) rotate(-15.87)" fill="#005e29" stroke="#000" stroke-miterlimit="10" stroke-width="0.75"/>
+    <ellipse cx="69.92" cy="77.17" rx="1.52" ry="1.57" transform="translate(-18.44 22.06) rotate(-15.87)" fill="#9b1012" stroke="#000" stroke-miterlimit="10" stroke-width="0.75"/>
+    <ellipse cx="70.77" cy="80.19" rx="1.52" ry="1.57" transform="translate(-19.23 22.41) rotate(-15.87)" fill="#005e29" stroke="#000" stroke-miterlimit="10" stroke-width="0.75"/>
+    <path d="M71.94,90.08a2.81,2.81,0,0,1,.51-2.14,2.22,2.22,0,0,0,1.58.63c.07-.66.28-1.11.69-1.28a6.37,6.37,0,0,1,1.35.89,33.85,33.85,0,0,1,.52,6.92A14.9,14.9,0,0,1,71.94,90.08Z" stroke="#000" stroke-miterlimit="10" stroke-width="0.75"/>
+    <path d="M71.06,81.81a104.24,104.24,0,0,1,5,12.71" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.75"/>
+  </g>
+  <path d="M88.35,41.33l1.81-1.82a3.1,3.1,0,0,1,3.63.61l-2.42,2.42Z" stroke="#000" stroke-miterlimit="10"/>
+  <circle cx="53.27" cy="20.16" r="10.58" fill="#666" opacity="0.5"/>
+  <circle cx="32.1" cy="23.18" r="10.58" opacity="0.5"/>
+  <circle cx="44.5" cy="38" r="7.26" fill="#666" opacity="0.5"/>
+  <circle cx="33.61" cy="57.36" r="4.84" fill="#666" opacity="0.5"/>
+  <circle cx="59.62" cy="34.98" r="4.84" opacity="0.5"/>
+  <circle cx="40.87" cy="8.97" r="4.84" fill="#666" opacity="0.5"/>
+  <circle cx="16.07" cy="34.98" r="9.07" fill="#666" opacity="0.5"/>
+  <circle cx="22.42" cy="51" r="8.17" opacity="0.5"/>
+</svg>

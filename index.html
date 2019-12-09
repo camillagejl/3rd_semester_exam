@@ -1,55 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-    />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="style.css" />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="style.css" />
+<!--  <link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet" />-->
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link
-      href="https://fonts.googleapis.com/css?family=Alatsi&display=swap"
-      rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Alatsi&display=swap"
+            rel="stylesheet"
     />
-    <title>3rd Semester Exam Project</title>
-  </head>
-  <body>
-    <section id="landing">
-      <nav>
-        <a href="#Home">Home</a>
-        <a href="#MoreGames">More Games</a>
-      </nav>
-      <div class="title"></div>
-      <div class="earth"></div>
-      <form>
-        <label for="name">Name</label>
-        <input type="text" placeholder="Enter Name" name="name" required />
+  <title>3rd Semester Exam Project</title>
+</head>
 
-        <label for="email">Email</label>
-        <input type="text" placeholder="Enter Email" name="email" required />
-
-        <label for="password">Password</label>
-        <input
-          type="text"
-          placeholder="Enter your Password"
-          name="password"
-          required
-        />
-
-        <button type="submit">Login</button>
-      </form>
-    </section>
-
-    <section id="game_page">
-      <div class="game_container">
-        <div class="chose_theme"></div>
-        <div class="game"></div>
+<body>
+  <section id="landing">
+    <nav>
+      <div>
+      <a href="#Home">Home</a>
+      <a href="#MoreGames">More Games</a>
       </div>
-    </section>
+      <div id="nav-buttons">
+        <button id="nav-login">Log In</button>
+        <button id="nav-signup">Sign Up</button>
+      </div>
+    </nav>
 
-    <div id="all_games"> </div>
+    <div id="logo-form-container">
+      <div id="logo-container">
+        <div class="title"></div>
+        <div class="earth"></div>
+      </div>
 
-    <script src="script.js"></script>
-  </body>
+      <div id="form-container">
+        <h1 id="signup-h1">Sign Up</h1>
+        <div id="bars-container">
+          <div class="bar">
+            <div class="first-step progress"></div>
+          </div>
+          <div class="bar">
+            <div class="second-step progress"></div>
+          </div>
+        </div>
+        <form id="signup-form" method="POST" action="">
+          <div id="first-fields">
+            <div class="group">
+              <input class="fields username" type="text" name="username" required />
+              <label>Username</label>
+            </div>
+            <div class="group">
+              <input class="fields" type="password" name="password" required />
+              <label>Password</label>
+            </div>
+            <div class="group">
+              <input class="fields" type="password" name="repeatpw" required />
+              <label>Repeat Password</label>
+            </div>
+          </div>
+          <div id="second-fields">
+            <div class="group">
+              <input class="fields" type="text" name="email" required />
+              <label>Email</label>
+            </div>
+            <div class="group">
+              <input class="fields" type="text" name="firstname" required />
+              <label>First Name</label>
+            </div>
+            <div class="group">
+              <input class="fields" type="text" name="lastname" required />
+              <label>Last Name</label>
+            </div>
+            <div class="group">
+              <input class="fields" type="text" name="country" required />
+              <label>Country</label>
+            </div>
+            <div class="group">
+              <input class="fields" type="date" name="dateofbirth" required />
+              <!-- <label>Date of Birth</label> -->
+            </div>
+            <div id="checkboxes">
+              <input id="first-checkbox" type="checkbox" /> I accept the Terms
+              of Use
+              <br />
+              <input id="second-checkbox" type="checkbox" /> I want to receive
+              newsletters and great offers
+            </div>
+          </div>
+          <div id="error"></div>
+          <button id="next-btn" name="next">Next</button>
+          <div id="buttons-container">
+            <button id="back-btn" name="back">Back</button>
+            <button id="signup-btn" type="submit" name="submit">Sign Up</button>
+          </div>
+          <div class="line">OR</div>
+          <button type="button" id="already-acc">Log In</button>
+        </form>
+
+        <form id="login-form" method="" action="">
+          <div class="group">
+            <input class="fields username" type="text" name="username" required />
+            <label>Username</label>
+          </div>
+          <div class="group">
+            <input class="fields" type="password" name="password" required />
+            <label>Password</label>
+          </div>
+          <!-- <div class="group">
+          <input class="fields" type="password" name="repeatpw" required>
+          <label>Repeat Password</label>
+        </div> -->
+          <button id="login-btn" type="submit" name="submit">Log In</button>
+          <div class="line">OR</div>
+          <button type="button" id="new-acc">Sign Up</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="game_page">
+
+      <!-- The theme is added to the .game div through JavaScript. It currently starts with 'mexico'. -->
+      <div class="game_container" data-game-theme="mexican">
+          <div class="game_options">
+              <div class="game_options_top">
+                  <div class="game_options_heading">
+                      Choose theme
+                  </div>
+                  <!-- If a new theme is added, the theme button needs to be added here. the data-theme is the attribute that is
+           used to style the elements through CSS. -->
+                  <button class="theme_button" data-theme="mexican"></button>
+                  <button class="theme_button" data-theme="indigenous"></button>
+                  <button class="theme_button" data-theme="viking"></button>
+              </div>
+              <div class="point_chart">
+                  <div class="point_chart_row point_chart_row_6">
+                      <div class="point_chart_symbol"></div>
+                      <div class="point_chart_symbol"></div>
+                      <div class="point_chart_symbol"></div>
+                      <div class="point_chart_points"> = 20</div>
+                  </div>
+                  <div class="point_chart_row point_chart_row_5">
+                      <div class="point_chart_symbol"></div>
+                      <div class="point_chart_symbol"></div>
+                      <div class="point_chart_symbol"></div>
+                      <div class="point_chart_points"> = 14</div>
+                  </div>
+                  <div class="point_chart_row point_chart_row_4">
+                      <div class="point_chart_symbol"></div>
+                      <div class="point_chart_symbol"></div>
+                      <div class="point_chart_symbol"></div>
+                      <div class="point_chart_points"> = 12</div>
+                  </div>
+                  <div class="point_chart_row point_chart_row_3">
+                      <div class="point_chart_symbol"></div>
+                      <div class="point_chart_symbol"></div>
+                      <div class="point_chart_symbol"></div>
+                      <div class="point_chart_points"> = 10</div>
+                  </div>
+                  <div class="point_chart_row point_chart_row_2">
+                      <div class="point_chart_symbol"></div>
+                      <div class="point_chart_symbol"></div>
+                      <div class="point_chart_symbol"></div>
+                      <div class="point_chart_points"> = 8</div>
+                  </div>
+                  <div class="point_chart_row point_chart_row_1">
+                      <div class="point_chart_symbol"></div>
+                      <div class="point_chart_symbol"></div>
+                      <div class="point_chart_symbol"></div>
+                      <div class="point_chart_points"> = 4</div>
+                  </div>
+              </div>
+          </div>
+          <div class="game">
+
+              <div class="slot_machine">
+                  <div class="hold_buttons"></div>
+
+                  <!-- The wheels are added through JavaScript -->
+                  <div class="wheels"></div>
+
+                  <div class="main_buttons">
+                      <!-- The start and spin buttons are always the same. -->
+                      <button class="start_button"></button>
+                      <button class="spin_button inactive"></button>
+                  </div>
+              </div>
+
+              <div class="game_popup">YOU WON, HUH</div>
+
+              <!-- The hold buttons are added through JavaScript. -->
+          </div>
+      </div>
+
+  </section>
+
+  <section id="more_games">
+  <div id="all_games"></div>
+  </section>
+
+  <script src="form_script.js"></script>
+  <script src="more_games_script.js"></script>
+  <script src="script.js"></script>
+</body>
+
 </html>
