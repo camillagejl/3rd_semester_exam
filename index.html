@@ -8,6 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
   <title>3rd Semester Exam Project</title>
 </head>
 
@@ -116,16 +117,87 @@
   </section>
 
   <section id="game_page">
-    <div class="game_container">
-      <div class="chose_theme"></div>
-      <div class="game"></div>
-    </div>
+
+      <!-- The theme is added to the .game div through JavaScript. It currently starts with 'mexico'. -->
+      <div class="game_container" data-game-theme="mexican">
+          <div class="game_options">
+              <div class="game_options_top">
+                  <div class="game_options_heading">
+                      Choose theme
+                  </div>
+                  <!-- If a new theme is added, the theme button needs to be added here. the data-theme is the attribute that is
+           used to style the elements through CSS. -->
+                  <button class="theme_button" data-theme="mexican"></button>
+                  <button class="theme_button" data-theme="indigenous"></button>
+                  <button class="theme_button" data-theme="viking"></button>
+              </div>
+              <div class="point_chart">
+                  <div class="point_chart_row point_chart_row_6">
+                      <div class="point_chart_symbol"></div>
+                      <div class="point_chart_symbol"></div>
+                      <div class="point_chart_symbol"></div>
+                      <div class="point_chart_points"> = 20</div>
+                  </div>
+                  <div class="point_chart_row point_chart_row_5">
+                      <div class="point_chart_symbol"></div>
+                      <div class="point_chart_symbol"></div>
+                      <div class="point_chart_symbol"></div>
+                      <div class="point_chart_points"> = 14</div>
+                  </div>
+                  <div class="point_chart_row point_chart_row_4">
+                      <div class="point_chart_symbol"></div>
+                      <div class="point_chart_symbol"></div>
+                      <div class="point_chart_symbol"></div>
+                      <div class="point_chart_points"> = 12</div>
+                  </div>
+                  <div class="point_chart_row point_chart_row_3">
+                      <div class="point_chart_symbol"></div>
+                      <div class="point_chart_symbol"></div>
+                      <div class="point_chart_symbol"></div>
+                      <div class="point_chart_points"> = 10</div>
+                  </div>
+                  <div class="point_chart_row point_chart_row_2">
+                      <div class="point_chart_symbol"></div>
+                      <div class="point_chart_symbol"></div>
+                      <div class="point_chart_symbol"></div>
+                      <div class="point_chart_points"> = 8</div>
+                  </div>
+                  <div class="point_chart_row point_chart_row_1">
+                      <div class="point_chart_symbol"></div>
+                      <div class="point_chart_symbol"></div>
+                      <div class="point_chart_symbol"></div>
+                      <div class="point_chart_points"> = 4</div>
+                  </div>
+              </div>
+          </div>
+          <div class="game">
+
+              <div class="slot_machine">
+                  <div class="hold_buttons"></div>
+
+                  <!-- The wheels are added through JavaScript -->
+                  <div class="wheels"></div>
+
+                  <div class="main_buttons">
+                      <!-- The start and spin buttons are always the same. -->
+                      <button class="start_button"></button>
+                      <button class="spin_button inactive"></button>
+                  </div>
+              </div>
+
+              <div class="game_popup">YOU WON, HUH</div>
+
+              <!-- The hold buttons are added through JavaScript. -->
+          </div>
+      </div>
+
   </section>
 
   <section id="all_games">
     <div class="games_container"></div>
   </section>
   <script src="form_script.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>

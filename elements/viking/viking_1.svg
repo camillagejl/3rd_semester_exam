@@ -1,0 +1,20 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+  <title>viking_1</title>
+  <g>
+    <rect x="5.96" y="59.34" width="27.53" height="19.94" rx="7.92" ry="7.92" transform="translate(39.45 138.62) rotate(-180)" fill="#f2f0df" stroke="#030000" stroke-miterlimit="10"/>
+    <path d="M16,59.34s.35-16,.06-19.94c-.77-10.55-9.5-11.49-10.49,0C5.18,43.34,6,71.83,6,71.83" fill="#f2f0df" stroke="#030000" stroke-miterlimit="10"/>
+    <rect x="67.16" y="58.45" width="27.53" height="19.94" rx="7.92" ry="7.92" fill="#f2f0df" stroke="#030000" stroke-miterlimit="10"/>
+    <path d="M50.66,82l-23.32-.12c0-34.18,10.55-62.26,23.32-62.26S74,47.75,74,82Z" fill="#c4c4c4" stroke="#030000" stroke-miterlimit="10"/>
+    <ellipse cx="30.76" cy="74.68" rx="1.58" ry="2.67" fill="#9b9b9b" stroke="#030000" stroke-miterlimit="10"/>
+    <ellipse cx="36.35" cy="74.68" rx="1.58" ry="2.67" fill="#9b9b9b" stroke="#030000" stroke-miterlimit="10"/>
+    <ellipse cx="42.15" cy="74.68" rx="1.58" ry="2.67" fill="#9b9b9b" stroke="#030000" stroke-miterlimit="10"/>
+    <ellipse cx="47.73" cy="74.68" rx="1.58" ry="2.67" fill="#9b9b9b" stroke="#030000" stroke-miterlimit="10"/>
+    <ellipse cx="54.59" cy="74.68" rx="1.58" ry="2.67" fill="#9b9b9b" stroke="#030000" stroke-miterlimit="10"/>
+    <ellipse cx="60.18" cy="74.68" rx="1.58" ry="2.67" fill="#9b9b9b" stroke="#030000" stroke-miterlimit="10"/>
+    <ellipse cx="65.76" cy="74.68" rx="1.58" ry="2.67" fill="#9b9b9b" stroke="#030000" stroke-miterlimit="10"/>
+    <ellipse cx="70.98" cy="74.68" rx="1.58" ry="2.67" fill="#9b9b9b" stroke="#030000" stroke-miterlimit="10"/>
+    <path d="M84.7,58.45s-.35-16-.06-19.94c.77-10.55,9.5-11.49,10.49,0,.34,3.94-.44,32.43-.44,32.43" fill="#f2f0df" stroke="#030000" stroke-miterlimit="10"/>
+    <line x1="50.88" y1="19.59" x2="50.88" y2="81.28" fill="none" stroke="#030000" stroke-miterlimit="10" stroke-width="0.5"/>
+    <path d="M43.9,40.77C42.67,47.41,40.26,52,38.52,51.11s-2.14-7-.9-13.68S41.27,26.17,43,27.09,45.14,34.14,43.9,40.77Z" fill="#fff"/>
+  </g>
+</svg>

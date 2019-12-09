@@ -1,0 +1,19 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="100" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="linear-gradient" x1="14.32" y1="49.38" x2="78.39" y2="49.38" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f6ff00"/>
+      <stop offset="0.29" stop-color="#eddd00" stop-opacity="0.99"/>
+      <stop offset="0.92" stop-color="#d78700" stop-opacity="0.96"/>
+      <stop offset="1" stop-color="#d47c00" stop-opacity="0.96"/>
+    </linearGradient>
+  </defs>
+  <title>mexic_5</title>
+  <g>
+    <path d="M51.69,11.8s4.85-4.5,8.74-1.8,1.94,4.5,1.94,4.5c4.49-.11,8.69.1,10.68,2.7L76,21.71s4.85-.9,5.82,2.7-1.94,4.5-1.94,4.5,6.8,3.6,6.8,9-1.94,5.4-1.94,5.4,1.94,4.5,1.94,7.21-2.91,7.21-2.91,7.21,1.94,5.4,1.94,8.11-4.85,4.5-4.85,4.5-1,6.31-4.85,7.21a25.1,25.1,0,0,0-6.8,2.7s2.91.9-3.88,6.31-13.59,0-13.59,0c-5.79,3.17-3.23,3.73-5.82,3.6a78.82,78.82,0,0,0-11.65,0,43.38,43.38,0,0,1-11.65,0c-5.82-.9-4.66-7.52-4.66-7.52Z" fill="#119800" stroke="#000" stroke-miterlimit="10" stroke-width="0.75"/>
+    <ellipse cx="68.2" cy="25.31" rx="8.74" ry="8.11" fill="#d20005" stroke="#000" stroke-miterlimit="10" stroke-width="0.75"/>
+    <ellipse cx="74.99" cy="47.83" rx="8.74" ry="8.11" fill="#d20005" stroke="#000" stroke-miterlimit="10" stroke-width="0.75"/>
+    <ellipse cx="67.23" cy="69.45" rx="8.74" ry="8.11" fill="#d20005" stroke="#000" stroke-miterlimit="10" stroke-width="0.75"/>
+    <ellipse cx="43.93" cy="81.16" rx="8.74" ry="8.11" fill="#d20005" stroke="#000" stroke-miterlimit="10" stroke-width="0.75"/>
+    <path d="M44.64,12.25,14.32,80.71c18.21,12.18,56.51,5,62.48-19.82C82.56,37,72.69,14,47.49,12.35Q46.1,12.25,44.64,12.25Z" stroke="#000" stroke-miterlimit="10" stroke-width="0.75" fill="url(#linear-gradient)"/>
+  </g>
+</svg>

@@ -1,0 +1,40 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="100" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="linear-gradient" x1="52.12" y1="91.18" x2="52.12" y2="18.41" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c69c6d" stop-opacity="0.98"/>
+      <stop offset="0.52" stop-color="#835d3b" stop-opacity="0.97"/>
+      <stop offset="1" stop-color="#42210b" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="82.16" y1="45.86" x2="98.49" y2="45.86" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f7931e"/>
+      <stop offset="0.14" stop-color="#f9a32e" stop-opacity="0.99"/>
+      <stop offset="0.3" stop-color="#fbad38" stop-opacity="0.98"/>
+      <stop offset="0.51" stop-color="#fbb03b" stop-opacity="0.98"/>
+      <stop offset="0.62" stop-color="#fbac3a" stop-opacity="0.98"/>
+      <stop offset="0.73" stop-color="#f9a137" stop-opacity="0.98"/>
+      <stop offset="0.83" stop-color="#f78e32" stop-opacity="0.97"/>
+      <stop offset="0.93" stop-color="#f4732b" stop-opacity="0.97"/>
+      <stop offset="1" stop-color="#f15a24" stop-opacity="0.96"/>
+    </linearGradient>
+  </defs>
+  <title>viking_2</title>
+  <path d="M9.8,18.41H32.07c4.24,21.2,11.14,41.83,20.56,45.13s24.55-9.53,42-24.21C85.06,67.39,62.82,89,49.21,91,31.67,93.67,7.36,55.26,9.8,18.41Z" stroke="#000" stroke-miterlimit="10" fill="url(#linear-gradient)"/>
+  <path d="M33.12,18.41c0-5.38-4.71-8.07-14.12-6.73S6.75,13,8.64,18.41,33.12,23.79,33.12,18.41Z" fill="#6b3c1c" stroke="#000" stroke-miterlimit="10" stroke-width="0.5"/>
+  <path d="M32.75,16.35s-.72-1-3.81-2-4.64,2-4.64,2,1.55-4,0-5-1.55,3-3.86,3-1.55-2-3.09-2,0,3,0,3-3.09-4-4.64-3,2.32,3,.77,3a3,3,0,0,1-2.32-1c-1.35.78-1.26,1.86-.77,3-1-2-2.32-4-3.86-2s-.28,5.93.77,7.07c0,0-1.55-1-4.64,5s5.41,1,5.41,2-.77-2,0,9.09,3.81-4,3.81-4-1.49-3.07,1.6,5S15,30.52,15,30.52s3.86,3,2.32-1-.77-6.06-.77-6.06c0-1,2.32-1.76,2.32,0,0,1,1.55,4,1.55,4,6,8.7,2.3-1.55,1.55-6.06,11.94,4.3,12-1.13,10.88-4.73" fill="#f4efd3" stroke="#000" stroke-miterlimit="10" stroke-width="0.25"/>
+  <ellipse cx="6.93" cy="26.99" rx="1.16" ry="1.51" fill="#fff" stroke="#f4efd3" stroke-miterlimit="10" stroke-width="0.25"/>
+  <ellipse cx="15.42" cy="16.89" rx="1.16" ry="1.51" fill="#fff" stroke="#f4efd3" stroke-miterlimit="10" stroke-width="0.25"/>
+  <ellipse cx="27.01" cy="16.89" rx="1.16" ry="1.51" fill="#fff" stroke="#f4efd3" stroke-miterlimit="10" stroke-width="0.25"/>
+  <ellipse cx="8.86" cy="25.47" rx="0.77" ry="1.01" fill="#fff" stroke="#f4efd3" stroke-miterlimit="10" stroke-width="0.25"/>
+  <ellipse cx="10.4" cy="32.54" rx="0.77" ry="1.01" fill="#fff" stroke="#f4efd3" stroke-miterlimit="10" stroke-width="0.25"/>
+  <ellipse cx="15.04" cy="20.42" rx="0.77" ry="1.01" fill="#fff" stroke="#f4efd3" stroke-miterlimit="10" stroke-width="0.25"/>
+  <ellipse cx="19.67" cy="16.39" rx="0.77" ry="1.01" fill="#fff" stroke="#f4efd3" stroke-miterlimit="10" stroke-width="0.25"/>
+  <ellipse cx="21.99" cy="26.48" rx="0.77" ry="1.01" fill="#fff" stroke="#f4efd3" stroke-miterlimit="10" stroke-width="0.25"/>
+  <ellipse cx="12.33" cy="31.02" rx="0.39" ry="0.5" fill="#fff" stroke="#f4efd3" stroke-miterlimit="10" stroke-width="0.25"/>
+  <ellipse cx="11.56" cy="22.95" rx="0.39" ry="0.5" fill="#fff" stroke="#f4efd3" stroke-miterlimit="10" stroke-width="0.25"/>
+  <ellipse cx="13.88" cy="26.99" rx="0.39" ry="0.5" fill="#fff" stroke="#f4efd3" stroke-miterlimit="10" stroke-width="0.25"/>
+  <ellipse cx="20.83" cy="17.9" rx="0.39" ry="0.5" fill="#fff" stroke="#f4efd3" stroke-miterlimit="10" stroke-width="0.25"/>
+  <ellipse cx="32.03" cy="18.41" rx="0.77" ry="1.01" fill="#fff" stroke="#f4efd3" stroke-miterlimit="10" stroke-width="0.25"/>
+  <ellipse cx="7.7" cy="17.9" rx="1.16" ry="1.51" fill="#fff" stroke="#f4efd3" stroke-miterlimit="10" stroke-width="0.25"/>
+  <ellipse cx="8.86" cy="18.41" rx="0.77" ry="1.01" fill="#fff" stroke="#f4efd3" stroke-miterlimit="10" stroke-width="0.25"/>
+  <path d="M82.16,49.65c2.31-.17,4.11,1.67,5.38,5.6C87.05,54.27,102,35,97.7,36.58,93.18,38.25,82.16,49.65,82.16,49.65Z" stroke="#000" stroke-miterlimit="10" stroke-width="0.75" fill="url(#linear-gradient-2)"/>
+</svg>

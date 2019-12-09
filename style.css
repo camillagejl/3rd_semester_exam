@@ -255,3 +255,384 @@ button {
     }
 }
 
+/* GAME */
+
+/* ----- GRAPHIC SOURCES ----- */
+
+/* Sources for the static design elements that do not change when changing themes.*/
+:root {
+    --slot_machine: url("elements/static/slot_machine.svg");
+    --hold_button: url("elements/static/hold.svg");
+    --start_button: url("elements/static/play_not_pressed.svg");
+    --start_button_pressed: url("elements/static/play_pressed.svg");
+    --start_button_inactive: url("elements/static/play_inactive.svg");
+    --spin_button: url("elements/static/spin_not_pressed.svg");
+    --spin_button_pressed: url("elements/static/spin_pressed.svg");
+    --spin_button_inactive: url("elements/static/spin_inactive.svg");
+}
+
+/* For each theme, a group of custom properties is created with sources to the graphics from the theme. */
+
+[data-game-theme="mexican"] {
+    --background-image: url("elements/mexican/mexican_background.svg");
+    --symbol-1: url("elements/mexican/mexican_1.svg");
+    --symbol-2: url("elements/mexican/mexican_2.svg");
+    --symbol-3: url("elements/mexican/mexican_3.svg");
+    --symbol-4: url("elements/mexican/mexican_4.svg");
+    --symbol-5: url("elements/mexican/mexican_5.svg");
+    --symbol-6: url("elements/mexican/mexican_6.svg");
+    --options_color: #79a67b;
+    --slot_machine_color: #763e19;
+    --slot_machine_color_dark: #4f2910;
+}
+
+[data-game-theme="indigenous"] {
+    --background-image: url("elements/indigenous/indigenous_background.svg");
+    --symbol-1: url("elements/indigenous/indigenous_1.svg");
+    --symbol-2: url("elements/indigenous/indigenous_2.svg");
+    --symbol-3: url("elements/indigenous/indigenous_3.svg");
+    --symbol-4: url("elements/indigenous/indigenous_4.svg");
+    --symbol-5: url("elements/indigenous/indigenous_5.svg");
+    --symbol-6: url("elements/indigenous/indigenous_6.svg");
+    --options_color: #d19865;
+    --slot_machine_color: #7b1911;
+    --slot_machine_color_dark: #5b120d;
+}
+
+[data-game-theme="viking"] {
+    --background-image: url("elements/viking/viking_background.svg");
+    --symbol-1: url("elements/viking/viking_1.svg");
+    --symbol-2: url("elements/viking/viking_2.svg");
+    --symbol-3: url("elements/viking/viking_3.svg");
+    --symbol-4: url("elements/viking/viking_4.svg");
+    --symbol-5: url("elements/viking/viking_5.svg");
+    --symbol-6: url("elements/viking/viking_6.svg");
+    --options_color: #6a8da6;
+    --slot_machine_color: #7b3310;
+    --slot_machine_color_dark: #56240b;
+}
+
+/* ----- GENERAL DESIGN -----*/
+
+.slot_machine_color {
+    fill: #000000;
+}
+
+body {
+    background-color: #3d3d3d;
+    font-family: "Press Start 2P", cursive;
+}
+
+.game_container {
+    box-sizing: border-box;
+    position: relative;
+    height: 70vh;
+    width: 100vh;
+    max-width: 90vw;
+    max-height: 63vw;
+    background-color: var(--options_color);
+    margin: 15vh auto;
+    border: 3px solid black;
+    border-radius: 3px;
+}
+
+.game_options {
+    color: #232323;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30%;
+    height: 97%;
+}
+
+.game_options_heading {
+    width: 100%;
+    text-align: center;
+    margin: 5% 0;
+}
+
+.game {
+    margin-left: 30%;
+    height: 100%;
+    width: 70%;
+    position: relative;
+    text-align: center;
+    background-image: var(--background-image);
+    background-size: cover;
+    overflow: hidden;
+}
+
+.slot_machine {
+    position: relative;
+    margin: 0 auto;
+    height: 100%;
+    width: 90%;
+    /*background-image: var(--slot_machine);*/
+    background-size: cover;
+}
+
+.wheels {
+    position: absolute;
+    top: 26%;
+    left: 12%;
+    display: flex;
+    height: 30%;
+    width: 56%;
+    overflow: hidden;
+}
+
+.wheel {
+    position: relative;
+    background-color: whitesmoke;
+    width: 100%;
+}
+
+/* Adds gradient to the wheels, which gives the "round wheels"-effect */
+.wheels:before {
+    z-index: 1;
+    content: "";
+    background: linear-gradient(#2b1e14 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0) 49.5%, rgba(255,0,0,1) 50%, rgba(0,0,0,0) 50.5%, rgba(0,0,0,0) 60%, #2b1e14 100%);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+}
+
+/* The "items" in the wheels. The background-images are added through attributes on each item. */
+.item {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 33%;
+    width: 100%;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+
+    /* Makes the transition linear when the wheels "spin", so it's a stable animation without tics. */
+    transition-timing-function: linear;
+}
+
+.hold_buttons {
+    position: absolute;
+    top: 59%;
+    left: 12%;
+    height: 4.7%;
+    width: 56%;
+}
+
+button {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.hold_wheel {
+    margin-right: 5%;
+    height: 100%;
+    width: 30%;
+    background-image: var(--hold_button);
+}
+
+.hold_wheel:last-child {
+    margin-right: 0;
+}
+
+.main_buttons {
+    position: absolute;
+    top: 70%;
+    left: 8%;
+    height: 10%;
+    width: 81%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.start_button {
+    height: 100%;
+    width: 25%;
+    background-image: var(--start_button);
+}
+
+.start_button:active {
+    background-image: var(--start_button_pressed);
+}
+
+.start_button.inactive {
+    cursor: default;
+    background-image: var(--start_button_inactive);
+}
+
+.spin_button {
+    height: 100%;
+    width: 25%;
+    background-image: var(--spin_button);
+}
+
+.spin_button:active {
+    background-image: var(--spin_button_pressed);
+}
+
+.spin_button.inactive {
+    cursor: default;
+    background-image: var(--spin_button_inactive);
+}
+
+
+/* -- THEME ELEMENTS -- */
+/* These elements all use custom properties, and these custom properties change depending on the theme. */
+
+[data-symbol-id="1"] {
+    background-image: var(--symbol-1);
+}
+
+[data-symbol-id="2"] {
+    background-image: var(--symbol-2);
+}
+
+[data-symbol-id="3"] {
+    background-image: var(--symbol-3);
+}
+
+[data-symbol-id="4"] {
+    background-image: var(--symbol-4);
+}
+
+[data-symbol-id="5"] {
+    background-image: var(--symbol-5);
+}
+
+[data-symbol-id="6"] {
+    background-image: var(--symbol-6);
+}
+
+/* ----- GAME POPUP ----- */
+
+.game_popup {
+    color: #f6f6f6;
+    line-height: 1.2rem;
+    flex-direction: column;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 80%;
+    width: 80%;
+    background-color: saddlebrown;
+    border: 3px solid black;
+    border-radius: 5%;
+
+    animation-name: fade_in_kf;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+}
+
+.popup_button {
+    font-size: 1.3rem;
+    margin: 3%;
+    color: #f6f6f6;
+    padding: 2%;
+    border: 3px solid black;
+    border-radius: 5px;
+}
+
+.popup_signup_button {
+    margin-bottom: 7%;
+    background-color: #8cb150;
+}
+
+.popup_keep_playing_button {
+    background-color: #6578b1;
+
+}
+
+@keyframes fade_in_kf {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.game_options_top {
+    height: 50%;
+}
+
+.theme_button {
+    background-size: cover;
+    margin: 3%;
+    width: 94%;
+    height: 20%;
+}
+
+[data-theme="mexican"] {
+    background-image: url("elements/static/mexicans_button.svg");
+}
+
+[data-theme="viking"] {
+    background-image: url("elements/static/vikings_button.svg");
+}
+
+[data-theme="indigenous"] {
+    background-image: url("elements/static/indiginous_button.svg");
+}
+
+.point_chart {
+    align-self: end;
+    height: 50%;
+    width: 100%;
+}
+
+.point_chart_row {
+    margin: 0 0 3% 3%;
+    display: flex;
+    height: 15%;
+    width: 100%;
+}
+
+.point_chart_points {
+    margin: 5%;
+}
+
+.point_chart_symbol {
+    width: 17%;
+    height: 100%;
+    background-size: cover;
+}
+
+.point_chart_row_1 .point_chart_symbol {
+    background-image: var(--symbol-1);
+}
+
+.point_chart_row_2 .point_chart_symbol {
+    background-image: var(--symbol-2);
+}
+
+.point_chart_row_3 .point_chart_symbol {
+    background-image: var(--symbol-3);
+}
+
+.point_chart_row_4 .point_chart_symbol {
+    background-image: var(--symbol-4);
+}
+
+.point_chart_row_5 .point_chart_symbol {
+    background-image: var(--symbol-5);
+}
+
+.point_chart_row_6 .point_chart_symbol {
+    background-image: var(--symbol-6);
+}
