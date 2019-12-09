@@ -1,1 +1,10 @@
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 61"><defs><style>.cls-1{fill:#d3d3d3;stroke:#000;stroke-miterlimit:10;}.cls-2{font-size:21px;font-family:PressStart2P-Regular, "Press Start 2P";}</style></defs><title>hold</title><rect class="cls-1" y="-0.66" width="200" height="61"/><text class="cls-2" transform="translate(58 40.41)">Hold</text></svg>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="215" height="75" viewBox="0 0 215 75">
+  <title>hold</title>
+  <rect x="7.71" y="7.77" width="200.27" height="61.25" fill="#d3d3d3" stroke="#000" stroke-miterlimit="10"/>
+  <g>
+    <path d="M70.44,45.77V25.65h4.68v8.62h7V25.65h4.68V45.77H82.13V37.15h-7v8.62Z"/>
+    <path d="M91.48,45.77V42.9H89.14V34.27h2.34V31.4h11.69v2.87h2.34V42.9h-2.34v2.87Zm2.34-2.87h7V34.27h-7Z"/>
+    <path d="M110.19,45.77V42.9h4.67V28.52h-2.33V25.65h7V42.9h4.68v2.87Z"/>
+    <path d="M128.89,45.77V42.9h-2.34V34.27h2.34V31.4h9.35V25.65h4.68V45.77Zm2.34-2.87h7V34.27h-7Z"/>
+  </g>
+</svg>

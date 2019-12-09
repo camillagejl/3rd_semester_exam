@@ -1,5 +1,13 @@
 <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="215" height="75" viewBox="0 0 215 75">
   <title>holding</title>
   <rect x="7.71" y="7.83" width="200.27" height="61.25" fill="#d3d3d3" stroke="#000" stroke-miterlimit="10"/>
-  <text transform="translate(42.38 48.65) scale(0.81 1)" font-size="23">Holding</text>
+  <g>
+    <path d="M42.38,45.77V25.65h4.68v8.62h7V25.65h4.68V45.77H54.07V37.15h-7v8.62Z"/>
+    <path d="M63.43,45.77V42.9H61.09V34.27h2.34V31.4H75.12v2.87h2.33V42.9H75.12v2.87Zm2.33-2.87h7V34.27h-7Z"/>
+    <path d="M82.13,45.77V42.9h4.68V28.52H84.47V25.65h7V42.9h4.68v2.87Z"/>
+    <path d="M100.83,45.77V42.9H98.5V34.27h2.33V31.4h9.36V25.65h4.67V45.77Zm2.34-2.87h7V34.27h-7Z"/>
+    <path d="M119.54,45.77V42.9h4.68V34.27h-2.34V31.4h7V42.9h4.68v2.87Zm4.68-17.25V25.65h4.67v2.87Z"/>
+    <path d="M135.91,45.77V31.4h14v2.87h2.33v11.5H147.6V34.27h-7v11.5Z"/>
+    <path d="M157,48.65V45.77h9.35V42.9H157V40h-2.34V34.27H157V31.4h14V45.77h-2.34v2.88ZM159.29,40h7V34.27h-7Z"/>
+  </g>
 </svg>
