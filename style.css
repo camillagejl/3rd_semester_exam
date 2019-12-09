@@ -395,7 +395,6 @@ label {
 }
 
 .point_chart {
-    align-self: end;
     height: 50%;
     width: 100%;
 }

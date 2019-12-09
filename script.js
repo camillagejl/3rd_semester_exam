@@ -90,6 +90,12 @@ function activateStartButton(wheels) {
     });
 
     document.querySelector(".start_button").addEventListener("click", function _function() {
+
+        document.querySelectorAll(".hold_wheel").forEach(button => {
+            holdButtonColorChange(button, false)
+        });
+
+
         // When the start button is activated (when the page is loaded or the user has used all three spins),
         // is will set the remaining spins to 3.
         activateSpinButton(wheels, 3);
@@ -262,8 +268,6 @@ function addWheelsToDOM(wheels) {
 function showSpinsLeft(spins) {
     document.querySelector(".spins_left").textContent = spins;
 }
-
-
 
 function holdButtonColorChange(button, thisIsHolding) {
     if (thisIsHolding) {
