@@ -14,15 +14,18 @@ async function fetchSymbols() {
 }
 
 let slotMachineSVG;
+let holdButtonSVG;
 function fetchSVGs() {
     const slotMachineSVGFile = fetch("elements/static/slot_machine.svg").then(r => r.text());
+    const holdButtonSVGFile = fetch("elements/static/hold.svg").then(r => r.text());
 
     Promise
-        .all([slotMachineSVGFile])
+        .all([slotMachineSVGFile, holdButtonSVGFile])
         .then(
             function (responses) {
-                const [slotMachineSVGFile] = responses;
+                const [slotMachineSVGFile, holdButtonSVGFile] = responses;
                 slotMachineSVG = slotMachineSVGFile;
+                holdButtonSVG = holdButtonSVGFile;
                 startGame();
             }
         );
@@ -112,6 +115,8 @@ const holdButtonsListeners = {};
 
 function toggleHoldButtons(wheels, spins) {
 
+    let thisIsHolding;
+
     document.querySelectorAll(".hold_wheel").forEach(button => {
 
         // When clicking a hold button, this will find out which button has been clicked.
@@ -124,7 +129,12 @@ function toggleHoldButtons(wheels, spins) {
                 console.log("Hold it!");
                 // This will toggle the isHolding state of the wheel matching the button that was clicked.
                 wheels[holdWheelID].isHolding = !wheels[holdWheelID].isHolding;
+                thisIsHolding = wheels[holdWheelID].isHolding;
                 console.log(wheels);
+
+
+                holdButtonColorChange(button, thisIsHolding);
+
             };
 
             button.addEventListener("click", holdButtonsListeners[holdWheelID]);
@@ -134,6 +144,7 @@ function toggleHoldButtons(wheels, spins) {
         if (spins === 0) {
             button.removeEventListener("click", holdButtonsListeners[holdWheelID]);
         }
+
     });
 }
 
@@ -243,12 +254,25 @@ function addWheelsToDOM(wheels) {
             document.querySelector(`.wheel_${wheel.id}`).innerHTML += `<div class="item" data-symbol-id="${symbol.id}"></div>`;
         });
 
-        document.querySelector(".hold_buttons").innerHTML += `<button class="hold_wheel" data-holdwheel="${wheel.id}"/>`
+        document.querySelector(".hold_buttons").innerHTML += `<button class="hold_wheel" data-holdwheel="${wheel.id}">${holdButtonSVG}</button>`;
+
     })
 }
 
 function showSpinsLeft(spins) {
     document.querySelector(".spins_left").textContent = spins;
+}
+
+
+
+function holdButtonColorChange(button, thisIsHolding) {
+    if (thisIsHolding) {
+        button.querySelector(".hold_button_color").style.fill = "#08d002";
+    }
+
+    else {
+        button.querySelector(".hold_button_color").style.fill = "#97b88d";
+    }
 }
 
 function spinVisualWheel(wheel, priceWon) {
