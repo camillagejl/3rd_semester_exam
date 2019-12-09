@@ -8,8 +8,49 @@
 
 body {
     font-family: "Alatsi", sans-serif;
-    background-image: url(elements/background_03.svg);
 }
+
+.body_background {
+    z-index: -2;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 250vh;
+    background-image: url("elements/body_background.svg");
+}
+
+.hide_background_crop {
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    height: 95vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hide_background {
+    background-color: white;
+    box-sizing: border-box;
+    height: 95vh;
+    width: 110vw;
+    margin-left: -5vw;
+
+    /* Curved line in CSS - inspiret by Elad Shechter
+    https://codepen.io/elad2412/pen/PwWjLL*/
+    border-radius: 50%/100px 100px 100px 100px;
+}
+
+.first_section {
+    top: -10vh;
+}
+
+.third_section {
+    top: calc(200vh);
+    height: 100vh;
+}
+
 
 section {
     min-height: 100vh;
@@ -352,7 +393,7 @@ label {
     max-width: 90vw;
     max-height: 63vw;
     background-color: var(--options_color);
-    margin: 15vh auto;
+    margin: 0 auto;
     border: 3px solid black;
     border-radius: 3px;
 }
