@@ -310,7 +310,7 @@ label {
     --symbol-4: url("elements/mexican/mexican_4.svg");
     --symbol-5: url("elements/mexican/mexican_5.svg");
     --symbol-6: url("elements/mexican/mexican_6.svg");
-    --options_color: #79a67b;
+    --options_color: #d19865;
     --slot_machine_color: #763e19;
     --slot_machine_color_dark: #4f2910;
 }
@@ -323,7 +323,7 @@ label {
     --symbol-4: url("elements/indigenous/indigenous_4.svg");
     --symbol-5: url("elements/indigenous/indigenous_5.svg");
     --symbol-6: url("elements/indigenous/indigenous_6.svg");
-    --options_color: #d19865;
+    --options_color: #85d187;
     --slot_machine_color: #7b1911;
     --slot_machine_color_dark: #5b120d;
 }
