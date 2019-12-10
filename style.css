@@ -436,6 +436,9 @@ label {
     background-image: var(--symbol-6);
 }
 
+
+/* The game*/
+
 .game {
     margin-left: 30%;
     height: 100%;
@@ -588,6 +591,30 @@ label {
     background-image: var(--symbol-6);
 }
 
+/* Landscape options */
+@media screen and (orientation: portrait) {
+    .game_container {
+        background-color: pink;
+        display: flex;
+        flex-direction: column-reverse;
+
+        height: 100vw;
+        width: 70vw;
+        max-width: 63vh;
+        max-height: 90vh;
+
+    }
+    .game_options {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+    }
+    .game {
+        height: 230%;
+        margin: 0;
+        width: 100%;
+    }
+}
 
 /* GAME POPUP */
 
