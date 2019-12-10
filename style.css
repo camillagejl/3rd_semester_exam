@@ -410,14 +410,27 @@ label {
 }
 
 .point_chart_points {
-    width: 30%;
-    margin: 5%;
+    width: 13%;
 }
 
 .point_chart_symbol {
     width: 17%;
     height: 100%;
     background-size: cover;
+}
+
+.equals {
+    margin-left: 5%;
+    margin-right: -5%;
+}
+
+.coin {
+    width: 8%;
+    height: 50%;
+    margin: 2%;
+    background-size: cover;
+    background-image: url("elements/static/coins.svg");
+    background-repeat: no-repeat;
 }
 
 .point_chart_row_1 .point_chart_symbol {
@@ -650,12 +663,22 @@ label {
     }
 
     .point_chart_points {
-        width: 25%;
         margin: 2% 0 0 5%;
+    }
+
+    .equals {
+        margin-left: 8%;
+        margin-right: -2%;
     }
 
     .point_chart_symbol {
         width: 10%;
+    }
+
+    .coin {
+        width: 10%;
+        height: 100%;
+        margin-right: -3%;
     }
 }
 
