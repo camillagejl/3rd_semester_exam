@@ -1,0 +1,26 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="100" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="linear-gradient" x1="21.32" y1="50.5" x2="80.68" y2="50.5" gradientTransform="translate(62.2 -20.39) rotate(54.26)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fcee21"/>
+      <stop offset="1" stop-color="#fbb03b"/>
+    </linearGradient>
+  </defs>
+  <title>coins</title>
+  <ellipse cx="55" cy="53.5" rx="35" ry="26.5" transform="translate(-20.55 66.89) rotate(-54.26)" fill="#d88a00" stroke="#000" stroke-miterlimit="10"/>
+  <ellipse cx="51" cy="50.5" rx="35" ry="26.5" transform="translate(-19.78 62.39) rotate(-54.26)" stroke="#000" stroke-miterlimit="10" fill="url(#linear-gradient)"/>
+  <line x1="47.41" y1="82.54" x2="49.97" y2="85.72" fill="none" stroke="#000" stroke-miterlimit="10"/>
+  <line x1="53.01" y1="81.11" x2="55" y2="84.75" fill="none" stroke="#000" stroke-miterlimit="10"/>
+  <line x1="41.95" y1="82.82" x2="43.23" y2="85.72" fill="none" stroke="#000" stroke-miterlimit="10"/>
+  <line x1="57.56" y1="79.14" x2="59.93" y2="82.93" fill="none" stroke="#000" stroke-miterlimit="10"/>
+  <line x1="62.5" y1="76.08" x2="65.19" y2="79.99" fill="none" stroke="#000" stroke-miterlimit="10"/>
+  <line x1="67.37" y1="71.97" x2="70.19" y2="76.08" fill="none" stroke="#000" stroke-miterlimit="10"/>
+  <line x1="70.95" y1="68.01" x2="74.17" y2="71.97" fill="none" stroke="#000" stroke-miterlimit="10"/>
+  <line x1="74.17" y1="63.51" x2="77.18" y2="68.01" fill="none" stroke="#000" stroke-miterlimit="10"/>
+  <line x1="76.68" y1="58.94" x2="79.89" y2="63.51" fill="none" stroke="#000" stroke-miterlimit="10"/>
+  <line x1="78.5" y1="54.52" x2="82.67" y2="57.02" fill="none" stroke="#000" stroke-miterlimit="10"/>
+  <line x1="79.89" y1="50" x2="84.13" y2="51.24" fill="none" stroke="#000" stroke-miterlimit="10"/>
+  <line x1="80.59" y1="44.58" x2="84.67" y2="45.15" fill="none" stroke="#000" stroke-miterlimit="10"/>
+  <line x1="80.42" y1="38.12" x2="84.01" y2="38.73" fill="none" stroke="#000" stroke-miterlimit="10"/>
+  <path d="M52.64,55.16c1.09-2,.44-3.65-1.81-6.09l-1-1.06c-2.78-3-3.86-5.84-2.14-9.09s5.84-4.49,9.58-2.5c3.28,1.74,4.85,5.07,3.56,8a1.68,1.68,0,0,1-2,.25c-.72-.38-1.29-1.27-.78-3.17l.75-2.76,1.07,2.07A10.21,10.21,0,0,0,56.8,38.2c-2.41-1.28-4.9-1.06-6.19,1.38-1.1,2.08-.4,3.91,1.51,5.88l1,1.08c3.58,3.86,3.79,6.68,2.38,9.34-1.84,3.48-5.82,4.54-10.24,2.2-3.48-1.85-5.1-5.16-3.73-8.06a1.71,1.71,0,0,1,2-.23c.78.41,1.27,1.21.74,3.14l-.75,2.77-1.11-2.09a13,13,0,0,0,3.84,3C48.92,58,51.37,57.56,52.64,55.16ZM50.88,47.1l1.3.69L44.65,62l-1.3-.69Zm0,0L58.29,33.2l1.3.68L52.21,47.8Z"/>
+  <ellipse cx="51.08" cy="29.07" rx="9.9" ry="7.5" transform="translate(-7.69 29.43) rotate(-30)" fill="#fff" opacity="0.5"/>
+</svg>
