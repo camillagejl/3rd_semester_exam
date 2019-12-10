@@ -312,6 +312,7 @@ label {
     --symbol-4: url("elements/mexican/mexican_4.svg");
     --symbol-5: url("elements/mexican/mexican_5.svg");
     --symbol-6: url("elements/mexican/mexican_6.svg");
+    --character: url("elements/mexican/mexican_char.svg");
     --options_color: #d19865;
     --slot_machine_color: #763e19;
     --slot_machine_color_dark: #4f2910;
@@ -328,6 +329,7 @@ label {
     --options_color: #85d187;
     --slot_machine_color: #7b1911;
     --slot_machine_color_dark: #5b120d;
+    --character: url("elements/indigenous/indigenous_char.svg");
 }
 
 [data-game-theme="viking"] {
@@ -341,6 +343,7 @@ label {
     --options_color: #6a8da6;
     --slot_machine_color: #7b3310;
     --slot_machine_color_dark: #56240b;
+    --character: url("elements/viking/viking_char.svg");
 }
 
 /* GENERAL DESIGN */
@@ -427,7 +430,7 @@ label {
 .coin {
     width: 8%;
     height: 50%;
-    margin: 2%;
+    margin: 0 2% 0 2%;
     background-size: cover;
     background-image: url("elements/static/coins.svg");
     background-repeat: no-repeat;
@@ -738,7 +741,26 @@ label {
     }
 }
 
+.character_sprite {
+    height: 20%;
+    width: 10%;
 
+    background-image: var(--character);
+    background-size: 300% 100%;
+    animation-name: char;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(3);
+}
+
+@keyframes char {
+    0% {
+        background-position: 0% 0%;
+    }
+    0% {
+        background-position: -300%;
+    }
+}
 
 /* WORDPRESS */
 

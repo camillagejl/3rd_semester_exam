@@ -45,7 +45,8 @@ function buildWheels() {
         id: 1,
 
         // The symbols are fetched from a json-file. Symbols can be added several times, and order doesn't matter.
-        symbols: [symbols[3], symbols[2], symbols[3], symbols[0], symbols[5], symbols[1], symbols[0], symbols[5], symbols[1], symbols[2], symbols[0], symbols[4], symbols[0], symbols[5]],
+        symbols: [symbols[0], symbols[0], symbols[5], symbols[5]],
+        // symbols: [symbols[3], symbols[2], symbols[3], symbols[0], symbols[5], symbols[1], symbols[0], symbols[5], symbols[1], symbols[2], symbols[0], symbols[4], symbols[0], symbols[5]],
         isHolding: false,
 
         // "active" refers to the active symbol in the wheel array. This starts on 1 (i.e. the second symbol in the
@@ -55,13 +56,15 @@ function buildWheels() {
     };
     let wheel2 = {
         id: 2,
-        symbols: [symbols[5], symbols[3], symbols[4], symbols[0], symbols[5], symbols[0], symbols[3], symbols[1], symbols[4], symbols[2], symbols[0], symbols[1], symbols[2], symbols[1]],
+        symbols: [symbols[0], symbols[0], symbols[5], symbols[5]],
+        // symbols: [symbols[5], symbols[3], symbols[4], symbols[0], symbols[5], symbols[0], symbols[3], symbols[1], symbols[4], symbols[2], symbols[0], symbols[1], symbols[2], symbols[1]],
         isHolding: false,
         active: 1
     };
     let wheel3 = {
         id: 3,
-        symbols: [symbols[3], symbols[5], symbols[1], symbols[0], symbols[4], symbols[5], symbols[2], symbols[1], symbols[0], symbols[0], symbols[5], symbols[3], symbols[3], symbols[2]],
+        symbols: [symbols[0], symbols[0], symbols[5], symbols[5]],
+        // symbols: [symbols[3], symbols[5], symbols[1], symbols[0], symbols[4], symbols[5], symbols[2], symbols[1], symbols[0], symbols[0], symbols[5], symbols[3], symbols[3], symbols[2]],
         isHolding: false,
         active: 1
     };
@@ -397,6 +400,7 @@ function displayPopup(priceWon) {
         You won the big jackpot of ${priceWon} coins!
         <p>Sign up now, and you can spend your coins to win real money prices!</p>
         <button class="popup_button popup_signup_button">Sign up now!</button>
+        <div class="character_sprite"></div>
         `
     }
 
@@ -407,6 +411,7 @@ function displayPopup(priceWon) {
         <button class="popup_button popup_signup_button">Sign up now!</button>
         <p>Or keep playing to aim for the big jackpot of 20 price, to take with you to our other games!</p>
         <button class="popup_button popup_keep_playing_button">Keep playing!</button>
+        <div class="character_sprite"></div>
         `
     }
 

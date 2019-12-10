@@ -1,0 +1,260 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="449" height="223" viewBox="0 0 449 223">
+  <defs>
+    <linearGradient id="linear-gradient" x1="-188.94" y1="141.92" x2="-131.9" y2="141.92" gradientTransform="matrix(-0.36, -0.93, 1.38, -0.53, -124.54, 60.27)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e2ccaf"/>
+      <stop offset="0.28" stop-color="#e2caac"/>
+      <stop offset="0.5" stop-color="#e3c3a2"/>
+      <stop offset="0.7" stop-color="#e3b892"/>
+      <stop offset="0.88" stop-color="#e4a77a"/>
+      <stop offset="1" stop-color="#e59a67"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="124.9" y1="156.25" x2="147.08" y2="156.25" gradientTransform="matrix(1, 0, 0, 1, 0, 0)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="69.74" y1="200.98" x2="90.21" y2="200.98" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#b21f02"/>
+      <stop offset="0.56" stop-color="#701307" stop-opacity="0.98"/>
+      <stop offset="1" stop-color="#3f0b0b" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-4" x1="101.3" y1="200.98" x2="121.77" y2="200.98" xlink:href="#linear-gradient-3"/>
+    <linearGradient id="linear-gradient-5" x1="-116.68" y1="81.37" x2="-65.92" y2="81.37" gradientTransform="matrix(0.87, -0.5, 0.74, 1.28, 71.23, -24.08)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-6" x1="59.93" y1="147.2" x2="129.88" y2="147.2" xlink:href="#linear-gradient-3"/>
+    <linearGradient id="linear-gradient-7" x1="94.9" y1="102.2" x2="94.9" y2="42.21" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f2c88b"/>
+      <stop offset="0.25" stop-color="#f2c589"/>
+      <stop offset="0.45" stop-color="#f1bb82"/>
+      <stop offset="0.63" stop-color="#efab77"/>
+      <stop offset="0.8" stop-color="#ec9366"/>
+      <stop offset="0.96" stop-color="#e97552"/>
+      <stop offset="1" stop-color="#e86c4b"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-8" x1="1.39" y1="51.25" x2="126.64" y2="51.25" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#efe584" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-9" x1="52.89" y1="77.72" x2="60.63" y2="77.72" xlink:href="#linear-gradient-8"/>
+    <linearGradient id="linear-gradient-10" x1="64.28" y1="75.05" x2="73.69" y2="75.05" xlink:href="#linear-gradient-8"/>
+    <linearGradient id="linear-gradient-11" x1="60.95" y1="79.05" x2="66.12" y2="79.05" xlink:href="#linear-gradient-8"/>
+    <linearGradient id="linear-gradient-12" x1="-132.67" y1="104.93" x2="-96.27" y2="104.93" gradientTransform="matrix(-1, 0, 0, 1, 4.79, 0)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#63080d"/>
+      <stop offset="1" stop-color="#f15a24" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-13" x1="-269.57" y1="-361.97" x2="-266.85" y2="-361.97" gradientTransform="matrix(-0.96, -0.27, -0.27, 0.96, -246.34, 392.39)" xlink:href="#linear-gradient-8"/>
+    <linearGradient id="linear-gradient-14" x1="23.24" y1="137.87" x2="45.42" y2="137.87" gradientTransform="matrix(1, 0, 0, 1, 0, 0)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-15" x1="-243.38" y1="237.93" x2="-186.34" y2="237.93" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-16" x1="276.9" y1="156.25" x2="299.08" y2="156.25" gradientTransform="matrix(1, 0, 0, 1, 0, 0)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-17" x1="221.74" y1="200.98" x2="242.21" y2="200.98" xlink:href="#linear-gradient-3"/>
+    <linearGradient id="linear-gradient-18" x1="253.3" y1="200.98" x2="273.77" y2="200.98" xlink:href="#linear-gradient-3"/>
+    <linearGradient id="linear-gradient-19" x1="14.96" y1="132.79" x2="65.71" y2="132.79" gradientTransform="matrix(0.87, -0.5, 0.74, 1.28, 71.23, -24.08)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-20" x1="211.93" y1="147.2" x2="281.88" y2="147.2" xlink:href="#linear-gradient-3"/>
+    <linearGradient id="linear-gradient-21" x1="246.9" y1="102.2" x2="246.9" y2="42.21" xlink:href="#linear-gradient-7"/>
+    <linearGradient id="linear-gradient-22" x1="153.39" y1="51.25" x2="278.64" y2="51.25" xlink:href="#linear-gradient-8"/>
+    <linearGradient id="linear-gradient-23" x1="204.89" y1="77.72" x2="212.63" y2="77.72" xlink:href="#linear-gradient-8"/>
+    <linearGradient id="linear-gradient-24" x1="216.28" y1="75.05" x2="225.69" y2="75.05" xlink:href="#linear-gradient-8"/>
+    <linearGradient id="linear-gradient-25" x1="212.95" y1="79.05" x2="218.12" y2="79.05" xlink:href="#linear-gradient-8"/>
+    <linearGradient id="linear-gradient-26" x1="-284.67" y1="104.93" x2="-248.27" y2="104.93" xlink:href="#linear-gradient-12"/>
+    <linearGradient id="linear-gradient-27" x1="-415.78" y1="-403.53" x2="-413.06" y2="-403.53" gradientTransform="matrix(-0.96, -0.27, -0.27, 0.96, -246.34, 392.39)" xlink:href="#linear-gradient-8"/>
+    <linearGradient id="linear-gradient-28" x1="175.24" y1="137.87" x2="197.42" y2="137.87" gradientTransform="matrix(1, 0, 0, 1, 0, 0)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-29" x1="-297.11" y1="332.69" x2="-240.07" y2="332.69" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-30" x1="426.9" y1="156.25" x2="449.08" y2="156.25" gradientTransform="matrix(1, 0, 0, 1, 0, 0)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-31" x1="371.74" y1="200.98" x2="392.21" y2="200.98" xlink:href="#linear-gradient-3"/>
+    <linearGradient id="linear-gradient-32" x1="403.3" y1="200.98" x2="423.77" y2="200.98" xlink:href="#linear-gradient-3"/>
+    <linearGradient id="linear-gradient-33" x1="144.86" y1="183.53" x2="195.62" y2="183.53" gradientTransform="matrix(0.87, -0.5, 0.74, 1.28, 71.23, -24.08)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-34" x1="362.4" y1="147.2" x2="431.4" y2="147.2" xlink:href="#linear-gradient-3"/>
+    <linearGradient id="linear-gradient-35" x1="396.9" y1="102.2" x2="396.9" y2="42.21" xlink:href="#linear-gradient-7"/>
+    <linearGradient id="linear-gradient-36" x1="303.39" y1="51.25" x2="428.64" y2="51.25" xlink:href="#linear-gradient-8"/>
+    <linearGradient id="linear-gradient-37" x1="354.89" y1="77.72" x2="362.63" y2="77.72" xlink:href="#linear-gradient-8"/>
+    <linearGradient id="linear-gradient-38" x1="366.28" y1="75.05" x2="375.69" y2="75.05" xlink:href="#linear-gradient-8"/>
+    <linearGradient id="linear-gradient-39" x1="362.95" y1="79.05" x2="368.12" y2="79.05" xlink:href="#linear-gradient-8"/>
+    <linearGradient id="linear-gradient-40" x1="-434.67" y1="104.93" x2="-398.27" y2="104.93" xlink:href="#linear-gradient-12"/>
+    <linearGradient id="linear-gradient-41" x1="-560.06" y1="-444.55" x2="-557.34" y2="-444.55" gradientTransform="matrix(-0.96, -0.27, -0.27, 0.96, -246.34, 392.39)" xlink:href="#linear-gradient-8"/>
+    <linearGradient id="linear-gradient-42" x1="325.24" y1="137.87" x2="347.42" y2="137.87" gradientTransform="matrix(1, 0, 0, 1, 0, 0)" xlink:href="#linear-gradient"/>
+  </defs>
+  <title>indiginous_char</title>
+  <path d="M142.08,153.66l-13.72-43.54c-.92-2.93-3.64-4.4-6-3.28l-4.18,2c-2.41,1.13-3.62,4.44-2.7,7.37l13.71,43.54c.92,2.92,3.64,4.4,6,3.28l4.18-2C141.78,159.9,143,156.58,142.08,153.66Z" stroke="#000" stroke-miterlimit="10" fill="url(#linear-gradient)"/>
+  <ellipse cx="135.99" cy="156.25" rx="11.09" ry="13.45" stroke="#000" stroke-miterlimit="10" fill="url(#linear-gradient-2)"/>
+  <rect x="69.74" y="179.78" width="20.47" height="42.41" rx="7.44" stroke="#000" stroke-miterlimit="10" fill="url(#linear-gradient-3)"/>
+  <rect x="101.3" y="179.78" width="20.47" height="42.41" rx="6.39" stroke="#000" stroke-miterlimit="10" fill="url(#linear-gradient-4)"/>
+  <path d="M39.14,144.64l33.25-23.27c2.23-1.57,3-5.07,1.71-7.78l-2.24-4.71c-1.29-2.71-4.17-3.64-6.41-2.08L32.21,130.07a6.42,6.42,0,0,0-1.72,7.78l2.24,4.71C34,145.27,36.91,146.2,39.14,144.64Z" stroke="#000" stroke-miterlimit="10" fill="url(#linear-gradient-5)"/>
+  <rect x="59.93" y="104.79" width="69.95" height="84.82" rx="14.5" stroke="#000" stroke-miterlimit="10" fill="url(#linear-gradient-6)"/>
+  <rect x="64.2" y="42.21" width="61.42" height="59.99" rx="12" stroke="#000" stroke-miterlimit="10" fill="url(#linear-gradient-7)"/>
+  <ellipse cx="80.4" cy="66.58" rx="2.99" ry="3.62"/>
+  <ellipse cx="108.13" cy="66.08" rx="2.99" ry="3.62"/>
+  <rect x="80.83" y="84.6" width="26.44" height="4.14"/>
+  <rect x="104.79" y="72.2" width="13.44" height="2.04" fill="red"/>
+  <rect x="72.03" y="72.2" width="13.44" height="2.04" fill="red"/>
+  <rect x="72.03" y="76.28" width="13.44" height="2.04" fill="red"/>
+  <rect x="104.79" y="76.28" width="13.44" height="2.04" fill="red"/>
+  <path d="M68.19,67.15c2.48-15.48,14.66-21.63,31.87-22.93,10-.71,18.43,1,25.75,4.51C131.45,38.09,107,5.3,90.89,4c-16-7.81-39.18-.85-55.44,1.51,17,.65,30.11,3.92,27.94,14.28-16.21-7.86-32-5.19-47.59,0,19.82,1.66,37,4.38,39.29,13.16C40,25.32,24,30.51,7.94,37.46c17.94-1.12,36.1-2.37,42.79,3C32,37,16.56,50.77,1.39,65.65c20.17-9.12,40.1-18,48-13.91C32.5,55,20.18,70.5,9.69,90.45c16.4-15,32.9-28.49,50.2-30.07-9,7.5-12,17-10.06,28a57.17,57.17,0,0,0,4.39,13.72A111.68,111.68,0,0,1,58.94,89.6c2.25-4.59,3-8,7.2-8.21Z" stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="url(#linear-gradient-8)"/>
+  <path d="M56.7,92c-3.9-9.66-4.88-19.15-2.61-28.47,1.56,2,3.48,3.33,6.54,2.53C57.5,72.81,56.47,81.75,56.7,92Z" stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="url(#linear-gradient-9)"/>
+  <path d="M68.74,62.66c3.88,6.19,5,14.93,5,24.79-2.24-8.92-5-16.88-9.41-21.83Z" stroke="#000" stroke-miterlimit="10" fill="url(#linear-gradient-10)"/>
+  <path d="M61.47,66C60.1,74.6,61.52,83.53,65,92.71c1.42-9.34,1.68-18.48,0-27.31Z" stroke="#000" stroke-miterlimit="10" fill="url(#linear-gradient-11)"/>
+  <path d="M63.82,51.74c1.23-1.49,2.52-2.92,3.85-4.28,12.08-12.29,29.38-18.11,57.05-11.69l-7.23,9.9-6.3-11.78c-3.35,4.37-6.72,8.82-8.81,10.21l-8.22-9.84a23.65,23.65,0,0,1-4.9,12L75,41.78l2,9.21C69.08,49.56,65,50,63.82,51.74Z" fill="#9b1012" stroke="#000" stroke-miterlimit="10"/>
+  <path d="M28.06,65c4.7-1.23,7.07.31,6.62,5.23a154.74,154.74,0,0,0-28,24C14,81.85,21.17,71.16,28.06,65Z" fill="#191919" stroke="#000" stroke-miterlimit="10"/>
+  <path d="M33.7,65.67c-7.55,6.08-15.21,14-22.91,22.72" fill="#f9f7e5" stroke="#000" stroke-miterlimit="10" stroke-width="4"/>
+  <path d="M20.82,48.92c5.08.88,8,2.53,8,5.24C19.12,58,9.54,61.85.3,65.83,5.94,59.46,13.26,54.12,20.82,48.92Z" fill="#191919" stroke="#000" stroke-miterlimit="10"/>
+  <path d="M23.88,30.88q4.36,2.82,1.7,5.66c-5.74-.06-13.93.73-23.09,1.86Z" fill="#191919" stroke="#000" stroke-miterlimit="10"/>
+  <path d="M33.48,14.72c2.54,1.92,2.86,4.18-.63,7-6.69-2.06-13.92-2-21.2-1.77C19.78,16.71,27.5,14.19,33.48,14.72Z" fill="#191919" stroke="#000" stroke-miterlimit="10"/>
+  <path d="M53,2.42C53.76,4,53,5.61,50.76,7.2l-19-1.5A109.85,109.85,0,0,1,53,2.42Z" fill="#191919" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+  <path d="M49.49,86c4-2,7.28-.56,10.27,2.09-2.44,4.38-4.44,10.18-6,17.44C51.09,98.09,49.24,91.29,49.49,86Z" fill="#191919" stroke="#000" stroke-miterlimit="10"/>
+  <path d="M55.31,83.5c-1.68,6.38-1.89,15.71-1.31,24.43" fill="none" stroke="#fff" stroke-miterlimit="10"/>
+  <path d="M34.79,64C25.54,72.77,15.88,83.28,6,94.78" fill="none" stroke="#fff" stroke-miterlimit="10"/>
+  <path d="M28.68,50.05C21.15,53.2,9.48,60.54-2.75,68.47" fill="none" stroke="#fff" stroke-miterlimit="10"/>
+  <path d="M26.24,33.13c-7,.56-15.81,2.59-25.5,5.27" fill="none" stroke="#fff" stroke-miterlimit="10"/>
+  <path d="M35.42,17.63c-6.89-.86-16,.55-25.95,2.72" fill="none" stroke="#fff" stroke-miterlimit="10"/>
+  <path d="M53,4.81c-5-.27-13.39.22-22.58.89" fill="none" stroke="#fff" stroke-miterlimit="10"/>
+  <path d="M52.33,77.67l.56.11,4.4.79a94,94,0,0,0-.59,14.14" fill="#191919" stroke="#000" stroke-miterlimit="10"/>
+  <path d="M61.47,79h4.65L65.18,92.9A52.53,52.53,0,0,1,61.47,79Z" fill="#191919" stroke="#000" stroke-miterlimit="10"/>
+  <polygon points="70.42 74.48 72.38 72.08 73.91 88.39 70.42 74.48" fill="#191919" stroke="#000" stroke-miterlimit="10"/>
+  <path d="M123.8,34.64l-4.1-7.28C93.45,16.58,43.88,41,55.71,61l4-1c-1.13-3.86.71-6.53,4.06-8.59C70.06,43,79.83,37.25,93,34.05,104.4,33.44,115,33.45,123.8,34.64Z" fill="#d34802" stroke="#000" stroke-miterlimit="10"/>
+  <path d="M70.2,59.53c0,4.15-3.91,7.51-8.73,7.51a9.53,9.53,0,0,1-5.91-2,7.05,7.05,0,0,1-2.83-5.53c0-4.16,3.91-7.52,8.74-7.52S70.2,55.37,70.2,59.53Z" fill="#9b1012" stroke="#000" stroke-miterlimit="10"/>
+  <path d="M102.7,86.63c9.42,11.69,20.13,26.58,24.6,25.89l1-7.57c3.11,2.62,6.17,2.7,9.18,0,0,0-.33,10-4.59,14.35s-6.89,5.57-11.48,1.19-20.33-33.07-20.33-33.07Z" stroke="#000" stroke-miterlimit="10" stroke-width="0.75" fill="url(#linear-gradient-12)"/>
+  <ellipse cx="132.87" cy="105.15" rx="4.59" ry="2.19" fill="#282828" stroke="#000" stroke-miterlimit="10" stroke-width="0.75"/>
+  <polygon points="119.77 107.31 115.02 111.73 113.01 108.49 117.5 104.89 119.77 107.31" fill="#005e29" stroke="#000" stroke-miterlimit="10"/>
+  <polygon points="117.67 105.15 113.17 108.47 111.05 104.93 115.39 102.49 117.67 105.15" fill="#d34802" stroke="#000" stroke-miterlimit="10"/>
+  <g>
+    <path d="M112.35,113.25a9.27,9.27,0,0,1-.34,4.4,10.25,10.25,0,0,1-2.87,4.41,34.51,34.51,0,0,1,.4-5.65,8.7,8.7,0,0,1,2.19-3.48C111.81,113.2,112.06,113.25,112.35,113.25Z" stroke="#000" stroke-miterlimit="10" stroke-width="0.75" fill="url(#linear-gradient-13)"/>
+    <ellipse cx="113.16" cy="108.25" rx="1.03" ry="0.82" transform="translate(0.56 217.08) rotate(-87.75)" fill="#005e29" stroke="#000" stroke-miterlimit="10" stroke-width="0.75"/>
+    <ellipse cx="112.7" cy="110.24" rx="1.03" ry="0.82" transform="translate(-1.88 218.52) rotate(-87.75)" fill="#9b1012" stroke="#000" stroke-miterlimit="10" stroke-width="0.75"/>
+    <ellipse cx="112.23" cy="112.22" rx="1.03" ry="0.82" transform="translate(-4.31 219.97) rotate(-87.75)" fill="#005e29" stroke="#000" stroke-miterlimit="10" stroke-width="0.75"/>
+    <path d="M111.6,118.74a2.19,2.19,0,0,0-.28-1.41,1.16,1.16,0,0,1-.86.42c0-.44-.15-.73-.37-.85a3.59,3.59,0,0,0-.73.59,27.44,27.44,0,0,0-.28,4.56A9.4,9.4,0,0,0,111.6,118.74Z" stroke="#000" stroke-miterlimit="10" stroke-width="0.75"/>
+    <path d="M112.08,113.29a75.58,75.58,0,0,0-2.72,8.37" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.75"/>
+  </g>
+  <path d="M102.7,86.63l-1-1.2a1.48,1.48,0,0,0-2,.4l1.31,1.59Z" stroke="#000" stroke-miterlimit="10"/>
+  <ellipse cx="121.72" cy="72.68" rx="5.74" ry="6.97" fill="#666" opacity="0.5"/>
+  <ellipse cx="133.2" cy="74.68" rx="5.74" ry="6.97" opacity="0.5"/>
+  <ellipse cx="126.48" cy="84.44" rx="3.93" ry="4.78" fill="#666" opacity="0.5"/>
+  <ellipse cx="132.38" cy="97.18" rx="2.62" ry="3.19" fill="#666" opacity="0.5"/>
+  <ellipse cx="118.28" cy="82.44" rx="2.62" ry="3.19" opacity="0.5"/>
+  <ellipse cx="128.44" cy="65.31" rx="2.62" ry="3.19" fill="#666" opacity="0.5"/>
+  <ellipse cx="141.89" cy="82.44" rx="4.92" ry="5.98" fill="#666" opacity="0.5"/>
+  <ellipse cx="138.44" cy="93" rx="4.43" ry="5.38" opacity="0.5"/>
+  <line x1="30.9" y1="64.02" x2="80.44" y2="174.4" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+  <path d="M31.84,63.77s-14,42.82,2.85,75.48S81.8,175.7,81.8,175.7" fill="none" stroke="#d34802" stroke-miterlimit="10" stroke-width="5"/>
+  <ellipse cx="34.33" cy="137.87" rx="11.09" ry="13.45" stroke="#000" stroke-miterlimit="10" fill="url(#linear-gradient-14)"/>
+  <path d="M294.08,153.66l-13.72-43.54c-.92-2.93-3.64-4.4-6-3.28l-4.18,2c-2.41,1.13-3.62,4.44-2.7,7.37l13.71,43.54c.92,2.92,3.64,4.4,6.05,3.28l4.18-2C293.78,159.9,295,156.58,294.08,153.66Z" stroke="#000" stroke-miterlimit="10" fill="url(#linear-gradient-15)"/>
+  <ellipse cx="287.99" cy="156.25" rx="11.09" ry="13.45" stroke="#000" stroke-miterlimit="10" fill="url(#linear-gradient-16)"/>
+  <rect x="221.74" y="179.78" width="20.47" height="42.41" rx="7.44" stroke="#000" stroke-miterlimit="10" fill="url(#linear-gradient-17)"/>
+  <rect x="253.3" y="179.78" width="20.47" height="42.41" rx="6.39" stroke="#000" stroke-miterlimit="10" fill="url(#linear-gradient-18)"/>
+  <path d="M191.14,144.64l33.25-23.27c2.23-1.57,3-5.07,1.71-7.78l-2.24-4.71c-1.29-2.71-4.17-3.64-6.41-2.08l-33.24,23.27a6.42,6.42,0,0,0-1.72,7.78l2.24,4.71C186,145.27,188.91,146.2,191.14,144.64Z" stroke="#000" stroke-miterlimit="10" fill="url(#linear-gradient-19)"/>
+  <rect x="211.93" y="104.79" width="69.95" height="84.82" rx="14.5" stroke="#000" stroke-miterlimit="10" fill="url(#linear-gradient-20)"/>
+  <rect x="216.2" y="42.21" width="61.42" height="59.99" rx="12" stroke="#000" stroke-miterlimit="10" fill="url(#linear-gradient-21)"/>
+  <ellipse cx="232.4" cy="66.58" rx="2.99" ry="3.62"/>
+  <ellipse cx="260.13" cy="66.08" rx="2.99" ry="3.62"/>
+  <ellipse cx="251.06" cy="86.38" rx="4.06" ry="4.92"/>
+  <rect x="256.79" y="72.2" width="13.44" height="2.04" fill="red"/>
+  <rect x="224.03" y="72.2" width="13.44" height="2.04" fill="red"/>
+  <rect x="224.03" y="76.28" width="13.44" height="2.04" fill="red"/>
+  <rect x="256.79" y="76.28" width="13.44" height="2.04" fill="red"/>
+  <path d="M220.19,67.15c2.48-15.48,14.66-21.63,31.87-22.93,10-.71,18.43,1,25.75,4.51C283.45,38.09,259,5.3,242.89,4c-16-7.81-39.18-.85-55.44,1.51,17,.65,30.11,3.92,27.94,14.28-16.21-7.86-32-5.19-47.59,0,19.82,1.66,37,4.38,39.29,13.16C192,25.32,176,30.51,159.94,37.46c17.94-1.12,36.1-2.37,42.79,3C184,37,168.56,50.77,153.39,65.65c20.17-9.12,40.1-18,48-13.91C184.5,55,172.18,70.5,161.69,90.45c16.4-15,32.9-28.49,50.2-30.07-9,7.5-11.95,17-10.06,28a57.17,57.17,0,0,0,4.39,13.72,111.68,111.68,0,0,1,4.72-12.51c2.25-4.59,3-8,7.2-8.21Z" stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="url(#linear-gradient-22)"/>
+  <path d="M208.7,92c-3.9-9.66-4.88-19.15-2.61-28.47,1.56,2,3.48,3.33,6.54,2.53C209.5,72.81,208.47,81.75,208.7,92Z" stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="url(#linear-gradient-23)"/>
+  <path d="M220.74,62.66c3.88,6.19,5,14.93,4.95,24.79-2.24-8.92-5-16.88-9.41-21.83Z" stroke="#000" stroke-miterlimit="10" fill="url(#linear-gradient-24)"/>
+  <path d="M213.47,66c-1.37,8.58.05,17.51,3.49,26.69,1.42-9.34,1.68-18.48,0-27.31Z" stroke="#000" stroke-miterlimit="10" fill="url(#linear-gradient-25)"/>
+  <path d="M215.82,51.74c1.23-1.49,2.52-2.92,3.85-4.28,12.08-12.29,29.38-18.11,57.05-11.69l-7.23,9.9-6.3-11.78c-3.35,4.37-6.72,8.82-8.81,10.21l-8.22-9.84a23.65,23.65,0,0,1-4.9,12L227,41.78l2,9.21C221.08,49.56,217,50,215.82,51.74Z" fill="#9b1012" stroke="#000" stroke-miterlimit="10"/>
+  <path d="M180.06,65c4.7-1.23,7.07.31,6.62,5.23a154.74,154.74,0,0,0-28.05,24C166,81.85,173.17,71.16,180.06,65Z" fill="#191919" stroke="#000" stroke-miterlimit="10"/>
+  <path d="M185.7,65.67c-7.55,6.08-15.21,14-22.91,22.72" fill="#f9f7e5" stroke="#000" stroke-miterlimit="10" stroke-width="4"/>
+  <path d="M172.82,48.92c5.08.88,8,2.53,8,5.24-9.68,3.82-19.26,7.69-28.5,11.67C157.94,59.46,165.26,54.12,172.82,48.92Z" fill="#191919" stroke="#000" stroke-miterlimit="10"/>
+  <path d="M175.88,30.88q4.37,2.82,1.7,5.66c-5.74-.06-13.93.73-23.09,1.86Z" fill="#191919" stroke="#000" stroke-miterlimit="10"/>
+  <path d="M185.48,14.72c2.54,1.92,2.86,4.18-.63,7-6.69-2.06-13.92-2-21.2-1.77C171.78,16.71,179.5,14.19,185.48,14.72Z" fill="#191919" stroke="#000" stroke-miterlimit="10"/>
+  <path d="M205,2.42c.75,1.59,0,3.19-2.25,4.78l-19-1.5A109.85,109.85,0,0,1,205,2.42Z" fill="#191919" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+  <path d="M201.49,86c4-2,7.28-.56,10.27,2.09-2.44,4.38-4.44,10.18-6,17.44C203.09,98.09,201.24,91.29,201.49,86Z" fill="#191919" stroke="#000" stroke-miterlimit="10"/>
+  <path d="M207.31,83.5c-1.68,6.38-1.89,15.71-1.31,24.43" fill="none" stroke="#fff" stroke-miterlimit="10"/>
+  <path d="M186.79,64c-9.25,8.81-18.91,19.32-28.81,30.82" fill="none" stroke="#fff" stroke-miterlimit="10"/>
+  <path d="M180.68,50.05c-7.53,3.15-19.2,10.49-31.43,18.42" fill="none" stroke="#fff" stroke-miterlimit="10"/>
+  <path d="M178.24,33.13c-7,.56-15.81,2.59-25.5,5.27" fill="none" stroke="#fff" stroke-miterlimit="10"/>
+  <path d="M187.42,17.63c-6.89-.86-16,.55-25.95,2.72" fill="none" stroke="#fff" stroke-miterlimit="10"/>
+  <path d="M205,4.81c-5-.27-13.39.22-22.58.89" fill="none" stroke="#fff" stroke-miterlimit="10"/>
+  <path d="M204.33,77.67l.56.11,4.4.79a94,94,0,0,0-.59,14.14" fill="#191919" stroke="#000" stroke-miterlimit="10"/>
+  <path d="M213.47,79h4.65l-.94,13.87A52.53,52.53,0,0,1,213.47,79Z" fill="#191919" stroke="#000" stroke-miterlimit="10"/>
+  <polygon points="222.41 74.48 224.38 72.08 225.91 88.39 222.41 74.48" fill="#191919" stroke="#000" stroke-miterlimit="10"/>
+  <path d="M275.8,34.64l-4.1-7.28C245.45,16.58,195.88,41,207.71,61l4-1c-1.13-3.86.71-6.53,4.06-8.59,6.24-8.37,16-14.11,29.16-17.31C256.4,33.44,267,33.45,275.8,34.64Z" fill="#d34802" stroke="#000" stroke-miterlimit="10"/>
+  <path d="M222.2,59.53c0,4.15-3.91,7.51-8.73,7.51a9.53,9.53,0,0,1-5.91-2,7.05,7.05,0,0,1-2.83-5.53c0-4.16,3.91-7.52,8.74-7.52S222.2,55.37,222.2,59.53Z" fill="#9b1012" stroke="#000" stroke-miterlimit="10"/>
+  <path d="M254.7,86.63c9.42,11.69,20.13,26.58,24.6,25.89l1-7.57c3.11,2.62,6.17,2.7,9.18,0,0,0-.33,10-4.59,14.35s-6.89,5.57-11.48,1.19-20.33-33.07-20.33-33.07Z" stroke="#000" stroke-miterlimit="10" stroke-width="0.75" fill="url(#linear-gradient-26)"/>
+  <ellipse cx="284.87" cy="105.15" rx="4.59" ry="2.19" fill="#282828" stroke="#000" stroke-miterlimit="10" stroke-width="0.75"/>
+  <polygon points="271.76 107.31 267.02 111.73 265.01 108.49 269.5 104.89 271.76 107.31" fill="#005e29" stroke="#000" stroke-miterlimit="10"/>
+  <polygon points="269.67 105.15 265.17 108.47 263.05 104.93 267.39 102.49 269.67 105.15" fill="#d34802" stroke="#000" stroke-miterlimit="10"/>
+  <g>
+    <path d="M264.35,113.25a9.27,9.27,0,0,1-.34,4.4,10.25,10.25,0,0,1-2.87,4.41,34.51,34.51,0,0,1,.4-5.65,8.7,8.7,0,0,1,2.19-3.48C263.81,113.2,264.06,113.25,264.35,113.25Z" stroke="#000" stroke-miterlimit="10" stroke-width="0.75" fill="url(#linear-gradient-27)"/>
+    <ellipse cx="265.16" cy="108.25" rx="1.03" ry="0.82" transform="translate(146.59 368.96) rotate(-87.75)" fill="#005e29" stroke="#000" stroke-miterlimit="10" stroke-width="0.75"/>
+    <ellipse cx="264.7" cy="110.24" rx="1.03" ry="0.82" transform="translate(144.16 370.4) rotate(-87.75)" fill="#9b1012" stroke="#000" stroke-miterlimit="10" stroke-width="0.75"/>
+    <ellipse cx="264.23" cy="112.22" rx="1.03" ry="0.82" transform="translate(141.73 371.85) rotate(-87.75)" fill="#005e29" stroke="#000" stroke-miterlimit="10" stroke-width="0.75"/>
+    <path d="M263.6,118.74a2.19,2.19,0,0,0-.28-1.41,1.16,1.16,0,0,1-.86.42c0-.44-.15-.73-.37-.85a3.59,3.59,0,0,0-.73.59,27.44,27.44,0,0,0-.28,4.56A9.4,9.4,0,0,0,263.6,118.74Z" stroke="#000" stroke-miterlimit="10" stroke-width="0.75"/>
+    <path d="M264.08,113.29a75.58,75.58,0,0,0-2.72,8.37" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.75"/>
+  </g>
+  <path d="M254.7,86.63l-1-1.2a1.48,1.48,0,0,0-2,.4l1.31,1.59Z" stroke="#000" stroke-miterlimit="10"/>
+  <ellipse cx="273.72" cy="72.68" rx="5.74" ry="6.97" fill="#666" opacity="0.5"/>
+  <ellipse cx="285.2" cy="74.68" rx="5.74" ry="6.97" opacity="0.5"/>
+  <ellipse cx="278.48" cy="84.44" rx="3.93" ry="4.78" fill="#666" opacity="0.5"/>
+  <ellipse cx="284.38" cy="97.18" rx="2.62" ry="3.19" fill="#666" opacity="0.5"/>
+  <ellipse cx="270.28" cy="82.44" rx="2.62" ry="3.19" opacity="0.5"/>
+  <ellipse cx="280.44" cy="65.31" rx="2.62" ry="3.19" fill="#666" opacity="0.5"/>
+  <ellipse cx="293.89" cy="82.44" rx="4.92" ry="5.98" fill="#666" opacity="0.5"/>
+  <ellipse cx="290.44" cy="93" rx="4.43" ry="5.38" opacity="0.5"/>
+  <line x1="182.9" y1="64.02" x2="232.44" y2="174.4" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+  <path d="M183.84,63.77s-14,42.82,2.85,75.48S233.8,175.7,233.8,175.7" fill="none" stroke="#d34802" stroke-miterlimit="10" stroke-width="5"/>
+  <ellipse cx="186.33" cy="137.87" rx="11.09" ry="13.45" stroke="#000" stroke-miterlimit="10" fill="url(#linear-gradient-28)"/>
+  <path d="M444.08,153.66l-13.72-43.54c-.92-2.93-3.64-4.4-6-3.28l-4.18,2c-2.41,1.13-3.62,4.44-2.7,7.37l13.71,43.54c.92,2.92,3.64,4.4,6.05,3.28l4.18-2C443.78,159.9,445,156.58,444.08,153.66Z" stroke="#000" stroke-miterlimit="10" fill="url(#linear-gradient-29)"/>
+  <ellipse cx="437.99" cy="156.25" rx="11.09" ry="13.45" stroke="#000" stroke-miterlimit="10" fill="url(#linear-gradient-30)"/>
+  <rect x="371.74" y="179.78" width="20.47" height="42.41" rx="7.44" stroke="#000" stroke-miterlimit="10" fill="url(#linear-gradient-31)"/>
+  <rect x="403.3" y="179.78" width="20.47" height="42.41" rx="6.39" stroke="#000" stroke-miterlimit="10" fill="url(#linear-gradient-32)"/>
+  <path d="M341.14,144.64l33.25-23.27c2.23-1.57,3-5.07,1.71-7.78l-2.24-4.71c-1.29-2.71-4.17-3.64-6.41-2.08l-33.24,23.27a6.42,6.42,0,0,0-1.72,7.78l2.24,4.71C336,145.27,338.91,146.2,341.14,144.64Z" stroke="#000" stroke-miterlimit="10" fill="url(#linear-gradient-33)"/>
+  <rect x="362.4" y="105.2" width="69" height="84" rx="14.5" stroke="#000" stroke-miterlimit="10" fill="url(#linear-gradient-34)"/>
+  <rect x="366.2" y="42.21" width="61.42" height="59.99" rx="12" stroke="#000" stroke-miterlimit="10" fill="url(#linear-gradient-35)"/>
+  <path d="M410.27,87.74a76.67,76.67,0,0,1-26.44,0V83.6a53.08,53.08,0,0,0,26.44,0Z"/>
+  <rect x="406.79" y="72.2" width="13.44" height="2.04" fill="red"/>
+  <rect x="374.03" y="72.2" width="13.44" height="2.04" fill="red"/>
+  <rect x="374.03" y="76.28" width="13.44" height="2.04" fill="red"/>
+  <rect x="406.79" y="76.28" width="13.44" height="2.04" fill="red"/>
+  <path d="M370.19,67.15c2.48-15.48,14.66-21.63,31.87-22.93,10-.71,18.43,1,25.75,4.51C433.45,38.09,409,5.3,392.89,4c-16-7.81-39.18-.85-55.44,1.51,17,.65,30.11,3.92,27.94,14.28-16.21-7.86-32-5.19-47.59,0,19.82,1.66,37,4.38,39.29,13.16C342,25.32,326,30.51,309.94,37.46c17.94-1.12,36.1-2.37,42.79,3C334,37,318.56,50.77,303.39,65.65c20.17-9.12,40.1-18,48-13.91C334.5,55,322.18,70.5,311.69,90.45c16.4-15,32.9-28.49,50.2-30.07-9,7.5-11.95,17-10.06,28a57.17,57.17,0,0,0,4.39,13.72,111.68,111.68,0,0,1,4.72-12.51c2.25-4.59,3-8,7.2-8.21Z" stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="url(#linear-gradient-36)"/>
+  <path d="M358.7,92c-3.9-9.66-4.88-19.15-2.61-28.47,1.56,2,3.48,3.33,6.54,2.53C359.5,72.81,358.47,81.75,358.7,92Z" stroke="#000" stroke-miterlimit="10" stroke-width="2" fill="url(#linear-gradient-37)"/>
+  <path d="M370.74,62.66c3.88,6.19,5,14.93,4.95,24.79-2.24-8.92-5-16.88-9.41-21.83Z" stroke="#000" stroke-miterlimit="10" fill="url(#linear-gradient-38)"/>
+  <path d="M363.47,66c-1.37,8.58,0,17.51,3.49,26.69,1.42-9.34,1.68-18.48,0-27.31Z" stroke="#000" stroke-miterlimit="10" fill="url(#linear-gradient-39)"/>
+  <path d="M365.82,51.74c1.23-1.49,2.52-2.92,3.85-4.28,12.08-12.29,29.38-18.11,57.05-11.69l-7.23,9.9-6.3-11.78c-3.35,4.37-6.72,8.82-8.81,10.21l-8.22-9.84a23.65,23.65,0,0,1-4.9,12L377,41.78l2,9.21C371.08,49.56,367,50,365.82,51.74Z" fill="#9b1012" stroke="#000" stroke-miterlimit="10"/>
+  <path d="M427.81,48.73a23.63,23.63,0,0,0-1.09-12.41l-7.2,9.41L413,33.7l-7.85,10.38L396.76,35l-4.21,10.6-15.81-4,3,9.4a31.77,31.77,0,0,0-13.2-.49l6,9C384.55,52.93,409.11,45.46,427.81,48.73Z" fill="#005e29" stroke="#000" stroke-miterlimit="10"/>
+  <path d="M277.81,48.73a23.63,23.63,0,0,0-1.09-12.41l-7.2,9.41L263,33.7l-7.85,10.38L246.76,35l-4.21,10.6-15.81-4,3,9.4a31.77,31.77,0,0,0-13.2-.49l6,9C234.55,52.93,259.11,45.46,277.81,48.73Z" fill="#005e29" stroke="#000" stroke-miterlimit="10"/>
+  <path d="M125.81,48.73a23.63,23.63,0,0,0-1.09-12.41l-7.2,9.41L111,33.7l-7.85,10.38L94.76,35l-4.21,10.6-15.81-4,3,9.4c-4.51-1.09-8.91-.26-13.2.51l6,8C82.55,52.93,107.11,45.46,125.81,48.73Z" fill="#005e29" stroke="#000" stroke-miterlimit="10"/>
+  <path d="M330.06,65c4.7-1.23,7.07.31,6.62,5.23a154.74,154.74,0,0,0-28.05,24C316,81.85,323.17,71.16,330.06,65Z" fill="#191919" stroke="#000" stroke-miterlimit="10"/>
+  <path d="M335.7,65.67c-7.55,6.08-15.21,14-22.91,22.72" fill="#f9f7e5" stroke="#000" stroke-miterlimit="10" stroke-width="4"/>
+  <path d="M321.82,48.92c5.08.88,8,2.53,8,5.24-9.68,3.82-19.26,7.69-28.5,11.67C306.94,59.46,314.26,54.12,321.82,48.92Z" fill="#191919" stroke="#000" stroke-miterlimit="10"/>
+  <path d="M324.88,30.88q4.37,2.82,1.7,5.66c-5.74-.06-13.93.73-23.09,1.86Z" fill="#191919" stroke="#000" stroke-miterlimit="10"/>
+  <path d="M335.48,14.72c2.54,1.92,2.86,4.18-.63,7-6.69-2.06-13.92-2-21.2-1.77C321.78,16.71,329.5,14.19,335.48,14.72Z" fill="#191919" stroke="#000" stroke-miterlimit="10"/>
+  <path d="M355,2.42c.75,1.59,0,3.19-2.25,4.78l-19-1.5A109.85,109.85,0,0,1,355,2.42Z" fill="#191919" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+  <path d="M351.49,86c4-2,7.28-.56,10.27,2.09-2.44,4.38-4.44,10.18-6,17.44C353.09,98.09,351.24,91.29,351.49,86Z" fill="#191919" stroke="#000" stroke-miterlimit="10"/>
+  <path d="M357.31,83.5c-1.68,6.38-1.89,15.71-1.31,24.43" fill="none" stroke="#fff" stroke-miterlimit="10"/>
+  <path d="M336.79,64c-9.25,8.81-18.91,19.32-28.81,30.82" fill="none" stroke="#fff" stroke-miterlimit="10"/>
+  <path d="M329.68,50.05c-7.53,3.15-19.2,10.49-31.43,18.42" fill="none" stroke="#fff" stroke-miterlimit="10"/>
+  <path d="M327.24,33.13c-7,.56-15.81,2.59-25.5,5.27" fill="none" stroke="#fff" stroke-miterlimit="10"/>
+  <path d="M337.42,17.63c-6.89-.86-16,.55-25.95,2.72" fill="none" stroke="#fff" stroke-miterlimit="10"/>
+  <path d="M355,4.81c-5-.27-13.39.22-22.58.89" fill="none" stroke="#fff" stroke-miterlimit="10"/>
+  <path d="M354.33,77.67l.56.11,4.4.79a94,94,0,0,0-.59,14.14" fill="#191919" stroke="#000" stroke-miterlimit="10"/>
+  <path d="M363.47,79h4.65l-.94,13.87A52.53,52.53,0,0,1,363.47,79Z" fill="#191919" stroke="#000" stroke-miterlimit="10"/>
+  <polygon points="372.42 74.48 374.38 72.08 375.91 88.39 372.42 74.48" fill="#191919" stroke="#000" stroke-miterlimit="10"/>
+  <path d="M425.8,34.64l-4.1-7.28C395.45,16.58,345.88,41,357.71,61l4.05-1c-1.13-3.86.71-6.53,4.06-8.59,6.24-8.37,16-14.11,29.16-17.31C406.4,33.44,417,33.45,425.8,34.64Z" fill="#d34802" stroke="#000" stroke-miterlimit="10"/>
+  <path d="M372.2,59.53c0,4.15-3.91,7.51-8.73,7.51a9.53,9.53,0,0,1-5.91-2,7.05,7.05,0,0,1-2.83-5.53c0-4.16,3.91-7.52,8.74-7.52S372.2,55.37,372.2,59.53Z" fill="#9b1012" stroke="#000" stroke-miterlimit="10"/>
+  <path d="M355.17,60.38l4.37-3,3.93,4.33,4.8-4.33,2.62,3.76c2-4.42,1.08-8.1-6.18-10.15C356.26,51.46,354.47,55.29,355.17,60.38Z" fill="#005e29" stroke="#000" stroke-miterlimit="10"/>
+  <path d="M404.7,86.63c9.42,11.69,20.13,26.58,24.6,25.89l1-7.57c3.11,2.62,6.17,2.7,9.18,0,0,0-.33,10-4.59,14.35s-6.89,5.57-11.48,1.19-20.33-33.07-20.33-33.07Z" stroke="#000" stroke-miterlimit="10" stroke-width="0.75" fill="url(#linear-gradient-40)"/>
+  <ellipse cx="434.87" cy="105.15" rx="4.59" ry="2.19" fill="#282828" stroke="#000" stroke-miterlimit="10" stroke-width="0.75"/>
+  <polygon points="421.76 107.31 417.02 111.73 415.01 108.49 419.5 104.89 421.76 107.31" fill="#005e29" stroke="#000" stroke-miterlimit="10"/>
+  <polygon points="419.67 105.15 415.17 108.47 413.05 104.93 417.39 102.49 419.67 105.15" fill="#d34802" stroke="#000" stroke-miterlimit="10"/>
+  <g>
+    <path d="M414.35,113.25a9.27,9.27,0,0,1-.34,4.4,10.25,10.25,0,0,1-2.87,4.41,34.51,34.51,0,0,1,.4-5.65,8.7,8.7,0,0,1,2.19-3.48C413.81,113.2,414.06,113.25,414.35,113.25Z" stroke="#000" stroke-miterlimit="10" stroke-width="0.75" fill="url(#linear-gradient-41)"/>
+    <ellipse cx="415.16" cy="108.25" rx="1.03" ry="0.82" transform="translate(290.71 518.84) rotate(-87.75)" fill="#005e29" stroke="#000" stroke-miterlimit="10" stroke-width="0.75"/>
+    <ellipse cx="414.7" cy="110.24" rx="1.03" ry="0.82" transform="matrix(0.04, -1, 1, 0.04, 288.28, 520.29)" fill="#9b1012" stroke="#000" stroke-miterlimit="10" stroke-width="0.75"/>
+    <ellipse cx="414.23" cy="112.22" rx="1.03" ry="0.82" transform="translate(285.84 521.73) rotate(-87.75)" fill="#005e29" stroke="#000" stroke-miterlimit="10" stroke-width="0.75"/>
+    <path d="M413.6,118.74a2.19,2.19,0,0,0-.28-1.41,1.16,1.16,0,0,1-.86.42c0-.44-.15-.73-.37-.85a3.59,3.59,0,0,0-.73.59,27.44,27.44,0,0,0-.28,4.56A9.4,9.4,0,0,0,413.6,118.74Z" stroke="#000" stroke-miterlimit="10" stroke-width="0.75"/>
+    <path d="M414.08,113.29a75.58,75.58,0,0,0-2.72,8.37" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.75"/>
+  </g>
+  <ellipse cx="423.72" cy="72.68" rx="5.74" ry="6.97" fill="#666" opacity="0.5"/>
+  <ellipse cx="435.2" cy="74.68" rx="5.74" ry="6.97" opacity="0.5"/>
+  <ellipse cx="428.48" cy="84.44" rx="3.93" ry="4.78" fill="#666" opacity="0.5"/>
+  <ellipse cx="434.38" cy="97.18" rx="2.62" ry="3.19" fill="#666" opacity="0.5"/>
+  <ellipse cx="420.28" cy="82.44" rx="2.62" ry="3.19" opacity="0.5"/>
+  <ellipse cx="430.44" cy="65.31" rx="2.62" ry="3.19" fill="#666" opacity="0.5"/>
+  <ellipse cx="443.89" cy="82.44" rx="4.92" ry="5.98" fill="#666" opacity="0.5"/>
+  <ellipse cx="440.44" cy="93" rx="4.43" ry="5.38" opacity="0.5"/>
+  <line x1="332.9" y1="64.02" x2="382.44" y2="174.4" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+  <path d="M333.84,63.77s-14,42.82,2.85,75.48S383.8,175.7,383.8,175.7" fill="none" stroke="#d34802" stroke-miterlimit="10" stroke-width="5"/>
+  <ellipse cx="336.33" cy="137.87" rx="11.09" ry="13.45" stroke="#000" stroke-miterlimit="10" fill="url(#linear-gradient-42)"/>
+  <path d="M205.17,60.38l4.37-3,3.93,4.33,4.8-4.33,2.62,3.76c2-4.42,1.08-8.1-6.18-10.15C206.26,51.46,204.47,55.29,205.17,60.38Z" fill="#005e29" stroke="#000" stroke-miterlimit="10"/>
+  <path d="M53.17,60.38l4.37-3,3.93,4.33,4.8-4.33,2.62,3.76C70.88,56.72,70,53,62.71,51,54.26,51.46,52.47,55.29,53.17,60.38Z" fill="#005e29" stroke="#000" stroke-miterlimit="10"/>
+  <rect x="408.2" y="64.54" width="9.25" height="2.23"/>
+  <rect x="377.2" y="64.54" width="9.25" height="2.23"/>
+</svg>
