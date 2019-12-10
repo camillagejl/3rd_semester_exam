@@ -45,7 +45,7 @@ function buildWheels() {
         id: 1,
 
         // The symbols are fetched from a json-file. Symbols can be added several times, and order doesn't matter.
-        symbols: [symbols[0], symbols[1], symbols[2], symbols[3], symbols[4], symbols[5]],
+        symbols: [symbols[3], symbols[2], symbols[3], symbols[0], symbols[5], symbols[1], symbols[0], symbols[5], symbols[1], symbols[2], symbols[0], symbols[4], symbols[0], symbols[5]],
         isHolding: false,
 
         // "active" refers to the active symbol in the wheel array. This starts on 1 (i.e. the second symbol in the
@@ -55,13 +55,13 @@ function buildWheels() {
     };
     let wheel2 = {
         id: 2,
-        symbols: [symbols[0], symbols[1], symbols[2], symbols[3], symbols[4], symbols[5]],
+        symbols: [symbols[5], symbols[3], symbols[4], symbols[0], symbols[5], symbols[0], symbols[3], symbols[1], symbols[4], symbols[2], symbols[0], symbols[1], symbols[2], symbols[1]],
         isHolding: false,
         active: 1
     };
     let wheel3 = {
         id: 3,
-        symbols: [symbols[0], symbols[1], symbols[2], symbols[3], symbols[4], symbols[5]],
+        symbols: [symbols[3], symbols[5], symbols[1], symbols[0], symbols[4], symbols[5], symbols[2], symbols[1], symbols[0], symbols[0], symbols[5], symbols[3], symbols[3], symbols[2]],
         isHolding: false,
         active: 1
     };
@@ -287,7 +287,7 @@ function spinVisualWheel(wheel, priceWon) {
         // of the wheel (the previously active index) - the new position where it should land (the active index). For
         // the wheel to spin several rounds, take the wheel length * 2, and * the wheel.id so the wheels will stop
         // one after one.
-        let spinRounds = wheel.previouslyActive - wheel.active + (wheel.symbols.length * 2 * wheel.id);
+        let spinRounds = wheel.previouslyActive - wheel.active + (wheel.symbols.length * wheel.id);
         console.log(wheel.id + " Active " + (wheel.active));
 
         spinWheel(wheel, spinRounds, priceWon)
