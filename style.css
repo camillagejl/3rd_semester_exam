@@ -719,11 +719,15 @@ label {
     width: 90%;
 }
 
+.game_popup strong {
+    font-size: 1.5rem;
+}
+
 .popup_button {
     font-size: 1.3rem;
     margin: 3%;
-    width: 20%;
-    height: 10%;
+    width: 25%;
+    height: 13%;
 }
 
 .popup_signup_button {
