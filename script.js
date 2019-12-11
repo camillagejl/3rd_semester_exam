@@ -15,17 +15,20 @@ async function fetchSymbols() {
 
 let slotMachineSVG;
 let holdButtonSVG;
+let textSVG;
 function fetchSVGs() {
     const slotMachineSVGFile = fetch("elements/static/slot_machine.svg").then(r => r.text());
     const holdButtonSVGFile = fetch("elements/static/hold.svg").then(r => r.text());
+    const textSVGFile = fetch("elements/static/text.svg").then(r => r.text());
 
     Promise
-        .all([slotMachineSVGFile, holdButtonSVGFile])
+        .all([slotMachineSVGFile, holdButtonSVGFile, textSVGFile])
         .then(
             function (responses) {
-                const [slotMachineSVGFile, holdButtonSVGFile] = responses;
+                const [slotMachineSVGFile, holdButtonSVGFile, textSVGFile] = responses;
                 slotMachineSVG = slotMachineSVGFile;
                 holdButtonSVG = holdButtonSVGFile;
+                textSVG = textSVGFile;
                 startGame();
             }
         );
@@ -246,7 +249,6 @@ function calculatePriceWon(wheels, spinResult) {
 
 // Adds the wheels, their symbols and hold buttons to the DOM.
 function addWheelsToDOM(wheels) {
-
     // First, adding the slot machine SVG to the DOM. This is added as an image with JavaScript so we are able to change
     // text elements (coins and spins left) through JavaScript.
 
@@ -265,7 +267,20 @@ function addWheelsToDOM(wheels) {
 
         document.querySelector(".hold_buttons").innerHTML += `<button class="hold_wheel" data-holdwheel="${wheel.id}">${holdButtonSVG}</button>`;
 
-    })
+    });
+
+    addSVGsToPopup();
+}
+
+function addSVGsToPopup() {
+    document.querySelectorAll(".text_svg").forEach(element => {
+        element.innerHTML = textSVG;
+    });
+
+    const jackpotPopup = document.querySelector(".jackpot");
+    const noJackpotPopup = document.querySelector(".no_jackpot");
+
+
 }
 
 function showSpinsLeft(spins) {
@@ -395,6 +410,9 @@ function toggleCoinsDisplay() {
 }
 
 function displayPopup(priceWon) {
+
+
+
     // if (priceWon === 20) {
     //     document.querySelector(".game_popup").innerHTML = `
     //     You won the big jackpot of ${priceWon} coins!
