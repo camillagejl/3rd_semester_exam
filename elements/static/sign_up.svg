@@ -1,7 +1,7 @@
 <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="221" height="62" viewBox="0 7 221 62">
   <title>sign_up</title>
   <rect x="2.76" y="8.09" width="215.5" height="59.05" fill="#0ec416" stroke="#000" stroke-miterlimit="10"/>
-  <g>
+  <g fill="#FFFFFF">
     <path d="M59.89,42.44V40.56H58V38.69h3.75v1.87h5.63V36.81h-7.5V34.94H58V31.19h1.88V29.31h9.37v1.88h1.88v1.87H67.39V31.19H61.76v3.75h7.5v1.87h1.88v3.75H69.26v1.88Z"/>
     <path d="M74.89,42.44V40.56h3.75V31.19H74.89V29.31H86.14v1.88H82.39v9.37h3.75v1.88Z"/>
     <path d="M91.76,42.44V40.56H89.89V38.69H88V33.06h1.88V31.19h1.87V29.31h9.38v1.88h-7.5v1.87H91.76v5.63h1.88v1.87h3.75V36.81H95.51V34.94h5.63v7.5Z"/>

@@ -277,9 +277,14 @@ function addSVGsToPopup() {
         element.innerHTML = textSVG;
     });
 
-    const jackpotPopup = document.querySelector(".jackpot");
     const noJackpotPopup = document.querySelector(".no_jackpot");
+    const jackpotPopup = document.querySelector(".jackpot");
 
+    noJackpotPopup.querySelector(".popup_text_one").querySelector(".svg_text").textContent = "Sign up now, and spend your coins on winning real money prices!";
+    noJackpotPopup.querySelector(".popup_text_two").querySelector(".svg_text").textContent = "Or keep playing, and aim for the big jackpot of 20 coins!";
+
+    jackpotPopup.querySelector(".popup_text_one").querySelector(".svg_text").textContent = "You won the jackpot. Don't loose your coins!";
+    jackpotPopup.querySelector(".popup_text_two").querySelector(".svg_text").textContent = "Sign up now, and spend your coins on winning real money prices!";
 
 }
 
@@ -411,27 +416,17 @@ function toggleCoinsDisplay() {
 
 function displayPopup(priceWon) {
 
-
-
-    // if (priceWon === 20) {
-    //     document.querySelector(".game_popup").innerHTML = `
-    //     You won the big jackpot of ${priceWon} coins!
-    //     <p>Sign up now, and you can spend your coins to win real money prices!</p>
-    //     <button class="popup_button popup_signup_button">Sign up now!</button>
-    //     <div class="character_sprite"></div>
-    //     `
-    // }
-
-    // else {
-    //     document.querySelector(".game_popup").innerHTML = `
-    //     <p>You won ${priceWon} coins!</p>
-    //     <p>Sign up now, and you can spend your coins to win real money prices!</p>
-    //     <button class="popup_button popup_signup_button">Sign up now!</button>
-    //     <p>Or keep playing to aim for the big jackpot of 20 price, to take with you to our other games!</p>
-    //     <button class="popup_button popup_keep_playing_button">Keep playing!</button>
-    //     <div class="character_sprite"></div>
-    //     `
-    // }
+    document.querySelectorAll(".game_popup_heading").forEach(heading => {
+        heading.querySelector(".svg_text").innerHTML = `Congratulations! &nbsp; You won ${priceWon} coins!`;
+    });
 
     document.querySelector(".game_popup").style.display = "flex";
+
+    if (priceWon === 20) {
+        document.querySelector(".jackpot").style.display = "block";
+    }
+
+    if (priceWon !== 20) {
+        document.querySelector(".no_jackpot").style.display = "block";
+    }
 }

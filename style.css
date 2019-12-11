@@ -714,13 +714,21 @@ label {
 }
 
 .game_popup_content {
+    display: none;
+    font-family: "Alatsi", sans-serif;
+    fill: whitesmoke;
     text-align: center;
     height: 90%;
     width: 90%;
 }
 
-.game_popup strong {
+.game_popup_heading {
+    width: 100%;
     font-size: 1.5rem;
+}
+
+.text_svg svg {
+    width: 100%;
 }
 
 .popup_button {

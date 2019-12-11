@@ -1,7 +1,7 @@
 <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="221" height="62" viewBox="0 7 221 62">
   <title>keep_playing</title>
   <rect x="2.51" y="8.09" width="215.5" height="59.05" fill="#ed7a1b" stroke="#000" stroke-miterlimit="10"/>
-  <g>
+  <g fill="#FFFFFF">
     <path d="M20.26,42.44V29.31H24v5.63h1.88V33.06h1.87V31.19h1.88V29.31h3.75v1.88H31.51v1.87H29.64v1.88H27.76v1.87h1.88v1.88h1.87v1.87h1.88v1.88H27.76V40.56H25.89V38.69H24v3.75Z"/>
     <path d="M35.26,42.44V29.31H48.39v1.88H39v3.75h7.5v1.87H39v3.75h9.38v1.88Z"/>
     <path d="M50.26,42.44V29.31H63.39v1.88H54v3.75h7.5v1.87H54v3.75h9.38v1.88Z"/>
