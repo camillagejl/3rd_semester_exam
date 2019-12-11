@@ -112,10 +112,12 @@ function List() {
     // ----- FILTER BY -----
 
     const [filterBy, setFilterBy] = useState('All');
+    const [filterColumn, setFilterColumn] = useState('All');
 
-    const filterByColumn = (column) => {
-        console.log("Changing");
-        setFilterBy(column);
+    const filterByColumn = (column, event) => {
+        console.log("Changing", column, event);
+        setFilterBy(event.target.value);
+        setFilterColumn(column);
     };
 
     let filteredCollection;
@@ -128,7 +130,7 @@ function List() {
     else {
     filteredCollection = filter(
         sortedCollection,
-        ['country', filterBy]
+        [filterColumn, filterBy]
     );
     }
 
@@ -136,9 +138,9 @@ function List() {
     return (
         <div className="list">
 
-            <label id="filterByCountry">
+            <label>
                 Filter by country:
-                <select name="filterByCountry" className="filterByCountry">
+                <select onChange={(e) => filterByColumn("country", e)} name="filterByCountry" className="filterByCountry">
                     <option value="All">All</option>
                     <option value="Denmark">Denmark</option>
                     <option value="United Kingdom">United Kingdom</option>
@@ -147,9 +149,9 @@ function List() {
                 </select>
             </label>
 
-            <label id="filterByEmailPrefs">
+            <label>
                 Filter by email subscription:
-                <select name="filterByEmailPrefs" className="filterByEmailPrefs">
+                <select onChange={(e) => filterByColumn("emailSub", e)} name="filterByEmailPrefs" className="filterByEmailPrefs">
                     <option value="All">All</option>
                     <option value="true">&#10003; Subscribed</option>
                     <option value="false">&times; Not subscribed</option>
