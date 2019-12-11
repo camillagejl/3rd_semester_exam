@@ -22,11 +22,11 @@ function insertAllGames() {
     <div class="overlay">
       <div class="text">Coming Soon!</div>
     </div>
-    </div>
-                   
+    </div>             
     <div class="gametitle">
     <h2>${section.gametitle}</h2>
     </div>
+    <div clas="category">${section.category}</div> 
             </div>`;
     destAllGames.insertAdjacentHTML("beforeend", template);
   });
