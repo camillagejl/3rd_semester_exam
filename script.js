@@ -273,10 +273,14 @@ function addWheelsToDOM(wheels) {
 }
 
 function addSVGsToPopup() {
+
+    // Adds editable text SVGs to where they are needed.
     document.querySelectorAll(".text_svg").forEach(element => {
         element.innerHTML = textSVG;
     });
 
+    // Add texts to the two different popups - one for when the user wins the jackpot, one for when the user wins
+    // anything else.
     const noJackpotPopup = document.querySelector(".no_jackpot");
     const jackpotPopup = document.querySelector(".jackpot");
 
@@ -285,6 +289,20 @@ function addSVGsToPopup() {
 
     jackpotPopup.querySelector(".popup_text_one").querySelector(".svg_text").textContent = "You won the jackpot. Don't loose your coins!";
     jackpotPopup.querySelector(".popup_text_two").querySelector(".svg_text").textContent = "Sign up now, and spend your coins on winning real money prices!";
+
+//    eventListeners for buttons
+
+    document.querySelectorAll(".popup_signup_button").forEach(button => {
+        button.addEventListener("click", function _function() {
+            console.log("Please sign up");
+        });
+    });
+
+    document.querySelector(".popup_keep_playing_button").addEventListener("click", function _function() {
+        document.querySelector(".game_popup").style.display = "none";
+        document.querySelector(".no_jackpot").style.display = "none";
+        document.querySelector(".coins_won").textContent = "0";
+    })
 
 }
 
@@ -396,14 +414,20 @@ function displayPrice(priceWon) {
     }
 
     if (priceWon !== 0 && priceWon === coinsDisplay) {
-        toggleCoinsDisplay();
+        const toggleCount = 30;
+        toggleCoinsDisplay(toggleCount);
         setTimeout(function _function() {
             displayPopup(priceWon);
         }, 2000);
     }
 }
 
-function toggleCoinsDisplay() {
+function toggleCoinsDisplay(toggleCount) {
+    toggleCount--;
+    console.log("Count", toggleCount);
+
+    if (toggleCount > 0) {
+
     if (document.querySelector(".coins_won").style.display === "block") {
     document.querySelector(".coins_won").style.display = "none";
     }
@@ -411,7 +435,10 @@ function toggleCoinsDisplay() {
     else {
         document.querySelector(".coins_won").style.display = "block";
     }
-    setTimeout(toggleCoinsDisplay, 100);
+    setTimeout(function _function(){
+        toggleCoinsDisplay(toggleCount);
+    }, 100);
+    }
 }
 
 function displayPopup(priceWon) {

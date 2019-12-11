@@ -610,6 +610,103 @@ label {
     background-image: var(--symbol-6);
 }
 
+
+/* GAME POPUP */
+
+.game_popup {
+    font-family: "Alatsi", sans-serif;
+    color: #f6f6f6;
+    flex-direction: column;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 80%;
+    width: 80%;
+    background-color: #54808b;
+    border: 3px solid black;
+    border-radius: 5%;
+
+    animation-name: fade_in_kf;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+}
+
+.game_popup_content {
+    display: none;
+    font-family: "Alatsi", sans-serif;
+    fill: whitesmoke;
+    text-align: center;
+    height: 90%;
+    width: 90%;
+}
+
+.game_popup_heading {
+    width: 100%;
+    font-size: 150%;
+}
+
+.text_svg svg {
+    width: 100%;
+}
+
+.popup_button {
+    margin: 3%;
+    width: 25%;
+    height: 13%;
+}
+
+.popup_signup_button {
+    background-image: url("elements/static/sign_up.svg");
+}
+
+.popup_keep_playing_button {
+    background-image: url("elements/static/keep_playing.svg");
+
+}
+
+@keyframes fade_in_kf {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.character_sprite {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 30%;
+    width: 12%;
+
+    background-image: var(--character);
+    background-size: 300% 100%;
+    animation-name: char;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(3);
+}
+
+@keyframes char {
+    0% {
+        background-position: 0% 0%;
+    }
+    0% {
+        background-position: -300%;
+    }
+}
+
+
 /* Landscape options */
 @media screen and (orientation: portrait) {
     .game_container {
@@ -683,101 +780,19 @@ label {
         height: 100%;
         margin-right: -3%;
     }
-}
 
-/* GAME POPUP */
-
-.game_popup {
-    font-family: "Alatsi", sans-serif;
-    color: #f6f6f6;
-    line-height: 1.2rem;
-    flex-direction: column;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 80%;
-    width: 80%;
-    background-color: #54808b;
-    border: 3px solid black;
-    border-radius: 5%;
-
-    animation-name: fade_in_kf;
-    animation-duration: 1s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-in;
-}
-
-.game_popup_content {
-    display: none;
-    font-family: "Alatsi", sans-serif;
-    fill: whitesmoke;
-    text-align: center;
-    height: 90%;
-    width: 90%;
-}
-
-.game_popup_heading {
-    width: 100%;
-    font-size: 1.5rem;
-}
-
-.text_svg svg {
-    width: 100%;
-}
-
-.popup_button {
-    font-size: 1.3rem;
-    margin: 3%;
-    width: 25%;
-    height: 13%;
-}
-
-.popup_signup_button {
-    background-image: url("elements/static/sign_up.svg");
-}
-
-.popup_keep_playing_button {
-    background-image: url("elements/static/keep_playing.svg");
-
-}
-
-@keyframes fade_in_kf {
-    0% {
-        opacity: 0;
+    .game_popup_heading {
+        font-size: 2.3rem;
     }
 
-    100% {
-        opacity: 1;
+    .popup_text_one,
+    .popup_text_two {
+        font-size: 1.3rem;
     }
-}
 
-.character_sprite {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 30%;
-    width: 12%;
-
-    background-image: var(--character);
-    background-size: 300% 100%;
-    animation-name: char;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    animation-timing-function: steps(3);
-}
-
-@keyframes char {
-    0% {
-        background-position: 0% 0%;
-    }
-    0% {
-        background-position: -300%;
+    .popup_button {
+        width: 40%;
+        height: 10%;
     }
 }
 
