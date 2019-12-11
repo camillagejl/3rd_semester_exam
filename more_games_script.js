@@ -1,6 +1,7 @@
 "use strict";
 
-const destAllGames = document.querySelector("#all_games");
+const popularGames = document.querySelector(".popular_games");
+const jackpotGames = document.querySelector(".jackpot_games");
 let section = [];
 
 async function getAllGames() {
@@ -24,11 +25,18 @@ function insertAllGames() {
     </div>
     </div>             
     <div class="gametitle">
-    <h2>${section.gametitle}</h2>
+    <h3>${section.gametitle}</h3>
     </div>
-    <div clas="category">${section.category}</div> 
             </div>`;
-    destAllGames.insertAdjacentHTML("beforeend", template);
+
+                        if (section.category[0] === "Popular Games") {
+                popularGames.insertAdjacentHTML("beforeend", template);
+                }
+
+                if (section.category[0] === "Jackpot Games") {
+                jackpotGames.insertAdjacentHTML("beforeend", template);
+                }
+
   });
 }
 getAllGames();
