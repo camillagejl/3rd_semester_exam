@@ -30,13 +30,15 @@ function insertAllGames() {
     </div>
             </div>`;
 
-            if (section.category[0] === "Popular Games") {
-    popularGames.insertAdjacentHTML("beforeend", template);
-    }
+                        if (section.category[0] === "Popular Games") {
+                popularGames.insertAdjacentHTML("beforeend", template);
+                }
 
-    if (section.category[0] === "Jackpot Games") {
-    jackpotGames.insertAdjacentHTML("beforeend", template);
-    }
+                if (section.category[0] === "Jackpot Games") {
+                jackpotGames.insertAdjacentHTML("beforeend", template);
+                }
+
+
   });
 }
 getAllGames();

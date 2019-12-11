@@ -8,8 +8,8 @@
 
 body {
     font-family: "Alatsi", sans-serif;
-    background-color: whitesmoke;
     /*background-image: url(elements/background_03.svg);*/
+    background-color: whitesmoke;
 }
 
 section {
@@ -643,6 +643,7 @@ label {
 }
 
 
+
 /* WORDPRESS */
 
 #more_games {
@@ -651,7 +652,12 @@ label {
 
 #more_games h1 {
     font-size: 2rem;
-    margin-bottom: 20px;
+}
+
+#more_games h2 {
+    font-size: 1.5rem;
+    font-weight: 100;
+    padding: 15px 0;
 }
 
 .popular_games,
@@ -682,13 +688,13 @@ label {
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 5%;
+    left: 0;
     right: 0;
-    height: 90%;
-    width: 90%;
+    height: 100%;
+    width: 100%;
     opacity: 0;
-    transition: .5s ease;
-    background-color: rgb(97, 97, 97);
+    transition: 0.5s ease;
+    background-color: rgba(255, 255, 255, 0.747);
 }
 
 .container:hover .overlay {
@@ -697,15 +703,12 @@ label {
 }
 
 .text {
-    color: white;
-    font-size: 20px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    text-align: center;
+    height: 100%;
+    color: rgb(0, 0, 0);
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .play_btn {
@@ -719,9 +722,8 @@ label {
     border-radius: 5px;
     font-family: "Alatsi", sans-serif;
     font-weight: 600;
-    font-size: 1em;
+    font-size: 1rem;
 }
-
 
 @media screen and (max-width: 1499px) {
     .play_btn {
@@ -761,6 +763,7 @@ label {
         top: 75%;
     }
 }
+
 
 /* ----- HELPER CLASSES ----- */
 
