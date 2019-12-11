@@ -115,6 +115,7 @@ function activateStartButton(wheels) {
 }
 
 function activateSpinButton(wheels, spins) {
+    console.log("Activating - Activate spin button", spins);
     showSpinsLeft(spins);
 
     document.querySelector(".spin_button").addEventListener("click", function _function() {
@@ -304,21 +305,27 @@ function holdButtonColorChange(button, thisIsHolding) {
 }
 
 function spinVisualWheel(wheel, priceWon, spins, wheels) {
-    // Only spins each wheel if they are not on hold.
-    if (!wheel.isHolding) {
-
         // To calculate how many times the wheel should spin to land on the active index, we take the current position
         // of the wheel (the previously active index) - the new position where it should land (the active index). For
         // the wheel to spin several rounds, take the wheel length * 2, and * the wheel.id so the wheels will stop
         // one after one.
-        let spinRounds = wheel.previouslyActive - wheel.active + (wheel.symbols.length * wheel.id);
-        console.log(wheel.id + " Active " + (wheel.active));
+
+    let spinRounds;
+    if (!wheel.isHolding) {
+        spinRounds = wheel.previouslyActive - wheel.active + (wheel.symbols.length * wheel.id);
+    }
+
+    else {
+        spinRounds = 0;
+    }
+
+    console.log(wheel.id + " Active " + (wheel.active));
 
         spinWheel(wheel, spinRounds, priceWon, spins, wheels)
-    }
 }
 
 function spinWheel(wheel, spinRounds, priceWon, spins, wheels) {
+    if (spinRounds > 0) {
     document.querySelectorAll(`.wheel_${wheel.id} .item`).forEach(item => {
 
         // Moves all symbols down 100% of their height.
@@ -329,7 +336,13 @@ function spinWheel(wheel, spinRounds, priceWon, spins, wheels) {
     document.querySelector(`.wheel_${wheel.id} .item`).addEventListener("transitionend", function _function() {
         document.querySelector(`.wheel_${wheel.id} .item`).removeEventListener("transitionend", _function);
         moveLastItem(wheel, spinRounds, priceWon, spins, wheels);
-    })
+    });
+
+    }
+
+    if (spinRounds === 0) {
+        moveLastItem(wheel, spinRounds, priceWon, spins, wheels);
+    }
 }
 
 function moveLastItem(wheel, spinRounds, priceWon, spins, wheels) {
@@ -341,6 +354,7 @@ function moveLastItem(wheel, spinRounds, priceWon, spins, wheels) {
         item.style.transform = "translateY(0)";
     });
 
+
     // Variable that contains all the divs in a wheel.
     const allItems = document.querySelectorAll(`.wheel_${wheel.id} .item`);
 
@@ -350,8 +364,10 @@ function moveLastItem(wheel, spinRounds, priceWon, spins, wheels) {
     // Gets the ID from the last div, so it can be added to the top below.
     const lastSymbolID = lastItem.getAttribute("data-symbol-id");
 
+    if (spinRounds > 0) {
     // Removes the last div completely from the DOM.
     lastItem.parentNode.removeChild(lastItem);
+    }
 
     addLastItem(wheel, lastSymbolID, spinRounds, priceWon, spins, wheels);
 }
@@ -359,9 +375,11 @@ function moveLastItem(wheel, spinRounds, priceWon, spins, wheels) {
 function addLastItem(wheel, lastSymbolID, spinRounds, priceWon, spins, wheels) {
     console.log("spins", spins);
 
+    if (spinRounds > 0) {
     // Inserts div to the start of the wheel, with the ID from the div removed from the end of the wheel.
     let lastItemTemplate = `<div class="item" data-symbol-id="${lastSymbolID}"></div>`;
     document.querySelector(`.wheel_${wheel.id}`).insertAdjacentHTML('afterbegin', lastItemTemplate);
+    }
 
     spinRounds--;
 
@@ -370,9 +388,9 @@ function addLastItem(wheel, lastSymbolID, spinRounds, priceWon, spins, wheels) {
         setTimeout(function () {
             spinWheel(wheel, spinRounds, priceWon, spins, wheels)
         }, 1)
+
     } else if (wheel.id === 3 && spinRounds <= 0) {
         displayPrice(priceWon);
-        console.log("spins again", spins);
 
         if (priceWon === 0) {
 
@@ -390,8 +408,6 @@ function addLastItem(wheel, lastSymbolID, spinRounds, priceWon, spins, wheels) {
         }
 
     }
-
-
 }
 
 function displayPrice(priceWon) {
