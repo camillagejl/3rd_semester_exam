@@ -49,9 +49,11 @@ function buildWheels() {
     let wheel1 = {
         id: 1,
 
+        // This line of symbols is only used when we want to test the winning popup.
+        // symbols: [symbols[0], symbols[0], symbols[5], symbols[5]],
+
         // The symbols are fetched from a json-file. Symbols can be added several times, and order doesn't matter.
-        symbols: [symbols[0], symbols[0], symbols[5], symbols[5]],
-        // symbols: [symbols[3], symbols[2], symbols[3], symbols[0], symbols[5], symbols[1], symbols[0], symbols[5], symbols[1], symbols[2], symbols[0], symbols[4], symbols[0], symbols[5]],
+        symbols: [symbols[3], symbols[2], symbols[3], symbols[0], symbols[5], symbols[1], symbols[0], symbols[5], symbols[1], symbols[2], symbols[0], symbols[4], symbols[0], symbols[5]],
         isHolding: false,
 
         // "active" refers to the active symbol in the wheel array. This starts on 1 (i.e. the second symbol in the
@@ -61,15 +63,15 @@ function buildWheels() {
     };
     let wheel2 = {
         id: 2,
-        symbols: [symbols[0], symbols[0], symbols[5], symbols[5]],
-        // symbols: [symbols[5], symbols[3], symbols[4], symbols[0], symbols[5], symbols[0], symbols[3], symbols[1], symbols[4], symbols[2], symbols[0], symbols[1], symbols[2], symbols[1]],
+        // symbols: [symbols[0], symbols[0], symbols[5], symbols[5]],
+        symbols: [symbols[5], symbols[3], symbols[4], symbols[0], symbols[5], symbols[0], symbols[3], symbols[1], symbols[4], symbols[2], symbols[0], symbols[1], symbols[2], symbols[1]],
         isHolding: false,
         active: 1
     };
     let wheel3 = {
         id: 3,
-        symbols: [symbols[0], symbols[0], symbols[5], symbols[5]],
-        // symbols: [symbols[3], symbols[5], symbols[1], symbols[0], symbols[4], symbols[5], symbols[2], symbols[1], symbols[0], symbols[0], symbols[5], symbols[3], symbols[3], symbols[2]],
+        // symbols: [symbols[0], symbols[0], symbols[5], symbols[5]],
+        symbols: [symbols[3], symbols[5], symbols[1], symbols[0], symbols[4], symbols[5], symbols[2], symbols[1], symbols[0], symbols[0], symbols[5], symbols[3], symbols[3], symbols[2]],
         isHolding: false,
         active: 1
     };
@@ -329,7 +331,7 @@ function spinWheel(wheel, spinRounds, priceWon, spins, wheels) {
     document.querySelectorAll(`.wheel_${wheel.id} .item`).forEach(item => {
 
         // Moves all symbols down 100% of their height.
-        item.style.transitionDuration = ".05s";
+        item.style.transitionDuration = ".04s";
         item.style.transform = "translateY(100%)";
     });
 
