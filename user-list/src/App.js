@@ -66,27 +66,33 @@ function List() {
 
     // ----- FILTER BY -----
 
-    const [filterBy, setFilterBy] = useState('All');
-    const [filterColumn, setFilterColumn] = useState('All');
+    const [countryFilter, setCountryFilter] = useState('All');
+    const [emailSubFilter, setEmailSubFilter] = useState('All');
 
-    const filterByColumn = (column, event) => {
-        console.log("Changing", column, event);
-        setFilterBy(event.target.value);
-        setFilterColumn(column);
+    const filterByCountry = (event) => {
+        console.log("Changing Country", event.target.value);
+        setCountryFilter(event.target.value);
     };
 
-    let filteredCollection;
-    if (filterBy === 'All') {
-    filteredCollection = filter(
-        sortedCollection
-    );
+    const filterByEmailSub = (event) => {
+        console.log("Changing emailSub", event.target.value);
+        setEmailSubFilter(event.target.value);
+    };
+
+    let filteredCollection = sortedCollection;
+
+    if (countryFilter !== 'All') {
+        filteredCollection = filter(
+            filteredCollection,
+            ["country", countryFilter]
+        );
     }
 
-    else {
-    filteredCollection = filter(
-        sortedCollection,
-        [filterColumn, filterBy]
-    );
+    if (emailSubFilter !== 'All') {
+        filteredCollection = filter(
+            filteredCollection,
+            ["emailSub", emailSubFilter]
+        );
     }
 
     // ----- LIST COMPONENT -----
@@ -95,7 +101,7 @@ function List() {
 
             <label>
                 Filter by country:
-                <select onChange={(e) => filterByColumn("country", e)} name="filterByCountry" className="filterByCountry">
+                <select onChange={filterByCountry} name="filterByCountry" className="filterByCountry">
                     <option value="All">All</option>
                     <option value="Denmark">Denmark</option>
                     <option value="United Kingdom">United Kingdom</option>
@@ -106,7 +112,7 @@ function List() {
 
             <label>
                 Filter by email subscription:
-                <select onChange={(e) => filterByColumn("subscription", e)} name="filterByEmailPrefs" className="filterByEmailPrefs">
+                <select onChange={filterByEmailSub} name="filterByEmailPrefs" className="filterByEmailPrefs">
                     <option value="All">All</option>
                     <option value="true">&#10003; Subscribed</option>
                     <option value="false">&times; Not subscribed</option>
@@ -173,6 +179,10 @@ function List() {
                         <img className="sortArrow" style={arrowStyle} src={sortArrow} alt="Sorting arrow"/>
                         }
                     </th>
+
+                    <th>
+                        Delete user
+                    </th>
                 </tr>
                 </thead>
                 <tbody>
@@ -188,7 +198,8 @@ function List() {
                         <td>{user.lastname}</td>
                         <td>{user.dateofbirth}</td>
                         <td>{user.country}</td>
-                        <td>{user.subscription}</td>
+                        <td>{user.emailSub}</td>
+                        <td className="delete_user">&times; Delete</td>
                     </tr>
 
                 ))}
@@ -198,12 +209,28 @@ function List() {
     )
 }
 
+function DesktopAppPopup() {
+
+    const [showingPopup, setShowingPopup] = useState(true);
+
+    console.log(showingPopup);
+
+    return (
+        <div className={`${showingPopup ? "desktop_app_popup" : "hidden"}`}>
+            <strong>Welcome to the World Games user list!</strong>
+            <p>This user list is created for desktop. Please use a desktop for the best experience.</p>
+            <p>If you wish continue on your current device, we recommend switching to landscape mode.</p>
+            <button onClick={() => setShowingPopup(false)}>Continue to the list</button>
+        </div>
+    )
+}
 
 function App() {
     return (
         <div className="App">
             <Header/>
             <List direction="asc"/>
+            <DesktopAppPopup/>
         </div>
     );
 }
@@ -219,6 +246,8 @@ export default App;
 // lodash library for easy sorting
 // https://www.npmjs.com/package/lodash
 //
-//
 // Conditional rendering
 // https://reactjs.org/docs/conditional-rendering.html?fbclid=IwAR3Nu5SDXMZ4yrBxZ86vnCRLchjlDdDgm0m9Lg3yi89WtVsPgS3I3b763Rw#inline-if-with-logical--operator1
+//
+// Adding class to popup depending on useState
+// https://codesandbox.io/s/vv3qnlx347?fontsize=14
