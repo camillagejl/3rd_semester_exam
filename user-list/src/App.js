@@ -198,7 +198,7 @@ function List() {
                         <td>{user.lastname}</td>
                         <td>{user.dateofbirth}</td>
                         <td>{user.country}</td>
-                        <td>{user.emailSub}</td>
+                        <td>{user.subscription}</td>
                         <td className="delete_user">&times; Delete</td>
                     </tr>
 
