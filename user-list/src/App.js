@@ -111,27 +111,33 @@ function List() {
 
     // ----- FILTER BY -----
 
-    const [filterBy, setFilterBy] = useState('All');
-    const [filterColumn, setFilterColumn] = useState('All');
+    const [countryFilter, setCountryFilter] = useState('All');
+    const [emailSubFilter, setEmailSubFilter] = useState('All');
 
-    const filterByColumn = (column, event) => {
-        console.log("Changing", column, event);
-        setFilterBy(event.target.value);
-        setFilterColumn(column);
+    const filterByCountry = (event) => {
+        console.log("Changing Country", event.target.value);
+        setCountryFilter(event.target.value);
     };
 
-    let filteredCollection;
-    if (filterBy === 'All') {
-    filteredCollection = filter(
-        sortedCollection
-    );
+    const filterByEmailSub = (event) => {
+        console.log("Changing emailSub", event.target.value);
+        setEmailSubFilter(event.target.value);
+    };
+
+    let filteredCollection = sortedCollection;
+
+    if (countryFilter !== 'All') {
+        filteredCollection = filter(
+            filteredCollection,
+            ["country", countryFilter]
+        );
     }
 
-    else {
-    filteredCollection = filter(
-        sortedCollection,
-        [filterColumn, filterBy]
-    );
+    if (emailSubFilter !== 'All') {
+        filteredCollection = filter(
+            filteredCollection,
+            ["emailSub", emailSubFilter]
+        );
     }
 
     // ----- LIST COMPONENT -----
@@ -140,7 +146,7 @@ function List() {
 
             <label>
                 Filter by country:
-                <select onChange={(e) => filterByColumn("country", e)} name="filterByCountry" className="filterByCountry">
+                <select onChange={filterByCountry} name="filterByCountry" className="filterByCountry">
                     <option value="All">All</option>
                     <option value="Denmark">Denmark</option>
                     <option value="United Kingdom">United Kingdom</option>
@@ -151,7 +157,7 @@ function List() {
 
             <label>
                 Filter by email subscription:
-                <select onChange={(e) => filterByColumn("emailSub", e)} name="filterByEmailPrefs" className="filterByEmailPrefs">
+                <select onChange={filterByEmailSub} name="filterByEmailPrefs" className="filterByEmailPrefs">
                     <option value="All">All</option>
                     <option value="true">&#10003; Subscribed</option>
                     <option value="false">&times; Not subscribed</option>
@@ -218,6 +224,10 @@ function List() {
                         <img className="sortArrow" style={arrowStyle} src={sortArrow} alt="Sorting arrow"/>
                         }
                     </th>
+
+                    <th>
+                        Delete user
+                    </th>
                 </tr>
                 </thead>
                 <tbody>
@@ -234,6 +244,7 @@ function List() {
                         <td>{user.dateOfBirth}</td>
                         <td>{user.country}</td>
                         <td>{user.emailSub}</td>
+                        <td className="delete_user">&times; Delete</td>
                     </tr>
 
                 ))}
@@ -242,7 +253,6 @@ function List() {
         </div>
     )
 }
-
 
 function App() {
     return (

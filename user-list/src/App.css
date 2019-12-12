@@ -64,3 +64,8 @@ tr:nth-child(odd) {
   padding-left: 5px;
   margin-bottom: 2px;
 }
+
+.delete_user {
+  cursor: pointer;
+  color: darkred;
+}
