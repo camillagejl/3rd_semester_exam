@@ -254,11 +254,28 @@ function List() {
     )
 }
 
+function DesktopAppPopup() {
+
+    const [showingPopup, setShowingPopup] = useState(true);
+
+    console.log(showingPopup);
+
+    return (
+        <div className={`${showingPopup ? "desktop_app_popup" : "hidden"}`}>
+            <strong>Welcome to the World Games user list!</strong>
+            <p>This user list is created for desktop. Please use a desktop for the best experience.</p>
+            <p>If you wish continue on your current device, we recommend switching to landscape mode.</p>
+            <button onClick={() => setShowingPopup(false)}>Continue to the list</button>
+        </div>
+    )
+}
+
 function App() {
     return (
         <div className="App">
             <Header/>
             <List direction="asc"/>
+            <DesktopAppPopup/>
         </div>
     );
 }
@@ -274,6 +291,8 @@ export default App;
 // lodash library for easy sorting
 // https://www.npmjs.com/package/lodash
 //
-//
 // Conditional rendering
 // https://reactjs.org/docs/conditional-rendering.html?fbclid=IwAR3Nu5SDXMZ4yrBxZ86vnCRLchjlDdDgm0m9Lg3yi89WtVsPgS3I3b763Rw#inline-if-with-logical--operator1
+//
+// Adding class to popup depending on useState
+// https://codesandbox.io/s/vv3qnlx347?fontsize=14
