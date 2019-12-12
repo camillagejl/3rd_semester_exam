@@ -7,69 +7,24 @@ import sortArrow from "./elements/sort_arrow.svg";
 // Placeholder user data
 // NOTE: dateOfBirth needs to be a proper date, so it can be sorted properly and not just
 // by numbers.
-const USERS = [
-    {
-        id: 1,
-        userName: "WSmith",
-        email: "will@smith.com",
-        firstName: "Will",
-        lastName: "Smith",
-        dateOfBirth: "05/09/1995",
-        country: "Denmark",
-        emailSub: "false"
-    },
-    {
-        id: 2,
-        userName: "Carlton",
-        email: "Carlton@smith.com",
-        firstName: "Carlton",
-        lastName: "Banks",
-        dateOfBirth: "15/09/1995",
-        country: "Denmark",
-        emailSub: "false"
-    },
-    {
-        id: 3,
-        userName: "Dwayne",
-        email: "Dwayne@smith.com",
-        firstName: "Dwayne",
-        lastName: "Johnson",
-        dateOfBirth: "13/09/1995",
-        country: "Romania",
-        emailSub: "false"
-    },
-    {
-        id: 4,
-        userName: "Harry",
-        email: "Harry@smith.com",
-        firstName: "Harry",
-        lastName: "Potter",
-        dateOfBirth: "23/09/1995",
-        country: "Romania",
-        emailSub: "true"
-    },
-    {
-        id: 5,
-        userName: "Katniss",
-        email: "Katniss@smith.com",
-        firstName: "Katniss",
-        lastName: "Everdeen",
-        dateOfBirth: "06/09/1995",
-        country: "United Kingdom",
-        emailSub: "true"
-    },
-    {
-        id: 6,
-        userName: "Barbara",
-        email: "Barbara@smith.com",
-        firstName: "Barbara",
-        lastName: "Roberts",
-        dateOfBirth: "21/09/1995",
-        country: "Japan",
-        emailSub: "false"
-    }
-];
 
+let USERS;
+
+function get() {
+    fetch("https://eexam-6f38.restdb.io/rest/website-users", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json; charset=uf-8",
+                "x-apikey": "5dde99ff4658275ac9dc1fce",
+                "cache-control": "no-cache"
+            }
+        })
+        .then(e => e.json())
+        .then(data => {
+            USERS = data;
+        });
+}
+get();
 
 function Header() {
     return (
@@ -151,7 +106,7 @@ function List() {
 
             <label>
                 Filter by email subscription:
-                <select onChange={(e) => filterByColumn("emailSub", e)} name="filterByEmailPrefs" className="filterByEmailPrefs">
+                <select onChange={(e) => filterByColumn("subscription", e)} name="filterByEmailPrefs" className="filterByEmailPrefs">
                     <option value="All">All</option>
                     <option value="true">&#10003; Subscribed</option>
                     <option value="false">&times; Not subscribed</option>
@@ -212,9 +167,9 @@ function List() {
                         }
                     </th>
 
-                    <th onClick={() => sortByColumn("emailSub")}>
+                    <th onClick={() => sortByColumn("subscription")}>
                         Email subscription
-                        {sortBy === "emailSub" &&
+                        {sortBy === "subscription" &&
                         <img className="sortArrow" style={arrowStyle} src={sortArrow} alt="Sorting arrow"/>
                         }
                     </th>
@@ -227,13 +182,13 @@ function List() {
                 {filteredCollection.map(user => (
 
                     <tr key={user.id}>
-                        <td>{user.userName}</td>
+                        <td>{user.username}</td>
                         <td>{user.email}</td>
-                        <td>{user.firstName}</td>
-                        <td>{user.lastName}</td>
-                        <td>{user.dateOfBirth}</td>
+                        <td>{user.firstname}</td>
+                        <td>{user.lastname}</td>
+                        <td>{user.dateofbirth}</td>
                         <td>{user.country}</td>
-                        <td>{user.emailSub}</td>
+                        <td>{user.subscription}</td>
                     </tr>
 
                 ))}
