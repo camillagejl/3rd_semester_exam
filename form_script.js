@@ -1,8 +1,17 @@
 "use strict";
 
+function checkIfLogged(){
+    if(localStorage.getItem('userID') !== null ) {
+        window.open("account.html","_self");
+    } 
+};
+
+window.onload = checkIfLogged;
+
 const signupForm = document.querySelector("#signup-form");
 const loginForm = document.querySelector("#login-form");
 let myData;
+
 
 function get() {
     fetch("https://eexam-6f38.restdb.io/rest/website-users", {
@@ -22,6 +31,7 @@ get();
 
 function post() {
     let newUser = {
+        id: uuidv4(),
         username: signupForm.elements.username.value,
         password: signupForm.elements.password.value,
         email: signupForm.elements.email.value,
@@ -46,38 +56,43 @@ function post() {
         .then(data => {});
 }
 
+// function disableButtons() {
+//     if(document.querySelector(".fields").value === "") { 
+//            document.querySelector('#signup-btn').disabled = true; 
+//            document.querySelector('#login-btn').disabled = true; 
+//        } else { 
+//         document.querySelector('#signup-btn').disabled = false; 
+//         document.querySelector('#login-btn').disabled = false;
+//        }
+//    }
+
 signupForm.addEventListener("submit", e => {
     e.preventDefault();
     post();
     get();
 });
 
+function uuidv4() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+      var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+      return v.toString(16);
+    });
+}
+
 loginForm.addEventListener("submit", e => {
     e.preventDefault();
 
     let foundUser = false;
 
-    myData.forEach(function (user, index) {
+    myData.forEach(function (user) {
         if (loginForm.elements.username.value === user.username && loginForm.elements.password.value === user.password) {
-            localStorage.setItem("username", user.username);
-            console.log(localStorage.setItem.value);
+            localStorage.setItem("userID", user.id);
+            window.open("account.html","_self");
             foundUser = true;
+        } else {
+            document.querySelector("#login-error").style.display = "block";
+            document.querySelector("#login-error").innerHTML = "Incorrect username or password";
         }
-
-        if (!foundUser && index === myData.length - 1) {
-
-        }
-
-        if (loginForm.elements.username.value !== user.username) {
-            document.querySelector("#error").style.display = "block";
-            document.querySelector("#error").innerHTML = "Incorrect username";
-        }
-
-        if (loginForm.elements.password.value !== user.password) {
-            document.querySelector("#error").style.display = "block";
-            document.querySelector("#error").innerHTML = "Inocrect password";
-        }
-
     })
 });
 
@@ -91,15 +106,15 @@ document.querySelector("#next-btn").addEventListener("click", e => {
         document.querySelector("#checkboxes").style.display = "block";
         document.querySelector("#next-btn").style.display = "none";
         document.querySelector("#buttons-container").style.display = "flex";
-        document.querySelector("#error").style.display = "none";
+        document.querySelector("#signup-error").style.display = "none";
     } else {
-        document.querySelector("#error").style.display = "block";
-        document.querySelector("#error").innerHTML = "The username and password must have more than 5 characters";
+        document.querySelector("#signup-error").style.display = "block";
+        document.querySelector("#signup-error").innerHTML = "The username and password must have more than 5 characters";
     }
 
     if (signupForm.elements.repeatpw.value !== signupForm.elements.password.value) {
-        document.querySelector("#error").style.display = "block";
-        document.querySelector("#error").innerHTML = "Incorrect repeat password";
+        document.querySelector("#signup-error").style.display = "block";
+        document.querySelector("#signup-error").innerHTML = "Incorrect repeat password";
     }
 });
 
@@ -131,7 +146,7 @@ document.querySelector("#new-acc").addEventListener("click", e => {
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+  if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
     document.querySelector("#nav-buttons").style.display = "flex";
   } else {
     document.querySelector("#nav-buttons").style.display = "none";

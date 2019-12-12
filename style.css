@@ -71,6 +71,8 @@ nav a {
 #logo-form-container {
     display: flex;
     margin-top: 50px;
+    align-items: center;
+    height: 85vh;
 }
 
 #logo-container {
@@ -84,18 +86,18 @@ nav a {
 
 #signup-h1 {
     text-align: center;
-    padding-bottom: 30px;
+    padding-bottom: 15px;
 }
 
 #bars-container {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 30px;
 }
 
 .bar {
     width: 49%;
     background-color: #999;
-    margin-bottom: 30px;
 }
 
 .first-step {
@@ -112,7 +114,7 @@ nav a {
 
 .fields {
     font-size: 18px;
-    padding: 10px 10px 10px 5px;
+    padding: 5px;
     display: block;
     width: 300px;
     border: none;
@@ -137,10 +139,16 @@ label {
     position: absolute;
     pointer-events: none;
     left: 5px;
-    top: 10px;
+    top: 5px;
     transition: 0.2s ease all;
     -moz-transition: 0.2s ease all;
     -webkit-transition: 0.2s ease all;
+}
+
+#second-fields :nth-child(5) label {
+    top: -20px;
+    font-size: 14px;
+    color: #757575;
 }
 
 .group {
@@ -218,7 +226,7 @@ label {
     align-items: center;
     font-size: 15px;
     color: #ccd0d5;
-    padding: 15px 0;
+    padding: 10px 0;
 }
 
 .line::before,
@@ -237,11 +245,19 @@ label {
 }
 
 #checkboxes {
-    padding-bottom: 30px;
+    padding-bottom: 20px;
     display: none;
 }
 
-#error {
+#signup-error {
+    display: none;
+    font-size: 15px;
+    color: red;
+    padding-bottom: 30px;
+    max-width: 300px;
+}
+
+#login-error {
     display: none;
     font-size: 15px;
     color: red;

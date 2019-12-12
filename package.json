@@ -1,0 +1,20 @@
+{
+  "name": "3rd_semester_exam",
+  "version": "1.0.0",
+  "description": "",
+  "main": "account.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cami32d9/3rd_semester_exam.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cami32d9/3rd_semester_exam/issues"
+  },
+  "homepage": "https://github.com/cami32d9/3rd_semester_exam#readme",
+  "dependencies": {}
+}
