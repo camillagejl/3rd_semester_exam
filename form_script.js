@@ -151,6 +151,9 @@ document.querySelector("#nav-login").addEventListener("click", e => {
     document.querySelector("#signup-h1").innerHTML = "Log In";
     document.querySelector("#bars-container").style.display = "none";
     loginForm.style.display = "block";
+    setTimeout(() => {
+        document.querySelector("#login-form .username").focus();
+    }, 300);
     scrollToTop();
 });
 
@@ -159,5 +162,8 @@ document.querySelector("#nav-signup").addEventListener("click", e => {
     document.querySelector("#signup-h1").innerHTML = "Sign Up";
     document.querySelector("#bars-container").style.display = "flex";
     signupForm.style.display = "block";
+    setTimeout(() => {
+        document.querySelector("#signup-form .username").focus();
+    }, 300);
     scrollToTop();
 });
