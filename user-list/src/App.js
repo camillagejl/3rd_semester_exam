@@ -1,30 +1,8 @@
-import React, {useState} from "react";
+import React, {useState,useEffect} from "react";
 import './App.css';
 import {orderBy} from "lodash";
 import {filter} from "lodash";
 import sortArrow from "./elements/sort_arrow.svg";
-
-// Placeholder user data
-// NOTE: dateOfBirth needs to be a proper date, so it can be sorted properly and not just
-// by numbers.
-
-let USERS;
-
-function get() {
-    fetch("https://eexam-6f38.restdb.io/rest/website-users", {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json; charset=uf-8",
-                "x-apikey": "5dde99ff4658275ac9dc1fce",
-                "cache-control": "no-cache"
-            }
-        })
-        .then(e => e.json())
-        .then(data => {
-            USERS = data;
-        });
-}
-get();
 
 function Header() {
     return (
@@ -37,13 +15,34 @@ function Header() {
 }
 
 function List() {
+    // ----- GET USERS FROM DATABASE -----
+    const [users, setUsers] = useState([]);
+
+    useEffect(()=>{
+        get()
+    },[]);
+    // Sets useStates on click on one of the column headers.
+    function get() {
+        fetch("https://eexam-6f38.restdb.io/rest/website-users", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json; charset=uf-8",
+                "x-apikey": "5dde99ff4658275ac9dc1fce",
+                "cache-control": "no-cache"
+            }
+        })
+            .then(e => e.json())
+            .then(data => {
+                setUsers(data)
+            });
+    }
+
     // ----- SORT BY -----
     // Defines useStates for sortBy (the key from the header that is clicked) and
     // sortDirection (toggles between ascending and descending on click).
     const [sortBy, setSortBy] = useState("userName");
     const [sortDirection, setDirection] = useState('asc');
 
-    // Sets useStates on click on one of the column headers.
     const sortByColumn = (column) => {
         console.log("Sorting");
         setSortBy(column);
@@ -52,7 +51,7 @@ function List() {
 
     // orderBy (from 'lodash' library)
     const sortedCollection = orderBy(
-        USERS,
+        users,
         [sortBy],
         [sortDirection]
     );
