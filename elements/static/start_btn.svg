@@ -1,0 +1,12 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="201" height="107" viewBox="0 0 201 107">
+  <title>start_btn</title>
+  <polygon points="198.61 79.61 2.11 79.61 21.25 6.88 180.74 6.88 198.61 79.61" fill="#0ec416" stroke="#000" stroke-miterlimit="10"/>
+  <rect x="1.87" y="80.44" width="196.97" height="19.27" fill="#11a511" stroke="#000" stroke-miterlimit="10"/>
+  <g>
+    <path d="M29.11,56.25V52.5H25.36V48.75h7.5V52.5H44.11V45h-15V41.25H25.36v-7.5h3.75V30H47.86v3.75h3.75V37.5h-7.5V33.75H32.86v7.5h15V45h3.75v7.5H47.86v3.75Z"/>
+    <path d="M66.61,56.25v-15h-7.5V37.5h7.5V30h7.5v7.5h7.5v3.75h-7.5v15Z"/>
+    <path d="M89.11,56.25V52.5H85.36V48.75h3.75V45h15V41.25h-15V37.5h18.75v3.75h3.75v15Zm3.75-3.75h11.25V48.75H92.86Z"/>
+    <path d="M126.61,41.25h3.75V45h-3.75V56.25h-7.5V37.5h7.5Zm15-3.75v3.75H130.36V37.5Z"/>
+    <path d="M156.61,56.25v-15h-7.5V37.5h7.5V30h7.5v7.5h7.5v3.75h-7.5v15Z"/>
+  </g>
+</svg>
