@@ -1,26 +1,26 @@
 [
   {
     "id": "1",
-    "price": 4
+    "prize": 4
   },
   {
     "id": "2",
-    "price": 8
+    "prize": 8
   },
   {
     "id": "3",
-    "price": 10
+    "prize": 10
   },
   {
     "id": "4",
-    "price": 12
+    "prize": 12
   },
   {
     "id": "5",
-    "price": 14
+    "prize": 14
   },
   {
     "id": "6",
-    "price": 20
+    "prize": 20
   }
 ]

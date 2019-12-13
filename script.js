@@ -176,7 +176,7 @@ function spin(wheels, spins) {
     let spinResult = calculateSpinResult(wheels);
 
     // didWin compares the active symbols, and returns true (if they are the same) or false (if they are not the same).
-    let prizeWon = calculatePriceWon(wheels, spinResult);
+    let prizeWon = calculatePrizeWon(wheels, spinResult);
 
     spins--;
 
@@ -223,7 +223,7 @@ function calculateSpinResult(wheels) {
     return spinResult;
 }
 
-function calculatePriceWon(wheels, spinResult) {
+function calculatePrizeWon(wheels, spinResult) {
     if (wheels[0].symbols[spinResult[0]] === wheels[1].symbols[spinResult[1]]
         && wheels[1].symbols[spinResult[1]] === wheels[2].symbols[spinResult[2]]) {
         return wheels[0].symbols[spinResult[0]].prize;
