@@ -112,7 +112,7 @@ function activateStartButton(wheels) {
         document.querySelector(".spin_button").classList.remove("inactive");
         document.querySelector(".start_button").classList.add("inactive");
         document.querySelector(".start_button").removeEventListener("click", _function);
-        document.querySelector(".coins_won").textContent = 0;
+        document.querySelector(".coins_won").textContent = "0";
     })
 }
 
@@ -176,15 +176,20 @@ function spin(wheels, spins) {
     let spinResult = calculateSpinResult(wheels);
 
     // didWin compares the active symbols, and returns true (if they are the same) or false (if they are not the same).
-    let priceWon = calculatePriceWon(wheels, spinResult);
+    let prizeWon = calculatePrizeWon(wheels, spinResult);
 
     spins--;
 
-    console.log(priceWon);
+    console.log(prizeWon);
+
+    // Starts the visual part of spinning the wheels, separately for each wheel.
+    wheels.forEach(wheel => {
+        spinVisualWheel(wheel, prizeWon, spins, wheels);
+    });
 
     // If the user wins:
-    if (priceWon > 0) {
-        console.log("won!", priceWon);
+    if (prizeWon > 0) {
+        console.log("won!", prizeWon);
 
         // Sets spins to 0 and toggles hold buttons, so they are deactivated.
         spins = 0;
@@ -194,10 +199,6 @@ function spin(wheels, spins) {
         activateStartButton(wheels);
     }
 
-    // Starts the visual part of spinning the wheels, separately for each wheel.
-    wheels.forEach(wheel => {
-        spinVisualWheel(wheel, priceWon, spins, wheels);
-    });
 
     // Updates visual display of spins left.
     showSpinsLeft(spins);
@@ -222,10 +223,10 @@ function calculateSpinResult(wheels) {
     return spinResult;
 }
 
-function calculatePriceWon(wheels, spinResult) {
+function calculatePrizeWon(wheels, spinResult) {
     if (wheels[0].symbols[spinResult[0]] === wheels[1].symbols[spinResult[1]]
         && wheels[1].symbols[spinResult[1]] === wheels[2].symbols[spinResult[2]]) {
-        return wheels[0].symbols[spinResult[0]].price;
+        return wheels[0].symbols[spinResult[0]].prize;
     } else {
         return 0;
     }
@@ -241,10 +242,6 @@ function addWheelsToDOM(wheels) {
     // text elements (coins and spins left) through JavaScript.
 
     document.querySelector(".slot_machine").insertAdjacentHTML('afterbegin', slotMachineSVG);
-    document.querySelectorAll(".slot_machine_color").forEach(element => {
-        element.style.fill = "var(--slot_machine_color)";
-    });
-    document.querySelector(".slot_machine_color_dark").style.fill = "var(--slot_machine_color_dark)";
 
     wheels.forEach(wheel => {
         document.querySelector(".wheels").innerHTML += `<div class="wheel wheel_${wheel.id}"></div>`;
@@ -277,11 +274,11 @@ function addSVGsToPopup() {
     welcomePopup.querySelector(".popup_text_one").querySelector(".svg_text").textContent = "Take a few spins for free, and win coins";
     welcomePopup.querySelector(".popup_text_two").querySelector(".svg_text").textContent = "to spend on our other fabulous games!";
 
-    noJackpotPopup.querySelector(".popup_text_one").querySelector(".svg_text").textContent = "Sign up now, and spend your coins on winning real money prices!";
+    noJackpotPopup.querySelector(".popup_text_one").querySelector(".svg_text").textContent = "Sign up now, and spend your coins on winning real money prizes!";
     noJackpotPopup.querySelector(".popup_text_two").querySelector(".svg_text").textContent = "Or keep playing, and aim for the big jackpot of 20 coins!";
 
     jackpotPopup.querySelector(".popup_text_one").querySelector(".svg_text").textContent = "You won the jackpot. Don't loose your coins!";
-    jackpotPopup.querySelector(".popup_text_two").querySelector(".svg_text").textContent = "Sign up now, and spend your coins on winning real money prices!";
+    jackpotPopup.querySelector(".popup_text_two").querySelector(".svg_text").textContent = "Sign up now, and spend your coins on winning real money prizes!";
 
 //    eventListeners for buttons
 
@@ -291,11 +288,13 @@ function addSVGsToPopup() {
         });
     });
 
-    document.querySelector(".popup_keep_playing_button").addEventListener("click", function _function() {
-        document.querySelector(".game_popup").style.display = "none";
+    document.querySelectorAll(".popup_keep_playing_button").forEach(button => {
+        button.addEventListener("click", function _function() {
+            document.querySelector(".game_popup").style.display = "none";
 
-        document.querySelectorAll(".game_popup_content").forEach(element => {
-            element.style.display = "none";
+            document.querySelectorAll(".game_popup_content").forEach(element => {
+                element.style.display = "none";
+            });
         });
 
         document.querySelector(".coins_won").textContent = "0";
@@ -315,7 +314,7 @@ function holdButtonColorChange(button, thisIsHolding) {
     }
 }
 
-function spinVisualWheel(wheel, priceWon, spins, wheels) {
+function spinVisualWheel(wheel, prizeWon, spins, wheels) {
         // To calculate how many times the wheel should spin to land on the active index, we take the current position
         // of the wheel (the previously active index) - the new position where it should land (the active index). For
         // the wheel to spin several rounds, take the wheel length * 2, and * the wheel.id so the wheels will stop
@@ -332,10 +331,10 @@ function spinVisualWheel(wheel, priceWon, spins, wheels) {
 
     console.log(wheel.id + " Active " + (wheel.active));
 
-        spinWheel(wheel, spinRounds, priceWon, spins, wheels)
+        spinWheel(wheel, spinRounds, prizeWon, spins, wheels)
 }
 
-function spinWheel(wheel, spinRounds, priceWon, spins, wheels) {
+function spinWheel(wheel, spinRounds, prizeWon, spins, wheels) {
     if (spinRounds > 0) {
     document.querySelectorAll(`.wheel_${wheel.id} .item`).forEach(item => {
 
@@ -346,17 +345,17 @@ function spinWheel(wheel, spinRounds, priceWon, spins, wheels) {
 
     document.querySelector(`.wheel_${wheel.id} .item`).addEventListener("transitionend", function _function() {
         document.querySelector(`.wheel_${wheel.id} .item`).removeEventListener("transitionend", _function);
-        moveLastItem(wheel, spinRounds, priceWon, spins, wheels);
+        moveLastItem(wheel, spinRounds, prizeWon, spins, wheels);
     });
 
     }
 
     if (spinRounds === 0) {
-        moveLastItem(wheel, spinRounds, priceWon, spins, wheels);
+        moveLastItem(wheel, spinRounds, prizeWon, spins, wheels);
     }
 }
 
-function moveLastItem(wheel, spinRounds, priceWon, spins, wheels) {
+function moveLastItem(wheel, spinRounds, prizeWon, spins, wheels) {
 
     // Moves all symbols back to their original position (which will change because there is another div added at the
     // top - as happens below).
@@ -380,10 +379,10 @@ function moveLastItem(wheel, spinRounds, priceWon, spins, wheels) {
     lastItem.parentNode.removeChild(lastItem);
     }
 
-    addLastItem(wheel, lastSymbolID, spinRounds, priceWon, spins, wheels);
+    addLastItem(wheel, lastSymbolID, spinRounds, prizeWon, spins, wheels);
 }
 
-function addLastItem(wheel, lastSymbolID, spinRounds, priceWon, spins, wheels) {
+function addLastItem(wheel, lastSymbolID, spinRounds, prizeWon, spins, wheels) {
     console.log("spins", spins);
 
     if (spinRounds > 0) {
@@ -397,13 +396,13 @@ function addLastItem(wheel, lastSymbolID, spinRounds, priceWon, spins, wheels) {
     // If spinRounds is over 0, the functions will loop and the wheel will keep spinning until spinRounds hits 0.
     if (spinRounds > 0) {
         setTimeout(function () {
-            spinWheel(wheel, spinRounds, priceWon, spins, wheels)
+            spinWheel(wheel, spinRounds, prizeWon, spins, wheels)
         }, 1)
 
     } else if (wheel.id === 3 && spinRounds <= 0) {
-        displayPrice(priceWon);
+        displayPrice(prizeWon);
 
-        if (priceWon === 0) {
+        if (prizeWon === 0) {
 
             // If spins is still above 0, the spin button will get activated again.
             if (spins > 0) {
@@ -421,26 +420,26 @@ function addLastItem(wheel, lastSymbolID, spinRounds, priceWon, spins, wheels) {
     }
 }
 
-function displayPrice(priceWon) {
+function displayPrice(prizeWon) {
 
     let coinsDisplay = document.querySelector(".coins_won").textContent;
 
-    if (coinsDisplay < priceWon) {
-        console.log("Done spinning", priceWon);
+    if (coinsDisplay < prizeWon) {
+        console.log("Done spinning", prizeWon);
 
         coinsDisplay++;
         document.querySelector(".coins_won").textContent = coinsDisplay;
 
         setTimeout(function _function() {
-            displayPrice(priceWon)
+            displayPrice(prizeWon)
         }, 100);
     }
 
-    if (priceWon !== 0 && priceWon === coinsDisplay) {
+    if (prizeWon !== 0 && prizeWon === coinsDisplay) {
         const toggleCount = 30;
         toggleCoinsDisplay(toggleCount);
         setTimeout(function _function() {
-            displayPopup(priceWon);
+            displayPopup(prizeWon);
         }, 2000);
     }
 }
@@ -460,19 +459,19 @@ function toggleCoinsDisplay(toggleCount) {
     }
 }
 
-function displayPopup(priceWon) {
+function displayPopup(prizeWon) {
 
     document.querySelectorAll(".game_popup_heading").forEach(heading => {
-        heading.querySelector(".svg_text").innerHTML = `Congratulations! &nbsp; You won ${priceWon} coins!`;
+        heading.querySelector(".svg_text").innerHTML = `Congratulations! &nbsp; You won ${prizeWon} coins!`;
     });
 
     document.querySelector(".game_popup").style.display = "flex";
 
-    if (priceWon === 20) {
+    if (prizeWon === 20) {
         document.querySelector(".jackpot").style.display = "block";
     }
 
-    if (priceWon !== 20) {
+    if (prizeWon !== 20) {
         document.querySelector(".no_jackpot").style.display = "block";
     }
 }

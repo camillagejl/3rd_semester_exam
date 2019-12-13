@@ -477,10 +477,15 @@ label {
 .game_options_heading {
     width: 100%;
     text-align: center;
-    margin: 5% 0;
+    margin: 5% 0 2% 0;
+}
+
+.game_options_heading img {
+    width: 80%;
 }
 
 .theme_button {
+    border: 1px solid black;
     background-size: cover;
     margin: 3%;
     width: 94%;
@@ -510,25 +515,26 @@ label {
     width: 100%;
 }
 
-.point_chart_points {
-    width: 13%;
-}
-
 .point_chart_symbol {
     width: 17%;
     height: 100%;
     background-size: cover;
 }
 
+
+.point_chart_points {
+    width: 12%;
+}
+
 .equals {
-    margin-left: 5%;
-    margin-right: -5%;
+    margin-left: 3%;
+    margin-right: -2%;
 }
 
 .coin {
     width: 8%;
     height: 50%;
-    margin: 0 2% 0 2%;
+    margin: 4% 1% 0 2%;
     background-size: cover;
     background-image: url("elements/static/coins.svg");
     background-repeat: no-repeat;
@@ -737,6 +743,7 @@ label {
 }
 
 .game_popup_content {
+    font-size: 14pt;
     display: none;
     font-family: "Alatsi", sans-serif;
     fill: whitesmoke;
@@ -775,11 +782,11 @@ label {
 .game_welcome .popup_keep_playing_button {
     height: 15%;
     width: 15%;
-    background-image: var(--start_button);
+    background-image: url("elements/static/start_btn_not_pressed.svg");
 }
 
 .game_welcome .popup_keep_playing_button:active {
-    background-image: var(--start_button_pressed);
+    background-image: url("elements/static/start_btn_pressed.svg");
 }
 
 
