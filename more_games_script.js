@@ -1,6 +1,7 @@
 "use strict";
 
-const destAllGames = document.querySelector("#all_games");
+const popularGames = document.querySelector(".popular_games");
+const jackpotGames = document.querySelector(".jackpot_games");
 let section = [];
 
 async function getAllGames() {
@@ -13,7 +14,7 @@ async function getAllGames() {
 
 function insertAllGames() {
   section.forEach(section => {
-    let template = `<div>
+    let template = `<div class="grid_div">
     <div class="container">
     <div class="image_content">
     <img src="${section.thumbnail.guid}" alt="Image for: ${section.title.rendered}">
@@ -28,7 +29,16 @@ function insertAllGames() {
     <h2>${section.gametitle}</h2>
     </div>
             </div>`;
-    destAllGames.insertAdjacentHTML("beforeend", template);
+
+                        if (section.category[0] === "Popular Games") {
+                popularGames.insertAdjacentHTML("beforeend", template);
+                }
+
+                if (section.category[0] === "Jackpot Games") {
+                jackpotGames.insertAdjacentHTML("beforeend", template);
+                }
+
+
   });
 }
 getAllGames();
