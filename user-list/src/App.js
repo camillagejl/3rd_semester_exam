@@ -40,7 +40,7 @@ function List() {
     // ----- SORT BY -----
     // Defines useStates for sortBy (the key from the header that is clicked) and
     // sortDirection (toggles between ascending and descending on click).
-    const [sortBy, setSortBy] = useState('userName');
+    const [sortBy, setSortBy] = useState("userName");
     const [sortDirection, setDirection] = useState('asc');
 
     // Sets useStates on click on one of the column headers.
@@ -80,7 +80,6 @@ function List() {
     };
 
     let filteredCollection = sortedCollection;
-
     if (countryFilter !== 'All') {
         filteredCollection = filter(
             filteredCollection,
@@ -91,7 +90,7 @@ function List() {
     if (emailSubFilter !== 'All') {
         filteredCollection = filter(
             filteredCollection,
-            ["emailSub", emailSubFilter]
+            ["subscription", emailSubFilter]
         );
     }
 
