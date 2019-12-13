@@ -477,25 +477,26 @@ label {
     width: 100%;
 }
 
-.point_chart_points {
-    width: 13%;
-}
-
 .point_chart_symbol {
     width: 17%;
     height: 100%;
     background-size: cover;
 }
 
+
+.point_chart_points {
+    width: 12%;
+}
+
 .equals {
-    margin-left: 5%;
-    margin-right: -5%;
+    margin-left: 3%;
+    margin-right: -2%;
 }
 
 .coin {
     width: 8%;
     height: 50%;
-    margin: 0 2% 0 2%;
+    margin: 4% 1% 0 2%;
     background-size: cover;
     background-image: url("elements/static/coins.svg");
     background-repeat: no-repeat;
