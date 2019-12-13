@@ -26,7 +26,7 @@ function insertAllGames() {
     </div>
                    
     <div class="gametitle">
-    <h2>${section.gametitle}</h2>
+    <h3>${section.gametitle}</h3>
     </div>
             </div>`;
 
