@@ -78,12 +78,22 @@
               <label>Last Name</label>
             </div>
             <div class="group">
-              <input class="fields" type="text" name="country" required />
-              <label>Country</label>
-            </div>
-            <div class="group">
               <input class="fields" type="date" name="dateofbirth" required />
               <label>Date of Birth</label>
+            </div>
+            <!-- <div class="group">
+              <input class="fields" type="text" name="country" required />
+              <label>Country</label>
+            </div> -->
+            <div class="group">
+                <label>Country</label>
+                <select name="country" required>
+                    <option value="" disabled selected hidden>Select your country</option>
+                    <option value="Denmark">Denmark</option>
+                    <option value="Romania">Romania</option>
+                    <option value="United Kingdom">United Kingdom</option>
+                    <option value="Germany">Germany</option>
+                  </select>
             </div>
             <div id="checkboxes">
               <input id="first-checkbox" type="checkbox" name="agreement" /> I accept the Terms

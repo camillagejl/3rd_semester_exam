@@ -150,6 +150,7 @@ document.querySelector("#back-btn").addEventListener("click", e => {
     document.querySelector("#buttons-container").style.display = "none";
     document.querySelector(".line").style.display = "flex";
     document.querySelector("#already-acc").style.display = "block";
+    document.querySelector("#signup-error").style.display = "none";
 });
 
 document.querySelector("#already-acc").addEventListener("click", e => {
