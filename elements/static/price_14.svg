@@ -1,0 +1,13 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="163" height="24" viewBox="0 0 163 24">
+  <title>price_14</title>
+  <g>
+    <path d="M5,9.67v-2H19v2Zm0,4v-2H19v2Z"/>
+    <path d="M39,17.67v-2h4v-8H41v-2h2v-2h4v12h4v2Z"/>
+    <path d="M61,17.67v-4H53v-4h2v-2h2v-2h2v-2h6v8h2v2H65v4Zm-4-6h4v-4H59v2H57Z"/>
+    <path d="M87,17.67v-2H85v-6h2v-2H99v2H89v6H99v2Z"/>
+    <path d="M103,17.67v-2h-2v-6h2v-2h10v2h2v6h-2v2Zm2-2h6v-6h-6Z"/>
+    <path d="M119,17.67v-2h4v-6h-2v-2h6v8h4v2Zm4-12v-2h4v2Z"/>
+    <path d="M133,17.67v-10h12v2h2v8h-4v-8h-6v8Z"/>
+    <path d="M149,17.67v-2h10v-2h-8v-2h-2v-2h2v-2h10v2h-8v2h8v2h2v2h-2v2Z"/>
+  </g>
+</svg>
