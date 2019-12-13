@@ -104,10 +104,10 @@ loginForm.addEventListener("submit", e => {
 
     myData.forEach(function (user) {
         if (loginForm.elements.username.value === user.username && loginForm.elements.password.value === user.password) {
+            document.querySelector("#login-error").style.display = "none";
             localStorage.setItem("userID", user.id);
             window.open("account.html","_self");
             foundUser = true;
-            document.querySelector("#login-error").style.display = "none";
         } else {
             document.querySelector("#login-error").style.display = "block";
             document.querySelector("#login-error").innerHTML = "Incorrect username or password";
