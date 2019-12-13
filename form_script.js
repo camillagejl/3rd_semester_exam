@@ -70,7 +70,7 @@ function post() {
 signupForm.addEventListener("submit", e => {
     e.preventDefault();
 
-    if(signupForm.elements.subscription.checked === false) {
+    if(signupForm.elements.agreement.checked === false) {
         document.querySelector("#signup-error").style.display = "block";
         document.querySelector("#signup-error").innerHTML = "You have to accept our Terms of Use first";
     } else {
@@ -78,6 +78,14 @@ signupForm.addEventListener("submit", e => {
         document.querySelector("#signup-error").style.display = "none";
         post();
         get();
+        setTimeout(() => {
+            signupForm.style.display = "none";
+            loginForm.style.display = "block";
+            document.querySelector("#signup-h1").innerHTML = "Log In";
+            document.querySelector("#bars-container").style.display = "none";
+            document.querySelector("#hide").style.display = "none";
+            signupForm.reset();
+        }, 1000);
     }
 
 });
@@ -99,6 +107,7 @@ loginForm.addEventListener("submit", e => {
             localStorage.setItem("userID", user.id);
             window.open("account.html","_self");
             foundUser = true;
+            document.querySelector("#login-error").style.display = "none";
         } else {
             document.querySelector("#login-error").style.display = "block";
             document.querySelector("#login-error").innerHTML = "Incorrect username or password";
@@ -109,7 +118,7 @@ loginForm.addEventListener("submit", e => {
 document.querySelector("#next-btn").addEventListener("click", e => {
     e.preventDefault();
 
-    if (signupForm.elements.username.value.length > 5 && signupForm.elements.password.value.length > 5 && signupForm.elements.repeatpw.value === signupForm.elements.password.value) {
+    if (signupForm.elements.username.value.length >= 6 && signupForm.elements.password.value.length >= 6 && signupForm.elements.repeatpw.value === signupForm.elements.password.value) {
         document.querySelector(".second-step").style.width = "100%";
         document.querySelector("#first-fields").style.display = "none";
         document.querySelector("#second-fields").style.display = "block";
@@ -117,9 +126,11 @@ document.querySelector("#next-btn").addEventListener("click", e => {
         document.querySelector("#next-btn").style.display = "none";
         document.querySelector("#buttons-container").style.display = "flex";
         document.querySelector("#signup-error").style.display = "none";
+        document.querySelector(".line").style.display = "none";
+        document.querySelector("#already-acc").style.display = "none";
     } else {
         document.querySelector("#signup-error").style.display = "block";
-        document.querySelector("#signup-error").innerHTML = "The username and password must have more than 5 characters";
+        document.querySelector("#signup-error").innerHTML = "The username and password must have at least 6 characters";
     }
 
     if (signupForm.elements.repeatpw.value !== signupForm.elements.password.value) {
@@ -137,6 +148,8 @@ document.querySelector("#back-btn").addEventListener("click", e => {
     document.querySelector("#checkboxes").style.display = "none";
     document.querySelector("#next-btn").style.display = "block";
     document.querySelector("#buttons-container").style.display = "none";
+    document.querySelector(".line").style.display = "flex";
+    document.querySelector("#already-acc").style.display = "block";
 });
 
 document.querySelector("#already-acc").addEventListener("click", e => {
