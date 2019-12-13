@@ -8,6 +8,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -343,7 +344,7 @@ label {
 /* ----- EARTH LOGO ----- */
 .title h1 {
   position: absolute;
-  top: 18vh;
+  top: 22vh;
   left: 11vw;
   font-family: var(--main_font);
   font-size: 2.5em;
@@ -359,7 +360,7 @@ label {
   background-size: 620px;
   animation: spin 6s infinite linear;
   position: absolute;
-  top: 25%;
+  top: 30%;
   left: 20%;
 }
 
