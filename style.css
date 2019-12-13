@@ -709,7 +709,7 @@ label {
 }
 
 .game_popup_content {
-    font-size: 1.3rem;
+    font-size: 14pt;
     display: none;
     font-family: "Alatsi", sans-serif;
     fill: whitesmoke;
