@@ -39,6 +39,7 @@ function post() {
         lastname: signupForm.elements.lastname.value,
         country: signupForm.elements.country.value,
         dateofbirth: signupForm.elements.dateofbirth.value,
+        subscription: signupForm.elements.subscription.checked
     }
 
     let postData = JSON.stringify(newUser);
@@ -68,8 +69,17 @@ function post() {
 
 signupForm.addEventListener("submit", e => {
     e.preventDefault();
-    post();
-    get();
+
+    if(signupForm.elements.subscription.checked === false) {
+        document.querySelector("#signup-error").style.display = "block";
+        document.querySelector("#signup-error").innerHTML = "You have to accept our Terms of Use first";
+    } else {
+        document.querySelector("#signedup").style.display = "block";
+        document.querySelector("#signup-error").style.display = "none";
+        post();
+        get();
+    }
+
 });
 
 function uuidv4() {
