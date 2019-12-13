@@ -317,10 +317,8 @@ label {
   background-image: url(elements/static/title_1.svg);
   background-repeat: no-repeat;
   position: absolute;
-  top: 16.5%;
-  left: 15%;
-  width: 500px;
-  height: 500px;
+  top: 18vh;
+  left: 15.8vw;
 }
 
 .earth {
