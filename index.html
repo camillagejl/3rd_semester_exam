@@ -17,11 +17,14 @@
 </head>
 
 <body>
-  <section id="landing">
+
+<div class="body_background"></div>
+
+<section id="landing">
     <nav>
       <div>
-      <a href="#">Home</a>
-      <a href="#">All games</a>
+      <a href="#Home">Home</a>
+      <a href="#MoreGames">More Games</a>
       </div>
       <div id="nav-buttons">
         <button id="nav-login">Log In</button>
@@ -35,69 +38,69 @@
         <div class="earth"></div>
       </div>
 
-      <div id="form-container">
-        <h1 id="signup-h1">Sign Up</h1>
-        <div id="bars-container">
-          <div class="bar">
-            <div class="first-step progress"></div>
-          </div>
-          <div class="bar">
-            <div class="second-step progress"></div>
-          </div>
-        </div>
-        <form id="signup-form" method="POST" action="">
-          <div id="first-fields">
-            <div class="group">
-              <input class="fields username" type="text" name="username" required />
-              <label>Username</label>
+        <div id="form-container">
+            <h1 id="signup-h1">Sign Up</h1>
+            <div id="bars-container">
+                <div class="bar">
+                    <div class="first-step progress"></div>
+                </div>
+                <div class="bar">
+                    <div class="second-step progress"></div>
+                </div>
             </div>
-            <div class="group">
-              <input class="fields" type="password" name="password" required />
-              <label>Password</label>
-            </div>
-            <div class="group">
-              <input class="fields" type="password" name="repeatpw" required />
-              <label>Repeat Password</label>
-            </div>
-          </div>
-          <div id="second-fields">
-            <div class="group">
-              <input class="fields" type="text" name="email" required />
-              <label>Email</label>
-            </div>
-            <div class="group">
-              <input class="fields" type="text" name="firstname" required />
-              <label>First Name</label>
-            </div>
-            <div class="group">
-              <input class="fields" type="text" name="lastname" required />
-              <label>Last Name</label>
-            </div>
-            <div class="group">
-              <input class="fields" type="text" name="country" required />
-              <label>Country</label>
-            </div>
-            <div class="group">
-              <input class="fields" type="date" name="dateofbirth" required />
-              <!-- <label>Date of Birth</label> -->
-            </div>
-            <div id="checkboxes">
-              <input id="first-checkbox" type="checkbox" /> I accept the Terms
-              of Use
-              <br />
-              <input id="second-checkbox" type="checkbox" /> I want to receive
-              newsletters and great offers
-            </div>
-          </div>
-          <div id="error"></div>
-          <button id="next-btn" name="next">Next</button>
-          <div id="buttons-container">
-            <button id="back-btn" name="back">Back</button>
-            <button id="signup-btn" type="submit" name="submit">Sign Up</button>
-          </div>
-          <div class="line">OR</div>
-          <button type="button" id="already-acc">Log In</button>
-        </form>
+            <form id="signup-form" method="POST" action="">
+                <div id="first-fields">
+                    <div class="group">
+                        <input class="fields username" type="text" name="username" required/>
+                        <label>Username</label>
+                    </div>
+                    <div class="group">
+                        <input class="fields" type="password" name="password" required/>
+                        <label>Password</label>
+                    </div>
+                    <div class="group">
+                        <input class="fields" type="password" name="repeatpw" required/>
+                        <label>Repeat Password</label>
+                    </div>
+                </div>
+                <div id="second-fields">
+                    <div class="group">
+                        <input class="fields" type="text" name="email" required/>
+                        <label>Email</label>
+                    </div>
+                    <div class="group">
+                        <input class="fields" type="text" name="firstname" required/>
+                        <label>First Name</label>
+                    </div>
+                    <div class="group">
+                        <input class="fields" type="text" name="lastname" required/>
+                        <label>Last Name</label>
+                    </div>
+                    <div class="group">
+                        <input class="fields" type="text" name="country" required/>
+                        <label>Country</label>
+                    </div>
+                    <div class="group">
+                        <input class="fields" type="date" name="dateofbirth" required/>
+                        <!-- <label>Date of Birth</label> -->
+                    </div>
+                    <div id="checkboxes">
+                        <input id="first-checkbox" type="checkbox"/> I accept the Terms
+                        of Use
+                        <br/>
+                        <input id="second-checkbox" type="checkbox"/> I want to receive
+                        newsletters and great offers
+                    </div>
+                </div>
+                <div id="error"></div>
+                <button id="next-btn" name="next">Next</button>
+                <div id="buttons-container">
+                    <button id="back-btn" name="back">Back</button>
+                    <button id="signup-btn" type="submit" name="submit">Sign Up</button>
+                </div>
+                <div class="line">OR</div>
+                <button type="button" id="already-acc">Log In</button>
+            </form>
 
         <form id="login-form" method="" action="">
           <div class="group">
@@ -120,7 +123,11 @@
     </div>
   </section>
 
-  <section id="game_page">
+<div class="hide_background_crop first_section">
+    <div class="hide_background"></div>
+</div>
+
+<section id="game_page">
 
     <!-- The theme is added to the .game div through JavaScript. It currently starts with 'mexico'. -->
     <div class="game_container" data-game-theme="mexican">
@@ -243,18 +250,18 @@
         </div>
         <div class="game">
 
-            <div class="slot_machine">
-                <div class="hold_buttons"></div>
+              <div class="slot_machine">
+                  <div class="hold_buttons"></div>
 
-                <!-- The wheels are added through JavaScript -->
-                <div class="wheels"></div>
+                  <!-- The wheels are added through JavaScript -->
+                  <div class="wheels"></div>
 
-                <div class="main_buttons">
-                    <!-- The start and spin buttons are always the same. -->
-                    <button class="start_button"></button>
-                    <button class="spin_button inactive"></button>
-                </div>
-            </div>
+                  <div class="main_buttons">
+                      <!-- The start and spin buttons are always the same. -->
+                      <button class="start_button"></button>
+                      <button class="spin_button inactive"></button>
+                  </div>
+              </div>
 
             <!-- The hold buttons are added through JavaScript. -->
         </div>
@@ -290,6 +297,11 @@
 
   </section>
 
+
+<div class="hide_background_crop third_section">
+    <div class="hide_background"></div>
+</div>
+
   <section>
       <div id="more_games">
           <h1>More games</h1>
@@ -300,9 +312,9 @@
       </div>
   </section>
 
-<script src="form_script.js"></script>
-<script src="more_games_script.js"></script>
-<script src="script.js"></script>
+  <script src="form_script.js"></script>
+  <script src="more_games_script.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>
