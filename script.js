@@ -242,10 +242,6 @@ function addWheelsToDOM(wheels) {
     // text elements (coins and spins left) through JavaScript.
 
     document.querySelector(".slot_machine").insertAdjacentHTML('afterbegin', slotMachineSVG);
-    document.querySelectorAll(".slot_machine_color").forEach(element => {
-        element.style.fill = "var(--slot_machine_color)";
-    });
-    document.querySelector(".slot_machine_color_dark").style.fill = "var(--slot_machine_color_dark)";
 
     wheels.forEach(wheel => {
         document.querySelector(".wheels").innerHTML += `<div class="wheel wheel_${wheel.id}"></div>`;

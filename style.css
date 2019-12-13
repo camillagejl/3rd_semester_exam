@@ -452,6 +452,7 @@ label {
 }
 
 .theme_button {
+    border: 1px solid black;
     background-size: cover;
     margin: 3%;
     width: 94%;
