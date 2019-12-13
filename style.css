@@ -114,6 +114,8 @@ nav a {
     margin-top: 50px;
     align-items: center;
     height: 85vh;
+
+    font-family: 'Roboto', sans-serif;
 }
 
 #logo-container {
