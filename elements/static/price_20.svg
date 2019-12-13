@@ -1,13 +1,7 @@
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="163" height="24" viewBox="0 0 163 24">
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="36" height="23" viewBox="0 0 36 23">
   <title>price_20</title>
   <g>
-    <path d="M5,9.67v-2H19v2Zm0,4v-2H19v2Z"/>
-    <path d="M37,17.67v-4h2v-2h2v-2h4v-2h2v-2H41v2H37v-2h2v-2H49v2h2v4H49v2H47v2H43v2h8v2Z"/>
-    <path d="M57,17.67v-2H55v-2H53v-6h2v-2h2v-2h6v2h2v2h2v6H65v2H63v2Zm2-2h4v-8H61v-2H57v8h2Z"/>
-    <path d="M87,17.67v-2H85v-6h2v-2H99v2H89v6H99v2Z"/>
-    <path d="M103,17.67v-2h-2v-6h2v-2h10v2h2v6h-2v2Zm2-2h6v-6h-6Z"/>
-    <path d="M119,17.67v-2h4v-6h-2v-2h6v8h4v2Zm4-12v-2h4v2Z"/>
-    <path d="M133,17.67v-10h12v2h2v8h-4v-8h-6v8Z"/>
-    <path d="M149,17.67v-2h10v-2h-8v-2h-2v-2h2v-2h10v2h-8v2h8v2h2v2h-2v2Z"/>
+    <path d="M1,19.42v-4.5H3.25V12.67H5.5V10.42H10V8.17h2.25V5.92H5.5V8.17H1V5.92H3.25V3.67H14.5V5.92h2.25v4.5H14.5v2.25H12.25v2.25H7.75v2.25h9v2.25Z"/>
+    <path d="M23.5,19.42V17.17H21.25V14.92H19V8.17h2.25V5.92H23.5V3.67h6.75V5.92H32.5V8.17h2.25v6.75H32.5v2.25H30.25v2.25Zm2.25-2.25h4.5v-9H28V5.92H23.5v9h2.25Z"/>
   </g>
 </svg>
