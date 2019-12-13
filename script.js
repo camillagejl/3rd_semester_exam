@@ -112,7 +112,7 @@ function activateStartButton(wheels) {
         document.querySelector(".spin_button").classList.remove("inactive");
         document.querySelector(".start_button").classList.add("inactive");
         document.querySelector(".start_button").removeEventListener("click", _function);
-        document.querySelector(".coins_won").textContent = 0;
+        document.querySelector(".coins_won").textContent = "0";
     })
 }
 

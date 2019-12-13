@@ -444,7 +444,11 @@ label {
 .game_options_heading {
     width: 100%;
     text-align: center;
-    margin: 5% 0;
+    margin: 4% 0 2% 0;
+}
+
+.game_options_heading img {
+    width: 90%;
 }
 
 .theme_button {
