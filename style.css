@@ -742,12 +742,12 @@ label {
 .game_welcome .popup_keep_playing_button {
     height: 15%;
     width: 15%;
-    background-image: var(--start_button);
+    background-image: url("elements/static/start_btn.svg");
 }
 
-.game_welcome .popup_keep_playing_button:active {
-    background-image: var(--start_button_pressed);
-}
+/*.game_welcome .popup_keep_playing_button:active {*/
+/*    background-image: var(--start_button_pressed);*/
+/*}*/
 
 
 

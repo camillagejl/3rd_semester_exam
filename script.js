@@ -182,6 +182,11 @@ function spin(wheels, spins) {
 
     console.log(priceWon);
 
+    // Starts the visual part of spinning the wheels, separately for each wheel.
+    wheels.forEach(wheel => {
+        spinVisualWheel(wheel, priceWon, spins, wheels);
+    });
+
     // If the user wins:
     if (priceWon > 0) {
         console.log("won!", priceWon);
@@ -194,10 +199,6 @@ function spin(wheels, spins) {
         activateStartButton(wheels);
     }
 
-    // Starts the visual part of spinning the wheels, separately for each wheel.
-    wheels.forEach(wheel => {
-        spinVisualWheel(wheel, priceWon, spins, wheels);
-    });
 
     // Updates visual display of spins left.
     showSpinsLeft(spins);
@@ -291,11 +292,13 @@ function addSVGsToPopup() {
         });
     });
 
-    document.querySelector(".popup_keep_playing_button").addEventListener("click", function _function() {
-        document.querySelector(".game_popup").style.display = "none";
+    document.querySelectorAll(".popup_keep_playing_button").forEach(button => {
+        button.addEventListener("click", function _function() {
+            document.querySelector(".game_popup").style.display = "none";
 
-        document.querySelectorAll(".game_popup_content").forEach(element => {
-            element.style.display = "none";
+            document.querySelectorAll(".game_popup_content").forEach(element => {
+                element.style.display = "none";
+            });
         });
 
         document.querySelector(".coins_won").textContent = "0";
