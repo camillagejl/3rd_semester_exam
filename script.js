@@ -269,8 +269,13 @@ function addSVGsToPopup() {
 
     // Add texts to the two different popups - one for when the user wins the jackpot, one for when the user wins
     // anything else.
+    const welcomePopup = document.querySelector(".game_welcome");
     const noJackpotPopup = document.querySelector(".no_jackpot");
     const jackpotPopup = document.querySelector(".jackpot");
+
+    welcomePopup.querySelector(".game_popup_heading").querySelector(".svg_text").textContent = "Welcome to the World Games slot machine!";
+    welcomePopup.querySelector(".popup_text_one").querySelector(".svg_text").textContent = "Take a few spins for free, and win coins";
+    welcomePopup.querySelector(".popup_text_two").querySelector(".svg_text").textContent = "to spend on our other fabulous games!";
 
     noJackpotPopup.querySelector(".popup_text_one").querySelector(".svg_text").textContent = "Sign up now, and spend your coins on winning real money prices!";
     noJackpotPopup.querySelector(".popup_text_two").querySelector(".svg_text").textContent = "Or keep playing, and aim for the big jackpot of 20 coins!";
@@ -288,7 +293,11 @@ function addSVGsToPopup() {
 
     document.querySelector(".popup_keep_playing_button").addEventListener("click", function _function() {
         document.querySelector(".game_popup").style.display = "none";
-        document.querySelector(".no_jackpot").style.display = "none";
+
+        document.querySelectorAll(".game_popup_content").forEach(element => {
+            element.style.display = "none";
+        });
+
         document.querySelector(".coins_won").textContent = "0";
     })
 

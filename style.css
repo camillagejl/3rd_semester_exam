@@ -617,7 +617,7 @@ label {
     font-family: "Alatsi", sans-serif;
     color: #f6f6f6;
     flex-direction: column;
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
     z-index: 2;
@@ -647,6 +647,10 @@ label {
     width: 90%;
 }
 
+.game_welcome {
+    display: block;
+}
+
 .game_popup_heading {
     width: 100%;
     font-size: 150%;
@@ -668,8 +672,19 @@ label {
 
 .popup_keep_playing_button {
     background-image: url("elements/static/keep_playing.svg");
-
 }
+
+.game_welcome .popup_keep_playing_button {
+    height: 15%;
+    width: 15%;
+    background-image: var(--start_button);
+}
+
+.game_welcome .popup_keep_playing_button:active {
+    background-image: var(--start_button_pressed);
+}
+
+
 
 @keyframes fade_in_kf {
     0% {
