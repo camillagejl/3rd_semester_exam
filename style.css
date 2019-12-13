@@ -126,7 +126,7 @@ nav a {
   display: flex;
   margin-top: 50px;
   align-items: center;
-  height: 85vh;
+  height: 70vh;
   font-family: "Roboto", sans-serif;
 }
 
@@ -168,7 +168,7 @@ nav a {
 }
 
 .fields {
-    font-size: 15px;
+    font-size: 16px;
     padding: 5px;
     display: block;
     width: 300px;
@@ -182,33 +182,47 @@ nav a {
 
 .fields:focus~label,
 .fields:valid~label {
-    top: -20px;
-    font-size: 14px;
+    top: -15px;
+    font-size: 13px;
     color: #757575;
 }
 
 label {
     color: #999;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: normal;
     position: absolute;
     pointer-events: none;
     left: 5px;
-    top: 5px;
+    top: 0px;
     transition: 0.2s ease all;
     -moz-transition: 0.2s ease all;
     -webkit-transition: 0.2s ease all;
 }
 
-#second-fields :nth-child(5) label {
-    top: -20px;
-    font-size: 14px;
-    color: #757575;
+.group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+#second-fields :nth-child(3) {
+    margin-bottom: 20px;
+}
+
+#second-fields :nth-child(4) label {
+    position: static;
+    display: inline-block;
+    padding-left: 5px;
+}
+
+#second-fields :nth-child(4) input {
+    width: 201px;
+    display: inline-block;
+    padding-bottom: 0px;
 }
 
 #second-fields :nth-child(4) {
-    margin-bottom: 15px;
-
+    margin-bottom: 20px;
 }
 
 #second-fields :nth-child(5) label {
@@ -217,12 +231,7 @@ label {
 }
 
 #second-fields :nth-child(5) select {
-    margin-left: 5px;
-}
-
-.group {
-    position: relative;
-    margin-bottom: 30px;
+    
 }
 
 #buttons-container {
@@ -314,8 +323,8 @@ label {
 }
 
 #checkboxes {
-    padding-bottom: 20px;
     display: none;
+    font-size: 14px;
 }
 
 #signup-error {

@@ -15,7 +15,7 @@
             rel="stylesheet"
     />
     <link href="https://fonts.googleapis.com/css?family=Courier+Prime&display=swap" rel="stylesheet">
-    <title>3rd Semester Exam Project</title>
+  <title>3rd Semester Exam Project</title>
 </head>
 
 <body>
@@ -37,10 +37,10 @@
     </nav>
 
     <div id="logo-form-container">
-        <div id="logo-container">
-            <div class="title"></div>
-            <div class="earth"></div>
-        </div>
+      <div id="logo-container">
+        <div class="title"></div>
+        <div class="earth"></div>
+      </div>
 
       <div id="form-container">
         <h1 id="signup-h1">Sign Up</h1>
@@ -81,18 +81,28 @@
               <label>Last Name</label>
             </div>
             <div class="group">
+                <label>Date of Birth</label>
+              <input class="fields" type="date" name="dateofbirth" required />
+            </div>
+            <!-- <div class="group">
               <input class="fields" type="text" name="country" required />
               <label>Country</label>
-            </div>
+            </div> -->
             <div class="group">
-              <input class="fields" type="date" name="dateofbirth" required />
-              <label>Date of Birth</label>
+                <label>Country</label>
+                <select name="country" required>
+                    <option value="" disabled selected hidden>Select your country</option>
+                    <option value="Denmark">Denmark</option>
+                    <option value="Romania">Romania</option>
+                    <option value="United Kingdom">United Kingdom</option>
+                    <option value="Germany">Germany</option>
+                  </select>
             </div>
             <div id="checkboxes">
-              <input id="first-checkbox" type="checkbox" name="subscription" /> I accept the Terms
+              <input id="first-checkbox" type="checkbox" name="agreement" /> I accept the Terms
               of Use
               <br>
-              <input id="second-checkbox" type="checkbox" /> I want to receive
+              <input id="second-checkbox" type="checkbox" name="subscription" /> I want to receive
               newsletters and great offers
             </div>
           </div>
@@ -107,21 +117,23 @@
           <button type="button" id="already-acc">Log In</button>
         </form>
 
-            <form id="login-form" method="" action="">
-                <div class="group">
-                    <input class="fields username" type="text" name="username" required />
-                    <label>Username</label>
-                </div>
-                <div class="group">
-                    <input class="fields" type="password" name="password" required />
-                    <label>Password</label>
-                </div>
-                <div id="login-error"></div>
-                <button id="login-btn" type="submit" name="submit">Log In</button>
-                <div class="line">OR</div>
-                <button type="button" id="new-acc">Sign Up</button>
-            </form>
-        </div>
+        <form id="login-form" method="" action="">
+          <div class="group">
+            <input class="fields username" type="text" name="username" required />
+            <label>Username</label>
+          </div>
+          <div class="group">
+            <input class="fields" type="password" name="password" required />
+            <label>Password</label>
+          </div>
+          <div id="login-error"></div>
+          <button id="login-btn" type="submit" name="submit">Log In</button>
+          <div id="hide">
+          <div class="line">OR</div>
+          <button type="button" id="new-acc">Sign Up</button>
+          </div>
+        </form>
+      </div>
     </div>
   </section>
 
@@ -247,22 +259,22 @@
         </div>
     </div>
 
-</section>
+  </section>
 
 
 <div class="hide_background_crop third_section">
     <div class="hide_background"></div>
 </div>
 
-<section>
-    <div id="more_games">
-        <h1>More games</h1>
-        <h2>Popular games</h2>
-        <div class="popular_games"></div>
-        <h2>Jackpot games</h2>
-        <div class="jackpot_games"></div>
-    </div>
-</section>
+  <section>
+      <div id="more_games">
+          <h1>More games</h1>
+          <h2>Popular games</h2>
+          <div class="popular_games"></div>
+          <h2>Jackpot games</h2>
+          <div class="jackpot_games"></div>
+      </div>
+  </section>
 
   <script src="form_script.js"></script>
   <script src="more_games_script.js"></script>
