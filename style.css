@@ -769,6 +769,11 @@ label {
     display: block;
 }
 
+.game_signup img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
 .game_popup_heading {
     width: 100%;
     font-size: 1.5rem;

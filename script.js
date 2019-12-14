@@ -259,7 +259,13 @@ function addSVGsToPopup() {
 
     document.querySelectorAll(".popup_signup_button").forEach(button => {
         button.addEventListener("click", function _function() {
-            console.log("Please sign up");
+
+            document.querySelectorAll(".game_popup_content").forEach(element => {
+                element.style.display = "none";
+            });
+
+            document.querySelector(".game_signup").style.display = "block";
+
         });
     });
 
