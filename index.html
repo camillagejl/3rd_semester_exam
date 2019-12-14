@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport"
-    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="stylesheet" href="style.css" />
-<!--  <link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet" />-->
+    <meta charset="UTF-8"/>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <link rel="stylesheet" href="style.css"/>
+    <!--  <link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet" />-->
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link
@@ -18,16 +18,16 @@
     <title>3rd Semester Exam Project</title>
 </head>
 
-  <body>
-    <div class="body_background"></div>
+<body>
+<div class="body_background"></div>
 
-    <section id="landing">
-      <nav>
+<section id="landing">
+    <nav>
         <div class="nav_center">
-          <a href="#">
-            <img class="nav_logo" src="elements/static/logo_nav.svg" />
-          </a>
-          <a href="#more_games">More games</a>
+            <a href="#">
+                <img class="nav_logo" src="elements/static/logo_nav.svg"/>
+            </a>
+            <a href="#more_games">More games</a>
         </div>
         <div id="nav-buttons">
             <button id="nav-login">Log In</button>
@@ -35,106 +35,106 @@
         </div>
     </nav>
 
-        <div id="logo-form-container">
-            <div id="logo-container">
-                <div class="title"><h1>Welcome to World Games</h1></div>
-                <div class="earth"></div>
-            </div>
-
-      <div id="form-container">
-        <h1 id="signup-h1">Sign Up</h1>
-        <div id="bars-container">
-          <div class="bar">
-            <div class="first-step progress"></div>
-          </div>
-          <div class="bar">
-            <div class="second-step progress"></div>
-          </div>
+    <div id="logo-form-container">
+        <div id="logo-container">
+            <div class="title"><h1>Welcome to World Games</h1></div>
+            <div class="earth"></div>
         </div>
-        <form id="signup-form" method="POST" action="">
-          <div id="first-fields">
-            <div class="group">
-              <input class="fields username" type="text" name="username" required />
-              <label>Username</label>
-            </div>
-            <div class="group">
-              <input class="fields" type="password" name="password" required />
-              <label>Password</label>
-            </div>
-            <div class="group">
-              <input class="fields" type="password" name="repeatpw" required />
-              <label>Repeat Password</label>
-            </div>
-          </div>
-          <div id="second-fields">
-            <div class="group">
-              <input class="fields" type="text" name="email" required />
-              <label>Email</label>
-            </div>
-            <div class="group">
-              <input class="fields" type="text" name="firstname" required />
-              <label>First Name</label>
-            </div>
-            <div class="group">
-              <input class="fields" type="text" name="lastname" required />
-              <label>Last Name</label>
-            </div>
-            <div class="group">
-                <label>Date of Birth</label>
-              <input class="fields" type="date" name="dateofbirth" required />
-            </div>
-            <!-- <div class="group">
-              <input class="fields" type="text" name="country" required />
-              <label>Country</label>
-            </div> -->
-            <div class="group">
-                <label>Country</label>
-                <select name="country" required>
-                    <option value="" disabled selected hidden>Select your country</option>
-                    <option value="Denmark">Denmark</option>
-                    <option value="Romania">Romania</option>
-                    <option value="United Kingdom">United Kingdom</option>
-                    <option value="Germany">Germany</option>
-                  </select>
-            </div>
-            <div id="checkboxes">
-              <input id="first-checkbox" type="checkbox" name="agreement" /> I accept the Terms
-              of Use
-              <br>
-              <input id="second-checkbox" type="checkbox" name="subscription" /> I want to receive
-              newsletters and great offers
-            </div>
-          </div>
-          <div id="signup-error"></div>
-          <div id="signedup">Account succesfully created</div>
-          <button id="next-btn" name="next">Next</button>
-          <div id="buttons-container">
-            <button id="back-btn" name="back">Back</button>
-            <button id="signup-btn" type="submit" name="submit">Sign Up</button>
-          </div>
-          <div class="line">OR</div>
-          <button type="button" id="already-acc">Log In</button>
-        </form>
 
-        <form id="login-form" method="" action="">
-          <div class="group">
-            <input class="fields username" type="text" name="username" required />
-            <label>Username</label>
-          </div>
-          <div class="group">
-            <input class="fields" type="password" name="password" required />
-            <label>Password</label>
-          </div>
-          <div id="login-error"></div>
-          <button id="login-btn" type="submit" name="submit">Log In</button>
-          <div id="hide">
-          <div class="line">OR</div>
-          <button type="button" id="new-acc">Sign Up</button>
-          </div>
-        </form>
-      </div>
+        <div id="form-container">
+            <h1 id="signup-h1">Sign Up</h1>
+            <div id="bars-container">
+                <div class="bar">
+                    <div class="first-step progress"></div>
+                </div>
+                <div class="bar">
+                    <div class="second-step progress"></div>
+                </div>
+            </div>
+            <form id="signup-form" method="POST" action="">
+                <div id="first-fields">
+                    <div class="group">
+                        <input class="fields username" type="text" name="username" required/>
+                        <label>Username</label>
+                    </div>
+                    <div class="group">
+                        <input class="fields" type="password" name="password" required/>
+                        <label>Password</label>
+                    </div>
+                    <div class="group">
+                        <input class="fields" type="password" name="repeatpw" required/>
+                        <label>Repeat Password</label>
+                    </div>
+                </div>
+                <div id="second-fields">
+                    <div class="group">
+                        <input class="fields" type="text" name="email" required/>
+                        <label>Email</label>
+                    </div>
+                    <div class="group">
+                        <input class="fields" type="text" name="firstname" required/>
+                        <label>First Name</label>
+                    </div>
+                    <div class="group">
+                        <input class="fields" type="text" name="lastname" required/>
+                        <label>Last Name</label>
+                    </div>
+                    <div class="group">
+                        <label>Date of Birth</label>
+                        <input class="fields" type="date" name="dateofbirth" required/>
+                    </div>
+                    <!-- <div class="group">
+                      <input class="fields" type="text" name="country" required />
+                      <label>Country</label>
+                    </div> -->
+                    <div class="group">
+                        <label>Country</label>
+                        <select name="country" required>
+                            <option value="" disabled selected hidden>Select your country</option>
+                            <option value="Denmark">Denmark</option>
+                            <option value="Romania">Romania</option>
+                            <option value="United Kingdom">United Kingdom</option>
+                            <option value="Germany">Germany</option>
+                        </select>
+                    </div>
+                    <div id="checkboxes">
+                        <input id="first-checkbox" type="checkbox" name="agreement"/> I accept the Terms
+                        of Use
+                        <br>
+                        <input id="second-checkbox" type="checkbox" name="subscription"/> I want to receive
+                        newsletters and great offers
+                    </div>
+                </div>
+                <div id="signup-error"></div>
+                <div id="signedup">Account succesfully created</div>
+                <button id="next-btn" name="next">Next</button>
+                <div id="buttons-container">
+                    <button id="back-btn" name="back">Back</button>
+                    <button id="signup-btn" type="submit" name="submit">Sign Up</button>
+                </div>
+                <div class="line">OR</div>
+                <button type="button" id="already-acc">Log In</button>
+            </form>
+
+            <form id="login-form" method="" action="">
+                <div class="group">
+                    <input class="fields username" type="text" name="username" required/>
+                    <label>Username</label>
+                </div>
+                <div class="group">
+                    <input class="fields" type="password" name="password" required/>
+                    <label>Password</label>
+                </div>
+                <div id="login-error"></div>
+                <button id="login-btn" type="submit" name="submit">Log In</button>
+                <div id="hide">
+                    <div class="line">OR</div>
+                    <button type="button" id="new-acc">Sign Up</button>
+                </div>
+            </form>
+        </div>
     </div>
-  </section>
+</section>
 
 <div class="hide_background_crop first_section">
     <div class="hide_background"></div>
@@ -231,26 +231,38 @@
         <div class="game_popup">
 
             <div class="game_popup_content game_welcome">
-                <div class="game_popup_heading text_svg"></div>
-                <div class="text_svg popup_text_one"></div>
-                <div class="text_svg popup_text_two"></div>
+                <div class="game_popup_heading">
+                    Welcome to the World Games slot machine!
+                </div>
+                <p>
+                    Take a few spins for free, and win coins to spend on our other fabulous games!
+                </p>
                 <button class="popup_button popup_keep_playing_button"></button>
                 <div class="character_sprite"></div>
             </div>
 
             <div class="game_popup_content no_jackpot">
-                <div class="game_popup_heading text_svg"></div>
-                <div class="text_svg popup_text_one"></div>
+                <div class="game_popup_heading">
+                    Congratulations! You won <div class="popup_prize"></div> coins!
+                </div>
+                <p>
+                    Sign up now, and spend your coins on winning real money prizes!
+                </p>
                 <button class="popup_button popup_signup_button"></button>
-                <div class="text_svg popup_text_two"></div>
+                <p>
+                    Or keep playing, and aim for the big jackpot of 20 coins!
+                </p>
                 <button class="popup_button popup_keep_playing_button"></button>
                 <div class="character_sprite"></div>
             </div>
 
             <div class="game_popup_content jackpot">
-                <div class="game_popup_heading text_svg"></div>
-                <div class="text_svg popup_text_one"></div>
-                <div class="text_svg popup_text_two"></div>
+                <div class="game_popup_heading">
+                    Congratulations! You won the jackpot!
+                </div>
+                <p>
+                    Don't loose your 20 coins! Sign up now, and spend your coins on winning real money prizes!
+                </p>
                 <button class="popup_button popup_signup_button"></button>
                 <div class="character_sprite"></div>
             </div>
@@ -265,19 +277,19 @@
     <div class="hide_background"></div>
 </div>
 
-    <section>
-      <div id="more_games">
+<section>
+    <div id="more_games">
         <h1>More games</h1>
         <h2>Popular games</h2>
         <div class="popular_games"></div>
         <h2>Jackpot games</h2>
         <div class="jackpot_games"></div>
-      </div>
-    </section>
+    </div>
+</section>
 
-  <script src="form_script.js"></script>
-  <script src="more_games_script.js"></script>
-  <script src="script.js"></script>
+<script src="form_script.js"></script>
+<script src="more_games_script.js"></script>
+<script src="script.js"></script>
 </body>
 
 </html>
