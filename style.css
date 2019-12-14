@@ -389,11 +389,24 @@ label {
     max-width: 50vw;
     max-height: 50vw;
     background-image: url(elements/animated_earth.svg);
+    background-color: #1a47c4;
     background-size: cover;
     border-radius: 100%;
     transform: rotate(10deg);
     border: 1px solid black;
     animation: spin 8s infinite linear;
+}
+
+.earth:before {
+    z-index: 1;
+    content: "";
+    background: radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0.08167016806722693) 32%, rgba(0,0,0,0.1881127450980392) 54%, rgba(0,0,0,0.30015756302521013) 66%, rgba(71,71,71,0.7987570028011204) 80%);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    border-radius: 100%;
 }
 
 @keyframes spin {
@@ -415,7 +428,7 @@ label {
     }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (orientation: portrait) and (max-width: 767px) {
     #form-container {
         display: none;
     }
@@ -1071,7 +1084,7 @@ label {
     }
 }
 
-@media screen and (max-width: 1079px) {
+@media screen and (max-width: 1199px) {
     .popular_games,
     .jackpot_games {
         grid-template-columns: 1fr 1fr;
