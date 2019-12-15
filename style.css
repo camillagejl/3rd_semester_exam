@@ -407,10 +407,10 @@ label {
 }
 
 .earth {
-    height: 50vh;
-    width: 50vh;
-    max-width: 50vw;
-    max-height: 50vw;
+    height: 40vh;
+    width: 40vh;
+    max-width: 40vw;
+    max-height: 40vw;
     background-image: url(elements/animated_earth.svg);
     background-color: #1a47c4;
     background-size: cover;
