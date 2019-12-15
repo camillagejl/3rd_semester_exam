@@ -219,10 +219,10 @@
         <div class="game">
 
             <div class="slot_machine">
-                <div class="hold_buttons"></div>
 
-                <!-- The wheels are added through JavaScript -->
+                <!-- The wheels and hold buttons are added through JavaScript -->
                 <div class="wheels"></div>
+                <div class="hold_buttons"></div>
 
                 <div class="main_buttons">
                     <!-- The start and spin buttons are always the same. -->
@@ -236,26 +236,42 @@
         <div class="game_popup">
 
             <div class="game_popup_content game_welcome">
-                <div class="game_popup_heading text_svg"></div>
-                <div class="text_svg popup_text_one"></div>
-                <div class="text_svg popup_text_two"></div>
+                <div class="game_popup_heading">
+                    Welcome to the World Games slot machine!
+                </div>
+                <p>
+                    Take a few spins for free, and win coins to spend on our other fabulous games!
+                </p>
                 <button class="popup_button popup_keep_playing_button"></button>
                 <div class="character_sprite"></div>
             </div>
 
             <div class="game_popup_content no_jackpot">
-                <div class="game_popup_heading text_svg"></div>
-                <div class="text_svg popup_text_one"></div>
+                <div class="game_popup_heading">
+                    Congratulations! You won <div class="popup_prize"></div> coins!
+                </div>
+                <p>
+                    Sign up now, and spend your coins on winning real money prizes!
+                </p>
                 <button class="popup_button popup_signup_button"></button>
-                <div class="text_svg popup_text_two"></div>
+                <p>
+                    Or keep playing, and aim for the big jackpot of 20 coins!
+                </p>
                 <button class="popup_button popup_keep_playing_button"></button>
                 <div class="character_sprite"></div>
             </div>
 
+            <div class="game_popup_content game_signup">
+                <img src="elements/static/signup_placeholder.jpg">
+            </div>
+
             <div class="game_popup_content jackpot">
-                <div class="game_popup_heading text_svg"></div>
-                <div class="text_svg popup_text_one"></div>
-                <div class="text_svg popup_text_two"></div>
+                <div class="game_popup_heading">
+                    Congratulations! You won the jackpot!
+                </div>
+                <p>
+                    Don't loose your 20 coins! Sign up now, and spend your coins on winning real money prizes!
+                </p>
                 <button class="popup_button popup_signup_button"></button>
                 <div class="character_sprite"></div>
             </div>

@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", fetchSymbols);
 let symbols;
 let slotMachineSVG;
 let holdButtonSVG;
-let textSVG;
 
 // Fetching all different symbols from the gameitems.json file.
 async function fetchSymbols() {
@@ -21,16 +20,14 @@ async function fetchSymbols() {
 function fetchSVGs() {
     const slotMachineSVGFile = fetch("elements/static/slot_machine.svg").then(r => r.text());
     const holdButtonSVGFile = fetch("elements/static/hold.svg").then(r => r.text());
-    const textSVGFile = fetch("elements/static/text.svg").then(r => r.text());
 
     Promise
-        .all([slotMachineSVGFile, holdButtonSVGFile, textSVGFile])
+        .all([slotMachineSVGFile, holdButtonSVGFile])
         .then(
             function (responses) {
-                const [slotMachineSVGFile, holdButtonSVGFile, textSVGFile] = responses;
+                const [slotMachineSVGFile, holdButtonSVGFile] = responses;
                 slotMachineSVG = slotMachineSVGFile;
                 holdButtonSVG = holdButtonSVGFile;
-                textSVG = textSVGFile;
                 startGame();
             }
         );
@@ -53,7 +50,7 @@ function buildWheels() {
         // symbols: [symbols[0], symbols[0], symbols[5], symbols[5]],
 
         // The symbols are fetched from a json-file. Symbols can be added several times, and order doesn't matter.
-        symbols: [symbols[3], symbols[2], symbols[3], symbols[0], symbols[5], symbols[1], symbols[0], symbols[5], symbols[1], symbols[2], symbols[0], symbols[4], symbols[0], symbols[5]],
+        symbols: [symbols[3], symbols[2], symbols[3], symbols[0], symbols[5], symbols[1], symbols[0], symbols[5], symbols[1], symbols[2], symbols[0], symbols[4], symbols[0], symbols[5], symbols[2]],
         isHolding: false,
 
         // "active" refers to the active symbol in the wheel array. This starts on 1 (i.e. the second symbol in the
@@ -64,14 +61,14 @@ function buildWheels() {
     let wheel2 = {
         id: 2,
         // symbols: [symbols[0], symbols[0], symbols[5], symbols[5]],
-        symbols: [symbols[5], symbols[3], symbols[4], symbols[0], symbols[5], symbols[0], symbols[3], symbols[1], symbols[4], symbols[2], symbols[0], symbols[1], symbols[2], symbols[1]],
+        symbols: [symbols[5], symbols[3], symbols[4], symbols[0], symbols[5], symbols[0], symbols[3], symbols[1], symbols[4], symbols[2], symbols[0], symbols[1], symbols[2], symbols[1], symbols[5]],
         isHolding: false,
         active: 1
     };
     let wheel3 = {
         id: 3,
         // symbols: [symbols[0], symbols[0], symbols[5], symbols[5]],
-        symbols: [symbols[3], symbols[5], symbols[1], symbols[0], symbols[4], symbols[5], symbols[2], symbols[1], symbols[0], symbols[0], symbols[5], symbols[3], symbols[3], symbols[2]],
+        symbols: [symbols[3], symbols[5], symbols[1], symbols[0], symbols[4], symbols[5], symbols[2], symbols[1], symbols[0], symbols[0], symbols[5], symbols[3], symbols[3], symbols[2], symbols[3]],
         isHolding: false,
         active: 1
     };
@@ -258,33 +255,17 @@ function addWheelsToDOM(wheels) {
 }
 
 function addSVGsToPopup() {
-
-    // Adds editable text SVGs to where they are needed.
-    document.querySelectorAll(".text_svg").forEach(element => {
-        element.innerHTML = textSVG;
-    });
-
-    // Add texts to the two different popups - one for when the user wins the jackpot, one for when the user wins
-    // anything else.
-    const welcomePopup = document.querySelector(".game_welcome");
-    const noJackpotPopup = document.querySelector(".no_jackpot");
-    const jackpotPopup = document.querySelector(".jackpot");
-
-    welcomePopup.querySelector(".game_popup_heading").querySelector(".svg_text").textContent = "Welcome to the World Games slot machine!";
-    welcomePopup.querySelector(".popup_text_one").querySelector(".svg_text").textContent = "Take a few spins for free, and win coins";
-    welcomePopup.querySelector(".popup_text_two").querySelector(".svg_text").textContent = "to spend on our other fabulous games!";
-
-    noJackpotPopup.querySelector(".popup_text_one").querySelector(".svg_text").textContent = "Sign up now, and spend your coins on winning real money prizes!";
-    noJackpotPopup.querySelector(".popup_text_two").querySelector(".svg_text").textContent = "Or keep playing, and aim for the big jackpot of 20 coins!";
-
-    jackpotPopup.querySelector(".popup_text_one").querySelector(".svg_text").textContent = "You won the jackpot. Don't loose your coins!";
-    jackpotPopup.querySelector(".popup_text_two").querySelector(".svg_text").textContent = "Sign up now, and spend your coins on winning real money prizes!";
-
 //    eventListeners for buttons
 
     document.querySelectorAll(".popup_signup_button").forEach(button => {
         button.addEventListener("click", function _function() {
-            console.log("Please sign up");
+
+            document.querySelectorAll(".game_popup_content").forEach(element => {
+                element.style.display = "none";
+            });
+
+            document.querySelector(".game_signup").style.display = "block";
+
         });
     });
 
@@ -460,11 +441,6 @@ function toggleCoinsDisplay(toggleCount) {
 }
 
 function displayPopup(prizeWon) {
-
-    document.querySelectorAll(".game_popup_heading").forEach(heading => {
-        heading.querySelector(".svg_text").innerHTML = `Congratulations! &nbsp; You won ${prizeWon} coins!`;
-    });
-
     document.querySelector(".game_popup").style.display = "flex";
 
     if (prizeWon === 20) {
@@ -473,5 +449,6 @@ function displayPopup(prizeWon) {
 
     if (prizeWon !== 20) {
         document.querySelector(".no_jackpot").style.display = "block";
+        document.querySelector(".popup_prize").innerHTML = prizeWon;
     }
 }
