@@ -126,6 +126,29 @@ nav a {
     outline: none;
     cursor: pointer;
     color: white;
+    font-family: var(--main_font);
+    font-size: 1rem;
+}
+
+@media screen and (max-width: 767px) {
+    nav {
+        height: 30px;
+    }
+
+    .nav_logo {
+        height: 19px;
+        margin-right: 10px;
+    }
+
+    #nav-buttons {
+        display: none;
+        padding-right: 0;
+    }
+
+    nav a,
+    #nav-buttons button {
+        font-size: 0.8rem;
+    }
 }
 
 /* ----- LOGIN FORM ----- */
