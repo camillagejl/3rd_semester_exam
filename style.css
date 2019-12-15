@@ -1061,7 +1061,7 @@ label {
 .jackpot_games {
     display: grid;
     grid-gap: 20px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     text-align: center;
 }
 
@@ -1125,9 +1125,14 @@ label {
 }
 
 @media screen and (max-width: 1499px) {
-    .play_btn {
-        top: 70%;
+    .popular_games,
+    .jackpot_games {
+        grid-template-columns: 1fr 1fr 1fr;
     }
+
+    /*.play_btn {*/
+    /*    top: 70%;*/
+    /*}*/
 }
 
 @media screen and (max-width: 1199px) {
@@ -1167,6 +1172,52 @@ label {
         margin-top: 120px;
     }
 }
+
+
+/* ----- FOOTER ----- */
+
+footer {
+    background-color: #15720a;
+    color: white;
+    font-size: 1.1rem;
+}
+
+footer a {
+    color: white;
+}
+
+footer img {
+    width: 200px;
+    margin-bottom: 10px;
+}
+
+.footer_content {
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+footer div:nth-child(3) {
+    padding-left: 45px;
+}
+
+@media screen and (max-width: 767px) {
+    .footer_content {
+        grid-template-columns: 1fr;
+    }
+
+    footer div:nth-child(4) {
+        padding-top: 10px;
+        padding-left: 45px;
+    }
+
+    .footer_content {
+        padding: 50px 10px;
+    }
+}
+
 
 /* ----- HELPER CLASSES ----- */
 
