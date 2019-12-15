@@ -21,6 +21,7 @@ function List() {
     useEffect(()=>{
         get()
     },[]);
+
     // Sets useStates on click on one of the column headers.
     function get() {
         fetch("https://eexam-6f38.restdb.io/rest/website-users", {
@@ -33,10 +34,27 @@ function List() {
         })
             .then(e => e.json())
             .then(data => {
-                setUsers(data)
+                setUsers(data);
             });
     }
 
+    const [newUsers, setNewUsers] = useState(users);
+    
+    const removeUser = (id) => {
+        fetch("https://eexam-6f38.restdb.io/rest/website-users/" + id, {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json",
+                    "x-apikey": "5dde99ff4658275ac9dc1fce",
+                    "cache-control": "no-cache"
+                }
+            })
+            .then(res => res.json())
+            .then(data => {   
+                filteredCollection = filteredCollection.filter(user => user._id !== id);
+                setNewUsers(filteredCollection);
+            });
+    }
     // ----- SORT BY -----
     // Defines useStates for sortBy (the key from the header that is clicked) and
     // sortDirection (toggles between ascending and descending on click).
@@ -96,7 +114,6 @@ function List() {
     // ----- LIST COMPONENT -----
     return (
         <div className="list">
-
             <label>
                 Filter by country:
                 <select onChange={filterByCountry} name="filterByCountry" className="filterByCountry">
@@ -185,11 +202,12 @@ function List() {
                 </thead>
                 <tbody>
 
+
                 {/* This should ideally be in a seperate file, but I could not make that work
                  for now. */}
                 {filteredCollection.map(user => (
 
-                    <tr key={user.id}>
+                    <tr key={user._id}>
                         <td>{user.username}</td>
                         <td>{user.email}</td>
                         <td>{user.firstname}</td>
@@ -197,7 +215,7 @@ function List() {
                         <td>{user.dateofbirth}</td>
                         <td>{user.country}</td>
                         <td>{user.subscription}</td>
-                        <td className="delete_user">&times; Delete</td>
+                        <td className="delete_user" onClick={() => removeUser(user._id)}>&times; Delete</td>
                     </tr>
 
                 ))}

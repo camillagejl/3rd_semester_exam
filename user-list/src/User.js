@@ -13,9 +13,9 @@ export default function UserObject(props) {
 
 function User(props) {
     return (
-                <tr className="user">
-                    <td className="user_detail">{props.firstName}</td>
-                    <td className="user_detail">{props.lastName}</td>
-                </tr>
+        <tr className="user">
+            <td className="user_detail">{props.firstName}</td>
+            <td className="user_detail">{props.lastName}</td>
+        </tr>
     )
 }
