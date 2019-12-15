@@ -4,7 +4,7 @@ function checkIfLogged(){
     if(localStorage.getItem('userID') !== null ) {
         window.open("account.html","_self");
     } 
-};
+}
 
 window.onload = checkIfLogged;
 
@@ -205,4 +205,9 @@ document.querySelector("#nav-signup").addEventListener("click", e => {
         document.querySelector("#signup-form .username").focus();
     }, 300);
     scrollToTop();
+});
+
+document.querySelector(".mobile_signup").addEventListener("click", e => {
+    document.querySelector("#logo-container").style.display = "none";
+    document.querySelector("#form-container").style.display = "block";
 });

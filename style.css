@@ -397,10 +397,15 @@ label {
     animation: spin 8s infinite linear;
 }
 
+.mobile_signup {
+    display: none;
+}
+
+/* Gradient over the earth to give it a depth effect */
 .earth:before {
     z-index: 1;
     content: "";
-    background: radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0.08167016806722693) 32%, rgba(0,0,0,0.1881127450980392) 54%, rgba(0,0,0,0.30015756302521013) 66%, rgba(71,71,71,0.7987570028011204) 80%);
+    background: radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 32%, rgba(0,0,0,0.2) 54%, rgba(0,0,0,0.3) 66%, rgba(71,71,71,0.8) 80%);
     position: absolute;
     left: 0;
     right: 0;
@@ -431,6 +436,7 @@ label {
 @media screen and (orientation: portrait) and (max-width: 767px) {
     #form-container {
         display: none;
+        margin: 0 auto;
     }
 
     #logo-container {
@@ -438,8 +444,22 @@ label {
     }
 
     .earth {
-        max-width: 80vw;
-        max-height: 80vw;
+        height: 50vw;
+        width: 50vw;
+        max-width: 40vh;
+        max-height: 40vh;
+    }
+
+    .mobile_signup {
+        font-family: var(--main_font);
+        display: block;
+        background-color: #1c3be2;
+        color: white;
+        margin: 30px 0 0 0;
+        padding: 20px;
+        font-size: 1.2rem;
+        border-radius: 20px;
+        border: 2px solid black;
     }
 }
 
@@ -986,6 +1006,9 @@ label {
         width: 40%;
         height: 10%;
     }
+    #game_header {
+        margin: -5vh 0 0 0;
+    }
 }
 
 /* WORDPRESS */
@@ -1113,6 +1136,12 @@ label {
 @media screen and (max-width: 448px) {
     .play_btn {
         top: 75%;
+    }
+}
+
+@media screen and (orientation: portrait) {
+    #more_games h1 {
+        margin-top: 120px;
     }
 }
 
