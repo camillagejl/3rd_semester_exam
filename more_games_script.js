@@ -42,3 +42,7 @@ function insertAllGames() {
   });
 }
 getAllGames();
+
+document.querySelector(".browse_games").addEventListener("click", function _function() {
+document.querySelector(".browse_games").textContent = "Coming soon!";
+})

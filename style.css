@@ -476,7 +476,7 @@ label {
     .mobile_signup {
         font-family: var(--main_font);
         display: block;
-        background-color: #1c3be2;
+        background-color: #55b0e2;
         color: white;
         margin: 30px 0 0 0;
         padding: 20px;
@@ -1037,7 +1037,8 @@ label {
 /* WORDPRESS */
 
 #more_games {
-    margin: 50px;
+    padding: 50px;
+    text-align: center;
 }
 
 #more_games h1 {
@@ -1045,9 +1046,11 @@ label {
 }
 
 #more_games h2 {
+    text-align: left;
+    margin: 20px 0 0 0;
     font-family: var(--main_font);
     font-size: 1.5rem;
-    font-weight: 100;
+    font-weight: bold;
     padding: 15px 0;
 }
 
@@ -1124,6 +1127,18 @@ label {
     font-size: 1rem;
 }
 
+.browse_games {
+    font-family: var(--main_font);
+    background-color: #55b0e2;
+    color: white;
+    margin: 40px 0;
+    padding: 20px;
+    font-size: 1.2rem;
+    border-radius: 20px;
+    border: 2px solid black;
+
+}
+
 @media screen and (max-width: 1499px) {
     .popular_games,
     .jackpot_games {
@@ -1157,7 +1172,7 @@ label {
     }
 
     #more_games {
-        margin: 10px;
+        padding: 10px;
     }
 }
 
