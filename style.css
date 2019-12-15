@@ -1126,6 +1126,7 @@ label {
     font-family: var(--main_font);
     font-size: 1.2rem;
     font-weight: 100;
+    margin-top: 10px;
 }
 
 .popular_games,
@@ -1197,14 +1198,18 @@ label {
 
 .browse_games {
     font-family: var(--main_font);
-    background-color: #55b0e2;
-    color: white;
+    background-color: #ffffff;
+    color:  rgb(0, 158, 0);
     margin: 40px 0;
-    padding: 20px;
+    padding: 15px;
     font-size: 1.2rem;
-    border-radius: 20px;
-    border: 2px solid black;
+    border-radius: 10px;
+    border: 2px solid rgb(0, 158, 0);
 
+    
+}
+.browse_games:hover {
+  color: black;
 }
 
 @media screen and (max-width: 1499px) {
