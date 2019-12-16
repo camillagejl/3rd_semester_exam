@@ -251,10 +251,10 @@ function addWheelsToDOM(wheels) {
 
     });
 
-    addSVGsToPopup();
+    addEventListeners();
 }
 
-function addSVGsToPopup() {
+function addEventListeners() {
 //    eventListeners for buttons
     document.querySelectorAll(".popup_keep_playing_button").forEach(button => {
         button.addEventListener("click", function _function() {
@@ -266,7 +266,42 @@ function addSVGsToPopup() {
         });
 
         document.querySelector(".coins_won").textContent = "0";
-    })
+    });
+
+
+    // MUSIC
+
+    const musicButton = document.querySelector(".music_toggle");
+    const music = document.querySelector("#music");
+    const buttonSound = document.querySelector("#button_sound");
+    music.loop = true;
+    buttonSound.volume = 0;
+
+    document.querySelectorAll(".game_container button").forEach(button => {
+        button.addEventListener("click", function _function() {
+            buttonSound.play();
+            buttonSound.currentTime = 0;
+        })
+    });
+
+    musicButton.addEventListener("click", function _function() {
+        console.log("Music");
+
+        this.setAttribute("data-music", this.getAttribute("data-music") === "off" ? "on" : "off");
+
+        if (this.getAttribute("data-music") === "off") {
+            music.pause();
+                buttonSound.volume = 0;
+                musicButton.style.backgroundImage = 'url("elements/static/music_off.svg")';
+        }
+
+        if (this.getAttribute("data-music") === "on") {
+            music.play();
+                buttonSound.volume = .5;
+            musicButton.style.backgroundImage = 'url("elements/static/music_on.svg")';
+        }
+
+    });
 
 }
 
@@ -438,4 +473,10 @@ function displayPopup(prizeWon) {
         document.querySelector(".no_jackpot").style.display = "block";
         document.querySelector(".popup_prize").innerHTML = prizeWon;
     }
+}
+
+function play(){
+    let audio = document.getElementById("audio");
+    audio.play();
+    audio.loop = true;
 }
