@@ -376,7 +376,16 @@ label {
 
 /* ----- GAME ----- */
 
+
 /* GRAPHIC SOURCES */
+
+#sound {
+  position: absolute;
+  left: 71.5%;
+  top: 110%;
+  width: 40px;
+  z-index: 1;
+}
 
 /* Sources for the static design elements that do not change when changing themes.*/
 :root {

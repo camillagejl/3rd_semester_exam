@@ -4,6 +4,15 @@ const popularGames = document.querySelector(".popular_games");
 const jackpotGames = document.querySelector(".jackpot_games");
 let section = [];
 
+function play(){
+  let audio = document.getElementById("audio");
+  audio.play()
+  audio.loop = true;
+}
+
+let btn_click = new Audio;
+btn_click.src = "elements/audio/button_click.mp3";
+
 async function getAllGames() {
   let pagesUrl =
     "http://creativegamerstuff.dk/kea/sem3/wordpress/wp-json/wp/v2/Game";

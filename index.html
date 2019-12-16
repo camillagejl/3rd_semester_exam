@@ -171,6 +171,8 @@
 
     <h1 id="game_header">Slot Machine</h1>
     <section id="game_page">
+        <input type="image" id="sound" src="elements/static/music_on.svg" value="PLAY"  onclick="play()">
+        <audio id="audio" src="elements/audio/8-bit_music_01.mp3"></audio>
       <!-- The theme is added to the .game div through JavaScript. It currently starts with 'mexico'. -->
       <div class="game_container" data-game-theme="mexican">
         <div class="game_options">
@@ -180,9 +182,9 @@
             </div>
             <!-- If a new theme is added, the theme button needs to be added here. the data-theme is the attribute that is
          used to style the elements through CSS. -->
-            <button class="theme_button" data-theme="mexican"></button>
-            <button class="theme_button" data-theme="indigenous"></button>
-            <button class="theme_button" data-theme="viking"></button>
+            <button class="theme_button" data-theme="mexican" onclick="btn_click.play()"></button>
+            <button class="theme_button" data-theme="indigenous" onclick="btn_click.play()"></button>
+            <button class="theme_button" data-theme="viking" onclick="btn_click.play()"></button>
           </div>
           <div class="point_chart">
             <div class="point_chart_row point_chart_row_6">
@@ -199,7 +201,6 @@
                 src="elements/static/price_20.svg"
               />
             </div>
-
             <div class="point_chart_row point_chart_row_5">
               <div class="point_chart_symbol"></div>
               <div class="point_chart_symbol"></div>
@@ -284,8 +285,8 @@
 
             <div class="main_buttons">
               <!-- The start and spin buttons are always the same. -->
-              <button class="start_button"></button>
-              <button class="spin_button inactive"></button>
+              <button class="start_button" onclick="btn_click.play()"></button>
+              <button class="spin_button inactive" onclick="btn_click.play()"></button>
             </div>
           </div>
 
@@ -296,7 +297,7 @@
             <div class="game_popup_heading text_svg"></div>
             <div class="text_svg popup_text_one"></div>
             <div class="text_svg popup_text_two"></div>
-            <button class="popup_button popup_keep_playing_button"></button>
+            <button class="popup_button popup_keep_playing_button" onclick="btn_click.play()"></button>
             <div class="character_sprite"></div>
           </div>
 
@@ -305,7 +306,7 @@
             <div class="text_svg popup_text_one"></div>
             <button class="popup_button popup_signup_button"></button>
             <div class="text_svg popup_text_two"></div>
-            <button class="popup_button popup_keep_playing_button"></button>
+            <button class="popup_button popup_keep_playing_button" onclick="btn_click.play()"></button>
             <div class="character_sprite"></div>
           </div>
 
@@ -313,7 +314,7 @@
             <div class="game_popup_heading text_svg"></div>
             <div class="text_svg popup_text_one"></div>
             <div class="text_svg popup_text_two"></div>
-            <button class="popup_button popup_signup_button"></button>
+            <button class="popup_button popup_signup_button" onclick="btn_click.play()"></button>
             <div class="character_sprite"></div>
           </div>
         </div>
