@@ -1,11 +1,13 @@
-/* We use a custom property for the pointer for clickable elements, so that they will also have the loading cursor
+/* We use a custom property for the cursor, so that they will also have the loading cursor
 well when the loading class is on the list object. */
 :root {
+  --default-cursor: default;
   --pointer-cursor: pointer;
   --min-screen-width: 1300px;
 }
 
 .loading {
+  --default-cursor: progress;
   --pointer-cursor: progress;
 }
 
@@ -40,6 +42,7 @@ p {
 /* ----- USER LIST ----- */
 
 .list {
+  cursor: var(--default-cursor);
   text-align: left;
   margin: 0 auto;
   min-width: var(--min-screen-width);
@@ -91,13 +94,12 @@ tr:nth-child(odd) {
 }
 
 .delete_user_th {
-  cursor: default;
+  cursor: var(--default-cursor);
 }
 
 .delete_user {
   cursor: var(--pointer-cursor);
   color: darkred;
-  cursor: defailt;
 }
 
 .deleting {
