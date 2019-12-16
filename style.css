@@ -803,6 +803,41 @@ label {
     background-image: var(--spin_button_inactive);
 }
 
+/* Lights */
+
+.light {
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 83%;
+    left: 2%;
+    width: 96%;
+    height: 10%;
+}
+
+#lights_off {
+    background-image: url(elements/static/lights_off.svg);
+    animation-delay: 1.5s;
+}
+
+#lights_on {
+    background-image: url(elements/static/lights_on.svg);
+    animation-name: switch;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+}
+
+@keyframes switch {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 
 /* THEME ELEMENTS */
 /* These elements all use custom properties, and these custom properties change depending on the theme. */
