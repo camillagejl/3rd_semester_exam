@@ -78,6 +78,15 @@ button {
     background-repeat: no-repeat;
 }
 
+.design_button {
+    font-family: var(--main_font);
+    color: rgb(0, 158, 0);
+    margin: 40px 0;
+    padding: 15px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    border: 2px solid rgb(0, 158, 0);
+}
 
 /* Media queries for general design */
 
@@ -474,15 +483,7 @@ label {
     }
 
     .mobile_signup {
-        font-family: var(--main_font);
         display: block;
-        background-color: #55b0e2;
-        color: white;
-        margin: 30px 0 0 0;
-        padding: 20px;
-        font-size: 1.2rem;
-        border-radius: 20px;
-        border: 2px solid black;
     }
 }
 
@@ -1196,18 +1197,6 @@ label {
     font-size: 1rem;
 }
 
-.browse_games {
-    font-family: var(--main_font);
-    background-color: #ffffff;
-    color:  rgb(0, 158, 0);
-    margin: 40px 0;
-    padding: 15px;
-    font-size: 1.2rem;
-    border-radius: 10px;
-    border: 2px solid rgb(0, 158, 0);
-
-    
-}
 .browse_games:hover {
   color: black;
 }
