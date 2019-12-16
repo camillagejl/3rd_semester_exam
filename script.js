@@ -47,10 +47,10 @@ function buildWheels() {
         id: 1,
 
         // This line of symbols is only used when we want to test the winning popup.
-        // symbols: [symbols[0], symbols[0], symbols[5], symbols[5]],
+        symbols: [symbols[0], symbols[0], symbols[5], symbols[5]],
 
         // The symbols are fetched from a json-file. Symbols can be added several times, and order doesn't matter.
-        symbols: [symbols[3], symbols[2], symbols[3], symbols[0], symbols[5], symbols[1], symbols[0], symbols[5], symbols[1], symbols[2], symbols[0], symbols[4], symbols[0], symbols[5], symbols[2]],
+        // symbols: [symbols[3], symbols[2], symbols[3], symbols[0], symbols[5], symbols[1], symbols[0], symbols[5], symbols[1], symbols[2], symbols[0], symbols[4], symbols[0], symbols[5], symbols[2]],
         isHolding: false,
 
         // "active" refers to the active symbol in the wheel array. This starts on 1 (i.e. the second symbol in the
@@ -60,15 +60,15 @@ function buildWheels() {
     };
     let wheel2 = {
         id: 2,
-        // symbols: [symbols[0], symbols[0], symbols[5], symbols[5]],
-        symbols: [symbols[5], symbols[3], symbols[4], symbols[0], symbols[5], symbols[0], symbols[3], symbols[1], symbols[4], symbols[2], symbols[0], symbols[1], symbols[2], symbols[1], symbols[5]],
+        symbols: [symbols[0], symbols[0], symbols[5], symbols[5]],
+        // symbols: [symbols[5], symbols[3], symbols[4], symbols[0], symbols[5], symbols[0], symbols[3], symbols[1], symbols[4], symbols[2], symbols[0], symbols[1], symbols[2], symbols[1], symbols[5]],
         isHolding: false,
         active: 1
     };
     let wheel3 = {
         id: 3,
-        // symbols: [symbols[0], symbols[0], symbols[5], symbols[5]],
-        symbols: [symbols[3], symbols[5], symbols[1], symbols[0], symbols[4], symbols[5], symbols[2], symbols[1], symbols[0], symbols[0], symbols[5], symbols[3], symbols[3], symbols[2], symbols[3]],
+        symbols: [symbols[0], symbols[0], symbols[5], symbols[5]],
+        // symbols: [symbols[3], symbols[5], symbols[1], symbols[0], symbols[4], symbols[5], symbols[2], symbols[1], symbols[0], symbols[0], symbols[5], symbols[3], symbols[3], symbols[2], symbols[3]],
         isHolding: false,
         active: 1
     };
@@ -256,19 +256,6 @@ function addWheelsToDOM(wheels) {
 
 function addSVGsToPopup() {
 //    eventListeners for buttons
-
-    document.querySelectorAll(".popup_signup_button").forEach(button => {
-        button.addEventListener("click", function _function() {
-
-            document.querySelectorAll(".game_popup_content").forEach(element => {
-                element.style.display = "none";
-            });
-
-            document.querySelector(".game_signup").style.display = "block";
-
-        });
-    });
-
     document.querySelectorAll(".popup_keep_playing_button").forEach(button => {
         button.addEventListener("click", function _function() {
             document.querySelector(".game_popup").style.display = "none";
