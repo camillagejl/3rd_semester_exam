@@ -276,6 +276,7 @@ function addEventListeners() {
     const buttonSound = document.querySelector("#button_sound");
     music.loop = true;
     buttonSound.volume = 0;
+    music.volume = .5;
 
     document.querySelectorAll(".game_container button").forEach(button => {
         button.addEventListener("click", function _function() {
@@ -297,7 +298,7 @@ function addEventListeners() {
 
         if (this.getAttribute("data-music") === "on") {
             music.play();
-                buttonSound.volume = .5;
+                buttonSound.volume = 1;
             musicButton.style.backgroundImage = 'url("elements/static/music_on.svg")';
         }
 
