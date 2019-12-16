@@ -1351,6 +1351,10 @@ footer div:nth-child(3) {
 }
 
 @media screen and (max-width: 767px) {
+    footer {
+        font-size: 1rem;
+    }
+
     .footer_content {
         grid-template-columns: 1fr;
     }
@@ -1362,6 +1366,13 @@ footer div:nth-child(3) {
 
     .footer_content {
         padding: 50px 10px;
+    }
+}
+
+@media screen and (max-width: 359px) {
+    footer div:nth-child(3),
+    footer div:nth-child(4){
+        padding-left: 0;
     }
 }
 
