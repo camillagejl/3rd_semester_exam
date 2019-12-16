@@ -23,6 +23,7 @@ function Header() {
 function List() {
     // LOADING CURSOR
     const [loading, setLoading] = useState(true);
+    const [deletingId, setDeletingId] = useState(null);
 
     // ----- GET USERS FROM DATABASE -----
     const [users, setUsers] = useState([]);
@@ -52,6 +53,7 @@ function List() {
     // Function to remove users
     const removeUser = (id) => {
         setLoading(true);
+        setDeletingId(id);
         fetch("https://eexam-6f38.restdb.io/rest/website-users/" + id, {
                 method: "DELETE",
                 headers: {
@@ -229,7 +231,11 @@ function List() {
                         <td>{user.dateofbirth}</td>
                         <td>{user.country}</td>
                         <td>{user.subscription}</td>
-                        <td className="delete_user" onClick={() => removeUser(user._id)}>&times; Delete</td>
+                        {deletingId === user._id ?
+                            <td className="delete_user">&times; Deleting</td>
+                            :
+                            <td className="delete_user" onClick={() => removeUser(user._id)}>&times; Delete</td>
+                        }
                     </tr>
 
                 ))}
