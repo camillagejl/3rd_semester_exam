@@ -9,6 +9,12 @@ function Header() {
         <div className="header">
             <header>
                 <h1>WORLD GAME USERS</h1>
+                <p>
+                    Welcome to the user list for World Game.
+                </p>
+                <p>
+                    On this page, you can view all users, filter and sort your view, and delete users.
+                </p>
             </header>
         </div>
     )
@@ -118,11 +124,13 @@ function List() {
     }
 
     // ----- LIST COMPONENT -----
+
     return (
         <div className={`list ${loading ? "loading" : ""}`}>
+            <div className="dropdowns">
             <label>
                 Filter by country:
-                <select onChange={filterByCountry} name="filterByCountry" className="filterByCountry">
+                <select onChange={filterByCountry} name="filterByCountry" className="filter_by filter_country">
                     <option value="All">All</option>
                     <option value="Denmark">Denmark</option>
                     <option value="Germany">Germany</option>
@@ -133,13 +141,13 @@ function List() {
 
             <label>
                 Filter by email subscription:
-                <select onChange={filterByEmailSub} name="filterByEmailPrefs" className="filterByEmailPrefs">
+                <select onChange={filterByEmailSub} name="filterByEmailPrefs" className="filter_by filter_email">
                     <option value="All">All</option>
                     <option value="true">&#10003; Subscribed</option>
                     <option value="false">&times; Not subscribed</option>
                 </select>
             </label>
-
+            </div>
 
 
             <table>
@@ -231,14 +239,14 @@ function List() {
     )
 }
 
-function DesktopAppPopup() {
+function MobilePopup() {
 
     const [showingPopup, setShowingPopup] = useState(true);
 
     console.log(showingPopup);
 
     return (
-        <div className={`${showingPopup ? "desktop_app_popup" : "hidden"}`}>
+        <div className={`${showingPopup ? "mobile_popup" : "hidden"}`}>
             <strong>Welcome to the World Games user list!</strong>
             <p>This user list is created for desktop. Please use a desktop for the best experience.</p>
             <p>If you wish continue on your current device, we recommend switching to landscape mode.</p>
@@ -252,7 +260,7 @@ function App() {
         <div className={`App`}>
             <Header/>
             <List direction="asc"/>
-            <DesktopAppPopup/>
+            <MobilePopup/>
         </div>
     );
 }

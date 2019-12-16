@@ -1,23 +1,40 @@
+/* We use a custom property for the pointer for clickable elements, so that they will also have the loading cursor
+well when the loading class is on the list object. */
 :root {
   --pointer-cursor: pointer;
+  --min-screen-width: 1300px;
 }
 
 .loading {
   --pointer-cursor: progress;
 }
 
+html {
+  background-color: #cdf3fd;
+}
+
 .App {
-  width: fit-content;
-  height: 100vh;
+  min-width: var(--min-screen-width);
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ----- HEADER ----- */
+
+.header {
   text-align: center;
-  background-color: lightblue;
 }
 
 h1 {
+  font-size: 3rem;
   margin: 0;
-  padding: 30px;
+  padding: 30px 0 0 0;
+}
+
+p {
+  margin: 5px;
 }
 
 /* ----- USER LIST ----- */
@@ -25,10 +42,29 @@ h1 {
 .list {
   text-align: left;
   margin: 0 auto;
+  min-width: var(--min-screen-width);
+}
+
+.dropdowns {
+  text-align: right;
+  margin: 10px 0;
+}
+
+.filter_country {
+  margin: 0 30px 0 10px;
+}
+
+.filter_email {
+  margin: 0 0 0 10px;
+}
+
+select {
+  min-width: 100px;
 }
 
 table {
   border-spacing: 0;
+  min-width: 1300px;
 }
 
 th, td {
@@ -61,7 +97,7 @@ tr:nth-child(odd) {
 
 /* POPUP FOR DESKTOP INFORMATION */
 
-.desktop_app_popup {
+.mobile_popup {
   position: absolute;
   top: 0;
   left: 0;
@@ -71,14 +107,16 @@ tr:nth-child(odd) {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   background-color: #292929;
   color: whitesmoke;
 }
 
-@media screen and (min-width: 1023px) {
-  .desktop_app_popup {
+@media screen and (min-width: 1300px) {
+  .mobile_popup {
     display: none;
+  }
+  .list {
+    display: block;
   }
 }
 
