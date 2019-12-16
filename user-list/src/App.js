@@ -145,8 +145,8 @@ function List() {
                 Filter by email subscription:
                 <select onChange={filterByEmailSub} name="filterByEmailPrefs" className="filter_by filter_email">
                     <option value="All">All</option>
-                    <option value="true">&#10003; Subscribed</option>
-                    <option value="false">&times; Not subscribed</option>
+                    <option value="Subscribed">&#10003; Subscribed</option>
+                    <option value="Not subscribed">&times; Not subscribed</option>
                 </select>
             </label>
             </div>
@@ -211,7 +211,7 @@ function List() {
                         }
                     </th>
 
-                    <th>
+                    <th className="delete_user_th">
                         Delete user
                     </th>
                 </tr>
@@ -223,7 +223,7 @@ function List() {
                  for now. */}
                 {filteredCollection.map(user => (
 
-                    <tr key={user._id}>
+                    <tr key={user._id} className={deletingId === user._id ? "deleting" : ""}>
                         <td>{user.username}</td>
                         <td>{user.email}</td>
                         <td>{user.firstname}</td>

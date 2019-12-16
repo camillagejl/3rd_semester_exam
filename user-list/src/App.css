@@ -90,9 +90,23 @@ tr:nth-child(odd) {
   margin-bottom: 2px;
 }
 
+.delete_user_th {
+  cursor: default;
+}
+
 .delete_user {
   cursor: var(--pointer-cursor);
   color: darkred;
+  cursor: defailt;
+}
+
+.deleting {
+  background-color: dimgrey !important;
+  color: grey;
+}
+
+.deleting .delete_user {
+  color: inherit;
 }
 
 /* POPUP FOR DESKTOP INFORMATION */
