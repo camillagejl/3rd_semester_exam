@@ -1300,6 +1300,7 @@ footer {
     background-color: #15720a;
     color: white;
     font-size: 1.1rem;
+    padding: 50px;
 }
 
 footer a {
@@ -1316,11 +1317,22 @@ footer img {
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin: 0 auto;
-    padding: 50px;
 }
 
 footer div:nth-child(3) {
     padding-left: 45px;
+}
+
+.footer_music {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    color: darkgrey;
+}
+
+.footer_music a {
+
+    color: darkgrey;
 }
 
 @media screen and (max-width: 767px) {
