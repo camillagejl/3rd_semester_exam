@@ -15,6 +15,9 @@ function Header() {
 }
 
 function List() {
+    // LOADING CURSOR
+    const [loading, setLoading] = useState(true);
+
     // ----- GET USERS FROM DATABASE -----
     const [users, setUsers] = useState([]);
 
@@ -24,6 +27,7 @@ function List() {
 
     // Sets useStates on click on one of the column headers.
     function get() {
+        console.log("getting..");
         fetch("https://eexam-6f38.restdb.io/rest/website-users", {
             method: "GET",
             headers: {
@@ -35,11 +39,13 @@ function List() {
             .then(e => e.json())
             .then(data => {
                 setUsers(data);
+                setLoading(false);
             });
     }
 
     // Function to remove users
     const removeUser = (id) => {
+        setLoading(true);
         fetch("https://eexam-6f38.restdb.io/rest/website-users/" + id, {
                 method: "DELETE",
                 headers: {
@@ -50,6 +56,7 @@ function List() {
             })
             .then(res => res.json())
             .then(function() {
+                console.log("Deleted!");
                 get();
             })
     };
@@ -112,7 +119,7 @@ function List() {
 
     // ----- LIST COMPONENT -----
     return (
-        <div className="list">
+        <div className={`list ${loading ? "loading" : ""}`}>
             <label>
                 Filter by country:
                 <select onChange={filterByCountry} name="filterByCountry" className="filterByCountry">
@@ -242,7 +249,7 @@ function DesktopAppPopup() {
 
 function App() {
     return (
-        <div className="App">
+        <div className={`App`}>
             <Header/>
             <List direction="asc"/>
             <DesktopAppPopup/>

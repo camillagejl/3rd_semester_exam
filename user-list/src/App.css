@@ -1,3 +1,11 @@
+:root {
+  --pointer-cursor: pointer;
+}
+
+.loading {
+  --pointer-cursor: progress;
+}
+
 .App {
   width: fit-content;
   height: 100vh;
@@ -28,7 +36,7 @@ th, td {
 }
 
 th {
-  cursor: pointer;
+  cursor: var(--pointer-cursor);
   background-color: black;
   color: white;
 }
@@ -47,7 +55,7 @@ tr:nth-child(odd) {
 }
 
 .delete_user {
-  cursor: pointer;
+  cursor: var(--pointer-cursor);
   color: darkred;
 }
 
@@ -68,6 +76,15 @@ tr:nth-child(odd) {
   color: whitesmoke;
 }
 
+@media screen and (min-width: 1023px) {
+  .desktop_app_popup {
+    display: none;
+  }
+}
+
+/* HELPER FUNCTIONS */
+
 .hidden {
   display: none;
 }
+
