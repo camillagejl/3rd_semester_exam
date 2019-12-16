@@ -34,7 +34,6 @@ function List() {
 
     // Sets useStates on click on one of the column headers.
     function get() {
-        console.log("getting..");
         fetch("https://eexam-6f38.restdb.io/rest/website-users", {
             method: "GET",
             headers: {
