@@ -38,8 +38,7 @@ function List() {
             });
     }
 
-    const [newUsers, setNewUsers] = useState(users);
-    
+    // Function to remove users
     const removeUser = (id) => {
         fetch("https://eexam-6f38.restdb.io/rest/website-users/" + id, {
                 method: "DELETE",
@@ -50,11 +49,11 @@ function List() {
                 }
             })
             .then(res => res.json())
-            .then(data => {   
-                filteredCollection = filteredCollection.filter(user => user._id !== id);
-                setNewUsers(filteredCollection);
-            });
-    }
+            .then(function() {
+                get();
+            })
+    };
+
     // ----- SORT BY -----
     // Defines useStates for sortBy (the key from the header that is clicked) and
     // sortDirection (toggles between ascending and descending on click).
@@ -119,9 +118,9 @@ function List() {
                 <select onChange={filterByCountry} name="filterByCountry" className="filterByCountry">
                     <option value="All">All</option>
                     <option value="Denmark">Denmark</option>
-                    <option value="United Kingdom">United Kingdom</option>
+                    <option value="Germany">Germany</option>
                     <option value="Romania">Romania</option>
-                    <option value="Japan">Japan</option>
+                    <option value="Sweden">Sweden</option>
                 </select>
             </label>
 
