@@ -15,6 +15,21 @@ body {
     font-family: var(--main_font);
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(0, 158, 0);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(3, 49, 3);
+}
 .body_background {
     /* The background is added to this div instead of the body, so it doesn't go all the way to the bottom of the
     page */
