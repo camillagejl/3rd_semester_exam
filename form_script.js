@@ -177,14 +177,6 @@ function scrollFunction() {
   }
 }
 
-const scrollToTop = () => {
-    const c = document.documentElement.scrollTop || document.body.scrollTop;
-    if (c > 0) {
-      window.requestAnimationFrame(scrollToTop);
-      window.scrollTo(0, c - c / 10);
-    }
-  };
-
 document.querySelector("#nav-login").addEventListener("click", e => {
     signupForm.style.display = "none";
     document.querySelector("#signup-h1").innerHTML = "Log In";
@@ -193,7 +185,6 @@ document.querySelector("#nav-login").addEventListener("click", e => {
     setTimeout(() => {
         document.querySelector("#login-form .username").focus();
     }, 300);
-    scrollToTop();
 });
 
 document.querySelector("#nav-signup").addEventListener("click", e => {
@@ -204,7 +195,6 @@ document.querySelector("#nav-signup").addEventListener("click", e => {
     setTimeout(() => {
         document.querySelector("#signup-form .username").focus();
     }, 300);
-    scrollToTop();
 });
 
 document.querySelector(".mobile_signup").addEventListener("click", e => {
