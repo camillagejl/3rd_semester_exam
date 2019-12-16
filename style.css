@@ -821,19 +821,19 @@ label {
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
-    top: 83%;
-    left: 2%;
-    width: 96%;
+    top: 18%;
+    left: 10%;
+    width: 75%;
     height: 10%;
 }
 
 #lights_off {
-    background-image: url(elements/static/lights_off.svg);
+    background-image: url(elements/static/lights_off_small.svg);
     animation-delay: 1.5s;
 }
 
 #lights_on {
-    background-image: url(elements/static/lights_on.svg);
+    background-image: url(elements/static/lights_on_small.svg);
     animation-name: switch;
     animation-duration: 1.5s;
     animation-iteration-count: infinite;
