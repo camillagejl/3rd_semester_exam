@@ -118,26 +118,18 @@ const holdButtonsListeners = {};
 // Main spin function on click
 function spin(wheels, spins) {
     spins--;
-
     setPreviouslyActive(wheels);
+
     let spinResult = calculateSpinResult(wheels);
-
-    console.log(wheels[0].symbols[spinResult[0]], wheels[1].symbols[spinResult[1]], wheels[2].symbols[spinResult[2]]);
-
     let prizeWon = calculatePrizeWon(wheels, spinResult);
 
     // Starts the visual part of spinning the wheels.
     startVisualSpin(wheels, prizeWon, spins);
 
-    // If the user wins:
     if (prizeWon > 0) {
-        console.log("won!", prizeWon);
-
-        // Sets spins to 0 and toggles hold buttons, so they are deactivated.
+        // If the user wins, spins is set to 0.
         spins = 0;
-        toggleHoldButtons(wheels, spins);
     }
-
 
     // Toggles the hold buttons.
     toggleHoldButtons(wheels, spins);
@@ -390,8 +382,12 @@ function visualSpin(wheels, prizeWon, spins, spinRounds) {
 function endOfSpinning(prizeWon, spins, wheels) {
         if (prizeWon > 0) {
             displayPrice(prizeWon);
-            activateStartButton(wheels);
             toggleHoldButtons(wheels, 3);
+
+            // Sets timeout on activating the start button, so it isn't activated before the popup is showing.
+            setTimeout(function() {
+                activateStartButton(wheels);
+            }, 4000)
         }
 
         if (prizeWon === 0 && spins > 0) {
