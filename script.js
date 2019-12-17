@@ -122,6 +122,7 @@ function spin(wheels, spins) {
 
     setPreviouslyActive(wheels);
     let spinResult = calculateSpinResult(wheels);
+    console.log(spinResult);
     let prizeWon = calculatePrizeWon(wheels, spinResult);
 
     // Starts the visual part of spinning the wheels.
@@ -367,8 +368,18 @@ function visualSpin(wheels, prizeWon, spins, spinRounds) {
     addLastItem(wheels, spinRounds, lastSymbolsIds);
     moveItemsBackToPlace();
 
+    // Spinning the first symbol is finished, and we now retract one number from the spin rounds.
+    spinRounds = subtractSpinRounds(spinRounds);
+
+
     // Function that checks whether the wheel should continue spinning or not. Returns true or false.
-    // continueSpinning();
+    const shouldContinueSpinning = continueSpinning(spinRounds);
+
+    if (shouldContinueSpinning.includes(true)) {
+        setTimeout(function () {
+        visualSpin(wheels, prizeWon, spins, spinRounds)
+        }, 1)
+    }
 }
 
 function setSpinRounds(wheels) {
@@ -471,30 +482,52 @@ function tospinornottospin() {
     wheelSpinRounds--;
 
     // If wheelSpinRounds is over 0, the functions will loop and the wheel will keep spinning until wheelSpinRounds hits 0.
-    // if (wheelSpinRounds > 0) {
-    //     setTimeout(function () {
-    //         spinWheel(wheel, wheelSpinRounds, prizeWon, spins, wheels)
-    //     }, 1)
-    //
-    // } else if (wheel.id === 3 && wheelSpinRounds <= 0) {
-    //     displayPrice(prizeWon);
-    //
-    //     if (prizeWon === 0) {
-    //
-    //         // If spins is still above 0, the spin button will get activated again.
-    //         if (spins > 0) {
-    //             console.log("Activate spin button", spins);
-    //             activateSpinButton(wheels, spins);
-    //         }
-    //
-    //         // If spins reaches 0, the user has lost and the start button will be activated.
-    //         else {
-    //             console.log("YOU LOST!");
-    //             activateStartButton(wheels);
-    //         }
-    //     }
-    //
-    // }
+    if (wheelSpinRounds > 0) {
+        setTimeout(function () {
+            spinWheel(wheel, wheelSpinRounds, prizeWon, spins, wheels)
+        }, 1)
+
+    } else if (wheel.id === 3 && wheelSpinRounds <= 0) {
+        displayPrice(prizeWon);
+
+        if (prizeWon === 0) {
+
+            // If spins is still above 0, the spin button will get activated again.
+            if (spins > 0) {
+                console.log("Activate spin button", spins);
+                activateSpinButton(wheels, spins);
+            }
+
+            // If spins reaches 0, the user has lost and the start button will be activated.
+            else {
+                console.log("YOU LOST!");
+                activateStartButton(wheels);
+            }
+        }
+
+    }
+}
+
+function subtractSpinRounds(spinRounds) {
+    let roundId = -1;
+    spinRounds.forEach(round => {
+        roundId++;
+        spinRounds[roundId]--;
+        }
+    );
+    return spinRounds;
+}
+
+function continueSpinning(spinRounds) {
+    let shouldContinueSpinning = [];
+    spinRounds.forEach(round => {
+        if (round > 0) {
+            shouldContinueSpinning.push(true);
+        } else {
+            shouldContinueSpinning.push(false);
+        }
+    });
+    return shouldContinueSpinning;
 }
 
 function displayPrice(prizeWon) {
