@@ -572,6 +572,7 @@ label {
 }
 
 .game_container {
+    cursor: default;
     font-family: "Press Start 2P", cursive;
     box-sizing: border-box;
     position: relative;

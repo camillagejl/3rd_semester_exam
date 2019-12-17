@@ -403,14 +403,14 @@ function endOfSpinning(prizeWon, spins, wheels) {
         }, 4000)
     }
 
-    if (prizeWon === 0 && spins > 0) {
-        activateSpinButton(wheels, spins);
-    }
-
     // If spins reaches 0, the user has lost and the start button will be activated.
     if (prizeWon === 0 && spins === 0) {
         console.log("YOU LOST!");
         activateStartButton(wheels);
+    }
+
+    if (prizeWon === 0 && spins > 0) {
+        activateSpinButton(wheels, spins);
     }
 }
 
