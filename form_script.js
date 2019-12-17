@@ -12,7 +12,6 @@ const signupForm = document.querySelector("#signup-form");
 const loginForm = document.querySelector("#login-form");
 let myData;
 
-
 function get() {
     fetch("https://eexam-6f38.restdb.io/rest/website-users", {
             method: "GET",
@@ -31,15 +30,20 @@ get();
 
 function post() {
     let newUser = {
-        id: uuidv4(),
+        // id: uuidv4(),
         username: signupForm.elements.username.value,
         password: signupForm.elements.password.value,
         email: signupForm.elements.email.value,
         firstname: signupForm.elements.firstname.value,
         lastname: signupForm.elements.lastname.value,
         country: signupForm.elements.country.value,
-        dateofbirth: signupForm.elements.dateofbirth.value,
-        subscription: signupForm.elements.subscription.checked
+        dateofbirth: signupForm.elements.dateofbirth.value
+    }
+    
+    if(signupForm.elements.subscription.checked === true){
+        newUser.subscription = "Subscribed";
+    } else {
+        newUser.subscription = "Not Subscribed";
     }
 
     let postData = JSON.stringify(newUser);
@@ -70,12 +74,24 @@ function post() {
 signupForm.addEventListener("submit", e => {
     e.preventDefault();
 
+    let enteredDate = signupForm.elements.dateofbirth.value;
+    let changedDate = enteredDate.split("-").reverse().join("-");
+    let yearsDiff = new Date(new Date() - new Date(changedDate)).getFullYear() - 1970;
+
     if(signupForm.elements.agreement.checked === false) {
-        document.querySelector("#signup-error").style.display = "block";
         document.querySelector("#signup-error").innerHTML = "You have to accept our Terms of Use first";
-    } else {
+        document.querySelector("#signup-error").style.display = "block";
+    }
+    else if(yearsDiff < 18) {
+        console.log(yearsDiff);
+        document.querySelector("#signup-error").style.display = "block";
+        document.querySelector("#signup-error").innerHTML = "You have to be 18yo";
+    }
+    else {
         document.querySelector("#signedup").style.display = "block";
         document.querySelector("#signup-error").style.display = "none";
+        document.querySelector("#login-error").style.display = "none";
+        document.querySelector("body").style.cursor = "wait";
         post();
         get();
         setTimeout(() => {
@@ -84,18 +100,19 @@ signupForm.addEventListener("submit", e => {
             document.querySelector("#signup-h1").innerHTML = "Log In";
             document.querySelector("#bars-container").style.display = "none";
             document.querySelector("#hide").style.display = "none";
+            document.querySelector("body").style.cursor = "auto";
             signupForm.reset();
         }, 1000);
     }
 
 });
 
-function uuidv4() {
-    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-      var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
-      return v.toString(16);
-    });
-}
+// function uuidv4() {
+//     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+//       var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+//       return v.toString(16);
+//     });
+// }
 
 loginForm.addEventListener("submit", e => {
     e.preventDefault();
@@ -105,7 +122,7 @@ loginForm.addEventListener("submit", e => {
     myData.forEach(function (user) {
         if (loginForm.elements.username.value === user.username && loginForm.elements.password.value === user.password) {
             document.querySelector("#login-error").style.display = "none";
-            localStorage.setItem("userID", user.id);
+            localStorage.setItem("userID", user._id);
             window.open("account.html","_self");
             foundUser = true;
         } else {
@@ -130,7 +147,7 @@ document.querySelector("#next-btn").addEventListener("click", e => {
         document.querySelector("#already-acc").style.display = "none";
     } else {
         document.querySelector("#signup-error").style.display = "block";
-        document.querySelector("#signup-error").innerHTML = "The username and password must have at least 6 characters";
+        document.querySelector("#signup-error").innerHTML = "The username and password must be at least 6 characters long";
     }
 
     if (signupForm.elements.repeatpw.value !== signupForm.elements.password.value) {
