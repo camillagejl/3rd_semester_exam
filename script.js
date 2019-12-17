@@ -345,60 +345,8 @@ function startVisualSpin(wheels, prizeWon, spins) {
 
     // We start out with defining the spinRounds by random here, because this part is not repeated like the rest of the
     // spinning process.
-    let spinRounds = setSpinRounds(wheels);
+    const spinRounds = setSpinRounds(wheels);
     visualSpin(wheels, prizeWon, spins, spinRounds);
-}
-
-function visualSpin(wheels, prizeWon, spins, spinRounds) {
-    // Setting a timeout so the wheel doesn't spin too quickly.
-    setTimeout(function() {
-
-    // The visual spinning of the wheels
-    let lastSymbolsOfWheels = getLastSymbols(wheels);
-    let lastSymbolsIds = getLastSymbolIds(wheels, lastSymbolsOfWheels);
-    moveWheelsDown(wheels, spinRounds);
-    removeLastItems(wheels, spinRounds, lastSymbolsOfWheels);
-    addLastItem(wheels, spinRounds, lastSymbolsIds);
-    moveItemsBackToPlace();
-
-    // Spinning the first symbol is finished, and we now retract one number from the spin rounds.
-    spinRounds = subtractSpinRounds(spinRounds);
-
-    // Function that checks whether the wheel should continue spinning or not. Returns true or false.
-    const shouldContinueSpinning = continueSpinning(spinRounds);
-
-    if (shouldContinueSpinning.includes(true)) {
-        visualSpin(wheels, prizeWon, spins, spinRounds)
-    }
-
-    else {
-        endOfSpinning(prizeWon, spins, wheels);
-    }
-
-
-    }, 35);
-}
-
-function endOfSpinning(prizeWon, spins, wheels) {
-        if (prizeWon > 0) {
-            displayPrice(prizeWon);
-            toggleHoldButtons(wheels, 3);
-
-            // Sets timeout on activating the start button, so it isn't activated before the popup is showing.
-            setTimeout(function() {
-                activateStartButton(wheels);
-            }, 4000)
-        }
-
-        if (prizeWon === 0 && spins > 0) {
-            activateSpinButton(wheels, spins);
-        }
-
-        // If spins reaches 0, the user has lost and the start button will be activated.
-        if (prizeWon === 0 && spins === 0) {
-            console.log("YOU LOST!");
-            activateStartButton(wheels);
-        }
 }
 
 function setSpinRounds(wheels) {
@@ -406,7 +354,6 @@ function setSpinRounds(wheels) {
     // of the wheel (the previously active index) - the new position where it should land (the active index). For
     // the wheel to spin several rounds, take the wheel length * the wheel.id so the wheels will stop
     // one after one.
-
     let spinRounds = [];
     wheels.forEach(wheel => {
         if (!wheel.isHolding) {
@@ -416,6 +363,55 @@ function setSpinRounds(wheels) {
         }
     });
     return spinRounds;
+}
+
+function visualSpin(wheels, prizeWon, spins, spinRounds) {
+    // Setting a timeout so the wheel doesn't spin too quickly.
+    setTimeout(function () {
+
+        // The visual spinning of the wheels
+        let lastSymbolsOfWheels = getLastSymbols(wheels);
+        let lastSymbolsIds = getLastSymbolIds(wheels, lastSymbolsOfWheels);
+        moveWheelsDown(wheels, spinRounds);
+        removeLastItems(wheels, spinRounds, lastSymbolsOfWheels);
+        addLastItem(wheels, spinRounds, lastSymbolsIds);
+        moveItemsBackToPlace();
+
+        // Spinning the first symbol is finished, and we now retract one number from the spin rounds.
+        spinRounds = subtractSpinRounds(spinRounds);
+
+        // Function that checks whether the wheel should continue spinning or not. Returns true or false.
+        const shouldContinueSpinning = continueSpinning(spinRounds);
+
+        if (shouldContinueSpinning.includes(true)) {
+            visualSpin(wheels, prizeWon, spins, spinRounds)
+        } else {
+            endOfSpinning(prizeWon, spins, wheels);
+        }
+
+    }, 35);
+}
+
+function endOfSpinning(prizeWon, spins, wheels) {
+    if (prizeWon > 0) {
+        displayPrice(prizeWon);
+        toggleHoldButtons(wheels, 3);
+
+        // Sets timeout on activating the start button, so it isn't activated before the popup is showing.
+        setTimeout(function () {
+            activateStartButton(wheels);
+        }, 4000)
+    }
+
+    if (prizeWon === 0 && spins > 0) {
+        activateSpinButton(wheels, spins);
+    }
+
+    // If spins reaches 0, the user has lost and the start button will be activated.
+    if (prizeWon === 0 && spins === 0) {
+        console.log("YOU LOST!");
+        activateStartButton(wheels);
+    }
 }
 
 function moveWheelsDown(wheels, spinRounds) {
@@ -460,13 +456,13 @@ function getLastSymbols(wheels) {
     let lastItems = [];
     wheels.forEach(wheel => {
 
-    // Variable that contains all the divs in a wheel.
-    const allItems = document.querySelectorAll(`.wheel_${wheel.id} .item`);
+        // Variable that contains all the divs in a wheel.
+        const allItems = document.querySelectorAll(`.wheel_${wheel.id} .item`);
 
-    // Finds the last div in the wheel by taking the amount of divs in the wheel.
-    const lastItem = allItems[allItems.length - 1];
+        // Finds the last div in the wheel by taking the amount of divs in the wheel.
+        const lastItem = allItems[allItems.length - 1];
 
-    lastItems.push(lastItem);
+        lastItems.push(lastItem);
     });
 
     return lastItems;
@@ -477,11 +473,11 @@ function addLastItem(wheels, spinRounds, lastSymbolsIds) {
         let wheelSpinRounds = spinRounds[wheel.id - 1];
         const lastSymbolId = lastSymbolsIds[wheel.id - 1];
 
-    if (wheelSpinRounds > 0) {
-        // Inserts div to the start of the wheel, with the ID from the div removed from the end of the wheel.
-        let lastItemTemplate = `<div class="item" data-symbol-id="${lastSymbolId}"></div>`;
-        document.querySelector(`.wheel_${wheel.id}`).insertAdjacentHTML('afterbegin', lastItemTemplate);
-    }
+        if (wheelSpinRounds > 0) {
+            // Inserts div to the start of the wheel, with the ID from the div removed from the end of the wheel.
+            let lastItemTemplate = `<div class="item" data-symbol-id="${lastSymbolId}"></div>`;
+            document.querySelector(`.wheel_${wheel.id}`).insertAdjacentHTML('afterbegin', lastItemTemplate);
+        }
     })
 }
 
@@ -496,8 +492,8 @@ function moveItemsBackToPlace() {
 function subtractSpinRounds(spinRounds) {
     let roundId = -1;
     spinRounds.forEach(round => {
-        roundId++;
-        spinRounds[roundId]--;
+            roundId++;
+            spinRounds[roundId]--;
         }
     );
     return spinRounds;
@@ -516,7 +512,6 @@ function continueSpinning(spinRounds) {
 }
 
 function displayPrice(prizeWon) {
-
     let coinsDisplay = document.querySelector(".coins_won").textContent;
 
     if (coinsDisplay < prizeWon) {
@@ -552,9 +547,7 @@ function toggleCoinsDisplay(toggleCount) {
         setTimeout(function _function() {
             toggleCoinsDisplay(toggleCount);
         }, 100);
-    }
-
-    else {
+    } else {
         document.querySelector(".coins_won").style.display = "block";
     }
 }
