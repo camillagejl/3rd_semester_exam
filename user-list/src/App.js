@@ -75,7 +75,6 @@ function List() {
     const [sortDirection, setDirection] = useState('asc');
 
     const sortByColumn = (column) => {
-        console.log("Sorting");
         setSortBy(column);
         setDirection(sortDirection === 'asc' ? 'desc' : 'asc');
     };
