@@ -136,9 +136,6 @@ function spin(wheels, spins) {
         // Sets spins to 0 and toggles hold buttons, so they are deactivated.
         spins = 0;
         toggleHoldButtons(wheels, spins);
-
-        // Activates the start button, so the user can start a new game.
-        activateStartButton(wheels);
     }
 
 
@@ -391,15 +388,18 @@ function visualSpin(wheels, prizeWon, spins, spinRounds) {
 }
 
 function endOfSpinning(prizeWon, spins, wheels) {
-        displayPrice(prizeWon);
+        if (prizeWon > 0) {
+            displayPrice(prizeWon);
+            activateStartButton(wheels);
+            toggleHoldButtons(wheels, 3);
+        }
 
         if (prizeWon === 0 && spins > 0) {
-            console.log("Activate spin button", spins);
             activateSpinButton(wheels, spins);
         }
 
         // If spins reaches 0, the user has lost and the start button will be activated.
-        else {
+        if (prizeWon === 0 && spins === 0) {
             console.log("YOU LOST!");
             activateStartButton(wheels);
         }
@@ -545,6 +545,7 @@ function displayPrice(prizeWon) {
 
 function toggleCoinsDisplay(toggleCount) {
     toggleCount--;
+    console.log(toggleCount);
     if (toggleCount > 0) {
 
         if (document.querySelector(".coins_won").style.display === "block") {
@@ -555,6 +556,10 @@ function toggleCoinsDisplay(toggleCount) {
         setTimeout(function _function() {
             toggleCoinsDisplay(toggleCount);
         }, 100);
+    }
+
+    else {
+        document.querySelector(".coins_won").style.display = "block";
     }
 }
 
