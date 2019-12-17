@@ -1,10 +1,10 @@
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1245 1400">
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1245 1400" aria-labelledby="slot_machine_desc">
     <defs>
         <style>
             .cls-1,.cls-8{fill:#fff;}.cls-1,.cls-2,.cls-3,.cls-4,.cls-6,.cls-9{stroke:#000;stroke-miterlimit:10;}.cls-2,.cls-3{fill:#7b3310;}.cls-2,.cls-9{stroke-width:2px;}.cls-3{stroke-width:5px;}.cls-4{fill:none;stroke-width:3px;}.cls-5{fill:#2b1e14;}.cls-6{fill:#d3d3d3;}.cls-7{isolation:isolate;}.cls-9{fill:#56240b;}
         </style>
     </defs>
-    <title>slot_machine</title>
+    <desc id="slot_machine_desc">Slot machine</desc>
     <path class="cls-1"
           d="M488.53,136.47H349.58C366.41,104,387.46,88,414.5,110.85c-1.45-31,55.9-39.59,62.64.56,0,0-8-48.4,35.31-37s13.66,62.07,13.66,62.07Z"/>
     <rect class="cls-2 slot_machine_color" x="99.64" y="284.93" width="1004.7" height="642.2"/>
