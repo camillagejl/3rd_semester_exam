@@ -28,16 +28,22 @@ function fetchSVGs() {
                 const [slotMachineSVGFile, holdButtonSVGFile] = responses;
                 slotMachineSVG = slotMachineSVGFile;
                 holdButtonSVG = holdButtonSVGFile;
-                startGame();
+                buildGame();
             }
         );
 }
 
-function startGame() {
+function buildGame() {
     let wheels = buildWheels();
-    activateThemeButtons();
-    activateStartButton(wheels);
     addItemsToDom(wheels);
+    activateButtons(wheels);
+}
+
+function activateButtons(wheels) {
+    activateStartButton(wheels);
+    activatePlayGameButton();
+    activateThemeButtons();
+    addMusic();
 }
 
 function buildWheels() {
@@ -77,53 +83,78 @@ function buildWheels() {
     return [wheel1, wheel2, wheel3];
 }
 
-// Activating all three theme buttons
-function activateThemeButtons() {
-    document.querySelectorAll(".theme_button").forEach(button => {
-        button.addEventListener("click", function () {
-            // Gives the game_container a data-attribute to set the theme for the whole game.
-            document.querySelector(".game_container").setAttribute("data-game-theme", button.getAttribute("data-theme"));
-        });
-    });
-}
-
 function activateStartButton(wheels) {
-    document.querySelector(".spin_button").classList.add("inactive");
-    document.querySelector(".start_button").classList.remove("inactive");
-
-    wheels.forEach(wheel => {
-        wheel.isHolding = false;
-    });
+    startButtonIsActivated();
+    setIsHoldingFalse(wheels);
 
     document.querySelector(".start_button").addEventListener("click", function _function() {
-
-        document.querySelectorAll(".hold_wheel").forEach(button => {
-            holdButtonColorChange(button, false)
-        });
-
+        document.querySelector(".start_button").removeEventListener("click", _function);
+        startButtonIsClicked();
 
         // When the start button is activated (when the page is loaded or the user has used all three spins),
-        // is will set the remaining spins to 3.
+        // this will set the remaining spins to 3.
         activateSpinButton(wheels, 3);
-        document.querySelector(".spin_button").classList.remove("inactive");
-        document.querySelector(".start_button").classList.add("inactive");
-        document.querySelector(".start_button").removeEventListener("click", _function);
-        document.querySelector(".coins_won").textContent = "0";
     })
 }
 
-function activateSpinButton(wheels, spins) {
-    console.log("Activating - Activate spin button", spins);
-    showSpinsLeft(spins);
-
-    document.querySelector(".spin_button").addEventListener("click", function _function() {
-        spin(wheels, spins);
-        document.querySelector(".spin_button").removeEventListener("click", _function);
+function setIsHoldingFalse(wheels) {
+    // Sets all wheels isHolding to false, so wheels can't be on hold from one game to another.
+    wheels.forEach(wheel => {
+        wheel.isHolding = false;
     });
 }
 
-// The hold button listeners are stored in a global variable, so they can be removed later, and not on button click.
+function activateSpinButton(wheels, spins) {
+    showSpinsLeft(spins);
+
+    document.querySelector(".spin_button").addEventListener("click", function _function() {
+        document.querySelector(".spin_button").removeEventListener("click", _function);
+        spin(wheels, spins);
+    });
+}
+
+// The hold button listeners are stored in a global variable, so they can be removed later, and not on the button click.
 const holdButtonsListeners = {};
+
+// Main spin function on click
+function spin(wheels, spins) {
+    spins--;
+
+    setPreviouslyActive(wheels);
+    let spinResult = calculateSpinResult(wheels);
+    let prizeWon = calculatePrizeWon(wheels, spinResult);
+
+    // Starts the visual part of spinning the wheels, separately for each wheel.
+    wheels.forEach(wheel => {
+        spinVisualWheel(wheel, prizeWon, spins, wheels);
+    });
+
+    // If the user wins:
+    if (prizeWon > 0) {
+        console.log("won!", prizeWon);
+
+        // Sets spins to 0 and toggles hold buttons, so they are deactivated.
+        spins = 0;
+        toggleHoldButtons(wheels, spins);
+
+        // Activates the start button, so the user can start a new game.
+        activateStartButton(wheels);
+    }
+
+
+    // Updates visual display of spins left.
+    showSpinsLeft(spins);
+
+    // Toggles the hold buttons.
+    toggleHoldButtons(wheels, spins);
+}
+
+function setPreviouslyActive(wheels) {
+    // Stores the previously active symbol index, so it can be used to see how many times the DOM wheel should spin.
+    wheels.forEach(wheel => {
+        wheel.previouslyActive = wheel.active;
+    });
+}
 
 function toggleHoldButtons(wheels, spins) {
 
@@ -160,55 +191,12 @@ function toggleHoldButtons(wheels, spins) {
     });
 }
 
-// Main spin function on click
-function spin(wheels, spins) {
-
-    // Stores the previously active symbol index, so it can be used to see how many times the DOM wheel should spin.
-    wheels.forEach(wheel => {
-        wheel.previouslyActive = wheel.active;
-    });
-
-    // The spin result is an array with the index of the "active" symbol in each wheel.
-    let spinResult = calculateSpinResult(wheels);
-
-    // didWin compares the active symbols, and returns true (if they are the same) or false (if they are not the same).
-    let prizeWon = calculatePrizeWon(wheels, spinResult);
-
-    spins--;
-
-    console.log(prizeWon);
-
-    // Starts the visual part of spinning the wheels, separately for each wheel.
-    wheels.forEach(wheel => {
-        spinVisualWheel(wheel, prizeWon, spins, wheels);
-    });
-
-    // If the user wins:
-    if (prizeWon > 0) {
-        console.log("won!", prizeWon);
-
-        // Sets spins to 0 and toggles hold buttons, so they are deactivated.
-        spins = 0;
-        toggleHoldButtons(wheels, spins);
-
-        // Activates the start button, so the user can start a new game.
-        activateStartButton(wheels);
-    }
-
-
-    // Updates visual display of spins left.
-    showSpinsLeft(spins);
-
-    // Toggles the hold buttons.
-    toggleHoldButtons(wheels, spins);
-
-}
-
 
 // ----- RETURN FUNCTIONS -----
 // Commented in the functions where they are used.
 
 function calculateSpinResult(wheels) {
+    // The spin result is an array with the index of the "active" symbol in each wheel.
     let spinResult = [];
     wheels.forEach(wheel => {
         if (!wheel.isHolding) {
@@ -220,6 +208,9 @@ function calculateSpinResult(wheels) {
 }
 
 function calculatePrizeWon(wheels, spinResult) {
+    // Compares the active symbols in all wheels.
+    // If the active symbols are the same, it returns the prize of the active symbols.
+    // If they are not the same, it returns 0.
     if (wheels[0].symbols[spinResult[0]] === wheels[1].symbols[spinResult[1]]
         && wheels[1].symbols[spinResult[1]] === wheels[2].symbols[spinResult[2]]) {
         return wheels[0].symbols[spinResult[0]].prize;
@@ -230,14 +221,12 @@ function calculatePrizeWon(wheels, spinResult) {
 }
 
 
-// ----- VISUAL -----
+// ----- ADDING VISUAL PARTS -----
 
 // Adds the wheels, their symbols and hold buttons to the DOM.
 function addItemsToDom(wheels) {
     addSlotMachineToDom();
     addWheelsToDom(wheels);
-    activateKeepPlaying();
-    addMusic();
 }
 
 function addSlotMachineToDom() {
@@ -261,8 +250,11 @@ function addWheelsToDom(wheels) {
     });
 }
 
-function activateKeepPlaying() {
-    // Activates the "Keep playing"-butons.
+
+// ----- EVENTLISTENERS FOR BUTTONS FOR VISUALS -----
+
+function activatePlayGameButton() {
+    // Activates the "Start" and "Keep playing" buttons.
     document.querySelectorAll(".popup_play_game").forEach(button => {
         button.addEventListener("click", function _function() {
             document.querySelector(".game_popup").style.display = "none";
@@ -272,6 +264,16 @@ function activateKeepPlaying() {
         });
 
         document.querySelector(".coins_won").textContent = "0";
+    });
+}
+
+function activateThemeButtons() {
+    // Activating all three theme buttons
+    document.querySelectorAll(".theme_button").forEach(button => {
+        button.addEventListener("click", function () {
+            // Gives the game_container a data-attribute to set the theme for the whole game.
+            document.querySelector(".game_container").setAttribute("data-game-theme", button.getAttribute("data-theme"));
+        });
     });
 }
 
@@ -321,6 +323,24 @@ function addMusic() {
     });
 }
 
+
+// ----- MODIFYING VISUAL PARTS -----
+
+function startButtonIsActivated() {
+    document.querySelector(".spin_button").classList.add("inactive");
+    document.querySelector(".start_button").classList.remove("inactive");
+}
+
+function startButtonIsClicked() {
+    document.querySelectorAll(".hold_wheel").forEach(button => {
+        holdButtonColorChange(button, false)
+    });
+
+    document.querySelector(".spin_button").classList.remove("inactive");
+    document.querySelector(".start_button").classList.add("inactive");
+    document.querySelector(".coins_won").textContent = "0";
+}
+
 function showSpinsLeft(spins) {
     document.querySelector(".spins_left").textContent = spins;
 }
@@ -331,6 +351,23 @@ function holdButtonColorChange(button, thisIsHolding) {
     } else {
         button.querySelector(".hold_button_color").style.fill = "#97b88d";
     }
+}
+
+function visualSpin(wheels, prizeWon, spins) {
+    let spinRounds = setSpinRounds(wheels);
+}
+
+function setSpinRounds(wheels) {
+    // Sets the number of times each wheel should spin.
+    let spinRounds = [];
+    wheels.forEach(wheel => {
+        if (!wheel.isHolding) {
+            spinRounds.push(wheel.previouslyActive - wheel.active + (wheel.symbols.length * wheel.id));
+        } else {
+            spinRounds.push(0);
+        }
+    });
+    return spinRounds;
 }
 
 function spinVisualWheel(wheel, prizeWon, spins, wheels) {
