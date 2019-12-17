@@ -965,7 +965,7 @@ label {
     background-image: url("elements/static/sign_up.svg");
 }
 
-.popup_keep_playing_button {
+.popup_play_game {
     background-image: url("elements/static/keep_playing.svg");
 }
 
@@ -973,14 +973,14 @@ label {
     margin: 10% 0;
 }
 
-.game_welcome .popup_keep_playing_button {
+.game_welcome .popup_play_game {
     height: 14%;
     width: 18%;
     margin: 7%;
     background-image: url("elements/static/start_btn_not_pressed.svg");
 }
 
-.game_welcome .popup_keep_playing_button:active {
+.game_welcome .popup_play_game:active {
     background-image: url("elements/static/start_btn_pressed.svg");
 }
 
@@ -1110,7 +1110,7 @@ label {
     #game_header {
         margin: -5vh 0 0 0;
     }
-    .game_welcome .popup_keep_playing_button {
+    .game_welcome .popup_play_game {
         height: 13%;
         width: 35%;
         margin: 7%;

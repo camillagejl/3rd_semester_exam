@@ -33,12 +33,11 @@ function fetchSVGs() {
         );
 }
 
-
 function startGame() {
     let wheels = buildWheels();
     activateThemeButtons();
     activateStartButton(wheels);
-    addWheelsToDOM(wheels);
+    addItemsToDom(wheels);
 }
 
 function buildWheels() {
@@ -234,32 +233,39 @@ function calculatePrizeWon(wheels, spinResult) {
 // ----- VISUAL -----
 
 // Adds the wheels, their symbols and hold buttons to the DOM.
-function addWheelsToDOM(wheels) {
-    // First, adding the slot machine SVG to the DOM. This is added as an image with JavaScript so we are able to change
+function addItemsToDom(wheels) {
+    addSlotMachineToDom();
+    addWheelsToDom(wheels);
+    activateKeepPlaying();
+    addMusic();
+}
+
+function addSlotMachineToDom() {
+    // Adding the slot machine SVG to the DOM. This is added as an image with JavaScript so we are able to change
     // text elements (coins and spins left) through JavaScript.
-
     document.querySelector(".slot_machine").insertAdjacentHTML('afterbegin', slotMachineSVG);
+}
 
+function addWheelsToDom(wheels) {
     wheels.forEach(wheel => {
+        // Adds each of the wheels to the DOM.
         document.querySelector(".wheels").innerHTML += `<div class="wheel wheel_${wheel.id}"></div>`;
 
+        // Adds the symbols found in the wheel's symbols array.
         wheel.symbols.forEach(symbol => {
             document.querySelector(`.wheel_${wheel.id}`).innerHTML += `<div class="item" data-symbol-id="${symbol.id}"></div>`;
         });
 
+        // Adds a hold button under the wheel, with the corresponding data attribute.
         document.querySelector(".hold_buttons").innerHTML += `<button class="hold_wheel" data-holdwheel="${wheel.id}">${holdButtonSVG}</button>`;
-
     });
-
-    addEventListeners();
 }
 
-function addEventListeners() {
-//    eventListeners for buttons
-    document.querySelectorAll(".popup_keep_playing_button").forEach(button => {
+function activateKeepPlaying() {
+    // Activates the "Keep playing"-butons.
+    document.querySelectorAll(".popup_play_game").forEach(button => {
         button.addEventListener("click", function _function() {
             document.querySelector(".game_popup").style.display = "none";
-
             document.querySelectorAll(".game_popup_content").forEach(element => {
                 element.style.display = "none";
             });
@@ -267,43 +273,52 @@ function addEventListeners() {
 
         document.querySelector(".coins_won").textContent = "0";
     });
+}
 
-
-    // MUSIC
-
+function addMusic() {
     const musicButton = document.querySelector(".music_toggle");
     const music = document.querySelector("#music");
     const buttonSound = document.querySelector("#button_sound");
+
+    // The music file should loop as long as it is playing.
     music.loop = true;
-    buttonSound.volume = 0;
+
+    // The music volume is always .5 when it is playing.
     music.volume = .5;
 
+    // The button sound volume starts at 0, so the sounds will only play when the user has turned sounds on.
+    buttonSound.volume = 0;
+
+    // Adds sounds to all buttons in the game - however, these sounds are at volume 0 to start with.
     document.querySelectorAll(".game_container button").forEach(button => {
         button.addEventListener("click", function _function() {
             buttonSound.play();
+
+            // Set the currentTime to 0 so that the sound will play every time a button is clicked - even if the sound
+            // from the last click hasn't finished playing.
             buttonSound.currentTime = 0;
         })
     });
 
-    musicButton.addEventListener("click", function _function() {
-        console.log("Music");
 
+    musicButton.addEventListener("click", function _function() {
+        // Toggles the music data-attribute between on and off.
         this.setAttribute("data-music", this.getAttribute("data-music") === "off" ? "on" : "off");
 
+        // If the data-attribute is now set to off, the music will pause and the button sounds volume will be 0.
         if (this.getAttribute("data-music") === "off") {
             music.pause();
-                buttonSound.volume = 0;
-                musicButton.style.backgroundImage = 'url("elements/static/music_off.svg")';
+            buttonSound.volume = 0;
+            musicButton.style.backgroundImage = 'url("elements/static/music_off.svg")';
         }
 
+        // If the data-attribute is now set to on, the music will play and the button sounds volume will be 1.
         if (this.getAttribute("data-music") === "on") {
             music.play();
-                buttonSound.volume = 1;
+            buttonSound.volume = 1;
             musicButton.style.backgroundImage = 'url("elements/static/music_on.svg")';
         }
-
     });
-
 }
 
 function showSpinsLeft(spins) {
@@ -319,38 +334,36 @@ function holdButtonColorChange(button, thisIsHolding) {
 }
 
 function spinVisualWheel(wheel, prizeWon, spins, wheels) {
-        // To calculate how many times the wheel should spin to land on the active index, we take the current position
-        // of the wheel (the previously active index) - the new position where it should land (the active index). For
-        // the wheel to spin several rounds, take the wheel length * 2, and * the wheel.id so the wheels will stop
-        // one after one.
+    // To calculate how many times the wheel should spin to land on the active index, we take the current position
+    // of the wheel (the previously active index) - the new position where it should land (the active index). For
+    // the wheel to spin several rounds, take the wheel length * 2, and * the wheel.id so the wheels will stop
+    // one after one.
 
     let spinRounds;
     if (!wheel.isHolding) {
         spinRounds = wheel.previouslyActive - wheel.active + (wheel.symbols.length * wheel.id);
-    }
-
-    else {
+    } else {
         spinRounds = 0;
     }
 
     console.log(wheel.id + " Active " + (wheel.active));
 
-        spinWheel(wheel, spinRounds, prizeWon, spins, wheels)
+    spinWheel(wheel, spinRounds, prizeWon, spins, wheels)
 }
 
 function spinWheel(wheel, spinRounds, prizeWon, spins, wheels) {
     if (spinRounds > 0) {
-    document.querySelectorAll(`.wheel_${wheel.id} .item`).forEach(item => {
+        document.querySelectorAll(`.wheel_${wheel.id} .item`).forEach(item => {
 
-        // Moves all symbols down 100% of their height.
-        item.style.transitionDuration = ".04s";
-        item.style.transform = "translateY(100%)";
-    });
+            // Moves all symbols down 100% of their height.
+            item.style.transitionDuration = ".04s";
+            item.style.transform = "translateY(100%)";
+        });
 
-    document.querySelector(`.wheel_${wheel.id} .item`).addEventListener("transitionend", function _function() {
-        document.querySelector(`.wheel_${wheel.id} .item`).removeEventListener("transitionend", _function);
-        moveLastItem(wheel, spinRounds, prizeWon, spins, wheels);
-    });
+        document.querySelector(`.wheel_${wheel.id} .item`).addEventListener("transitionend", function _function() {
+            document.querySelector(`.wheel_${wheel.id} .item`).removeEventListener("transitionend", _function);
+            moveLastItem(wheel, spinRounds, prizeWon, spins, wheels);
+        });
 
     }
 
@@ -379,8 +392,8 @@ function moveLastItem(wheel, spinRounds, prizeWon, spins, wheels) {
     const lastSymbolID = lastItem.getAttribute("data-symbol-id");
 
     if (spinRounds > 0) {
-    // Removes the last div completely from the DOM.
-    lastItem.parentNode.removeChild(lastItem);
+        // Removes the last div completely from the DOM.
+        lastItem.parentNode.removeChild(lastItem);
     }
 
     addLastItem(wheel, lastSymbolID, spinRounds, prizeWon, spins, wheels);
@@ -390,9 +403,9 @@ function addLastItem(wheel, lastSymbolID, spinRounds, prizeWon, spins, wheels) {
     console.log("spins", spins);
 
     if (spinRounds > 0) {
-    // Inserts div to the start of the wheel, with the ID from the div removed from the end of the wheel.
-    let lastItemTemplate = `<div class="item" data-symbol-id="${lastSymbolID}"></div>`;
-    document.querySelector(`.wheel_${wheel.id}`).insertAdjacentHTML('afterbegin', lastItemTemplate);
+        // Inserts div to the start of the wheel, with the ID from the div removed from the end of the wheel.
+        let lastItemTemplate = `<div class="item" data-symbol-id="${lastSymbolID}"></div>`;
+        document.querySelector(`.wheel_${wheel.id}`).insertAdjacentHTML('afterbegin', lastItemTemplate);
     }
 
     spinRounds--;
@@ -476,7 +489,7 @@ function displayPopup(prizeWon) {
     }
 }
 
-function play(){
+function play() {
     let audio = document.getElementById("audio");
     audio.play();
     audio.loop = true;
