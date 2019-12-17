@@ -125,7 +125,7 @@ function spin(wheels, spins) {
     let prizeWon = calculatePrizeWon(wheels, spinResult);
 
     // Starts the visual part of spinning the wheels.
-    visualSpin(wheels, prizeWon, spins);
+    startVisualSpin(wheels, prizeWon, spins);
 
     // If the user wins:
     if (prizeWon > 0) {
@@ -351,10 +351,24 @@ function holdButtonColorChange(button, thisIsHolding) {
     }
 }
 
-function visualSpin(wheels, prizeWon, spins) {
+function startVisualSpin(wheels, prizeWon, spins) {
+    // We start out with defining the spinRounds by random here, because this part is not repeated like the rest of the
+    // spinning process.
     let spinRounds = setSpinRounds(wheels);
+    visualSpin(wheels, prizeWon, spins, spinRounds);
+}
+
+function visualSpin(wheels, prizeWon, spins, spinRounds) {
+    // The visual spinning of the wheels
+    let lastSymbolsOfWheels = getLastSymbols(wheels);
+    let lastSymbolsIds = getLastSymbolIds(wheels, lastSymbolsOfWheels);
     moveWheelsDown(wheels, spinRounds);
-    removeLastItems(wheels, spinRounds);
+    removeLastItems(wheels, spinRounds, lastSymbolsOfWheels);
+    addLastItem(wheels, spinRounds, lastSymbolsIds);
+    moveItemsBackToPlace();
+
+    // Function that checks whether the wheel should continue spinning or not. Returns true or false.
+    // continueSpinning();
 }
 
 function setSpinRounds(wheels) {
@@ -377,7 +391,7 @@ function setSpinRounds(wheels) {
 
 function moveWheelsDown(wheels, spinRounds) {
     wheels.forEach(wheel => {
-        let wheelSpinRounds = spinRounds[wheel.id - 1];
+        const wheelSpinRounds = spinRounds[wheel.id - 1];
         if (wheelSpinRounds > 0) {
             document.querySelectorAll(`.wheel_${wheel.id} .item`).forEach(item => {
                 item.style.transform = "translateY(100%)";
@@ -386,76 +400,101 @@ function moveWheelsDown(wheels, spinRounds) {
     })
 }
 
-function removeLastItems(wheels, spinRounds) {
+function removeLastItems(wheels, spinRounds, lastSymbols) {
     let lastSymbolIds = [];
 
     wheels.forEach(wheel => {
-        // Variable that contains all the divs in a wheel.
-        const allItems = document.querySelectorAll(`.wheel_${wheel.id} .item`);
 
-        // Finds the last div in the wheel by taking the amount of divs in the wheel.
-        const lastItem = allItems[allItems.length - 1];
+        const lastSymbol = lastSymbols[wheel.id - 1];
 
-        // Gets the ID from the last div, so it can be added to the top below.
-        const lastSymbolId = lastItem.getAttribute("data-symbol-id");
+        const wheelSpinRounds = spinRounds[wheel.id - 1];
 
-        lastSymbolIds.push(lastSymbolId);
-
-        if (spinRounds > 0) {
+        if (wheelSpinRounds > 0) {
             // Removes the last div completely from the DOM.
-            lastItem.parentNode.removeChild(lastItem);
+            lastSymbol.parentNode.removeChild(lastSymbol);
         }
     });
-
-    console.log(lastSymbolIds);
-    return lastSymbolIds;
-    // addLastItem(wheel, lastSymbolID, spinRounds, prizeWon, spins, wheels);
 }
 
-function addLastItem(wheel, lastSymbolID, spinRounds, prizeWon, spins, wheels) {
-    console.log("spins", spins);
+function getLastSymbolIds(wheels, symbols) {
+    let lastSymbolIds = [];
 
-    if (spinRounds > 0) {
+    wheels.forEach(wheel => {
+        const lastSymbol = symbols[wheel.id - 1];
+        // Gets the ID from the last div, so it can be added to the top.
+        const lastSymbolId = lastSymbol.getAttribute("data-symbol-id");
+        lastSymbolIds.push(lastSymbolId);
+    });
+    return lastSymbolIds;
+}
+
+function getLastSymbols(wheels) {
+
+    let lastItems = [];
+    wheels.forEach(wheel => {
+
+    // Variable that contains all the divs in a wheel.
+    const allItems = document.querySelectorAll(`.wheel_${wheel.id} .item`);
+
+    // Finds the last div in the wheel by taking the amount of divs in the wheel.
+    const lastItem = allItems[allItems.length - 1];
+
+    lastItems.push(lastItem);
+    });
+
+    return lastItems;
+}
+
+function addLastItem(wheels, spinRounds, lastSymbolsIds) {
+
+    wheels.forEach(wheel => {
+        let wheelSpinRounds = spinRounds[wheel.id - 1];
+        const lastSymbolId = lastSymbolsIds[wheel.id - 1];
+
+    if (wheelSpinRounds > 0) {
         // Inserts div to the start of the wheel, with the ID from the div removed from the end of the wheel.
-        let lastItemTemplate = `<div class="item" data-symbol-id="${lastSymbolID}"></div>`;
+        let lastItemTemplate = `<div class="item" data-symbol-id="${lastSymbolId}"></div>`;
         document.querySelector(`.wheel_${wheel.id}`).insertAdjacentHTML('afterbegin', lastItemTemplate);
     }
-
-    spinRounds--;
-
-    // If spinRounds is over 0, the functions will loop and the wheel will keep spinning until spinRounds hits 0.
-    if (spinRounds > 0) {
-        setTimeout(function () {
-            spinWheel(wheel, spinRounds, prizeWon, spins, wheels)
-        }, 1)
-
-    } else if (wheel.id === 3 && spinRounds <= 0) {
-        displayPrice(prizeWon);
-
-        if (prizeWon === 0) {
-
-            // If spins is still above 0, the spin button will get activated again.
-            if (spins > 0) {
-                console.log("Activate spin button", spins);
-                activateSpinButton(wheels, spins);
-            }
-
-            // If spins reaches 0, the user has lost and the start button will be activated.
-            else {
-                console.log("YOU LOST!");
-                activateStartButton(wheels);
-            }
-        }
-
-    }
+    })
 }
 
-function moveBackToPlace() {
+function moveItemsBackToPlace() {
     // Moves all symbols back to their original position (which will change because there is another div added at the
-    // top - as happens below).
-    document.querySelectorAll(`.wheel_${wheel.id} .item`).forEach(item => {
+    // top).
+    document.querySelectorAll(`.item`).forEach(item => {
         item.style.transform = "translateY(0)";
     });
+}
+
+function tospinornottospin() {
+    wheelSpinRounds--;
+
+    // If wheelSpinRounds is over 0, the functions will loop and the wheel will keep spinning until wheelSpinRounds hits 0.
+    // if (wheelSpinRounds > 0) {
+    //     setTimeout(function () {
+    //         spinWheel(wheel, wheelSpinRounds, prizeWon, spins, wheels)
+    //     }, 1)
+    //
+    // } else if (wheel.id === 3 && wheelSpinRounds <= 0) {
+    //     displayPrice(prizeWon);
+    //
+    //     if (prizeWon === 0) {
+    //
+    //         // If spins is still above 0, the spin button will get activated again.
+    //         if (spins > 0) {
+    //             console.log("Activate spin button", spins);
+    //             activateSpinButton(wheels, spins);
+    //         }
+    //
+    //         // If spins reaches 0, the user has lost and the start button will be activated.
+    //         else {
+    //             console.log("YOU LOST!");
+    //             activateStartButton(wheels);
+    //         }
+    //     }
+    //
+    // }
 }
 
 function displayPrice(prizeWon) {
