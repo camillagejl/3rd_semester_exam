@@ -89,6 +89,7 @@ function activateStartButton(wheels) {
 
     document.querySelector(".start_button").addEventListener("click", function _function() {
         document.querySelector(".start_button").removeEventListener("click", _function);
+        showSpinsLeft(0);
         startButtonIsClicked();
 
         // When the start button is activated (when the page is loaded or the user has used all three spins),
@@ -105,8 +106,6 @@ function setIsHoldingFalse(wheels) {
 }
 
 function activateSpinButton(wheels, spins) {
-    showSpinsLeft(spins);
-
     document.querySelector(".spin_button").addEventListener("click", function _function() {
         document.querySelector(".spin_button").removeEventListener("click", _function);
         spin(wheels, spins);
@@ -122,7 +121,9 @@ function spin(wheels, spins) {
 
     setPreviouslyActive(wheels);
     let spinResult = calculateSpinResult(wheels);
-    console.log(spinResult);
+
+    console.log(wheels[0].symbols[spinResult[0]], wheels[1].symbols[spinResult[1]], wheels[2].symbols[spinResult[2]]);
+
     let prizeWon = calculatePrizeWon(wheels, spinResult);
 
     // Starts the visual part of spinning the wheels.
@@ -140,9 +141,6 @@ function spin(wheels, spins) {
         activateStartButton(wheels);
     }
 
-
-    // Updates visual display of spins left.
-    showSpinsLeft(spins);
 
     // Toggles the hold buttons.
     toggleHoldButtons(wheels, spins);
@@ -353,6 +351,9 @@ function holdButtonColorChange(button, thisIsHolding) {
 }
 
 function startVisualSpin(wheels, prizeWon, spins) {
+    // Updates visual display of spins left.
+    showSpinsLeft(spins);
+
     // We start out with defining the spinRounds by random here, because this part is not repeated like the rest of the
     // spinning process.
     let spinRounds = setSpinRounds(wheels);
@@ -360,6 +361,9 @@ function startVisualSpin(wheels, prizeWon, spins) {
 }
 
 function visualSpin(wheels, prizeWon, spins, spinRounds) {
+    // Setting a timeout so the wheel doesn't spin too quickly.
+    setTimeout(function() {
+
     // The visual spinning of the wheels
     let lastSymbolsOfWheels = getLastSymbols(wheels);
     let lastSymbolsIds = getLastSymbolIds(wheels, lastSymbolsOfWheels);
@@ -371,19 +375,37 @@ function visualSpin(wheels, prizeWon, spins, spinRounds) {
     // Spinning the first symbol is finished, and we now retract one number from the spin rounds.
     spinRounds = subtractSpinRounds(spinRounds);
 
-
     // Function that checks whether the wheel should continue spinning or not. Returns true or false.
     const shouldContinueSpinning = continueSpinning(spinRounds);
 
     if (shouldContinueSpinning.includes(true)) {
-        setTimeout(function () {
         visualSpin(wheels, prizeWon, spins, spinRounds)
-        }, 1)
     }
+
+    else {
+        endOfSpinning(prizeWon, spins, wheels);
+    }
+
+
+    }, 35);
+}
+
+function endOfSpinning(prizeWon, spins, wheels) {
+        displayPrice(prizeWon);
+
+        if (prizeWon === 0 && spins > 0) {
+            console.log("Activate spin button", spins);
+            activateSpinButton(wheels, spins);
+        }
+
+        // If spins reaches 0, the user has lost and the start button will be activated.
+        else {
+            console.log("YOU LOST!");
+            activateStartButton(wheels);
+        }
 }
 
 function setSpinRounds(wheels) {
-    console.log(wheels);
     // To calculate how many times the wheel should spin to land on the active index, we take the current position
     // of the wheel (the previously active index) - the new position where it should land (the active index). For
     // the wheel to spin several rounds, take the wheel length * the wheel.id so the wheels will stop
@@ -412,8 +434,6 @@ function moveWheelsDown(wheels, spinRounds) {
 }
 
 function removeLastItems(wheels, spinRounds, lastSymbols) {
-    let lastSymbolIds = [];
-
     wheels.forEach(wheel => {
 
         const lastSymbol = lastSymbols[wheel.id - 1];
@@ -457,7 +477,6 @@ function getLastSymbols(wheels) {
 }
 
 function addLastItem(wheels, spinRounds, lastSymbolsIds) {
-
     wheels.forEach(wheel => {
         let wheelSpinRounds = spinRounds[wheel.id - 1];
         const lastSymbolId = lastSymbolsIds[wheel.id - 1];
@@ -476,36 +495,6 @@ function moveItemsBackToPlace() {
     document.querySelectorAll(`.item`).forEach(item => {
         item.style.transform = "translateY(0)";
     });
-}
-
-function tospinornottospin() {
-    wheelSpinRounds--;
-
-    // If wheelSpinRounds is over 0, the functions will loop and the wheel will keep spinning until wheelSpinRounds hits 0.
-    if (wheelSpinRounds > 0) {
-        setTimeout(function () {
-            spinWheel(wheel, wheelSpinRounds, prizeWon, spins, wheels)
-        }, 1)
-
-    } else if (wheel.id === 3 && wheelSpinRounds <= 0) {
-        displayPrice(prizeWon);
-
-        if (prizeWon === 0) {
-
-            // If spins is still above 0, the spin button will get activated again.
-            if (spins > 0) {
-                console.log("Activate spin button", spins);
-                activateSpinButton(wheels, spins);
-            }
-
-            // If spins reaches 0, the user has lost and the start button will be activated.
-            else {
-                console.log("YOU LOST!");
-                activateStartButton(wheels);
-            }
-        }
-
-    }
 }
 
 function subtractSpinRounds(spinRounds) {
@@ -580,10 +569,4 @@ function displayPopup(prizeWon) {
         document.querySelector(".no_jackpot").style.display = "block";
         document.querySelector(".popup_prize").innerHTML = prizeWon;
     }
-}
-
-function play() {
-    let audio = document.getElementById("audio");
-    audio.play();
-    audio.loop = true;
 }
