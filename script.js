@@ -1,4 +1,4 @@
-3"use strict";
+"use strict";
 
 document.addEventListener("DOMContentLoaded", fetchSymbols);
 
