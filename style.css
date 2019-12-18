@@ -15,22 +15,6 @@ body {
   font-family: var(--main_font);
 }
 
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgb(0, 158, 0);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: rgb(3, 49, 3);
-}
-
 .body_background {
   /* The background is added to this div instead of the body, so it doesn't go all the way to the bottom of the
     page */
@@ -44,6 +28,29 @@ body {
   background-image: url("elements/body_background.svg");
 }
 
+#arrow img {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 50%;
+    top: 88%;
+    margin-top: -15px;
+    margin-left: -15px;
+    background-repeat: no-repeat;
+    animation-name: arrow;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes arrow {
+    0% {
+        top: 88%;
+    }
+    100% {
+        top: 91%;
+    }
+}
 .hide_background_crop {
   z-index: -1;
   position: absolute;
@@ -575,7 +582,7 @@ label {
   text-align: center;
   color: white;
   font-family: var(--main_font);
-  margin-bottom: 50px;
+  margin-top: 50px;
 }
 
 .game_container {
