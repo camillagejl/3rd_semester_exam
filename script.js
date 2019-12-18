@@ -119,8 +119,7 @@ const holdButtonsListeners = {};
 function spin(wheels, spins) {
     spins--;
     setPreviouslyActive(wheels);
-
-    console.log(wheels[0].symbols[wheels[0].active], wheels[1].symbols[wheels[1].active], wheels[2].symbols[wheels[2].active]);
+    calculateSpinResult(wheels);
 
     let prizeWon = calculatePrizeWon(wheels);
 
