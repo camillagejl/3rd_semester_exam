@@ -21,7 +21,7 @@ function getUser() {
             profileForm.elements.firstname.value = data.firstname,
             profileForm.elements.lastname.value = data.lastname,
             profileForm.elements.country.value = data.country;
-            document.querySelector('#profile-form > input:nth-child(15)').value = data.dateofbirth.slice(0, 10);
+            document.querySelector('#profile-form > input:nth-child(16)').value = data.dateofbirth.slice(0, 10);
         });
 }
 

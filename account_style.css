@@ -33,12 +33,14 @@ nav button i {
 .fa-caret-down {
   font-size: 20px;
 }
+
 #headline {
   font-size: 1.5em;
   font-family: "Courier New", Courier, monospace;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   font-weight: 600;
 }
+
 #dropdown {
   position: relative;
   display: inline-block;
@@ -142,6 +144,14 @@ label {
 }
 
 .fields {
+  font-size: 13px;
+  padding: 5px;
+  width: 200px;
+  color: black;
+  margin-bottom: 5px;
+}
+
+select {
   font-size: 13px;
   padding: 5px;
   width: 200px;
