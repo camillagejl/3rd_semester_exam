@@ -198,12 +198,10 @@ function calculatePrizeWon(wheels) {
 
     wheels.forEach(wheel => {
         if (wheels[wheel.id]) {
-
-            if (wheels[wheel.id - 1].symbols[wheels[wheel.id - 1].active]
+            if (wheel.symbols[wheel.active]
                 === wheels[wheel.id].symbols[wheels[wheel.id].active]) {
                 symbolsMatch.push(true);
-            }
-            else {
+            } else {
                 symbolsMatch.push(false);
             }
         }
@@ -212,7 +210,7 @@ function calculatePrizeWon(wheels) {
     if (!symbolsMatch.includes(false)) {
         return wheels[0].symbols[wheels[0].active].prize;
     }
-        return 0;
+    return 0;
 }
 
 

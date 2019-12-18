@@ -798,14 +798,14 @@ label {
   position: absolute;
   top: 59%;
   left: 12%;
-  height: 4.7%;
+  height: 5%;
   width: 56%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .hold_wheel {
-  margin-right: 5%;
-  height: 100%;
-  width: 30%;
+  max-height: 100%;
 }
 
 .hold_wheel svg {
