@@ -44,7 +44,7 @@ p {
 .list {
   cursor: var(--default-cursor);
   text-align: left;
-  margin: 0 auto;
+  margin: 0 auto 50px auto;
   min-width: var(--min-screen-width);
 }
 
