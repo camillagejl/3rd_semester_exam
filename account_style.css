@@ -45,7 +45,12 @@ nav button i {
   position: relative;
   display: inline-block;
 }
-
+#placeholder_content {
+  display: flex;
+  justify-content: center;
+  margin-top: 20%;
+  font-family: "Courier New", Courier, monospace;
+}
 #profile-btn {
   padding: 11px 35px;
 }
