@@ -144,7 +144,7 @@ function List() {
                 <select onChange={filterByEmailSub} name="filterByEmailPrefs" className="filter_by filter_email">
                     <option value="All">All</option>
                     <option value="Subscribed">&#10003; Subscribed</option>
-                    <option value="Not subscribed">&times; Not subscribed</option>
+                    <option value="Not Subscribed">&times; Not subscribed</option>
                 </select>
             </label>
             </div>
@@ -226,7 +226,7 @@ function List() {
                         <td>{user.email}</td>
                         <td>{user.firstname}</td>
                         <td>{user.lastname}</td>
-                        <td>{user.dateofbirth}</td>
+                        <td>{user.dateofbirth.slice(0,10)}</td>
                         <td>{user.country}</td>
                         <td>{user.subscription}</td>
                         {deletingId === user._id ?
