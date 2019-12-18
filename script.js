@@ -41,7 +41,7 @@ function buildGame() {
 
 function activateButtons(wheels) {
     activateStartButton(wheels);
-    activatePlayGameButton();
+    activatePlayGameButtons();
     activateThemeButtons();
     addMusic();
 }
@@ -246,7 +246,7 @@ function addWheelsToDom(wheels) {
 
 // ----- EVENTLISTENERS FOR BUTTONS FOR VISUALS -----
 
-function activatePlayGameButton() {
+function activatePlayGameButtons() {
     // Activates the "Start" and "Keep playing" buttons.
     document.querySelectorAll(".popup_play_game").forEach(button => {
         button.addEventListener("click", function _function() {
@@ -334,10 +334,6 @@ function startButtonIsClicked() {
     document.querySelector(".coins_won").textContent = "0";
 }
 
-function showSpinsLeft(spins) {
-    document.querySelector(".spins_left").textContent = spins;
-}
-
 function holdButtonColorChange(button, thisIsHolding) {
     if (thisIsHolding) {
         button.querySelector(".hold_button_color").style.fill = "#08d002";
@@ -345,6 +341,13 @@ function holdButtonColorChange(button, thisIsHolding) {
         button.querySelector(".hold_button_color").style.fill = "#97b88d";
     }
 }
+
+function showSpinsLeft(spins) {
+    document.querySelector(".spins_left").textContent = spins;
+}
+
+
+// ----- THE VISUAL WHEELS SPINNING -----
 
 function startVisualSpin(wheels, prizeWon, spins) {
     // Updates visual display of spins left.
@@ -397,28 +400,6 @@ function visualSpin(wheels, prizeWon, spins, spinRounds) {
         }
 
     }, 35);
-}
-
-function endOfSpinning(prizeWon, spins, wheels) {
-    if (prizeWon > 0) {
-        displayPrice(prizeWon);
-        toggleHoldButtons(wheels, 3);
-
-        // Sets timeout on activating the start button, so it isn't activated before the popup is showing.
-        setTimeout(function () {
-            activateStartButton(wheels);
-        }, 4000)
-    }
-
-    // If spins reaches 0, the user has lost and the start button will be activated.
-    if (prizeWon === 0 && spins === 0) {
-        console.log("YOU LOST!");
-        activateStartButton(wheels);
-    }
-
-    if (prizeWon === 0 && spins > 0) {
-        activateSpinButton(wheels, spins);
-    }
 }
 
 function moveWheelsDown(wheels, spinRounds) {
@@ -516,6 +497,28 @@ function continueSpinning(spinRounds) {
         }
     });
     return shouldContinueSpinning;
+}
+
+function endOfSpinning(prizeWon, spins, wheels) {
+    if (prizeWon > 0) {
+        displayPrice(prizeWon);
+        toggleHoldButtons(wheels, 3);
+
+        // Sets timeout on activating the start button, so it isn't activated before the popup is showing.
+        setTimeout(function () {
+            activateStartButton(wheels);
+        }, 4000)
+    }
+
+    // If spins reaches 0, the user has lost and the start button will be activated.
+    if (prizeWon === 0 && spins === 0) {
+        console.log("YOU LOST!");
+        activateStartButton(wheels);
+    }
+
+    if (prizeWon === 0 && spins > 0) {
+        activateSpinButton(wheels, spins);
+    }
 }
 
 function displayPrice(prizeWon) {
