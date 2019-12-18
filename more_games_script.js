@@ -2,18 +2,18 @@
 
 const popularGames = document.querySelector(".popular_games");
 const jackpotGames = document.querySelector(".jackpot_games");
-let section = [];
+let sections = [];
 
 async function getAllGames() {
   let pagesUrl =
     "http://creativegamerstuff.dk/kea/sem3/wordpress/wp-json/wp/v2/Game";
   let jsonData = await fetch(pagesUrl);
-  section = await jsonData.json();
+  sections = await jsonData.json();
   insertAllGames();
 }
 
 function insertAllGames() {
-  section.forEach(section => {
+  sections.forEach(section => {
     let template = `<div class="grid_div">
     <div class="container">
     <div class="image_content">
