@@ -188,9 +188,9 @@ function List() {
                         }
                     </th>
 
-                    <th onClick={() => sortByColumn("dateOfBirth")}>
+                    <th onClick={() => sortByColumn("dateofbirth")}>
                         Date of birth
-                        {sortBy === "dateOfBirth" &&
+                        {sortBy === "dateofbirth" &&
                         <img className="sortArrow" style={arrowStyle} src={sortArrow} alt="Sorting arrow"/>
                         }
                     </th>
