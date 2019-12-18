@@ -1,0 +1,144 @@
+/* We use a custom property for the cursor, so that they will also have the loading cursor
+well when the loading class is on the list object. */
+:root {
+  --default-cursor: default;
+  --pointer-cursor: pointer;
+  --min-screen-width: 1300px;
+}
+
+.loading {
+  --default-cursor: progress;
+  --pointer-cursor: progress;
+}
+
+html {
+  background-color: #cdf3fd;
+}
+
+.App {
+  min-width: var(--min-screen-width);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ----- HEADER ----- */
+
+.header {
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 0;
+  padding: 30px 0 0 0;
+}
+
+p {
+  margin: 5px;
+}
+
+/* ----- USER LIST ----- */
+
+.list {
+  cursor: var(--default-cursor);
+  text-align: left;
+  margin: 0 auto 50px auto;
+  min-width: var(--min-screen-width);
+}
+
+.dropdowns {
+  text-align: right;
+  margin: 10px 0;
+}
+
+.filter_country {
+  margin: 0 30px 0 10px;
+}
+
+.filter_email {
+  margin: 0 0 0 10px;
+}
+
+select {
+  min-width: 100px;
+}
+
+table {
+  border-spacing: 0;
+  min-width: 1300px;
+}
+
+th, td {
+  padding: 10px 30px 10px 10px;
+}
+
+th {
+  cursor: var(--pointer-cursor);
+  background-color: black;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #DDDFE8;
+}
+
+tr:nth-child(odd) {
+   background-color: #E9E9E9;
+ }
+
+.sortArrow {
+  padding-left: 5px;
+  margin-bottom: 2px;
+}
+
+.delete_user_th {
+  cursor: var(--default-cursor);
+}
+
+.delete_user {
+  cursor: var(--pointer-cursor);
+  color: darkred;
+}
+
+.deleting {
+  background-color: dimgrey !important;
+  color: grey;
+}
+
+.deleting .delete_user {
+  color: inherit;
+}
+
+/* POPUP FOR DESKTOP INFORMATION */
+
+.mobile_popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #292929;
+  color: whitesmoke;
+}
+
+@media screen and (min-width: 1300px) {
+  .mobile_popup {
+    display: none;
+  }
+  .list {
+    display: block;
+  }
+}
+
+/* HELPER FUNCTIONS */
+
+.hidden {
+  display: none;
+}
+

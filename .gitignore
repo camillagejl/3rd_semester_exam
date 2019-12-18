@@ -1,4 +1,5 @@
 .idea/
 _offline
-node_modules/
-user-list/
+user-list/node_modules
+node_modules
+user-list/src/.cache/
