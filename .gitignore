@@ -2,3 +2,4 @@
 _offline
 user-list/node_modules
 node_modules
+user-list/src/.cache/
