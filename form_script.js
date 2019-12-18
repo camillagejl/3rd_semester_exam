@@ -75,10 +75,14 @@ signupForm.addEventListener("submit", e => {
     e.preventDefault();
 
     let enteredDate = signupForm.elements.dateofbirth.value;
+    console.log(enteredDate);
     let changedDate = enteredDate.split("-").reverse().join("-");
-    let yearsDiff = new Date(new Date() - new Date(changedDate)).getFullYear() - 1970;
+    console.log(changedDate);
+    let yearsDiff = new Date().getFullYear() - new Date(changedDate).getFullYear();
+    console.log(yearsDiff);
 
     if(signupForm.elements.agreement.checked === false) {
+        console.log(signupForm.elements.agreement.checked);
         document.querySelector("#signup-error").innerHTML = "You have to accept our Terms of Use first";
         document.querySelector("#signup-error").style.display = "block";
     }
@@ -88,6 +92,7 @@ signupForm.addEventListener("submit", e => {
         document.querySelector("#signup-error").innerHTML = "You have to be 18yo";
     }
     else {
+        console.log('all good');
         document.querySelector("#signedup").style.display = "block";
         document.querySelector("#signup-error").style.display = "none";
         document.querySelector("#login-error").style.display = "none";
@@ -119,16 +124,23 @@ loginForm.addEventListener("submit", e => {
 
     let foundUser = false;
 
+    let totalUsers = myData.length;
+
     myData.forEach(function (user) {
         if (loginForm.elements.username.value === user.username && loginForm.elements.password.value === user.password) {
             document.querySelector("#login-error").style.display = "none";
             localStorage.setItem("userID", user._id);
             window.open("account.html","_self");
             foundUser = true;
-        } else {
+            return;
+        }
+        
+        if (totalUsers === 1){
             document.querySelector("#login-error").style.display = "block";
             document.querySelector("#login-error").innerHTML = "Incorrect username or password";
         }
+
+        totalUsers--;
     })
 });
 
