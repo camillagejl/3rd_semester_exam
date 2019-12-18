@@ -176,3 +176,17 @@ select {
   color: green;
   padding-top: 25px;
 }
+
+@media screen and (max-width: 499px) {
+  #modal-content {
+    width: 95%;
+  }
+
+  .fields {
+    width: 100%;
+  }
+
+  #profile-form {
+    padding: 0;
+  }
+}

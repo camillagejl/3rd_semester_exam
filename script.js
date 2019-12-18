@@ -207,6 +207,8 @@ function calculatePrizeWon(wheels) {
         }
     });
 
+    console.log(symbolsMatch);
+
     if (!symbolsMatch.includes(false)) {
         return wheels[0].symbols[wheels[0].active].prize;
     }
@@ -525,7 +527,6 @@ function displayPrice(prizeWon) {
     let coinsDisplay = document.querySelector(".coins_won").textContent;
 
     if (coinsDisplay < prizeWon) {
-        console.log("Done spinning", prizeWon);
 
         coinsDisplay++;
         document.querySelector(".coins_won").textContent = coinsDisplay;
