@@ -86,6 +86,17 @@ nav button i {
   transform: rotate(180deg);
   transition: 0.3s;
 }
+#edit-btn {
+  background-color: green;
+  padding: 10px;
+  color: white;
+}
+
+#update {
+  background-color: green;
+  padding: 10px;
+  color: white;
+}
 
 #modal {
   display: none;
@@ -146,7 +157,7 @@ label {
 .fields {
   font-size: 13px;
   padding: 5px;
-  width: 200px;
+  width: 300px;
   color: black;
   margin-bottom: 5px;
 }

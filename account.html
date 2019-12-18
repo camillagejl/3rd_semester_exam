@@ -1,66 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="account_style.css" type="text/css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Document</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <link rel="stylesheet" href="account_style.css" type="text/css" />
-</head>
+  <body>
+    <nav>
+      <div id="dropdown">
+        <button id="profile-btn">
+          <i class="fa fa-user" aria-hidden="true"></i>
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <button id="profile">Profile</button>
+          <hr />
+          <button id="logout">Log Out</button>
+        </div>
+      </div>
+    </nav>
 
-<body>
-  <nav>
-    <div id="dropdown">
-      <button id="profile-btn">
-        <i class="fa fa-user" aria-hidden="true"></i>
-        <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="dropdown-content">
-        <button id="profile">Profile</button>
-        <hr />
-        <button id="logout">Log Out</button>
+    <div id="modal">
+      <div id="modal-content">
+        <span id="close">&times;</span>
+        <form id="profile-form" method="PUT" action="">
+          <label id="headline">Your Profile</label>
+          <input type="hidden" name="id" />
+          <label>Email</label>
+          <input class="fields" type="text" name="email" disabled />
+          <br />
+          <label>First Name</label>
+          <input class="fields" type="text" name="firstname" disabled />
+          <br />
+          <label>Last Name</label>
+          <input class="fields" type="text" name="lastname" disabled />
+          <br />
+          <label>Country</label>
+          <select class="fields" name="country" disabled>
+            <option value="" disabled selected hidden
+              >Select your country</option
+            >
+            <option value="Denmark">Denmark</option>
+            <option value="Romania">Romania</option>
+            <option value="United Kingdom">Sweden</option>
+            <option value="Germany">Germany</option>
+          </select>
+          <br />
+          <label>Date of Birth</label>
+          <input class="fields" type="date" name="dateofbirth" disabled />
+          <h1>Profile Updated</h1>
+          <div id="profile-buttons">
+            <button id="edit-btn" type="button">Edit Profile</button>
+            <button type="submit" name="submit" id="update">Update</button>
+          </div>
+        </form>
       </div>
     </div>
-  </nav>
 
-  <div id="modal">
-    <div id="modal-content">
-      <span id="close">&times;</span>
-      <form id="profile-form" method="PUT" action="">
-        <label id="headline">Your Profile</label>
-        <input type="hidden" name="id" />
-        <label>Email</label>
-        <input class="fields" type="text" name="email" disabled />
-        <br />
-        <label>First Name</label>
-        <input class="fields" type="text" name="firstname" disabled />
-        <br />
-        <label>Last Name</label>
-        <input class="fields" type="text" name="lastname" disabled />
-        <br />
-        <label>Country</label>
-        <select class="fields" name="country" disabled>
-          <option value="" disabled selected hidden>Select your country</option>
-          <option value="Denmark">Denmark</option>
-          <option value="Romania">Romania</option>
-          <option value="United Kingdom">Sweden</option>
-          <option value="Germany">Germany</option>
-        </select>
-        <br />
-        <label>Date of Birth</label>
-        <input class="fields" type="date" name="dateofbirth" disabled />
-        <h1>Profile Updated</h1>
-        <div id="profile-buttons">
-          <button id="edit-btn" type="button">Edit Profile</button>
-          <button type="submit" name="submit">Update</button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <script src="account_script.js"></script>
-</body>
-
+    <script src="account_script.js"></script>
+  </body>
 </html>
