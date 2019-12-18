@@ -1123,9 +1123,7 @@ label {
         width: 40%;
         height: 10%;
     }
-    #game_header {
-        margin: -5vh 0 0 0;
-    }
+
     .game_welcome .popup_play_game {
         height: 13%;
         width: 35%;
