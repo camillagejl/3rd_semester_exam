@@ -30,6 +30,7 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(3, 49, 3);
 }
+
 .body_background {
     /* The background is added to this div instead of the body, so it doesn't go all the way to the bottom of the
     page */
@@ -142,11 +143,11 @@ nav a {
 
 #nav-buttons {
     display: none;
-    padding-right: 3em;
+    padding-right: 1em;
 }
 
 #nav-buttons button {
-    margin-right: 1em;
+    margin-right: 2em;
     outline: none;
     cursor: pointer;
     color: white;
@@ -201,6 +202,7 @@ nav a {
 #signup-h1 {
     text-align: center;
     padding-bottom: 15px;
+    font-size: 25px;
 }
 
 #bars-container {
@@ -248,12 +250,12 @@ nav a {
 
 label {
     color: #999;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: normal;
     position: absolute;
     pointer-events: none;
     left: 5px;
-    top: 0px;
+    top: 5px;
     transition: 0.2s ease all;
     -moz-transition: 0.2s ease all;
     -webkit-transition: 0.2s ease all;
@@ -396,7 +398,7 @@ label {
     display: none;
     font-size: 15px;
     color: red;
-    padding-bottom: 30px;
+    padding: 5px 0 25px 0;
     max-width: 300px;
 }
 
@@ -404,7 +406,7 @@ label {
     display: none;
     font-size: 15px;
     color: green;
-    padding-bottom: 30px;
+    padding: 5px 0 25px 0;
     max-width: 300px;
 }
 
