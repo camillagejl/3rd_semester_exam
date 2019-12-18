@@ -120,8 +120,9 @@ function spin(wheels, spins) {
     spins--;
     setPreviouslyActive(wheels);
 
-    let spinResult = calculateSpinResult(wheels);
-    let prizeWon = calculatePrizeWon(wheels, spinResult);
+    console.log(wheels[0].symbols[wheels[0].active], wheels[1].symbols[wheels[1].active], wheels[2].symbols[wheels[2].active]);
+
+    let prizeWon = calculatePrizeWon(wheels);
 
     // Starts the visual part of spinning the wheels.
     startVisualSpin(wheels, prizeWon, spins);
@@ -182,28 +183,37 @@ function toggleHoldButtons(wheels, spins) {
 // Commented in the functions where they are used.
 
 function calculateSpinResult(wheels) {
-    // The spin result is an array with the index of the "active" symbol in each wheel.
-    let spinResult = [];
+    // To get the spin result for each wheel, we add the random number we find to the wheel array as "active".
     wheels.forEach(wheel => {
         if (!wheel.isHolding) {
             wheel.active = Math.ceil(Math.random() * wheel.symbols.length) - 1
         }
-        spinResult.push(wheel.active);
     });
-    return spinResult;
 }
 
-function calculatePrizeWon(wheels, spinResult) {
+function calculatePrizeWon(wheels) {
     // Compares the active symbols in all wheels.
     // If the active symbols are the same, it returns the prize of the active symbols.
     // If they are not the same, it returns 0.
-    if (wheels[0].symbols[spinResult[0]] === wheels[1].symbols[spinResult[1]]
-        && wheels[1].symbols[spinResult[1]] === wheels[2].symbols[spinResult[2]]) {
-        return wheels[0].symbols[spinResult[0]].prize;
-    } else {
-        return 0;
-    }
+    let symbolsMatch = [];
 
+    wheels.forEach(wheel => {
+        if (wheels[wheel.id]) {
+
+            if (wheels[wheel.id - 1].symbols[wheels[wheel.id - 1].active]
+                === wheels[wheel.id].symbols[wheels[wheel.id].active]) {
+                symbolsMatch.push(true);
+            }
+            else {
+                symbolsMatch.push(false);
+            }
+        }
+    });
+
+    if (!symbolsMatch.includes(false)) {
+        return wheels[0].symbols[wheels[0].active].prize;
+    }
+        return 0;
 }
 
 
