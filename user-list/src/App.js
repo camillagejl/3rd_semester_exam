@@ -157,12 +157,12 @@ function List() {
                 <tr>
 
                     {/* onClick runs SortByColumn-function with userName as parameter. */}
-                    <th onClick={() => sortByColumn("userName")}>
+                    <th onClick={() => sortByColumn("username")}>
                         Username
 
-                        {/* If sortBy is set to userName, this function will return true and
+                        {/* If sortBy is set to username, this function will return true and
                         display the arrow.*/}
-                        {sortBy === "userName" &&
+                        {sortBy === "username" &&
                         <img className="sortArrow" style={arrowStyle} src={sortArrow} alt="Sorting arrow"/>
                         }
                     </th>
@@ -174,16 +174,16 @@ function List() {
                         }
                     </th>
 
-                    <th onClick={() => sortByColumn("firstName")}>
+                    <th onClick={() => sortByColumn("firstname")}>
                         First name
-                        {sortBy === "firstName" &&
+                        {sortBy === "firstname" &&
                             <img className="sortArrow" style={arrowStyle} src={sortArrow} alt="Sorting arrow"/>
                         }
                     </th>
 
-                    <th onClick={() => sortByColumn("lastName")}>
+                    <th onClick={() => sortByColumn("lastname")}>
                         Last name
-                        {sortBy === "lastName" &&
+                        {sortBy === "lastname" &&
                             <img className="sortArrow" style={arrowStyle} src={sortArrow} alt="Sorting arrow"/>
                         }
                     </th>
