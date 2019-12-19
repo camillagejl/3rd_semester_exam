@@ -71,7 +71,6 @@ function post() {
 //        }
 //    }
 
-
 signupForm.addEventListener("submit", e => {
     e.preventDefault();
 
@@ -96,18 +95,17 @@ signupForm.addEventListener("submit", e => {
         document.querySelector("#signup-error").innerHTML = "This email is already in use!";
     }
 
-    else if(signupForm.elements.agreement.checked === false) {
-        console.log(signupForm.elements.agreement.checked);
-        document.querySelector("#signup-error").innerHTML = "You have to accept our Terms of Use first";
+    if(signupForm.elements.agreement.checked === false) {
+        document.querySelector("#signup-error").innerHTML = "You must accept our Terms of Use first";
         document.querySelector("#signup-error").style.display = "block";
     }
     else if(yearsDiff < 18) {
-        console.log(yearsDiff);
+        console.log("under 18")
         document.querySelector("#signup-error").style.display = "block";
         document.querySelector("#signup-error").innerHTML = "You must be 18+ to sign up";
     }
     else {
-        console.log('all good');
+        console.log("above 18");
         document.querySelector("#signedup").style.display = "block";
         document.querySelector("#signup-error").style.display = "none";
         document.querySelector("#login-error").style.display = "none";
