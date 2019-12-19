@@ -59,6 +59,7 @@ function post() {
         })
         .then(res => res.json())
         .then(data => {});
+
 }
 
 // function disableButtons() {
@@ -100,7 +101,7 @@ signupForm.addEventListener("submit", e => {
         document.querySelector("#signup-error").style.display = "block";
     }
     else if(yearsDiff < 18) {
-        console.log("under 18")
+        console.log("under 18");
         document.querySelector("#signup-error").style.display = "block";
         document.querySelector("#signup-error").innerHTML = "You must be 18+ to sign up";
     }
@@ -120,9 +121,8 @@ signupForm.addEventListener("submit", e => {
             document.querySelector("#hide").style.display = "none";
             document.querySelector("body").style.cursor = "auto";
             signupForm.reset();
-        }, 1000);
+        }, 2000);
     }
-
 });
 
 // function uuidv4() {
