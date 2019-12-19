@@ -38,7 +38,7 @@ function post() {
         lastname: signupForm.elements.lastname.value,
         country: signupForm.elements.country.value,
         dateofbirth: signupForm.elements.dateofbirth.value
-    }
+    };
     
     if(signupForm.elements.subscription.checked === true){
         newUser.subscription = "Subscribed";
@@ -71,6 +71,7 @@ function post() {
 //        }
 //    }
 
+
 signupForm.addEventListener("submit", e => {
     e.preventDefault();
 
@@ -81,7 +82,21 @@ signupForm.addEventListener("submit", e => {
     let yearsDiff = new Date().getFullYear() - new Date(changedDate).getFullYear();
     console.log(yearsDiff);
 
-    if(signupForm.elements.agreement.checked === false) {
+    let isSignedUp;
+
+    myData.forEach(function (user) {
+        if(signupForm.elements.email.value === user.email) {
+            console.log("Is signed up!");
+            isSignedUp = true;
+        }
+    });
+
+    if (isSignedUp) {
+        document.querySelector("#signup-error").style.display = "block";
+        document.querySelector("#signup-error").innerHTML = "This email is already in use!";
+    }
+
+    else if(signupForm.elements.agreement.checked === false) {
         console.log(signupForm.elements.agreement.checked);
         document.querySelector("#signup-error").innerHTML = "You have to accept our Terms of Use first";
         document.querySelector("#signup-error").style.display = "block";
@@ -89,7 +104,7 @@ signupForm.addEventListener("submit", e => {
     else if(yearsDiff < 18) {
         console.log(yearsDiff);
         document.querySelector("#signup-error").style.display = "block";
-        document.querySelector("#signup-error").innerHTML = "You have to be 18yo";
+        document.querySelector("#signup-error").innerHTML = "You must be 18+ to sign up";
     }
     else {
         console.log('all good');
@@ -147,7 +162,31 @@ loginForm.addEventListener("submit", e => {
 document.querySelector("#next-btn").addEventListener("click", e => {
     e.preventDefault();
 
-    if (signupForm.elements.username.value.length >= 6 && signupForm.elements.password.value.length >= 6 && signupForm.elements.repeatpw.value === signupForm.elements.password.value) {
+    let isSignedUp;
+
+    myData.forEach(function (user) {
+        if(signupForm.elements.username.value === user.username) {
+            console.log("Is signed up!");
+            isSignedUp = true;
+        }
+    });
+
+    if (isSignedUp) {
+        document.querySelector("#signup-error").style.display = "block";
+        document.querySelector("#signup-error").innerHTML = "This username is already in use!";
+    }
+
+    else if (signupForm.elements.username.value.length < 6 || signupForm.elements.password.value.length < 6 && signupForm.elements.repeatpw.value === signupForm.elements.password.value) {
+        document.querySelector("#signup-error").style.display = "block";
+        document.querySelector("#signup-error").innerHTML = "The username and password must be at least 6 characters long";
+    }
+
+    else if (signupForm.elements.repeatpw.value !== signupForm.elements.password.value) {
+        document.querySelector("#signup-error").style.display = "block";
+        document.querySelector("#signup-error").innerHTML = "Incorrect repeat password";
+    }
+
+    else {
         document.querySelector(".second-step").style.width = "100%";
         document.querySelector("#first-fields").style.display = "none";
         document.querySelector("#second-fields").style.display = "block";
@@ -157,14 +196,6 @@ document.querySelector("#next-btn").addEventListener("click", e => {
         document.querySelector("#signup-error").style.display = "none";
         document.querySelector(".line").style.display = "none";
         document.querySelector("#already-acc").style.display = "none";
-    } else {
-        document.querySelector("#signup-error").style.display = "block";
-        document.querySelector("#signup-error").innerHTML = "The username and password must be at least 6 characters long";
-    }
-
-    if (signupForm.elements.repeatpw.value !== signupForm.elements.password.value) {
-        document.querySelector("#signup-error").style.display = "block";
-        document.querySelector("#signup-error").innerHTML = "Incorrect repeat password";
     }
 });
 
