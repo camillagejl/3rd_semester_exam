@@ -65,12 +65,18 @@ document.querySelector("#profile").addEventListener("click", e => {
 document.querySelector("#close").addEventListener("click", e => {
     document.querySelector("#modal").style.display = "none";
     document.querySelector("#profile-form h1").style.display = "none";
+    profileFieldsArray.forEach((field) => {
+        field.setAttribute("disabled", "true");
+    });
 });
 
 window.addEventListener("click", e => {
     if (e.target === modal) {
         modal.style.display = "none";
         document.querySelector("#profile-form h1").style.display = "none";
+        profileFieldsArray.forEach((field) => {
+            field.setAttribute("disabled", "true");
+        });
     }
 });
 
